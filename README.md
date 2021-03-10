@@ -1,3 +1,5 @@
-# Your blog
+# The Object
 
-This is the repository for your blog! Click *_config.yml* above to get started and fill in the details. Then click *index.md* and edit it to start creating your home page.
+This is my personal blog. You can see [here] (https://28-08-2000.github.io/)
+
+Here I post some one my experiences and what i learnt in my journey.
