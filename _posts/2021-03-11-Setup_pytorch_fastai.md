@@ -7,6 +7,7 @@ In this we will try to set up our pytorch environment using conda.
 **using miniconda**
 
 write following command in your comman prompt or terminal
+
 `conda create --name torch python=3.7`
 
 
@@ -15,6 +16,7 @@ write following command in your comman prompt or terminal
 to add jupyter notebooks in your virtual environment use the following commands:
 
 `conda activate torch`
+
 `conda install nb_conda`
 
 # register environment on jupyter
@@ -32,22 +34,25 @@ to add your environment in jupyter notebooks kernel use:
 `conda install -c fastai -c pytorch fastai`
 
 # install dependencies
-# activate and go to this address
+
+activate and go to this address
 
 `(torch) C:location_of_conda_envs\conda\pkgs`
 
-# now just pip it 
+# now just use pip 
 
 `pip install ipywidgets`
 
 # To add Voila
 
 `pip install voila`
+
 `jupyter serverextension enable voila --sys-prefix`
 
 # to make voila working in all directories
 
 `conda install -c conda-forge jupyter`
+
 `conda install notebook`
 
-Hope this will help
+Hope this will helps.
