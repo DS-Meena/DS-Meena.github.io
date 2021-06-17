@@ -46,11 +46,11 @@ You need the specific command for specific dataset.
 Go to the Dataset on Kaggle and copy the api command.
 
 
-![copy api command](/images/Kaggle_api_command.png)
+![copy api command](/images/kaggle_api_command.png)
 
 Now paste it in your notebook and then it will start downloading the data in a zip file.
 
-![download the dataset](/images/Kaggle_api_dataset_download.png)
+![download the dataset](/images/kaggle_api_dataset_download.png)
 
 Since, the data will be inside a zip file, so we need to first unzip the zip folder. 
 For extracting the files we can use:
