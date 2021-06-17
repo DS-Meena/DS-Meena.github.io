@@ -1,6 +1,6 @@
 Hello and welcome to The blog.
 
-![unexplored word](images/Flammarion.jpg)
+![unexplored world](images/Flammarion.jpg)
 
 ## So this is my blog.
 
