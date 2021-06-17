@@ -50,7 +50,7 @@ Go to the Dataset on Kaggle and copy the api command.
 
 Now paste it in your notebook and then it will start downloading the data in a zip file.
 
-![copy api command](/images/Kaggle_api_dataset_download.png)
+![download the dataset](/images/Kaggle_api_dataset_download.png)
 
 Since, the data will be inside a zip file, so we need to first unzip the zip folder. 
 For extracting the files we can use:
@@ -62,8 +62,6 @@ For extracting the files we can use:
 Now, you can see the files extracted. So, go ahead do what matters.
 
 **Now, work done.**
-
-
 
 >Note - we can also use wget command to download a dataset direct from website.
 
