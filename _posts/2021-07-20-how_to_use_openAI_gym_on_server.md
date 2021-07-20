@@ -168,14 +168,14 @@ So, we need to download the rom, and import it during running our environments.
 
 4. Create a folder (rars), move both zip files into it.
 
-``!mkdir rars``
+    ``!mkdir rars``
 
-``!mv HC\ ROMS.zip   rars``  
-``!mv ROMS.zip  rars``
+    ``!mv HC\ ROMS.zip   rars``  
+    ``!mv ROMS.zip  rars``
 
 5. Now import the rom using below code.
 
-``!python -m atari_py.import_roms rars``
+    ``!python -m atari_py.import_roms rars``
 
 6. Now you can run complex environments.  
 
