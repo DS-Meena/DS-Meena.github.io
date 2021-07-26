@@ -12,7 +12,7 @@ now  click on get new token.
 
 You can also expire the previous token and get a new token. You should do this because your old token can be unsecure now. 
 
-![kaggle api token](/images/Kaggle_api_token.png)
+![kaggle api token](/images/Kaggle/Kaggle_api_token.png)
 
 Download the kaggle.json file.
 This file contains your Kaggle username and your personal authorized key to access to different public datasets.
@@ -46,11 +46,11 @@ You need the specific command for specific dataset.
 Go to the Dataset on Kaggle and copy the api command.
 
 
-![copy api command](/images/kaggle_api_command.png)
+![copy api command](/images/Kaggle/kaggle_api_command.png)
 
 Now paste it in your notebook and then it will start downloading the data in a zip file.
 
-![download the dataset](/images/kaggle_api_dataset_download.png)
+![download the dataset](/images/Kaggle/kaggle_api_dataset_download.png)
 
 Since, the data will be inside a zip file, so we need to first unzip the zip folder. 
 For extracting the files we can use:
