@@ -147,7 +147,7 @@ It will stop when the episode terminates, then it will display the saved environ
 
 Output
 
-![copy api command](/images/mountaincar-v0.png)
+![copy api command](/images/OpenAI_Gym/mountaincar-v0.png)
 
 ## Run Atari and complex environment (ROM Issue)
 
@@ -185,7 +185,7 @@ Example :- try the pong game, just change the env id in above code, and run it a
 
 Output: -
 
-![copy api command](/images/pongNoFrameSkip-v4.png)
+![copy api command](/images/OpenAI_Gym/pongNoFrameSkip-v4.png)
 
 ## Summary
 
