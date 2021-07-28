@@ -2,57 +2,71 @@
 
 In this we will try to set up our pytorch environment using conda.
 
-# Create a virtual environment
+This will help you to install PyTorch for both CPU and GPU. 
 
-**using miniconda**
+First, install Miniconda. Miniconda is the minimal set of features of Anaconda python distribution.
+Download it from the [here](https://docs.conda.io/en/latest/miniconda.html).
 
-write following command in your comman prompt or terminal
+![Miniconda install](/images/minconda_install.png)
 
-`conda create --name torch python=3.7`
+Now, we will use only miniconda for the packages installation.
 
+1. **Create a virtual environment.**
 
-# activate and add jupyter
+    write following command in your comman prompt or terminal
 
-to add jupyter notebooks in your virtual environment use the following commands:
+    `conda create --name torch python=3.7`
 
-`conda activate torch`
+2. **Activate and add jupyter**
 
-`conda install nb_conda`
+    To add jupyter notebooks in your virtual environment use the following commands:
 
-# register environment on jupyter
+    `conda activate torch`
 
-to add your environment in jupyter notebooks kernel use:
+    `conda install nb_conda`
 
-`python -m ipykernel install --user --name pytorch --display-name "Python 3.7 (pytorch)"`
+3. **Register environment on jupyter**
 
-# install 	cpu only pytroch (latest)
+    To add your environment in jupyter notebooks kernel use:
 
-`conda install pytorch -c pytorch` 
+    `python -m ipykernel install --user --name pytorch --display-name "Python 3.7 (pytorch)"`
 
-# install fastai2 and torchvision (latest)
+4. **Install pytorch (CPU or GPU)**
 
-`conda install -c fastai -c pytorch fastai`
+    For installing cpu only pytroch (latest)
 
-# install dependencies
+    `conda install pytorch -c pytorch`
 
-activate and go to this address
+    Or
 
-`(torch) C:location_of_conda_envs\conda\pkgs`
+    For installing GPU supported pytorch (latest)
 
-# now just use pip 
+    `conda install pytorch cudatoolkit -c pytorch`
 
-`pip install ipywidgets`
+5. **Install fastai2 and torchvision (latest)**
 
-# To add Voila
+    `conda install -c fastai -c pytorch fastai`
 
-`pip install voila`
+6. **Install dependencies**
 
-`jupyter serverextension enable voila --sys-prefix`
+    Activate and go to this address
 
-# to make voila working in all directories
+    `(torch) C:location_of_conda_envs\conda\pkgs`
 
-`conda install -c conda-forge jupyter`
+    now, just use pip 
 
-`conda install notebook`
+    `pip install ipywidgets`
+
+7. **To add Voila support** [optional]
+
+    `pip install voila`
+
+    `jupyter serverextension enable voila --sys-prefix`
+
+8. **To make voila working in all directories** [optional]
+
+    `conda install -c conda-forge jupyter`
+
+    `conda install notebook`
 
 Hope this will helps.
