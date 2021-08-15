@@ -1,7 +1,7 @@
 # Understanding and Implementing Playing Atari using Deep Reinforcement learning
 
 In this we will try to understand and implement the Foundational research paper of deep reinforcement learning [[1]](https://www.cs.toronto.edu/~vmnih/docs/dqn.pdf). Foundational because it was one of the starting papers that revolunize the use of reinformcent learning. This paper gave the most Starting algorithm of deep rl i.e, DQN (using deep networks in the Q-algorithm).
-We will try to understand this paper and them implementing together with it.
+We will try to understand this paper and them implementing together with it. Refer Here for the [implementation](https://github.com/higgsfield/RL-Adventure/blob/master/1.dqn.ipynb).
 
 ## Introduction
 
