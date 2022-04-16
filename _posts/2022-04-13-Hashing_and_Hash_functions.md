@@ -16,7 +16,7 @@ Since the index value can be large, so we can't use it directly as a index in th
 
 ## Hash Functions
 
-Hash functions are used to convert given index value into a small index or key. A good hash function generates different indeces for different values.
+Hash functions are used to convert given index value or key into a small index. A good hash function generates different indeces for different index values.
 
 Example: -
 
@@ -38,14 +38,14 @@ Collision occurs when, the hash function gives same index for two different inde
 
 In such a situation their are ways two handle this: -
 
-1. Separate Chaining
+1. **Separate Chaining**
 
-    In this we use a linked list, to store all elements corresponding to the index. In this we use array of type linked list.
+    In this we use a linked list, to store all elements corresponding to the index. In this we use table of type linked list.
 
         index = hashfunc(index_value);
         table[index].append(data);
 
-2. Open Addressing
+2. **Open Addressing**
 
     In this we find next empty index by simply traversing the array, using some other algorithms.
 
@@ -71,3 +71,33 @@ In such a situation their are ways two handle this: -
             
             while not empty table[index]:
                 index = (index + i*index2) % size
+
+## Hash Functions in CPP
+
+You can also define custom hash functions while working with hash tables with user defined type keys. This hash function will be used to find the index for the key(index value).
+
+Synatx: unordered_map<key_type, data_type, hashfunc>
+
+Example:
+
+    // --------My Key data_type-------------
+    struct mydata {
+        int a, b;
+        mydata(int A, int B) 
+        { a = A; b = B; }
+        
+        bool operator==(const mydata& A) const 
+        { return a == A.a && b == A.b; }
+    };
+
+    // --------Hash Function----------------
+    class hashfunc {
+        public:
+
+        size_t operator()(const mydata& A) const 
+        { return -(A.a + A.b); }
+    };
+
+    // --hash table with custom hash function--    
+    unordered_map<mydata, int, hashfunc> ump;
+    ump[{2, 3}] = 10;
