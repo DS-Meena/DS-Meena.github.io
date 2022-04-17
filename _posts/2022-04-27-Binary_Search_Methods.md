@@ -71,3 +71,7 @@ In this case we have to use floating point values.
         print(l)
 
 Similar, algorithm can be used to minimize value.
+
+Note -> All Algorithms shown above has a time complexity of O(log(range)).
+
+You can read in detail about binary search advanced concepts from  [Codeforces.](https://codeforces.com/edu/course/2/lesson/6/2)
