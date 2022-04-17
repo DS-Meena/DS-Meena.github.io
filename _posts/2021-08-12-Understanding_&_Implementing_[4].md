@@ -26,7 +26,7 @@ First we will understand different progressions made in Q-learning. I have state
 
 As being Reinforcement learning algo, this also tries to train an agent to act in partially observable environment and tries to maximize the reward signal.
 
-**Agents and environments:** 
+**Agents and environments:**
 
 This can be formulated as an Markov decision process (means current state depends on previous states). And this MDP is episodic.
 

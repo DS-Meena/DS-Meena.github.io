@@ -1,8 +1,8 @@
-Hello and welcome to The blog.
+# The Blog
 
 ![unexplored world](images/Flammarion.jpg)
 
-## So this is my blog.
+Hello and welcome to The blog.
 
 I will be blogging on some useful things.
 

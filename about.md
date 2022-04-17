@@ -6,9 +6,7 @@ In these years, I have learnt my different things and tried to implement them in
 
 So here, It is a just a way to validate the things i have learnt by posting them and organizing them. I also like to write posts on topics that can probably help someone in future.
 
-This is a Blog cum portfolio.
-
-‍
+This is a Portfolio cum Blog.‍
 
 ## Problem Solving Experience: -
 
