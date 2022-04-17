@@ -74,7 +74,7 @@ In such a situation their are ways two handle this: -
 
 ## Hash Functions in CPP
 
-You can also define custom hash functions while working with hash tables with user defined type keys. This hash function will be used to find the index for the key(index value).
+You can also define custom hash functions while working with hash tables with user defined keys. This hash function will be used to find the index for the key(index value).
 
 Synatx: unordered_map<key_type, data_type, hashfunc>
 
@@ -95,7 +95,7 @@ Example:
         public:
 
         size_t operator()(const mydata& A) const 
-        { return -(A.a + A.b); }
+        { return -A.a + A.b; }
     };
 
     // --hash table with custom hash function--    
