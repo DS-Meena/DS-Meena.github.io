@@ -1,0 +1,399 @@
+<!DOCTYPE html>
+<html lang="en"><head>
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1"><!-- Begin Jekyll SEO tag v2.8.0 -->
+<title>Decoding OOPs with cpp | dsm Blogs</title>
+<meta name="generator" content="Jekyll v4.3.3" />
+<meta property="og:title" content="Decoding OOPs with cpp" />
+<meta property="og:locale" content="en_US" />
+<meta name="description" content="Programming is a vast field with myriad techniques and paradigms. Among these, Object-Oriented Programming (OOP) shines as a method that helps us structure our programs using objects. Objects are entities that bundle data and functionality, making our code more intuitive and easier to maintain. C++ is a perfect language to delve into OOP, as it inherently supports this paradigm." />
+<meta property="og:description" content="Programming is a vast field with myriad techniques and paradigms. Among these, Object-Oriented Programming (OOP) shines as a method that helps us structure our programs using objects. Objects are entities that bundle data and functionality, making our code more intuitive and easier to maintain. C++ is a perfect language to delve into OOP, as it inherently supports this paradigm." />
+<link rel="canonical" href="http://localhost:4000/programming/2023/04/09/Decodings-OOPS-with-CPP.html" />
+<meta property="og:url" content="http://localhost:4000/programming/2023/04/09/Decodings-OOPS-with-CPP.html" />
+<meta property="og:site_name" content="dsm Blogs" />
+<meta property="og:type" content="article" />
+<meta property="article:published_time" content="2023-04-09T15:08:10+05:30" />
+<meta name="twitter:card" content="summary" />
+<meta property="twitter:title" content="Decoding OOPs with cpp" />
+<script type="application/ld+json">
+{"@context":"https://schema.org","@type":"BlogPosting","dateModified":"2023-04-09T15:08:10+05:30","datePublished":"2023-04-09T15:08:10+05:30","description":"Programming is a vast field with myriad techniques and paradigms. Among these, Object-Oriented Programming (OOP) shines as a method that helps us structure our programs using objects. Objects are entities that bundle data and functionality, making our code more intuitive and easier to maintain. C++ is a perfect language to delve into OOP, as it inherently supports this paradigm.","headline":"Decoding OOPs with cpp","mainEntityOfPage":{"@type":"WebPage","@id":"http://localhost:4000/programming/2023/04/09/Decodings-OOPS-with-CPP.html"},"url":"http://localhost:4000/programming/2023/04/09/Decodings-OOPS-with-CPP.html"}</script>
+<!-- End Jekyll SEO tag -->
+<link rel="stylesheet" href="/assets/main.css"><link type="application/atom+xml" rel="alternate" href="http://localhost:4000/feed.xml" title="dsm Blogs" /></head>
+<body><header class="site-header" role="banner">
+
+  <div class="wrapper"><a class="site-title" rel="author" href="/">dsm Blogs</a><nav class="site-nav">
+        <input type="checkbox" id="nav-trigger" class="nav-trigger" />
+        <label for="nav-trigger">
+          <span class="menu-icon">
+            <svg viewBox="0 0 18 15" width="18px" height="15px">
+              <path d="M18,1.484c0,0.82-0.665,1.484-1.484,1.484H1.484C0.665,2.969,0,2.304,0,1.484l0,0C0,0.665,0.665,0,1.484,0 h15.032C17.335,0,18,0.665,18,1.484L18,1.484z M18,7.516C18,8.335,17.335,9,16.516,9H1.484C0.665,9,0,8.335,0,7.516l0,0 c0-0.82,0.665-1.484,1.484-1.484h15.032C17.335,6.031,18,6.696,18,7.516L18,7.516z M18,13.516C18,14.335,17.335,15,16.516,15H1.484 C0.665,15,0,14.335,0,13.516l0,0c0-0.82,0.665-1.483,1.484-1.483h15.032C17.335,12.031,18,12.695,18,13.516L18,13.516z"/>
+            </svg>
+          </span>
+        </label>
+
+        <div class="trigger"><a class="page-link" href="/about/">About</a></div>
+      </nav></div>
+</header>
+<main class="page-content" aria-label="Content">
+      <div class="wrapper">
+        <article class="post h-entry" itemscope itemtype="http://schema.org/BlogPosting">
+
+  <header class="post-header">
+    <h1 class="post-title p-name" itemprop="name headline">Decoding OOPs with cpp</h1>
+    <p class="post-meta">
+      <time class="dt-published" datetime="2023-04-09T15:08:10+05:30" itemprop="datePublished">Apr 9, 2023
+      </time></p>
+  </header>
+
+  <div class="post-content e-content" itemprop="articleBody">
+    <p>Programming is a vast field with myriad techniques and paradigms. Among these, Object-Oriented Programming (OOP) shines as a method that helps us structure our programs using objects. Objects are entities that bundle data and functionality, making our code more intuitive and easier to maintain. C++ is a perfect language to delve into OOP, as it inherently supports this paradigm.</p>
+
+<p>Let’s start our journey with OOP’s (aka Object Oriented Programming). C++ is a OOP’s oriented programming language.</p>
+
+<h2 id="1-class-logical-entity">1. Class (Logical Entity)</h2>
+
+<p>A class serves as a blueprint for creating objects. In technical terms, it’s a user-defined data type with its own data members (attributes) and member functions (methods).</p>
+
+<p>To access a class we then need instance of that class known as object.</p>
+
+<p>Example → Consider a class ‘Car’, which could have attributes like speed limit and mileage, and methods like applying brakes, increasing speed, and so on.</p>
+
+<p>Class car</p>
+
+<p>Data members → Speed limit, mileage, etc.</p>
+
+<p>Member functions → Apply brakes, increase speed, etc.</p>
+
+<h2 id="2-object-physical-entity">2. Object (Physical Entity)</h2>
+
+<p>An object is an instance of a class. It’s a real-world entity that gives us the ability to access and manipulate the data within a class.</p>
+
+<ul>
+  <li>Class definition (no memory allocated).</li>
+  <li>When we create object (memory allocated).</li>
+</ul>
+
+<p>Example →</p>
+
+<div class="language-cpp highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="k">class</span> <span class="nc">Person</span> 
+<span class="p">{</span>
+	<span class="kt">char</span> <span class="n">name</span><span class="p">[</span><span class="mi">20</span><span class="p">];</span>
+	<span class="kt">int</span> <span class="n">id</span><span class="p">;</span>
+	<span class="nl">public:</span>
+		<span class="kt">void</span> <span class="n">getdetails</span><span class="p">()</span> <span class="p">{}</span>
+<span class="p">};</span>
+
+<span class="kt">int</span> <span class="nf">main</span><span class="p">()</span>
+<span class="p">{</span>
+	<span class="n">Person</span> <span class="n">pi</span><span class="p">;</span>     <span class="c1">// object</span>
+<span class="p">}</span>
+</code></pre></div></div>
+
+<h2 id="3-encapsulation-protective-shield">3. Encapsulation (protective shield)</h2>
+
+<p>Encapsulation is the practice of binding data and the functions that handle them within a class. It acts as a protective shield, preventing data from being accessed directly by the code outside the class.</p>
+
+<p>In encapsulation we hide the data and implementation details within a class.</p>
+
+<ul>
+  <li>Used in Abstraction</li>
+  <li>Binding together the data and function that manipulate them.</li>
+</ul>
+
+<p>Example → a Class.</p>
+
+<h2 id="4-abstraction-hiding-the-complexity">4. Abstraction (Hiding the complexity)</h2>
+
+<p>Abstraction means displaying only essential information and hiding the details.</p>
+
+<p>There are 2 ways to do Abstraction: -</p>
+
+<h4 id="using-class-">Using Class →</h4>
+
+<p>We use <strong>access specifiers</strong>.  Access specifiers enforce restrictions on class members.</p>
+
+<ol>
+  <li>Public → We can access from anywhere.</li>
+  <li>Private (Default) → We can access only from within class.</li>
+  <li>Protected → We can also access from subclass.</li>
+</ol>
+
+<p>Example →</p>
+
+<div class="language-cpp highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="n">Class</span> <span class="n">Abstraction</span>
+<span class="p">{</span>
+    <span class="nl">private:</span>
+        <span class="kt">int</span> <span class="n">a</span><span class="p">,</span> <span class="n">b</span><span class="p">;</span>
+    <span class="nl">public:</span>
+        <span class="kt">void</span> <span class="n">set</span><span class="p">(</span><span class="kt">int</span> <span class="n">x</span><span class="p">,</span> <span class="kt">int</span> <span class="n">y</span><span class="p">)</span> <span class="p">{</span>
+            <span class="n">a</span> <span class="o">=</span> <span class="n">x</span><span class="p">,</span> <span class="n">b</span> <span class="o">=</span> <span class="n">y</span><span class="p">;</span>
+        <span class="p">}</span>
+        <span class="kt">void</span> <span class="nf">dispaly</span><span class="p">()</span> <span class="p">{</span>
+            <span class="n">cout</span> <span class="o">&lt;&lt;</span> <span class="n">a</span> <span class="o">&lt;&lt;</span> <span class="s">" "</span> <span class="o">&lt;&lt;</span> <span class="n">b</span> <span class="o">&lt;&lt;</span> <span class="s">"</span><span class="se">\n</span><span class="s">"</span><span class="p">;</span>
+        <span class="p">}</span>
+<span class="p">}</span>
+
+<span class="kt">int</span> <span class="nf">main</span><span class="p">()</span>
+<span class="p">{</span>
+    <span class="n">Abstraction</span> <span class="n">obj</span><span class="p">;</span>
+    <span class="n">obj</span><span class="p">.</span><span class="n">set</span><span class="p">(</span><span class="mi">1</span><span class="p">,</span> <span class="mi">2</span><span class="p">);</span>
+    <span class="n">obj</span><span class="p">.</span><span class="n">display</span><span class="p">();</span>
+<span class="p">}</span>
+
+<span class="c1">// OUTPUT</span>
+<span class="c1">// 1 2</span>
+</code></pre></div></div>
+
+<h4 id="in-header-files-">In header Files →</h4>
+<p>Example → You can import math.h and use Pow() function without directly knowing algorithm behind it.</p>
+
+<p>The degree of abstraction refers to the level of detail or complexity at which information is presented or understood.</p>
+
+<p>Completely hidden → highest degree of abstraction.</p>
+
+<h3 id="5-polymorphism-many-forms-of-an-object">5. Polymorphism (Many forms of an object)</h3>
+
+<p>Polymorphism refers to an object’s ability to take on many forms.</p>
+
+<ul>
+  <li>Property of having many forms</li>
+  <li>Ability of a message to be displayed in more than one form.</li>
+</ul>
+
+<p>Example → Like man can be husband, father and son.</p>
+
+<p>Polymorphism in C++</p>
+
+<h4 id="1-operator-overloading">1. Operator Overloading</h4>
+
+<p>Customizes the C++ operators for operands of user-defined types.</p>
+
+<p>Example → “+” operator can be overloaded to do string concatenation and addition.
+”a” + “b” = “ab”
+4 + 3 = 7</p>
+
+<table>
+  <thead>
+    <tr>
+      <th>Overloadable</th>
+      <th>Non-Overloadable</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td>+          -           *          /        %          ^          =</td>
+      <td>::            .*          .           ?:</td>
+    </tr>
+  </tbody>
+</table>
+
+<p>Also, we can define the behavior of operators for objects, be defining them in class.</p>
+
+<p>Example →</p>
+
+<div class="language-cpp highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="k">class</span> <span class="nc">complex</span> <span class="p">{</span>
+    <span class="nl">public:</span>
+        <span class="kt">int</span> <span class="n">real</span><span class="p">,</span> <span class="n">img</span><span class="p">;</span>
+        <span class="n">complex</span><span class="p">(</span><span class="kt">int</span> <span class="n">r</span><span class="o">=</span><span class="mi">0</span><span class="p">,</span> <span class="kt">int</span> <span class="n">i</span><span class="o">=</span><span class="mi">0</span><span class="p">)</span> <span class="p">{</span><span class="n">real</span><span class="o">=</span><span class="n">r</span><span class="p">,</span> <span class="n">img</span><span class="o">=</span><span class="n">i</span><span class="p">;}</span>
+        
+        <span class="c1">// Here, we defined behavior of "+" when we add to complex numbers.</span>
+        <span class="n">complex</span> <span class="k">operator</span> <span class="o">+</span> <span class="p">(</span><span class="n">complex</span> <span class="k">const</span> <span class="o">&amp;</span><span class="n">obj</span><span class="p">)</span> <span class="p">{</span>
+            <span class="n">complex</span> <span class="n">res</span><span class="p">;</span>
+            <span class="n">res</span><span class="p">.</span><span class="n">real</span> <span class="o">=</span> <span class="n">real</span> <span class="o">+</span> <span class="n">obj</span><span class="p">.</span><span class="n">real</span><span class="p">;</span>
+            <span class="n">res</span><span class="p">.</span><span class="n">img</span> <span class="o">=</span> <span class="n">img</span> <span class="o">+</span> <span class="n">obj</span><span class="p">.</span><span class="n">img</span><span class="p">;</span>
+            <span class="k">return</span> <span class="n">res</span><span class="p">;</span>
+        <span class="p">}</span>
+<span class="p">}</span>
+
+<span class="c1">// an easy example -&gt; used in sorting</span>
+<span class="k">struct</span> <span class="nc">P</span> <span class="p">{</span>
+    <span class="kt">int</span> <span class="n">x</span><span class="p">,</span> <span class="n">y</span><span class="p">;</span>
+    <span class="kt">bool</span> <span class="k">operator</span><span class="o">&lt;</span><span class="p">(</span><span class="k">const</span> <span class="n">P</span> <span class="o">&amp;</span><span class="n">p</span><span class="p">)</span> <span class="p">{</span>
+        <span class="k">if</span> <span class="p">(</span><span class="n">x</span> <span class="o">!=</span> <span class="n">p</span><span class="p">.</span><span class="n">x</span><span class="p">)</span> <span class="k">return</span> <span class="n">x</span> <span class="o">&lt;</span> <span class="n">p</span><span class="p">.</span><span class="n">x</span><span class="p">;</span>
+        <span class="k">else</span> <span class="k">return</span> <span class="n">y</span> <span class="o">&lt;</span> <span class="n">p</span><span class="p">.</span><span class="n">y</span><span class="p">;</span>
+    <span class="p">}</span>
+<span class="p">};</span>
+</code></pre></div></div>
+
+<h4 id="2-templates">2. Templates</h4>
+<h4 id="3-function-overloading">3. Function Overloading</h4>
+<p>Use a single function name to perform different tasks.</p>
+
+<p>Example →</p>
+
+<div class="language-cpp highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="kt">int</span> <span class="nf">sum</span><span class="p">(</span><span class="kt">int</span> <span class="n">a</span><span class="p">,</span> <span class="kt">int</span> <span class="n">b</span><span class="p">)</span> <span class="p">{</span>
+    <span class="k">return</span> <span class="n">a</span><span class="o">+</span><span class="n">b</span><span class="p">;</span>	
+<span class="p">}</span>
+<span class="kt">int</span> <span class="nf">sum</span><span class="p">(</span><span class="kt">int</span> <span class="n">a</span><span class="p">,</span> <span class="kt">int</span> <span class="n">b</span><span class="p">,</span> <span class="kt">int</span> <span class="n">c</span><span class="p">)</span> <span class="p">{</span>
+    <span class="k">return</span> <span class="n">a</span> <span class="o">+</span> <span class="n">b</span> <span class="o">+</span> <span class="n">c</span><span class="p">;</span>
+<span class="p">}</span>
+
+<span class="kt">int</span> <span class="nf">main</span><span class="p">()</span>
+<span class="p">{</span>
+    <span class="n">sum1</span> <span class="o">=</span> <span class="n">sum</span><span class="p">(</span><span class="mi">2</span><span class="o">+</span><span class="mi">3</span><span class="p">);</span>
+    <span class="n">sum2</span> <span class="o">=</span> <span class="n">sum</span><span class="p">(</span><span class="mi">2</span> <span class="o">+</span> <span class="mi">3</span> <span class="o">+</span> <span class="mi">4</span><span class="p">);</span>
+<span class="p">}</span>
+</code></pre></div></div>
+
+<p>Early binding is when a variable is assigned its value at compile time. Late binding is when a variable is assigned a value at run time.</p>
+
+<h3 id="dynamic-binding--abstract-class--virtual-method">Dynamic Binding / Abstract class / virtual method</h3>
+
+<p>Dynamic binding, also known as late binding or runtime polymorphism, is a mechanism in object-oriented programming where the actual method or function to be executed is determined at runtime based on the type of the object.</p>
+
+<p>In C++, dynamic binding is achieved through the use of virtual functions. A virtual function is a member function declared within a base class and marked with the <code class="language-plaintext highlighter-rouge">virtual</code> keyword. When a derived class overrides this virtual function, the function call is resolved dynamically at runtime based on the actual type of the object being referenced.</p>
+
+<p>Example:</p>
+
+<div class="language-cpp highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="k">class</span> <span class="nc">Shape</span> <span class="p">{</span>    <span class="c1">// THIS IS NOT AN ABSTRACT CLASS</span>
+<span class="nl">public:</span>
+    <span class="k">virtual</span> <span class="kt">void</span> <span class="n">draw</span><span class="p">()</span> <span class="p">{</span>    <span class="c1">// because provides implementation of virtual method</span>
+        <span class="n">cout</span> <span class="o">&lt;&lt;</span> <span class="s">"Drawing a shape."</span> <span class="o">&lt;&lt;</span> <span class="n">endl</span><span class="p">;</span>
+    <span class="p">}</span>
+    
+<span class="p">};</span>
+
+<span class="k">class</span> <span class="nc">Circle</span> <span class="o">:</span> <span class="k">public</span> <span class="n">Shape</span> <span class="p">{</span>
+<span class="nl">public:</span>
+    <span class="kt">void</span> <span class="n">draw</span><span class="p">()</span> <span class="k">override</span> <span class="p">{</span>
+        <span class="n">cout</span> <span class="o">&lt;&lt;</span> <span class="s">"Drawing a circle."</span> <span class="o">&lt;&lt;</span> <span class="n">endl</span><span class="p">;</span>
+    <span class="p">}</span>
+<span class="p">};</span>
+
+<span class="k">class</span> <span class="nc">Rectangle</span> <span class="o">:</span> <span class="k">public</span> <span class="n">Shape</span> <span class="p">{</span>
+<span class="p">};</span>
+
+<span class="kt">int</span> <span class="nf">main</span><span class="p">()</span> <span class="p">{</span>
+    <span class="n">Shape</span><span class="o">*</span> <span class="n">shape1</span> <span class="o">=</span> <span class="k">new</span> <span class="n">Circle</span><span class="p">();</span>
+    <span class="n">Shape</span><span class="o">*</span> <span class="n">shape2</span> <span class="o">=</span> <span class="k">new</span> <span class="n">Rectangle</span><span class="p">();</span>
+
+    <span class="n">shape1</span><span class="o">-&gt;</span><span class="n">draw</span><span class="p">();</span> <span class="c1">// Dynamic binding - calls draw() of Circle</span>
+    <span class="n">shape2</span><span class="o">-&gt;</span><span class="n">draw</span><span class="p">();</span> <span class="c1">// Dynamic binding - calls draw() of Shape</span>
+        <span class="c1">// FUN NOTE -&gt; A-&gt;B IS EQUAL TO (*A).B</span>
+
+    <span class="k">delete</span> <span class="n">shape1</span><span class="p">;</span>
+    <span class="k">delete</span> <span class="n">shape2</span><span class="p">;</span>
+
+    <span class="k">return</span> <span class="mi">0</span><span class="p">;</span>
+<span class="p">}</span>
+</code></pre></div></div>
+
+<p>In the above example, the <code class="language-plaintext highlighter-rouge">draw()</code> function is declared as a virtual function in the base class <code class="language-plaintext highlighter-rouge">Shape</code>. When we create objects of derived classes (<code class="language-plaintext highlighter-rouge">Circle</code> and <code class="language-plaintext highlighter-rouge">Rectangle</code>) and assign them to a pointer of type , the appropriate  function is called based on the actual type of the object being referenced. This is determined dynamically at runtime, allowing for polymorphic behavior.</p>
+
+<p>Yes, if the <code class="language-plaintext highlighter-rouge">Rectangle</code> class does not override the <code class="language-plaintext highlighter-rouge">draw</code> method of the <code class="language-plaintext highlighter-rouge">Shape</code> class, then calling <code class="language-plaintext highlighter-rouge">draw</code> on an object of the <code class="language-plaintext highlighter-rouge">Rectangle</code> class will call the <code class="language-plaintext highlighter-rouge">draw</code> method defined in the <code class="language-plaintext highlighter-rouge">Shape</code> class.</p>
+
+<h3 id="abstract-class">Abstract Class</h3>
+
+<p>An abstract class is a class that cannot be instantiated, meaning we cannot create objects of that class. It serves as a blueprint for other classes to inherit from. It contains at least one pure virtual function, which is a virtual function that has no implementation in the abstract class and must be overridden by any derived class inheriting from it.</p>
+
+<p>To define an abstract class in C++, we use the <code class="language-plaintext highlighter-rouge">virtual</code> keyword to declare pure virtual functions. The syntax is as follows:</p>
+
+<div class="language-cpp highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="k">class</span> <span class="nc">AbstractClass</span> <span class="p">{</span>   <span class="c1">// THIS IS AN ABSTRACT CLASS</span>
+<span class="nl">public:</span>
+    <span class="k">virtual</span> <span class="kt">void</span> <span class="n">pureVirtualFunction</span><span class="p">()</span> <span class="o">=</span> <span class="mi">0</span><span class="p">;</span> <span class="c1">// Pure virtual function</span>
+    <span class="kt">void</span> <span class="n">nonVirtualFunction</span><span class="p">()</span> <span class="p">{</span>
+        <span class="c1">// Non-virtual function</span>
+    <span class="p">}</span>
+<span class="p">};</span>
+
+</code></pre></div></div>
+
+<p>In the example above, <code class="language-plaintext highlighter-rouge">pureVirtualFunction()</code> is a pure virtual function, and <code class="language-plaintext highlighter-rouge">nonVirtualFunction()</code> is a normal member function. Any class that inherits from <code class="language-plaintext highlighter-rouge">AbstractClass</code> must override the pure virtual function, but it can choose whether to override the non-virtual function.</p>
+
+<h2 id="6-inheritance">6. Inheritance</h2>
+
+<p>Capability of a child class (Sub-Class) to derive properties and characteristics from parent class (Super Class).</p>
+
+<p>Gives us “Reusability” of methods.</p>
+
+<p>We can access <strong>public, protected</strong> member of super class from subclass.</p>
+
+<p>Example →</p>
+
+<p>Let’s say there is an Animal class. then we can create subclasses like Dog, Cat and Cow subclasses which inherits the properties of Animal super class.</p>
+
+<div class="language-cpp highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="k">class</span> <span class="nc">Animal</span> 
+<span class="p">{</span>
+		<span class="nl">public:</span>
+			<span class="n">string</span> <span class="n">species</span><span class="p">;</span>
+<span class="p">}</span>
+
+<span class="k">class</span> <span class="nc">Dog</span><span class="o">:</span><span class="k">public</span> <span class="n">Animal</span> <span class="p">{</span>
+		<span class="nl">public:</span> 
+			<span class="kt">int</span> <span class="n">weight</span><span class="p">;</span>
+<span class="p">}</span>
+
+<span class="c1">// Multiple inheritance</span>
+<span class="k">class</span> <span class="nc">C</span> <span class="o">:</span> <span class="k">public</span> <span class="n">A</span><span class="p">,</span> <span class="k">public</span> <span class="n">B</span> <span class="p">{</span>
+<span class="nl">public:</span>
+    <span class="kt">void</span> <span class="n">displayC</span><span class="p">()</span> <span class="p">{</span>
+        <span class="n">cout</span> <span class="o">&lt;&lt;</span> <span class="s">"This is class C"</span> <span class="o">&lt;&lt;</span> <span class="n">endl</span><span class="p">;</span>
+    <span class="p">}</span>
+<span class="p">};</span>
+
+<span class="kt">int</span> <span class="nf">main</span><span class="p">()</span> <span class="p">{</span>
+	<span class="n">Dog</span> <span class="n">d</span><span class="p">;</span>
+	<span class="n">d</span><span class="p">.</span><span class="n">species</span> <span class="o">=</span> <span class="s">"xyz"</span><span class="p">;</span>
+	<span class="n">d</span><span class="p">.</span><span class="n">weight</span> <span class="o">=</span> <span class="mi">100</span><span class="p">;</span>
+<span class="p">}</span>
+</code></pre></div></div>
+
+<p>Note → The access specifier used while inheriting the parent class, tells the nature of the inherited properties.  By default, it is private.</p>
+
+<p>In object-oriented programming, an IS-A relationship refers to inheritance or subclassing.</p>
+
+<p>For example, if we have a base class called “Animal” and a derived class called “Dog”, we can say that “Dog IS-A Animal”. This means that a dog is a type of animal and inherits the characteristics of an animal.</p>
+
+<h3 id="types-of-inheritance">Types of Inheritance</h3>
+
+<p>In C++, inheritance allows a derived class to inherit properties and characteristics from a base class. There are several types of inheritance:</p>
+
+<ol>
+  <li>Single Inheritance: A derived class inherits properties from a single base class.</li>
+  <li>Multiple Inheritance: A derived class inherits properties from multiple base classes.
+A → B
+C → B</li>
+  <li>Multilevel Inheritance: A derived class inherits properties from a base class, which in turn inherits properties from another base class.
+A → B → C</li>
+  <li>Hierarchical Inheritance: Multiple derived classes inherit properties from a single base class.
+A → B
+A → C</li>
+  <li>Hybrid Inheritance: It is a combination of multiple and multilevel inheritance.</li>
+</ol>
+
+<p>These types of inheritance provide flexibility in designing class hierarchies, allowing for code reuse and organization of related classes.</p>
+
+<p>In conclusion, Object-Oriented Programming provides a clear structure for our programs, making the code easier to design, understand, and maintain. So, the next time you’re coding in C++, keep these OOP concepts in mind as your guiding principles. They will surely make your programming journey smoother and more efficient.</p>
+
+  </div><a class="u-url" href="/programming/2023/04/09/Decodings-OOPS-with-CPP.html" hidden></a>
+</article>
+
+      </div>
+    </main><footer class="site-footer h-card">
+  <data class="u-url" href="/"></data>
+
+  <div class="wrapper">
+
+    <h2 class="footer-heading">dsm Blogs</h2>
+
+    <div class="footer-col-wrapper">
+      <div class="footer-col footer-col-1">
+        <ul class="contact-list">
+          <li class="p-name">dsm Blogs</li><li><a class="u-email" href="mailto:dharamsinghmeena2000@gmail.com">dharamsinghmeena2000@gmail.com</a></li></ul>
+      </div>
+
+      <div class="footer-col footer-col-2"><ul class="social-media-list"><li><a href="https://github.com/DS-Meena"><svg class="svg-icon"><use xlink:href="/assets/minima-social-icons.svg#github"></use></svg> <span class="username">DS-Meena</span></a></li><li><a href="https://www.twitter.com/DSMOfficial1"><svg class="svg-icon"><use xlink:href="/assets/minima-social-icons.svg#twitter"></use></svg> <span class="username">DSMOfficial1</span></a></li></ul>
+</div>
+
+      <div class="footer-col footer-col-3">
+        <p>This is a blog about Data Science and Machine Learning. I write about all the things I learn in this domain. I also share my knowledge with you.</p>
+      </div>
+    </div>
+
+  </div>
+
+</footer>
+</body>
+
+</html>
