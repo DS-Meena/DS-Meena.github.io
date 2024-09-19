@@ -43,7 +43,7 @@ Once the repository has been created, you can start adding files to it using the
 
 You can also clone an existing project into your directory, using HTTPS, SSH or GitHub CLI.
 
-![Fig: Ways to Clone an existing Project](/assets/clone_repo.png)
+![Fig: Ways to Clone an existing Project](/assets/2024/September/clone_repo.png)
 
 Fig: Ways to Clone an existing Project
 
@@ -55,7 +55,7 @@ Fig: Ways to Clone an existing Project
     1. Generate a new SSH key by running the following command in your terminal: `ssh-keygen -t rsa -b 4096 -C "your_email@example.com"`
     2. Follow the prompts to create a passphrase and save the key. 
         
-        ![Fig: Generating SSH Key](https://s3-us-west-2.amazonaws.com/secure.notion-static.com/12178030-b1a2-4779-8c40-5f24f44ed687/Untitled.png)
+        ![Fig: Generating SSH Key](/assets/2024/September/Generate%20SSH%20Key.png)
         
         Fig: Generating SSH Key
         
@@ -63,8 +63,8 @@ Fig: Ways to Clone an existing Project
         
     3. Add the SSH key to your GitHub account by going to your account settings and selecting "SSH and GPG keys". Click "New SSH key" and paste the contents of your public key into the text box.
     4. Test your SSH connection by running the command `ssh -T git@github.com`. You should receive a message indicating that you've successfully authenticated.
-        
-        ![Fig: Authenticating SSH Key](https://s3-us-west-2.amazonaws.com/secure.notion-static.com/32f74387-253b-46ac-b4a6-91b0c038f5a0/Untitled.png)
+
+        ![Fig: Authenticating SSH Key](/assets/2024/September/Generate%20SSH%20Key.png)
         
         Fig: Authenticating SSH Key
         
@@ -190,7 +190,7 @@ In summary, using the `-u` flag simplifies the process of pushing changes to the
 
 After pushing changes into remote repository, we can **create a Pull request**. A pull request in GitHub is a way for developers to propose changes to a repository hosted on GitHub. When a developer creates a pull request, they are essentially asking that their changes be reviewed and potentially merged into the main codebase. Other developers can review the changes and provide feedback before the pull request is merged. Pull requests are a key feature of the collaborative nature of GitHub, allowing developers to work together on open source projects and contribute to each other's code. You can learn more about pull requests from the [official GitHub documentation](https://docs.github.com/en/github/collaborating-with-issues-and-pull-requests/about-pull-requests).
 
-!https://docs.github.com/assets/cb-23923/mw-1000/images/help/repository/branching.webp
+![Branching](/assets/2024/September/branching.webp)
 
 **To pull changes from a remote repository:**
 
