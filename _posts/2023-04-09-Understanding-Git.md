@@ -43,7 +43,7 @@ Once the repository has been created, you can start adding files to it using the
 
 You can also clone an existing project into your directory, using HTTPS, SSH or GitHub CLI.
 
-![Fig: Ways to Clone an existing Project](../_site/web/2023/04/09/Untitled-500x533.png)
+![Fig: Ways to Clone an existing Project](/assets/clone_repo.png)
 
 Fig: Ways to Clone an existing Project
 
