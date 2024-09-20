@@ -1,4 +1,4 @@
-<?xml version="1.0" encoding="utf-8"?><feed xmlns="http://www.w3.org/2005/Atom" ><generator uri="https://jekyllrb.com/" version="4.3.3">Jekyll</generator><link href="http://localhost:4000/feed.xml" rel="self" type="application/atom+xml" /><link href="http://localhost:4000/" rel="alternate" type="text/html" /><updated>2024-09-19T10:14:26+05:30</updated><id>http://localhost:4000/feed.xml</id><title type="html">dsm Blogs</title><subtitle>This is a blog about Data Science and Machine Learning. I write about all the things I learn in this domain. I also share my knowledge with you.</subtitle><entry><title type="html">Welcome to Jekyll!</title><link href="http://localhost:4000/jekyll/update/2024/09/15/welcome-to-jekyll.html" rel="alternate" type="text/html" title="Welcome to Jekyll!" /><published>2024-09-15T15:08:10+05:30</published><updated>2024-09-15T15:08:10+05:30</updated><id>http://localhost:4000/jekyll/update/2024/09/15/welcome-to-jekyll</id><content type="html" xml:base="http://localhost:4000/jekyll/update/2024/09/15/welcome-to-jekyll.html"><![CDATA[<p>You’ll find this post in your <code class="language-plaintext highlighter-rouge">_posts</code> directory. Go ahead and edit it and re-build the site to see your changes. You can rebuild the site in many different ways, but the most common way is to run <code class="language-plaintext highlighter-rouge">jekyll serve</code>, which launches a web server and auto-regenerates your site when a file is updated.</p>
+<?xml version="1.0" encoding="utf-8"?><feed xmlns="http://www.w3.org/2005/Atom" ><generator uri="https://jekyllrb.com/" version="4.3.3">Jekyll</generator><link href="http://localhost:4000/feed.xml" rel="self" type="application/atom+xml" /><link href="http://localhost:4000/" rel="alternate" type="text/html" /><updated>2024-09-20T09:51:18+05:30</updated><id>http://localhost:4000/feed.xml</id><title type="html">dsm Blogs</title><subtitle>This is a blog about Data Science and Machine Learning. I write about all the things I learn in this domain. I also share my knowledge with you.</subtitle><entry><title type="html">Welcome to Jekyll!</title><link href="http://localhost:4000/jekyll/update/2024/09/15/welcome-to-jekyll.html" rel="alternate" type="text/html" title="Welcome to Jekyll!" /><published>2024-09-15T15:08:10+05:30</published><updated>2024-09-15T15:08:10+05:30</updated><id>http://localhost:4000/jekyll/update/2024/09/15/welcome-to-jekyll</id><content type="html" xml:base="http://localhost:4000/jekyll/update/2024/09/15/welcome-to-jekyll.html"><![CDATA[<p>You’ll find this post in your <code class="language-plaintext highlighter-rouge">_posts</code> directory. Go ahead and edit it and re-build the site to see your changes. You can rebuild the site in many different ways, but the most common way is to run <code class="language-plaintext highlighter-rouge">jekyll serve</code>, which launches a web server and auto-regenerates your site when a file is updated.</p>
 
 <p>Jekyll requires blog post files to be named according to the following format:</p>
 
@@ -510,7 +510,421 @@ Example →
 
 <p>In conclusion, Git is an essential tool for developers who want to keep track of changes in their code and collaborate with others. It allows developers to easily view the history of their code, revert to previous versions, and work on separate branches. By mastering the basics of Git, developers can become more efficient and effective in their work.</p>
 
-<p>That’s all for this Blog. Hope this was worth your time. ❤️❤️</p>]]></content><author><name></name></author><category term="Web" /><summary type="html"><![CDATA[Introduction]]></summary></entry><entry><title type="html">Decoding OOPs with cpp</title><link href="http://localhost:4000/programming/2023/04/09/Decodings-OOPS-with-CPP.html" rel="alternate" type="text/html" title="Decoding OOPs with cpp" /><published>2023-04-09T15:08:10+05:30</published><updated>2023-04-09T15:08:10+05:30</updated><id>http://localhost:4000/programming/2023/04/09/Decodings-OOPS-with-CPP</id><content type="html" xml:base="http://localhost:4000/programming/2023/04/09/Decodings-OOPS-with-CPP.html"><![CDATA[<p>Programming is a vast field with myriad techniques and paradigms. Among these, Object-Oriented Programming (OOP) shines as a method that helps us structure our programs using objects. Objects are entities that bundle data and functionality, making our code more intuitive and easier to maintain. C++ is a perfect language to delve into OOP, as it inherently supports this paradigm.</p>
+<p>That’s all for this Blog. Hope this was worth your time. ❤️❤️</p>]]></content><author><name></name></author><category term="Web" /><summary type="html"><![CDATA[Introduction]]></summary></entry><entry><title type="html">Just machine learning</title><link href="http://localhost:4000/ai/2023/04/09/Just_machine_learning.html" rel="alternate" type="text/html" title="Just machine learning" /><published>2023-04-09T15:08:10+05:30</published><updated>2023-04-09T15:08:10+05:30</updated><id>http://localhost:4000/ai/2023/04/09/Just_machine_learning</id><content type="html" xml:base="http://localhost:4000/ai/2023/04/09/Just_machine_learning.html"><![CDATA[<p>In this blog post, we’re going to talk about machine learning and its different types.</p>
+
+<p>Artificial intelligence (AI) refers to machines that are programmed to learn and perform tasks that usually require human thinking, like recognizing images, understanding speech, making decisions, and translating languages.</p>
+
+<p>Machine learning is a branch of AI that allows computers to learn and make predictions or decisions based on data. It uses algorithms and statistical models to analyze data, find patterns, and make predictions on new data.</p>
+
+<h1 id="supervised-learning">Supervised Learning</h1>
+
+<p>Supervised learning is a machine learning technique where a model is trained on labeled data. The model is presented with inputs and corresponding outputs, and it learns to make predictions based on those inputs.</p>
+
+<p>This technique is used for tasks such as classification, regression, and prediction.</p>
+
+<p>Some common types of supervised learning include:</p>
+
+<ul>
+  <li><strong>Classification:</strong> the model learns to classify inputs into different categories or classes.</li>
+  <li><strong>Regression:</strong> the model learns to predict a continuous output based on the input.</li>
+  <li><strong>Time Series Prediction:</strong> the model learns to make predictions based on time series data.</li>
+  <li><strong>Anomaly Detection:</strong> the model learns to identify unusual or unexpected data points.</li>
+</ul>
+
+<h2 id="classification">Classification</h2>
+
+<p>Classification is a type of supervised learning in machine learning where the model learns to put inputs into different categories or classes.</p>
+
+<p>Examples → Image recognition, sentiment analysis, and speech recognition.</p>
+
+<p>There are a bunch of algorithms that can be used for classification, including decision trees, random forests, and support vector machines (SVMs).</p>
+
+<p>The choice of algorithm depends on the specific problem and the characteristics of the data. For example, decision trees are great for problems with just a few features, while SVMs are awesome when there are lots of features and the data isn’t linearly separable.</p>
+
+<p>There are many algorithms that can be used for classification, including:</p>
+
+<ul>
+  <li>Decision trees</li>
+  <li>Random forests (Ensemble method)</li>
+  <li>Support vector machines (SVMs)</li>
+  <li>Nearest neighbor</li>
+  <li>K-nearest neighbors (KNN)</li>
+  <li>Naive Bayes</li>
+</ul>
+
+<p>Let’s Discuss some of these techniques:</p>
+
+<h3 id="decision-trees">Decision Trees</h3>
+
+<p>Decision trees are a type of classification algorithm used in machine learning. They are especially handy for problems with just a few features and a ton of training examples.</p>
+
+<p>The basic idea behind decision trees is to split up the input space into different regions, where each region represents a different class or category. This is done by recursively splitting up the input space over and over again based on the values of the input features.</p>
+
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>![Fig: Decision Tree](https://static.javatpoint.com/tutorial/machine-learning/images/decision-tree-classification-algorithm.png)
+
+Fig: Decision Tree
+
+At each level of the tree, the algorithm picks the input feature that separates the training examples into different classes the best. This feature is used to make a decision node, which splits the input space into two or more regions. The process is repeated on each of the resulting regions until a stopping criterion is met, like reaching the maximum depth or having a minimum number of examples in each region.
+
+Decision trees are super easy to understand and interpret, and they can be used for both classifying and regression problems. They can also handle non-linear relationships between the input features and the target variable.
+
+```python
+from sklearn.tree import DecisionTreeClassifier
+from sklearn.model_selection import cross_val_score
+
+model = DecisionTreeClassifier(random_state=0)
+model.fit(X_train, Y_train)
+
+score = cross_val_score(model, X, Y, cv=10)
+```
+
+Decision trees can also be used for regression problems, where the goal is to predict a continuous output variable based on the input features. The decision tree algorithm works in the same way as for classification problems, but instead of predicting a class label, it predicts a numeric value.
+
+Here is an example of a decision tree for a regression problem:
+
+- **Regression Decision Tree**
+    
+    ![Fig: Regression Decision Tree](https://scikit-learn.org/stable/_images/sphx_glr_plot_tree_regression_001.png)
+    
+    Fig: Regression Decision Tree
+    
+    In this example, the decision tree is used to fit a sine curve as a result it learns linear regression approximating the sine curve. We can see in this example, that if max depth of the tree is set to high, it can overfit the training data by learning the noise observations also.
+    
+    The algorithm chooses the feature that results in the best split of the data based on a measure of the variance reduction. The prediction for each leaf node is the average of the target values of the training examples that fall within that leaf node.
+    
+
+However, decision trees can be sensitive to small changes in the input data and may overfit the training data if not properly regularized. To address these issues, ensemble methods such as random forests and gradient boosting are often used.
+
+Overall, decision trees are a simple and effective technique for classification and regression problems, particularly when the decision boundary is simple or linear.
+</code></pre></div></div>
+
+<ul>
+  <li>
+    <p><strong>Nearest-neighbor classification</strong></p>
+
+    <p>In this algorithm, the model given an input chooses the class of the nearest data point to that point.</p>
+
+    <p>This technique is useful for problems where the decision boundary between classes is complex or nonlinear. However, it can be computationally expensive and may not perform well on high-dimensional data.</p>
+  </li>
+  <li>
+    <p><strong>K-Nearest Neighbor Classification (KNN)</strong></p>
+
+    <p>In this algorithm, the model assigns a class to a new data point based on the classes of the k nearest data points in the training data set. The value of k is a hyperparameter that can be tuned to optimize the model’s performance.</p>
+
+    <p>This technique is often used for problems with a small number of classes and a large number of features. However, it can be sensitive to the choice of distance metric used to calculate the distance between data points.</p>
+
+    <p><a href="https://miro.medium.com/v2/resize:fit:1100/0*ItVKiyx2F3ZU8zV5">Fig: KNN Example</a></p>
+
+    <p>Fig: KNN Example</p>
+
+    <p>Overall, k-nearest neighbor classification is a simple and effective technique for classification problems, particularly when the decision boundary is complex or nonlinear.</p>
+  </li>
+</ul>
+
+<h3 id="regression">Regression</h3>
+
+<p>Regression is a type of supervised learning in machine learning. It involves the use of algorithms and statistical models to predict a continuous output based on input data.</p>
+
+<p>This is useful when trying to predict a value that falls within a range, such as the price of a house based on its size, location, and other factors.</p>
+
+<p>Example → f(size, location, architecture) = price
+                   f(1200, Delhi, 2 story building) = 1 million</p>
+
+<h3 id="types-of-regression">Types of Regression</h3>
+
+<p>There are several types of regression, including:</p>
+
+<ul>
+  <li>
+    <p><strong>Linear Regression:</strong> the model learns to predict a continuous output based on a linear relationship between the input and output variables.</p>
+
+    <p>!https://static.javatpoint.com/tutorial/machine-learning/images/linear-regression-in-machine-learning.png</p>
+
+    <div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code>  <span class="c1"># using skitit learn
+</span>  <span class="kn">from</span> <span class="n">sklearn.linear_model</span> <span class="kn">import</span> <span class="n">Linear</span> <span class="n">Regression</span>
+    
+  <span class="n">model</span> <span class="o">=</span> <span class="nc">LinearRegression</span><span class="p">()</span>
+  <span class="n">model</span><span class="p">.</span><span class="nf">fit</span><span class="p">(</span><span class="n">X_train</span><span class="p">,</span> <span class="n">Y_train</span><span class="p">)</span>
+    
+  <span class="c1"># Print coefficients and accuracy
+</span>  <span class="nf">print</span><span class="p">(</span><span class="n">model</span><span class="p">.</span><span class="n">coef_</span><span class="p">)</span>
+    
+  <span class="n">accuracy</span> <span class="o">=</span> <span class="n">model</span><span class="p">.</span><span class="nf">score</span><span class="p">(</span><span class="n">X_test</span><span class="p">,</span> <span class="n">Y_test</span><span class="p">)</span>
+  <span class="nf">print</span><span class="p">(</span><span class="n">accuracy</span><span class="p">)</span>
+</code></pre></div>    </div>
+  </li>
+  <li><strong>Logistic Regression:</strong> the model learns to predict a binary output based on the input variables.</li>
+  <li><strong>Polynomial Regression:</strong> the model learns to predict a continuous output based on a polynomial relationship between the input and output variables.</li>
+  <li><strong>Ridge Regression:</strong> a regularization technique used to prevent overfitting in linear regression models.</li>
+  <li><strong>Lasso Regression:</strong> a regularization technique used to prevent overfitting in linear regression models, but with a different approach than Ridge Regression.</li>
+  <li><strong>Elastic Net Regression:</strong> a combination of Ridge and Lasso Regression, which balances their strengths and weaknesses.</li>
+</ul>
+
+<p>Each type of regression is suited for different types of data and problems, and choosing the right type of regression is an important part of building an accurate machine learning model.</p>
+
+<p><strong>Logistic Regression</strong></p>
+
+<p>Logistic regression is a type of supervised learning in machine learning that is used for binary classification tasks. In this technique, the model learns to predict a binary output (0 or 1) based on the input variables.</p>
+
+<p>It is commonly used in applications such as fraud detection, spam filtering, and medical diagnosis.</p>
+
+<p>The logistic regression algorithm uses a sigmoid function to map the input values to a range between 0 and 1 (generate probabilities), which represents the probability of the input data belonging to one of the two categories. The algorithm then makes a binary decision based on this probability.</p>
+
+<p>!https://static.javatpoint.com/tutorial/machine-learning/images/logistic-regression-in-machine-learning.png</p>
+
+<div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="c1"># Logistic Regression
+</span><span class="kn">from</span> <span class="n">sklearn.linear_model</span> <span class="kn">import</span> <span class="n">LogisticRegression</span>
+<span class="kn">from</span> <span class="n">sklearn.metrics</span> <span class="kn">import</span> <span class="n">accuracy_score</span>
+
+<span class="n">model</span> <span class="o">=</span> <span class="nc">LogisticRegression</span><span class="p">()</span>
+<span class="n">model</span><span class="p">.</span><span class="nf">fit</span><span class="p">(</span><span class="n">X_train</span><span class="p">,</span> <span class="n">Y_train</span><span class="p">)</span>
+
+<span class="n">accuracy</span> <span class="o">=</span> <span class="nf">accuracy_score</span><span class="p">(</span><span class="n">model</span><span class="p">.</span><span class="nf">predict</span><span class="p">(</span><span class="n">X_test</span><span class="p">),</span> <span class="n">Y_test</span><span class="p">))</span>
+<span class="nf">print</span><span class="p">(</span><span class="n">accuracy</span><span class="p">)</span>
+</code></pre></div></div>
+
+<p><strong>Ridge Regression</strong></p>
+
+<p>Ridge regression is a type of linear regression that adds a regularization term (L2) to the cost function to prevent overfitting. The cost function for ridge regression is:</p>
+
+<p>The Ridge Regression Equation is given by:</p>
+
+<p>$J(w) = \sum_{i=1}^{m} [y^{(i)} - \hat{y}^{(i)}]^2 + \alpha\sum_{j=1}^{n} w_j^2$</p>
+
+<p>where:</p>
+
+<ul>
+  <li>J(w) is the cost function</li>
+  <li>m is the number of training examples</li>
+  <li>n is the number of features</li>
+  <li>y is the target variable</li>
+  <li>w is the vector of coefficients</li>
+  <li>α is the regularization parameter</li>
+</ul>
+
+<p>The first term in the equation is the mean squared error (MSE) between the predicted values and the true values. The second term is the L2 regularization term, which penalizes the magnitude of the coefficients.</p>
+
+<p><strong>Lasso Regression</strong></p>
+
+<p>Lasso regression is another type of linear regression that adds a regularization term (L1) to the cost function. The cost function for lasso regression is:</p>
+
+<table>
+  <tbody>
+    <tr>
+      <td>$J(w) = \sum_{i=1}^{m} [y^{(i)} - \hat{y}^{(i)}]^2 + \alpha\sum_{j=1}^{n}</td>
+      <td>w_j</td>
+      <td>$</td>
+    </tr>
+  </tbody>
+</table>
+
+<p>Where:</p>
+
+<ul>
+  <li>$J(w)$ is the cost function</li>
+  <li>$m$ is the number of training examples</li>
+  <li>$n$ is the number of features</li>
+  <li>$y$ is the target variable</li>
+  <li>$w$ is the vector of coefficients</li>
+  <li>$\alpha$ is the regularization parameter (hyperparameter)</li>
+</ul>
+
+<p>The first term in the equation is the mean squared error (MSE) between the predicted values and the true values. The second term is the L1 regularization term, which penalizes the absolute value of the coefficients.</p>
+
+<p>Lasso regression is useful for feature selection, as it tends to set the coefficients of less important features to zero. This can lead to a more interpretable model and improve its generalization performance.</p>
+
+<h2 id="unsupervised-learning">Unsupervised Learning</h2>
+
+<hr />
+
+<p>Unsupervised learning is a type of machine learning where the model is trained on unlabeled data. The model is not given any specific outputs to learn from, but instead must identify patterns and relationships in the input data on its own.</p>
+
+<p>This technique is used for tasks such as clustering, anomaly detection, and dimensionality reduction.</p>
+
+<p>Some common types of unsupervised learning include:</p>
+
+<ul>
+  <li>
+    <p><strong>Clustering:</strong> the model learns to group similar inputs into clusters or categories.</p>
+
+    <p><a href="https://www.notion.so/But-how-you-do-clustering-d6b2d75d69204bf0a78f8df5548f7fc8?pvs=21">But how you do clustering?</a></p>
+  </li>
+  <li><strong>Anomaly Detection:</strong> the model learns to identify unusual or unexpected data points.</li>
+  <li><strong>Dimensionality Reduction:</strong> the model learns to identify the most important features or variables in the input data.</li>
+  <li><strong>Density estimation</strong> involves a model learning a probability density function (PDF), which is used in anomaly detection. Instances found in very-low density regions are considered anomalies.</li>
+</ul>
+
+<p><a href="https://www.notion.so/Gaussian-Mixtures-b0c8ae93678d4590a12aeb3e42f68240?pvs=21">Gaussian Mixtures</a></p>
+
+<p>Unsupervised learning is useful when working with large amounts of data that may not be well understood or labeled. By identifying patterns and relationships in the data, unsupervised learning can help to uncover insights and guide further analysis.</p>
+
+<h2 id="reinforcement-learning">Reinforcement learning</h2>
+
+<hr />
+
+<p><a href="https://www.notion.so/Learn-by-Reinforcement-e811c0c2b34c47abb946dc90b59749fe?pvs=21">Learn by Reinforcement</a></p>
+
+<p><strong>Convergence Rate</strong></p>
+
+<p>The convergence rate of a model refers to how quickly the model is able to converge to an optimal solution during training.</p>
+
+<p>A faster convergence rate means that the model is able to reach a good solution more quickly, while a slower convergence rate means that the model may require more time and resources to reach a good solution.</p>
+
+<p>The convergence rate can be affected by various factors, such as the choice of optimization algorithm, the learning rate, the size of the training data, and the complexity of the model architecture. A well-designed model with appropriate hyperparameters can achieve a faster convergence rate and better performance.</p>
+
+<h2 id="ensemble-methods">Ensemble Methods</h2>
+
+<hr />
+
+<p>A group of predictors is called ensemble and an ensemble learning algorithm is called Ensemble method.</p>
+
+<p>In other words, Ensemble methods are a type of machine learning technique that involve combining multiple models to improve their performance.</p>
+
+<p>Ensemble has a similar bias but a lower variance than a single predictor trained on a the original training set.</p>
+
+<p>There are several types of ensemble methods, including:</p>
+
+<ul>
+  <li>
+    <p><strong>Bagging:</strong> the model combines the predictions of multiple models trained on different subsets of the training data. This can help to reduce overfitting and improve the accuracy of the model.</p>
+
+    <p><img src="https://prod-files-secure.s3.us-west-2.amazonaws.com/5989232b-4798-4c63-ac9f-04cb2f5fb1a8/48745c7a-5e51-4186-8452-6647e672a3f6/Untitled.png" alt="Fig: Bagging and pasting involves training several predictors on different random samples of the training set" /></p>
+
+    <p>Fig: Bagging and pasting involves training several predictors on different random samples of the training set</p>
+
+    <p>Bagging - sampling is performed with replacement (bootstrap=True)</p>
+
+    <p>Pasting - sampling is performed without replacement (bootstrap=False)</p>
+
+    <div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code>  <span class="kn">from</span> <span class="n">sklearn.ensemble</span> <span class="kn">import</span> <span class="n">BaggingClassifier</span>
+  <span class="kn">from</span> <span class="n">sklearn.tree</span> <span class="kn">import</span> <span class="n">DecisionTreeClassifier</span>
+    
+  <span class="n">bag_clf</span> <span class="o">=</span> <span class="nc">BaggingClassifier</span><span class="p">(</span>
+      <span class="nc">DecisionTreeClassifier</span><span class="p">(),</span> <span class="n">n_estimators</span><span class="o">=</span><span class="mi">500</span><span class="p">,</span>
+      <span class="n">max_samples</span><span class="o">=</span><span class="mi">100</span><span class="p">,</span> <span class="n">bootstrap</span><span class="o">=</span><span class="bp">True</span><span class="p">,</span> <span class="n">n_jobs</span><span class="o">=-</span><span class="mi">1</span>
+  <span class="p">)</span>
+  <span class="n">bag_clf</span><span class="p">.</span><span class="nf">fit</span><span class="p">(</span><span class="n">X_train</span><span class="p">,</span> <span class="n">y_train</span><span class="p">)</span>
+    
+  <span class="n">y_pred</span> <span class="o">=</span> <span class="n">bag_clf</span><span class="p">.</span><span class="nf">predict</span><span class="p">(</span><span class="n">X_val</span><span class="p">)</span>
+  <span class="nf">print</span><span class="p">(</span><span class="n">y_pred</span><span class="p">)</span>
+</code></pre></div>    </div>
+
+    <p>n_estimators = number of decision trees</p>
+
+    <p>max_samples = 100 training samples randomly sampled from training set</p>
+
+    <p>bootstrap = True, with replacement</p>
+
+    <p>n_jobs = number of CPU cores to use for training and predictions, -1 means use all available</p>
+
+    <p>Bootstrapping introduces more diversity into the predictor, means it is more biased than pasting; but the diversity also means the predictors are less correlated and ensemble variance is reduced.</p>
+  </li>
+  <li>
+    <p><strong>Boosting:</strong> the model combines the predictions of multiple weak models to create a strong model. This can help to improve the accuracy of the model and reduce bias.</p>
+  </li>
+  <li>
+    <p><strong>Stacking:</strong> the model combines the predictions of multiple models using a meta-model (blender). This can help to improve the accuracy of the model and reduce overfitting.</p>
+
+    <p><img src="https://prod-files-secure.s3.us-west-2.amazonaws.com/5989232b-4798-4c63-ac9f-04cb2f5fb1a8/8984dd70-5bb4-482c-8329-825d5ce887ba/Untitled.png" alt="Fig: Aggregating predictions using a blending predictor" /></p>
+
+    <p>Fig: Aggregating predictions using a blending predictor</p>
+  </li>
+</ul>
+
+<p>Ensemble methods are particularly useful when working with complex data or when the performance of a single model is not sufficient. By combining the predictions of multiple models, ensemble methods can help to improve the accuracy and reliability of the model.</p>
+
+<p>Some common ensemble methods include:</p>
+
+<h3 id="random-forests"><strong>Random Forests</strong></h3>
+
+<hr />
+
+<p>Random Forest is an ensemble of Decision trees, generally trained via the bagging method (or sometimes pasting), typically with <em>max_samples</em> set to the size of training set.</p>
+
+<div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="kn">from</span> <span class="n">sklearn.ensemble</span> <span class="kn">import</span> <span class="n">RandomForestClassifier</span>
+
+<span class="n">rnd_clf</span> <span class="o">=</span> <span class="nc">RandomForestClassifier</span><span class="p">(</span><span class="n">n_estimators</span><span class="o">=</span><span class="mi">500</span><span class="p">,</span> <span class="n">max_leaf_nodes</span><span class="o">=</span><span class="mi">16</span><span class="p">,</span> <span class="n">n_jobs</span><span class="o">=-</span><span class="mi">1</span><span class="p">)</span>
+<span class="n">rnd_clf</span><span class="p">.</span><span class="nf">fit</span><span class="p">(</span><span class="n">X_train</span><span class="p">,</span> <span class="n">y_train</span><span class="p">)</span>
+
+<span class="n">y_pred_rf</span> <span class="o">=</span> <span class="n">rnd_clf</span><span class="p">.</span><span class="nf">predict</span><span class="p">(</span><span class="n">X_val</span><span class="p">)</span>
+</code></pre></div></div>
+
+<p>Random Forest algorithm introduces extra randomness when growing trees; instead of searching for the best feature when splitting a node, it searches for the best feature among a random subset of features.</p>
+
+<p><strong>Feature Importance</strong></p>
+
+<p>Random forests allow us to measure the relative importance of each feature. Feature importance is calculated by how much tree nodes that use that use that feature reduce impurity on average.</p>
+
+<div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="c1"># feature importance
+</span><span class="k">for</span> <span class="n">name</span><span class="p">,</span> <span class="n">score</span> <span class="ow">in</span> <span class="nf">zip</span><span class="p">(</span><span class="n">iris</span><span class="p">[</span><span class="sh">"</span><span class="s">feature_names</span><span class="sh">"</span><span class="p">],</span> <span class="n">rnd_clf</span><span class="p">.</span><span class="n">feature_importances_</span><span class="p">):</span>
+    <span class="nf">print</span><span class="p">(</span><span class="n">name</span><span class="p">,</span> <span class="n">score</span><span class="p">)</span>
+
+<span class="c1"># output
+# sepal length (cm) 0.10109300798027078
+# sepal width (cm) 0.031280365249363895
+# petal length (cm) 0.3941268382545283
+# petal width (cm) 0.47349978851583696
+</span></code></pre></div></div>
+
+<p>Random forests are particularly useful for high-dimensional data and problems with complex decision boundaries. They can also handle missing values and noisy data.</p>
+
+<p>Overall, random forests are a powerful and versatile technique for solving a wide range of machine learning problems.</p>
+
+<h3 id="adaboost"><strong>AdaBoost</strong></h3>
+
+<hr />
+
+<p>A type of boosting ensemble method used for classification problems. AdaBoost combines the predictions of multiple weak models using a weighted sum, where the relative weight of misclassified instances increased (boost).</p>
+
+<p>The algorithm increases the relative weight of the misclassified training instances.</p>
+
+<div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="kn">from</span> <span class="n">sklearn.ensemble</span> <span class="kn">import</span> <span class="n">AdaBoostClassifier</span>
+
+<span class="n">ada_clf</span> <span class="o">=</span> <span class="nc">AdaBoostClassifier</span><span class="p">(</span>
+    <span class="nc">DecisionTreeClassifier</span><span class="p">(</span><span class="n">max_depth</span><span class="o">=</span><span class="mi">1</span><span class="p">),</span> <span class="n">n_estimators</span><span class="o">=</span><span class="mi">200</span><span class="p">,</span> 
+    <span class="n">algorithm</span><span class="o">=</span><span class="sh">"</span><span class="s">SAMME.R</span><span class="sh">"</span><span class="p">,</span> <span class="n">learning_rate</span><span class="o">=</span><span class="mf">0.5</span>
+<span class="p">)</span>
+<span class="n">ada_clf</span><span class="p">.</span><span class="nf">fit</span><span class="p">(</span><span class="n">X_train</span><span class="p">,</span> <span class="n">y_train</span><span class="p">)</span>
+</code></pre></div></div>
+
+<h3 id="gradient-boosting"><strong>Gradient Boosting</strong></h3>
+
+<hr />
+
+<p>A type of boosting ensemble method used for classification and regression problems. Gradient boosting tries to fit the new predictor to the residual errors (literally) made by the previous predictor.</p>
+
+<p>The basic idea behind gradient boosting is to build a sequence of models, each of which tries to correct the errors of the previous models. The final prediction is the weighted sum of the predictions of all the models in the sequence.</p>
+
+<p>For example, in a binary classification problem, the first model might predict the probability of the positive class for each example. The second model would then focus on the examples that were misclassified by the first model, and try to improve the predictions for those examples. The third model would then focus on the examples that were still misclassified by the first two models, and so on.</p>
+
+<div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="kn">from</span> <span class="n">sklearn.ensemble</span> <span class="kn">import</span> <span class="n">GradientBoostingClassifier</span>
+
+<span class="n">model</span> <span class="o">=</span> <span class="nc">GradientBoostingClassifier</span><span class="p">(</span><span class="n">n_estimators</span><span class="o">=</span><span class="mi">1000</span><span class="p">,</span> <span class="n">learning_rate</span><span class="o">=</span><span class="mf">0.5</span><span class="p">,</span> <span class="n">max_depth</span><span class="o">=</span><span class="mi">1</span><span class="p">,</span> <span class="n">random_state</span><span class="o">=</span><span class="mi">0</span><span class="p">)</span>
+<span class="n">model</span><span class="p">.</span><span class="nf">fit</span><span class="p">(</span><span class="n">X_train</span><span class="p">,</span> <span class="n">Y_train</span><span class="p">)</span>
+
+<span class="n">score</span> <span class="o">=</span> <span class="n">model</span><span class="p">.</span><span class="nf">score</span><span class="p">(</span><span class="n">X_test</span><span class="p">,</span> <span class="n">Y_test</span><span class="p">)</span>
+<span class="nf">print</span><span class="p">(</span><span class="n">score</span><span class="p">)</span>
+</code></pre></div></div>
+
+<p>Gradient boosting with early stopping:</p>
+
+<div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="kn">import</span> <span class="n">xgboost</span>
+
+<span class="n">xgb_reg</span> <span class="o">=</span> <span class="n">xgboost</span><span class="p">.</span><span class="nc">XGBRegressor</span><span class="p">()</span>
+<span class="n">xgb_reg</span><span class="p">.</span><span class="nf">fit</span><span class="p">(</span><span class="n">X_train</span><span class="p">,</span> <span class="n">y_train</span><span class="p">)</span>
+
+<span class="n">xgb_reg</span><span class="p">.</span><span class="nf">fit</span><span class="p">(</span><span class="n">X_train</span><span class="p">,</span> <span class="n">y_train</span><span class="p">,</span>
+           <span class="n">eval_set</span><span class="o">=</span><span class="p">[(</span><span class="n">X_val</span><span class="p">,</span> <span class="n">y_val</span><span class="p">)],</span> <span class="n">early_stopping_rounds</span><span class="o">=</span><span class="mi">2</span>
+           <span class="p">)</span>
+
+<span class="n">y_pred</span> <span class="o">=</span> <span class="n">xgb_reg</span><span class="p">.</span><span class="nf">predict</span><span class="p">(</span><span class="n">X_val</span><span class="p">)</span>
+</code></pre></div></div>
+
+<p>Gradient boosting is a powerful technique for improving the performance of machine learning models, particularly when working with complex data or when the performance of a single model is not sufficient. However, it can be computationally intensive and may require careful tuning of hyperparameters to achieve good performance.</p>
+
+<p>Overall, ensemble methods are a powerful technique for improving the performance of machine learning models, and they are widely used in industry and research. However, it is important to carefully consider the problem and the available data before choosing an ensemble method.</p>
+
+<p><a href="https://www.kaggle.com/code/dsmeena/ch-7-ensemble-learning-and-random-forests"></a></p>]]></content><author><name></name></author><category term="AI" /><summary type="html"><![CDATA[In this blog post, we’re going to talk about machine learning and its different types.]]></summary></entry><entry><title type="html">Decoding OOPs with cpp</title><link href="http://localhost:4000/programming/2023/04/09/Decodings-OOPS-with-CPP.html" rel="alternate" type="text/html" title="Decoding OOPs with cpp" /><published>2023-04-09T15:08:10+05:30</published><updated>2023-04-09T15:08:10+05:30</updated><id>http://localhost:4000/programming/2023/04/09/Decodings-OOPS-with-CPP</id><content type="html" xml:base="http://localhost:4000/programming/2023/04/09/Decodings-OOPS-with-CPP.html"><![CDATA[<p>Programming is a vast field with myriad techniques and paradigms. Among these, Object-Oriented Programming (OOP) shines as a method that helps us structure our programs using objects. Objects are entities that bundle data and functionality, making our code more intuitive and easier to maintain. C++ is a perfect language to delve into OOP, as it inherently supports this paradigm.</p>
 
 <p>Let’s start our journey with OOP’s (aka Object Oriented Programming). C++ is a OOP’s oriented programming language.</p>
 
