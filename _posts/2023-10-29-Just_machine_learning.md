@@ -1,7 +1,7 @@
 ---
 layout: post
 title:  "Just machine learning"
-date:   2023-04-09 15:08:10 +0530
+date:   2023-10-29 15:08:10 +0530
 categories: AI
 ---
 
