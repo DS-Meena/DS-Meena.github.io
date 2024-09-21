@@ -1,7 +1,7 @@
 ---
 layout: post
 title:  "Policy Gradients"
-date:   2024-09-20 10:00:10 +0530
+date:   3024-09-20 10:00:10 +0530
 categories: AI
 ---
 
