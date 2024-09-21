@@ -7,6 +7,10 @@ Here I post some one my experiences and what i learnt in my journey.
 
 # Learnings
 
+## Equations not rendering
+
+
+
 ## How to install Jekyll 🎃
 
 To install Jekyll on Ubuntu, you'll need to follow these steps:
