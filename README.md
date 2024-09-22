@@ -7,6 +7,10 @@ Here I post some one my experiences and what i learnt in my journey.
 
 # Learnings
 
+## Issue with ' and *
+
+On using ' and * in equation, it is not rendering on website. To fix this replace * with `\star` and ' with `\prime`.
+
 ## Equations not rendering ➗
 
 By default equations do not render on web page with Jekyll. For that we have to make some changes in `post.html` file.  Add following code inside the file.

@@ -7,8 +7,40 @@ Here I post some one my experiences and what i learnt in my journey.
 
 # Learnings
 
-## Equations not rendering
+## Issue with ' and *
 
+On using ' and * in equation, it is not rendering on website. To fix this replace * with `\star` and ' with `\prime`.
+
+## Equations not rendering ➗
+
+By default equations do not render on web page with Jekyll. For that we have to make some changes in `post.html` file.  Add following code inside the file.
+
+```js
+<script src="https://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML" type="text/javascript"></script>
+<script type="text/x-mathjax-config">
+  MathJax.Hub.Config({
+    tex2jax: {
+      inlineMath: [['$','$']],
+      processEscapes: true
+    }
+  });
+</script>
+```
+
+If you don't have `post.html` file in your local repository. You can search it using `bundle show minima` command. 🔍
+
+```bash
+$ bundle show minima
+/home/dsm/gems/gems/minima-2.5.2
+
+~/gems/gems/minima-2.5.2$ ls
+LICENSE.txt  README.md  _includes  _layouts  _sass  assets
+
+~/gems/gems/minima-2.5.2/_layouts$ ls
+default.html  home.html  page.html  post.html
+```
+
+Create a `_layouts` folder in your folder and copy `post.html` file into it. After this, jekyll will this file for rendering your site. 🌐
 
 
 ## How to install Jekyll 🎃

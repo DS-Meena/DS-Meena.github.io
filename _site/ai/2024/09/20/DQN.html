@@ -7,8 +7,8 @@
 <meta name="generator" content="Jekyll v4.3.3" />
 <meta property="og:title" content="Deep Q-Learning" />
 <meta property="og:locale" content="en_US" />
-<meta name="description" content="Q-Learning" />
-<meta property="og:description" content="Q-Learning" />
+<meta name="description" content="Introduction" />
+<meta property="og:description" content="Introduction" />
 <link rel="canonical" href="http://localhost:4000/ai/2024/09/20/DQN.html" />
 <meta property="og:url" content="http://localhost:4000/ai/2024/09/20/DQN.html" />
 <meta property="og:site_name" content="dsm Blogs" />
@@ -17,7 +17,7 @@
 <meta name="twitter:card" content="summary" />
 <meta property="twitter:title" content="Deep Q-Learning" />
 <script type="application/ld+json">
-{"@context":"https://schema.org","@type":"BlogPosting","dateModified":"2024-09-20T10:00:10+05:30","datePublished":"2024-09-20T10:00:10+05:30","description":"Q-Learning","headline":"Deep Q-Learning","mainEntityOfPage":{"@type":"WebPage","@id":"http://localhost:4000/ai/2024/09/20/DQN.html"},"url":"http://localhost:4000/ai/2024/09/20/DQN.html"}</script>
+{"@context":"https://schema.org","@type":"BlogPosting","dateModified":"2024-09-20T10:00:10+05:30","datePublished":"2024-09-20T10:00:10+05:30","description":"Introduction","headline":"Deep Q-Learning","mainEntityOfPage":{"@type":"WebPage","@id":"http://localhost:4000/ai/2024/09/20/DQN.html"},"url":"http://localhost:4000/ai/2024/09/20/DQN.html"}</script>
 <!-- End Jekyll SEO tag -->
 <link rel="stylesheet" href="/assets/main.css"><link type="application/atom+xml" rel="alternate" href="http://localhost:4000/feed.xml" title="dsm Blogs" /></head>
 <body><header class="site-header" role="banner">
@@ -37,7 +37,18 @@
 </header>
 <main class="page-content" aria-label="Content">
       <div class="wrapper">
-        <article class="post h-entry" itemscope itemtype="http://schema.org/BlogPosting">
+        <!--Added Math Latext support-->
+<script src="https://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML" type="text/javascript"></script>
+<script type="text/x-mathjax-config">
+  MathJax.Hub.Config({
+    tex2jax: {
+      inlineMath: [['$','$']],
+      processEscapes: true
+    }
+  });
+</script>
+
+<article class="post h-entry" itemscope itemtype="http://schema.org/BlogPosting">
 
   <header class="post-header">
     <h1 class="post-title p-name" itemprop="name headline">Deep Q-Learning</h1>
@@ -47,9 +58,91 @@
   </header>
 
   <div class="post-content e-content" itemprop="articleBody">
-    <h1 id="q-learning">Q-Learning</h1>
+    <h1 id="introduction">Introduction</h1>
 
-<p>Q-Learning algorithm is an adaptation of the Q-Value Iteration algorithm to the situation where the transition probabilities and the rewards are initially unknown.</p>
+<p>In this blog, we will learn about the fundamental algorithms used in reinforcement learning. It’s not about neural networks but the mathematical algorithms involved in learning.</p>
+
+<h1 id="markov-decision-process-">Markov Decision Process 🤔</h1>
+
+<p>Let’s understand the problem, we are trying to solve here. The environment of an agent can be modelled as a Markov decision process, where the agent can choose one of several actions and the transition probabilities depend on the chosen action. 🤖</p>
+
+<p>Our aim is to find an optimal policy for the agent, by following that agent can maximize the rewards earned in the enviornment.</p>
+
+<p><img src="/assets/2024/September/markov%20decision%20chain.png" alt="alt text" />
+<em>Fig: Example of Markov chain</em></p>
+
+<p>Let’s learn some of the algorithms that are used to find the optimal policy for the agent.</p>
+
+<h2 id="state-value-iteration-algorithm-">(State) Value Iteration algorithm 🔄</h2>
+
+<p>In this algorithm, we calcualte the state value $V(s)$ for all states.</p>
+
+<p>Optimal state value $V^*(s)$ of any state s, is the sum of all discounted future rewards the agent can expect on average after it reaches a state s, assuming it acts optimally. 🎯</p>
+
+<p>$V\star(s) = max_a \sum_sP(s,a,s\prime)[R(s,a,s\prime)+\gamma.V^*(s\prime)]$  for all s</p>
+
+<p><em>Eq: Bellman Optimality Equation</em></p>
+
+<p>where,</p>
+
+<ul>
+  <li>$P(s,a,s’)$ = transition probability from state s to state s’, given that agent chose action a [conditional probability]. 🎲</li>
+  <li>$R(s,a,s’)$ = reward the agent gets when it goes from state s to state s’, given that agent chose action a 🏆</li>
+  <li>$\gamma$ = discount factor 🈹</li>
+</ul>
+
+<p>Bellman optimality equation assumes, that we already have the optimal state value for next state s’. Since, we don’t have future value; we update state values iteratively as follows:</p>
+
+<ol>
+  <li>First initialize all the state value estimates to 0.</li>
+  <li>
+    <p>Iteratively update them using recurrent relation</p>
+
+    <p>$V_{k+1}(s) \leftarrow  \underset{a}{\max} \underset{s’}{\sum}P(s,a,s’) [R(s,a,s’) + \gamma.V_k(s’)]$ for all s</p>
+
+    <p><em>Eq: Value Iteration algorithm</em> 🔁</p>
+
+    <p>where</p>
+
+    <ul>
+      <li>$V_k(s)$ = estimated value of state s at the $k^{th}$ iteration</li>
+    </ul>
+  </li>
+</ol>
+
+<p>After the Value Iteration algorithm converges, we can derive the optimal policy $π^\star$ for each state s: 🥳</p>
+
+\[\pi^*(s) = \underset{a}{argmax} \sum_{s'} P(s, a, s')[R(s,a,s') + \gamma V^*(s')]\]
+
+<p>This means that for each state, the optimal action is the one that maximizes the expected sum of the immediate reward and the discounted optimal value of the next state. 💰</p>
+
+<h2 id="q-value-iteration-algorithm-">Q-Value Iteration algorithm 🎲</h2>
+
+<p>This algorithm is used to find the optimal state-action values, genreally called Q-values (Quality values). 💡</p>
+
+<p>Optimal Q-value of state-action pair (s, a), $Q^*(s, a)$, is the sum of discounted future rewards the agent can expect on average after it reaches state s and chooses an action a. 💰</p>
+
+<p>It involves following steps:</p>
+<ol>
+  <li>Initialize all Q-values estimates to 0.</li>
+  <li>
+    <p>Then update them using below recurrence relation. 🔄</p>
+
+    <p>$Q_{k+1}(s,a) \leftarrow \underset{s’}{\sum}T(s,a,s’)[R(s,a,s’)+\gamma.\underset{a’}{max} \space Q_k(s’,a’)]$</p>
+
+    <p><em>Eq: Q-Value Iteration algorithm</em></p>
+  </li>
+</ol>
+
+<p>After the Q-Value Iteration algorithm converges, we can derive the optimal policy $\pi^*(s)$ for each state s.</p>
+
+\[\pi^*(s) = \underset{a}{argmax} \space Q^\star(s,a)\]
+
+<p>That means, when the agent is in state s it should choose the action with the highest Q-Value for that state. 🏆</p>
+
+<h1 id="q-learning-">Q-Learning 🦆</h1>
+
+<p>Q-Learning algorithm is an adaptation of the <strong>Q-Value Iteration</strong> algorithm to the situation where the transition probabilities and the rewards are initially unknown.</p>
 
 <p>This algorithm is useful for problems where the environment is fully observable, and the agent can learn by trial and error. Q-learning has been successfully applied to problems such as game playing, robotics, and natural language processing.</p>
 
@@ -136,6 +229,12 @@
 <p>It can be computationally expensive and may require a large amount of data to converge to an optimal solution.</p>
 
 <p>Overall, Q-learning is a powerful technique with many potential applications, but it is important to carefully consider the problem and the available data before choosing a Q-learning approach.</p>
+
+<h2 id="references">References</h2>
+
+<ol>
+  <li>Hands on Machine learning with keras and Tensorflow</li>
+</ol>
 
   </div><a class="u-url" href="/ai/2024/09/20/DQN.html" hidden></a>
 </article>
