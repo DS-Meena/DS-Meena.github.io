@@ -3,21 +3,21 @@
   <meta charset="utf-8">
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <meta name="viewport" content="width=device-width, initial-scale=1"><!-- Begin Jekyll SEO tag v2.8.0 -->
-<title>Deep Q-Learning | dsm Blogs</title>
+<title>Q-Learning | dsm Blogs</title>
 <meta name="generator" content="Jekyll v4.3.3" />
-<meta property="og:title" content="Deep Q-Learning" />
+<meta property="og:title" content="Q-Learning" />
 <meta property="og:locale" content="en_US" />
 <meta name="description" content="Introduction" />
 <meta property="og:description" content="Introduction" />
-<link rel="canonical" href="http://localhost:4000/ai/2024/09/23/DQN.html" />
-<meta property="og:url" content="http://localhost:4000/ai/2024/09/23/DQN.html" />
+<link rel="canonical" href="http://localhost:4000/ai/2024/09/23/Q_learning.html" />
+<meta property="og:url" content="http://localhost:4000/ai/2024/09/23/Q_learning.html" />
 <meta property="og:site_name" content="dsm Blogs" />
 <meta property="og:type" content="article" />
 <meta property="article:published_time" content="2024-09-23T10:00:10+05:30" />
 <meta name="twitter:card" content="summary" />
-<meta property="twitter:title" content="Deep Q-Learning" />
+<meta property="twitter:title" content="Q-Learning" />
 <script type="application/ld+json">
-{"@context":"https://schema.org","@type":"BlogPosting","dateModified":"2024-09-23T10:00:10+05:30","datePublished":"2024-09-23T10:00:10+05:30","description":"Introduction","headline":"Deep Q-Learning","mainEntityOfPage":{"@type":"WebPage","@id":"http://localhost:4000/ai/2024/09/23/DQN.html"},"url":"http://localhost:4000/ai/2024/09/23/DQN.html"}</script>
+{"@context":"https://schema.org","@type":"BlogPosting","dateModified":"2024-09-23T10:00:10+05:30","datePublished":"2024-09-23T10:00:10+05:30","description":"Introduction","headline":"Q-Learning","mainEntityOfPage":{"@type":"WebPage","@id":"http://localhost:4000/ai/2024/09/23/Q_learning.html"},"url":"http://localhost:4000/ai/2024/09/23/Q_learning.html"}</script>
 <!-- End Jekyll SEO tag -->
 <link rel="stylesheet" href="/assets/main.css"><link type="application/atom+xml" rel="alternate" href="http://localhost:4000/feed.xml" title="dsm Blogs" /></head>
 <body><header class="site-header" role="banner">
@@ -51,7 +51,7 @@
 <article class="post h-entry" itemscope itemtype="http://schema.org/BlogPosting">
 
   <header class="post-header">
-    <h1 class="post-title p-name" itemprop="name headline">Deep Q-Learning</h1>
+    <h1 class="post-title p-name" itemprop="name headline">Q-Learning</h1>
     <p class="post-meta">
       <time class="dt-published" datetime="2024-09-23T10:00:10+05:30" itemprop="datePublished">Sep 23, 2024
       </time></p>
@@ -196,9 +196,11 @@ Bellman optimality equation assumes, that we already have the optimal state valu
 
 <h1 id="q-learning-">Q-Learning 🤖</h1>
 
-<p>If you notice in the above MDP diagram, the transition probabilities and rewards are given us in advance. That’s not the case in real word, now comes the role of Q-Learning algorithm. <strong>Q-Learning algorithm</strong> is an adaptation of the Q-Value Iteration algorithm to the situation where the transition probabilities and the rewards are initially unknown.</p>
+<p>If you notice in the above MDP diagram, the transition probabilities and rewards are given us in advance. That’s not the case in real word 🌍, now comes the role of Q-Learning algorithm. <strong>Q-Learning algorithm</strong> is an adaptation of the Q-Value Iteration algorithm to the situation where the transition probabilities and the rewards are initially unknown.</p>
 
 <p>This algorithm is useful for problems where the environment is fully observable, and the agent can learn by trial and error. Q-learning has been successfully applied to problems such as game playing, robotics, and natural language processing. 🧠🤖</p>
+
+<p>This is an example of <strong>model-free reinforcement learning</strong>, where the transition probabilities and the rewards are initially unknown and agent has to learn these by direct interactions and experiences.</p>
 
 <p>$Q(s,a) \underset {\alpha}{\leftarrow} r + \gamma.\underset{a’}{max} \space Q(s’, a’)$</p>
 
@@ -300,7 +302,7 @@ Bellman optimality equation assumes, that we already have the optimal state valu
   <li>Hands-On Machine Learning with Scikit-Learn, Keras, and TensorFlow <a href="https://www.oreilly.com/library/view/hands-on-machine-learning/9781492032632/">Buy here</a></li>
 </ol>
 
-  </div><a class="u-url" href="/ai/2024/09/23/DQN.html" hidden></a>
+  </div><a class="u-url" href="/ai/2024/09/23/Q_learning.html" hidden></a>
 </article>
 
       </div>

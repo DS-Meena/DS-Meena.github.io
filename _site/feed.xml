@@ -1,4 +1,4 @@
-<?xml version="1.0" encoding="utf-8"?><feed xmlns="http://www.w3.org/2005/Atom" ><generator uri="https://jekyllrb.com/" version="4.3.3">Jekyll</generator><link href="http://localhost:4000/feed.xml" rel="self" type="application/atom+xml" /><link href="http://localhost:4000/" rel="alternate" type="text/html" /><updated>2024-09-24T08:04:37+05:30</updated><id>http://localhost:4000/feed.xml</id><title type="html">dsm Blogs</title><subtitle>This is a blog about Data Science and Machine Learning. I write about all the things I learn in this domain. I also share my knowledge with you.</subtitle><entry><title type="html">Deep Q-Learning</title><link href="http://localhost:4000/ai/2024/09/23/DQN.html" rel="alternate" type="text/html" title="Deep Q-Learning" /><published>2024-09-23T10:00:10+05:30</published><updated>2024-09-23T10:00:10+05:30</updated><id>http://localhost:4000/ai/2024/09/23/DQN</id><content type="html" xml:base="http://localhost:4000/ai/2024/09/23/DQN.html"><![CDATA[<h1 id="introduction">Introduction</h1>
+<?xml version="1.0" encoding="utf-8"?><feed xmlns="http://www.w3.org/2005/Atom" ><generator uri="https://jekyllrb.com/" version="4.3.3">Jekyll</generator><link href="http://localhost:4000/feed.xml" rel="self" type="application/atom+xml" /><link href="http://localhost:4000/" rel="alternate" type="text/html" /><updated>2024-09-24T09:28:14+05:30</updated><id>http://localhost:4000/feed.xml</id><title type="html">dsm Blogs</title><subtitle>This is a blog about Data Science and Machine Learning. I write about all the things I learn in this domain. I also share my knowledge with you.</subtitle><entry><title type="html">Q-Learning</title><link href="http://localhost:4000/ai/2024/09/23/Q_learning.html" rel="alternate" type="text/html" title="Q-Learning" /><published>2024-09-23T10:00:10+05:30</published><updated>2024-09-23T10:00:10+05:30</updated><id>http://localhost:4000/ai/2024/09/23/Q_learning</id><content type="html" xml:base="http://localhost:4000/ai/2024/09/23/Q_learning.html"><![CDATA[<h1 id="introduction">Introduction</h1>
 
 <p>In this blog, we will learn about the fundamental algorithms used in reinforcement learning. It’s not about neural networks but the mathematical algorithms involved in learning.</p>
 
@@ -136,9 +136,11 @@ Bellman optimality equation assumes, that we already have the optimal state valu
 
 <h1 id="q-learning-">Q-Learning 🤖</h1>
 
-<p>If you notice in the above MDP diagram, the transition probabilities and rewards are given us in advance. That’s not the case in real word, now comes the role of Q-Learning algorithm. <strong>Q-Learning algorithm</strong> is an adaptation of the Q-Value Iteration algorithm to the situation where the transition probabilities and the rewards are initially unknown.</p>
+<p>If you notice in the above MDP diagram, the transition probabilities and rewards are given us in advance. That’s not the case in real word 🌍, now comes the role of Q-Learning algorithm. <strong>Q-Learning algorithm</strong> is an adaptation of the Q-Value Iteration algorithm to the situation where the transition probabilities and the rewards are initially unknown.</p>
 
 <p>This algorithm is useful for problems where the environment is fully observable, and the agent can learn by trial and error. Q-learning has been successfully applied to problems such as game playing, robotics, and natural language processing. 🧠🤖</p>
+
+<p>This is an example of <strong>model-free reinforcement learning</strong>, where the transition probabilities and the rewards are initially unknown and agent has to learn these by direct interactions and experiences.</p>
 
 <p>$Q(s,a) \underset {\alpha}{\leftarrow} r + \gamma.\underset{a’}{max} \space Q(s’, a’)$</p>
 
@@ -238,7 +240,41 @@ Bellman optimality equation assumes, that we already have the optimal state valu
 
 <ol>
   <li>Hands-On Machine Learning with Scikit-Learn, Keras, and TensorFlow <a href="https://www.oreilly.com/library/view/hands-on-machine-learning/9781492032632/">Buy here</a></li>
-</ol>]]></content><author><name></name></author><category term="AI" /><summary type="html"><![CDATA[Introduction]]></summary></entry><entry><title type="html">Welcome to Jekyll!</title><link href="http://localhost:4000/jekyll/update/2024/09/15/welcome-to-jekyll.html" rel="alternate" type="text/html" title="Welcome to Jekyll!" /><published>2024-09-15T15:08:10+05:30</published><updated>2024-09-15T15:08:10+05:30</updated><id>http://localhost:4000/jekyll/update/2024/09/15/welcome-to-jekyll</id><content type="html" xml:base="http://localhost:4000/jekyll/update/2024/09/15/welcome-to-jekyll.html"><![CDATA[<p>You’ll find this post in your <code class="language-plaintext highlighter-rouge">_posts</code> directory. Go ahead and edit it and re-build the site to see your changes. You can rebuild the site in many different ways, but the most common way is to run <code class="language-plaintext highlighter-rouge">jekyll serve</code>, which launches a web server and auto-regenerates your site when a file is updated.</p>
+</ol>]]></content><author><name></name></author><category term="AI" /><summary type="html"><![CDATA[Introduction]]></summary></entry><entry><title type="html">Policy Gradients</title><link href="http://localhost:4000/ai/2024/09/20/Policy_gradients.html" rel="alternate" type="text/html" title="Policy Gradients" /><published>2024-09-20T10:00:10+05:30</published><updated>2024-09-20T10:00:10+05:30</updated><id>http://localhost:4000/ai/2024/09/20/Policy_gradients</id><content type="html" xml:base="http://localhost:4000/ai/2024/09/20/Policy_gradients.html"><![CDATA[<p>In this blog, we will discuss about the policy and policy gradients in reinforcement learning.</p>
+
+<h1 id="policy-">Policy 🎮</h1>
+
+<p>The algorithm a software agent uses to determine it’s actions is called it’s policy. The goal of the agent is to learn a policy that maximizes its reward over time. 🎯</p>
+
+<p>There are several types of policies:</p>
+
+<ol>
+  <li>Deterministic policies 🔒: 
+These directly map states to actions</li>
+  <li>Stochastic policies 🎲: 
+These map states to probability distributions over actions. An action is randomly chosen based on the probability distribution, and it’s not necessary for the agent to always choose the action with the highest probability. This type of policy involves some randomness.</li>
+</ol>
+
+<p>This distinction between deterministic and stochastic policies is an important concept in reinforcement learning and policy-based methods. 🧠</p>
+
+<h1 id="policy-gradients">Policy Gradients</h1>
+
+<p>Policy gradients is a type of reinforcement learning algorithm where the agent learns to make decisions based on a policy, which is a mapping from states to actions. [In naive terms, improves its policy by playing, using gradient descent  &amp; discounted rewards]</p>
+
+<p>This method is useful for problems where the environment is fully observable, and the agent can learn by trial and error. Policy gradients have been successfully applied to problems such as robotics and natural language processing.</p>
+
+<p>The policy gradient algorithm is an iterative process that gradually updates the policy parameters to maximize the expected reward. The optimization is done using gradient descent methods, such as stochastic gradient descent.</p>
+
+<h2 id="algorithm">Algorithm</h2>
+
+<p>One popular class of PG algorithms called REINFORCE algorithms (1992). Common variant:</p>
+
+<ol>
+  <li>Let the neural network play the game several times and keep calculating the gradients that would make the chosen action more likely - but don’t apply yet.</li>
+  <li>Once you have run several episodes, compute each action’s advantage (+ve for good, -ve for bad).</li>
+  <li>Multiply each gradient vector by the corresponding action’s advantage.</li>
+  <li>Finally compute the mean of all resulting gradient vectors, and use it to perform a Gradient Descent step.</li>
+</ol>]]></content><author><name></name></author><category term="AI" /><summary type="html"><![CDATA[In this blog, we will discuss about the policy and policy gradients in reinforcement learning.]]></summary></entry><entry><title type="html">Welcome to Jekyll!</title><link href="http://localhost:4000/jekyll/update/2024/09/15/welcome-to-jekyll.html" rel="alternate" type="text/html" title="Welcome to Jekyll!" /><published>2024-09-15T15:08:10+05:30</published><updated>2024-09-15T15:08:10+05:30</updated><id>http://localhost:4000/jekyll/update/2024/09/15/welcome-to-jekyll</id><content type="html" xml:base="http://localhost:4000/jekyll/update/2024/09/15/welcome-to-jekyll.html"><![CDATA[<p>You’ll find this post in your <code class="language-plaintext highlighter-rouge">_posts</code> directory. Go ahead and edit it and re-build the site to see your changes. You can rebuild the site in many different ways, but the most common way is to run <code class="language-plaintext highlighter-rouge">jekyll serve</code>, which launches a web server and auto-regenerates your site when a file is updated.</p>
 
 <p>Jekyll requires blog post files to be named according to the following format:</p>
 

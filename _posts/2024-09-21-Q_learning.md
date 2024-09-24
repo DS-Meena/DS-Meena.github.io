@@ -1,6 +1,6 @@
 ---
 layout: post
-title:  "Deep Q-Learning"
+title:  "Q-Learning"
 date:   2024-09-23 10:00:10 +0530
 categories: AI
 ---
@@ -132,9 +132,11 @@ Using above algorithm we can find the best policy for the agent.
 
 # Q-Learning 🤖
 
-If you notice in the above MDP diagram, the transition probabilities and rewards are given us in advance. That's not the case in real word, now comes the role of Q-Learning algorithm. **Q-Learning algorithm** is an adaptation of the Q-Value Iteration algorithm to the situation where the transition probabilities and the rewards are initially unknown.
+If you notice in the above MDP diagram, the transition probabilities and rewards are given us in advance. That's not the case in real word 🌍, now comes the role of Q-Learning algorithm. **Q-Learning algorithm** is an adaptation of the Q-Value Iteration algorithm to the situation where the transition probabilities and the rewards are initially unknown.
 
 This algorithm is useful for problems where the environment is fully observable, and the agent can learn by trial and error. Q-learning has been successfully applied to problems such as game playing, robotics, and natural language processing. 🧠🤖
+
+This is an example of **model-free reinforcement learning**, where the transition probabilities and the rewards are initially unknown and agent has to learn these by direct interactions and experiences.
 
 $Q(s,a) \underset {\alpha}{\leftarrow} r + \gamma.\underset{a'}{max} \space Q(s', a')$
 

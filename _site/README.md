@@ -1,9 +1,8 @@
-# The Object
+# dsm Blogs
 
 This is my personal blog. You can see [here](https://ds-meena.github.io/)
 
 Here I post some one my experiences and what i learnt in my journey.
-
 
 # Learnings
 
@@ -40,7 +39,7 @@ LICENSE.txt  README.md  _includes  _layouts  _sass  assets
 default.html  home.html  page.html  post.html
 ```
 
-Create a `_layouts` folder in your folder and copy `post.html` file into it. After this, jekyll will this file for rendering your site. 🌐
+Create a `_layouts` folder in your folder and copy `post.html` file into it. After this, jekyll will use this file for rendering your site. 🌐
 
 
 ## How to install Jekyll 🎃

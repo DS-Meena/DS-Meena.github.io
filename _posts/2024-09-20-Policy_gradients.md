@@ -1,24 +1,27 @@
 ---
 layout: post
 title:  "Policy Gradients"
-date:   3024-09-20 10:00:10 +0530
+date:   2024-09-20 10:00:10 +0530
 categories: AI
 ---
 
 In this blog, we will discuss about the policy and policy gradients in reinforcement learning.
 
-# Policy
+# Policy 🎮
 
-The algorithm a software agent uses to determine it’s actions is called it’s policy. The goal of the agent is to learn a policy that maximizes its reward over time. 
+The algorithm a software agent uses to determine it’s actions is called it’s policy. The goal of the agent is to learn a policy that maximizes its reward over time. 🎯
 
 There are several types of policies:
 
-1. Deterministic policies: 
+1. Deterministic policies 🔒: 
 These directly map states to actions
-2. Stochastic policies: 
-These map states to probability distributions over actions. An action is randomly chosen based on the probability distribution, and it's not necessary for the agent to always choose the action with the highest probability. This type of policy involves some randomness
+2. Stochastic policies 🎲: 
+These map states to probability distributions over actions. An action is randomly chosen based on the probability distribution, and it's not necessary for the agent to always choose the action with the highest probability. This type of policy involves some randomness.
 
-This distinction between deterministic and stochastic policies is an important concept in reinforcement learning and policy-based methods.
+This distinction between deterministic and stochastic policies is an important concept in reinforcement learning and policy-based methods. 🧠
+
+
+
 
 # Policy Gradients
 
