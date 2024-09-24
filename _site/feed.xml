@@ -1,4 +1,4 @@
-<?xml version="1.0" encoding="utf-8"?><feed xmlns="http://www.w3.org/2005/Atom" ><generator uri="https://jekyllrb.com/" version="4.3.3">Jekyll</generator><link href="http://localhost:4000/feed.xml" rel="self" type="application/atom+xml" /><link href="http://localhost:4000/" rel="alternate" type="text/html" /><updated>2024-09-22T19:35:41+05:30</updated><id>http://localhost:4000/feed.xml</id><title type="html">dsm Blogs</title><subtitle>This is a blog about Data Science and Machine Learning. I write about all the things I learn in this domain. I also share my knowledge with you.</subtitle><entry><title type="html">Deep Q-Learning</title><link href="http://localhost:4000/ai/2024/09/20/DQN.html" rel="alternate" type="text/html" title="Deep Q-Learning" /><published>2024-09-20T10:00:10+05:30</published><updated>2024-09-20T10:00:10+05:30</updated><id>http://localhost:4000/ai/2024/09/20/DQN</id><content type="html" xml:base="http://localhost:4000/ai/2024/09/20/DQN.html"><![CDATA[<h1 id="introduction">Introduction</h1>
+<?xml version="1.0" encoding="utf-8"?><feed xmlns="http://www.w3.org/2005/Atom" ><generator uri="https://jekyllrb.com/" version="4.3.3">Jekyll</generator><link href="http://localhost:4000/feed.xml" rel="self" type="application/atom+xml" /><link href="http://localhost:4000/" rel="alternate" type="text/html" /><updated>2024-09-24T08:04:37+05:30</updated><id>http://localhost:4000/feed.xml</id><title type="html">dsm Blogs</title><subtitle>This is a blog about Data Science and Machine Learning. I write about all the things I learn in this domain. I also share my knowledge with you.</subtitle><entry><title type="html">Deep Q-Learning</title><link href="http://localhost:4000/ai/2024/09/23/DQN.html" rel="alternate" type="text/html" title="Deep Q-Learning" /><published>2024-09-23T10:00:10+05:30</published><updated>2024-09-23T10:00:10+05:30</updated><id>http://localhost:4000/ai/2024/09/23/DQN</id><content type="html" xml:base="http://localhost:4000/ai/2024/09/23/DQN.html"><![CDATA[<h1 id="introduction">Introduction</h1>
 
 <p>In this blog, we will learn about the fundamental algorithms used in reinforcement learning. It’s not about neural networks but the mathematical algorithms involved in learning.</p>
 
@@ -9,7 +9,7 @@
 <p>Our aim is to find an optimal policy for the agent, by following that agent can maximize the rewards earned in the enviornment.</p>
 
 <p><img src="/assets/2024/September/markov%20decision%20chain.png" alt="alt text" />
-<em>Fig: Example of Markov chain</em></p>
+<em>Fig: Example of Markov chain  <a href="https://www.oreilly.com/library/view/hands-on-machine-learning/9781492032632/">credit for image</a></em></p>
 
 <p>Let’s learn some of the algorithms that are used to find the optimal policy for the agent.</p>
 
@@ -31,7 +31,8 @@
   <li>$\gamma$ = discount factor 🈹</li>
 </ul>
 
-<p>Bellman optimality equation assumes, that we already have the optimal state value for next state s’. Since, we don’t have future value; we update state values iteratively as follows:</p>
+<p>If we increase discount factor, we will value the future rewards more.
+Bellman optimality equation assumes, that we already have the optimal state value for next state s’. Since, we don’t have future value; we update state values iteratively as follows:</p>
 
 <ol>
   <li>First initialize all the state value estimates to 0.</li>
@@ -71,6 +72,11 @@
     <p>$Q_{k+1}(s,a) \leftarrow \underset{s’}{\sum}T(s,a,s’)[R(s,a,s’)+\gamma.\underset{a’}{max} \space Q_k(s’,a’)]$</p>
 
     <p><em>Eq: Q-Value Iteration algorithm</em></p>
+
+    <p>where:</p>
+    <ul>
+      <li>$\underset{a’}{max} \space Q_k(s’, a’)$ is the maximum Q-value for the next state s’ and all possible actions a’ at $k_{th}$ iteratin</li>
+    </ul>
   </li>
 </ol>
 
@@ -80,19 +86,67 @@
 
 <p>That means, when the agent is in state s it should choose the action with the highest Q-Value for that state. 🏆</p>
 
-<h1 id="q-learning-">Q-Learning 🦆</h1>
+<p>Let’s apply the Q-Value Iteration algorithm to MDP given in above image:</p>
 
-<p>Q-Learning algorithm is an adaptation of the <strong>Q-Value Iteration</strong> algorithm to the situation where the transition probabilities and the rewards are initially unknown.</p>
+<div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="c1"># shape=[s, a, s']  # row - current state, column = action
+# s2 to s0 given action a1 transition probability = [2][1][0]
+</span><span class="n">transition_probabilities</span> <span class="o">=</span> <span class="p">[</span> 
+		<span class="p">[[</span><span class="mf">0.7</span><span class="p">,</span> <span class="mf">0.3</span><span class="p">,</span> <span class="mf">0.0</span><span class="p">],</span> <span class="p">[</span><span class="mf">1.0</span><span class="p">,</span> <span class="mf">0.0</span><span class="p">,</span> <span class="mf">0.0</span><span class="p">],</span> <span class="p">[</span><span class="mf">0.8</span><span class="p">,</span> <span class="mf">0.2</span><span class="p">,</span> <span class="mf">0.0</span><span class="p">]],</span> 
+		<span class="p">[[</span><span class="mf">0.0</span><span class="p">,</span> <span class="mf">1.0</span><span class="p">,</span> <span class="mf">0.0</span><span class="p">],</span> <span class="bp">None</span><span class="p">,</span> <span class="p">[</span><span class="mf">0.0</span><span class="p">,</span> <span class="mf">0.0</span><span class="p">,</span> <span class="mf">1.0</span><span class="p">]],</span> 
+		<span class="p">[</span><span class="bp">None</span><span class="p">,</span> <span class="p">[</span><span class="mf">0.8</span><span class="p">,</span> <span class="mf">0.1</span><span class="p">,</span> <span class="mf">0.1</span><span class="p">],</span> <span class="bp">None</span><span class="p">]</span>
+	<span class="p">]</span>
 
-<p>This algorithm is useful for problems where the environment is fully observable, and the agent can learn by trial and error. Q-learning has been successfully applied to problems such as game playing, robotics, and natural language processing.</p>
+<span class="c1"># shape=[s, a, s']
+</span><span class="n">rewards</span> <span class="o">=</span> <span class="p">[</span>  
+		<span class="p">[[</span><span class="o">+</span><span class="mi">10</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span> <span class="mi">0</span><span class="p">],</span> <span class="p">[</span><span class="mi">0</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span> <span class="mi">0</span><span class="p">],</span> <span class="p">[</span><span class="mi">0</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span> <span class="mi">0</span><span class="p">]],</span> 
+		<span class="p">[[</span><span class="mi">0</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span> <span class="mi">0</span><span class="p">],</span> <span class="p">[</span><span class="mi">0</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span> <span class="mi">0</span><span class="p">],</span> <span class="p">[</span><span class="mi">0</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span> <span class="o">-</span><span class="mi">50</span><span class="p">]],</span> 
+		<span class="p">[[</span><span class="mi">0</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span> <span class="mi">0</span><span class="p">],</span> <span class="p">[</span><span class="o">+</span><span class="mi">40</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span> <span class="mi">0</span><span class="p">],</span> <span class="p">[</span><span class="mi">0</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span> <span class="mi">0</span><span class="p">]]</span>
+	<span class="p">]</span>
+
+<span class="c1"># from s0, s1, s2
+</span><span class="n">possible_actions</span> <span class="o">=</span> <span class="p">[[</span><span class="mi">0</span><span class="p">,</span> <span class="mi">1</span><span class="p">,</span> <span class="mi">2</span><span class="p">],</span> <span class="p">[</span><span class="mi">0</span><span class="p">,</span> <span class="mi">2</span><span class="p">],</span> <span class="p">[</span><span class="mi">1</span><span class="p">]]</span>   
+
+<span class="c1"># Initialize Q-Values
+</span><span class="n">Q_values</span> <span class="o">=</span> <span class="n">np</span><span class="p">.</span><span class="nf">full</span><span class="p">((</span><span class="mi">3</span><span class="p">,</span> <span class="mi">3</span><span class="p">),</span> <span class="o">-</span><span class="n">np</span><span class="p">.</span><span class="n">inf</span><span class="p">)</span>  <span class="c1"># -np.inf for impossible actions
+</span><span class="k">for</span> <span class="n">state</span><span class="p">,</span> <span class="n">actions</span> <span class="ow">in</span> <span class="nf">enumerate</span><span class="p">(</span><span class="n">possible_actions</span><span class="p">):</span>
+	<span class="n">Q_values</span><span class="p">[</span><span class="n">state</span><span class="p">,</span> <span class="n">actions</span><span class="p">]</span> <span class="o">=</span> <span class="mf">0.0</span>     <span class="c1"># 0 for possible actions
+</span>	
+<span class="c1"># Q-Value Iteration algorithm
+</span><span class="n">gamma</span> <span class="o">=</span> <span class="mf">0.90</span>
+
+<span class="k">for</span> <span class="n">iteration</span> <span class="ow">in</span> <span class="nf">range</span><span class="p">(</span><span class="mi">50</span><span class="p">):</span>
+	<span class="n">Q_prev</span> <span class="o">=</span> <span class="n">Q_values</span><span class="p">.</span><span class="nf">copy</span><span class="p">()</span>
+	
+	<span class="k">for</span> <span class="n">s</span> <span class="ow">in</span> <span class="nf">range</span><span class="p">(</span><span class="mi">3</span><span class="p">):</span>
+		<span class="k">for</span> <span class="n">a</span> <span class="ow">in</span> <span class="n">possible_actions</span><span class="p">[</span><span class="n">s</span><span class="p">]:</span>
+
+			<span class="n">Q_values</span><span class="p">[</span><span class="n">s</span><span class="p">,</span> <span class="n">a</span><span class="p">]</span> <span class="o">=</span> <span class="n">np</span><span class="p">.</span><span class="nf">sum</span><span class="p">([</span><span class="n">transition_probabilities</span><span class="p">[</span><span class="n">s</span><span class="p">][</span><span class="n">a</span><span class="p">][</span><span class="n">sp</span><span class="p">]</span> <span class="o">*</span> <span class="p">(</span><span class="n">rewards</span><span class="p">[</span><span class="n">s</span><span class="p">][</span><span class="n">a</span><span class="p">][</span><span class="n">sp</span><span class="p">]</span> <span class="o">+</span> <span class="n">gamma</span> <span class="o">*</span> <span class="n">np</span><span class="p">.</span><span class="nf">max</span><span class="p">(</span><span class="n">Q_prev</span><span class="p">[</span><span class="n">sp</span><span class="p">]))</span>
+				<span class="k">for</span> <span class="n">sp</span> <span class="ow">in</span> <span class="nf">range</span><span class="p">(</span><span class="mi">3</span><span class="p">)])</span>
+                        
+<span class="nf">print</span><span class="p">(</span><span class="n">Q_values</span><span class="p">)</span>
+<span class="nf">print</span><span class="p">(</span><span class="sh">"</span><span class="s">Best action for each state: </span><span class="sh">"</span><span class="p">,</span> <span class="n">np</span><span class="p">.</span><span class="nf">argmax</span><span class="p">(</span><span class="n">Q_values</span><span class="p">,</span> <span class="n">axis</span><span class="o">=</span><span class="mi">1</span><span class="p">))</span>
+
+<span class="c1"># [[18.91891892 17.02702702 13.62162162]
+#  [ 0.                -inf -4.87971488]
+#  [       -inf 50.13365013        -inf]]
+# Best action for each state  [0 0 1]
+</span></code></pre></div></div>
+
+<p>Using above algorithm we can find the best policy for the agent.</p>
+
+<h1 id="q-learning-">Q-Learning 🤖</h1>
+
+<p>If you notice in the above MDP diagram, the transition probabilities and rewards are given us in advance. That’s not the case in real word, now comes the role of Q-Learning algorithm. <strong>Q-Learning algorithm</strong> is an adaptation of the Q-Value Iteration algorithm to the situation where the transition probabilities and the rewards are initially unknown.</p>
+
+<p>This algorithm is useful for problems where the environment is fully observable, and the agent can learn by trial and error. Q-learning has been successfully applied to problems such as game playing, robotics, and natural language processing. 🧠🤖</p>
 
 <p>$Q(s,a) \underset {\alpha}{\leftarrow} r + \gamma.\underset{a’}{max} \space Q(s’, a’)$</p>
 
-<p>Eq: Q-Learning algorithm</p>
+<p><em>Eq: Q-Learning algorithm</em></p>
 
-<p>old ← new ⇒ old(1-a) + a*new [This is how be interpret the above equation]</p>
+<p>$ old \underset {\alpha}{\leftarrow} new ⇒ old(1-a) + a*new$ [This is how be interpret the above equation]</p>
 
-<h2 id="q-learning-algorithm">Q-learning algorithm</h2>
+<h2 id="q-learning-algorithm-">Q-learning algorithm 🧠</h2>
 
 <ol>
   <li>Initialize the Q-table with arbitrary values for all state-action pairs.</li>
@@ -113,58 +167,68 @@
       <li>α is the learning rate, which determines how much the Q-value is updated in each iteration</li>
       <li>r is the reward received for taking action a in state s</li>
       <li>γ is the discount factor, which determines the importance of future rewards</li>
-      <li>max Q(s’, a’) is the maximum Q-value for the next state s’ and all possible actions a’ (maximum future reward estimate)</li>
+      <li>$\underset{a’}{max} \space Q(s’, a’)$ is the maximum Q-value for the next state s’ and all possible actions a’ (maximum future reward estimate)</li>
       <li>s’ is the next state reached after taking action a in state s</li>
     </ul>
   </li>
-  <li>Repeat steps 2-5 until the algorithm converges or a maximum number of iterations is reached.</li>
+  <li>Repeat 🔄 steps 2-5 until the algorithm converges or a maximum number of iterations is reached.</li>
 </ol>
 
-<p>The optimal policy can be derived by selecting the action with the highest Q-value for each state.</p>
+<p>The optimal policy 🏆 can be derived by selecting the action with the highest Q-value for each state as in Q-value Iteration algorithm.</p>
 
-<p>Let’s implement Q-Learning algorithm.</p>
+<p>Let’s implement Q-Learning algorithm using open AI gym environment (Taxi-v3). 🚕</p>
 
-<div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="c1"># step function for agent
-</span><span class="k">def</span> <span class="nf">step</span><span class="p">(</span><span class="n">state</span><span class="p">,</span> <span class="n">action</span><span class="p">):</span>
-	<span class="n">probas</span> <span class="o">=</span> <span class="n">transition_probabilities</span><span class="p">[</span><span class="n">state</span><span class="p">][</span><span class="n">action</span><span class="p">]</span>
-	<span class="n">next_state</span> <span class="o">=</span> <span class="n">np</span><span class="p">.</span><span class="n">random</span><span class="p">.</span><span class="nf">choice</span><span class="p">([</span><span class="mi">0</span><span class="p">,</span><span class="mi">1</span><span class="p">,</span><span class="mi">2</span><span class="p">],</span> <span class="n">p</span><span class="o">=</span><span class="n">probas</span><span class="p">)</span>
-	<span class="n">reward</span> <span class="o">=</span> <span class="n">rewards</span><span class="p">[</span><span class="n">state</span><span class="p">][</span><span class="n">action</span><span class="p">][</span><span class="n">next_state</span><span class="p">]</span>
-	<span class="k">return</span> <span class="n">next_state</span><span class="p">,</span> <span class="n">reward</span>
+<div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="n">env</span> <span class="o">=</span> <span class="n">gym</span><span class="p">.</span><span class="nf">make</span><span class="p">(</span><span class="sh">'</span><span class="s">Taxi-v3</span><span class="sh">'</span><span class="p">)</span>
 
-<span class="k">def</span> <span class="nf">exploration_policy</span><span class="p">(</span><span class="n">state</span><span class="p">):</span>
-	<span class="k">return</span> <span class="n">np</span><span class="p">.</span><span class="n">random</span><span class="p">.</span><span class="nf">choice</span><span class="p">(</span><span class="n">possible_actions</span><span class="p">[</span><span class="n">state</span><span class="p">])</span>
-</code></pre></div></div>
+<span class="n">Q_values</span> <span class="o">=</span> <span class="n">np</span><span class="p">.</span><span class="nf">zeros</span><span class="p">([</span><span class="n">env</span><span class="p">.</span><span class="n">observation_space</span><span class="p">.</span><span class="n">n</span><span class="p">,</span> <span class="n">env</span><span class="p">.</span><span class="n">action_space</span><span class="p">.</span><span class="n">n</span><span class="p">])</span>
 
-<p>Q-Learning algorithm with learning rate decay:</p>
-
-<div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="n">alpha0</span> <span class="o">=</span> <span class="mf">0.05</span> <span class="c1"># initial learning rate
-</span><span class="n">decay</span> <span class="o">=</span> <span class="mf">0.005</span> 
-<span class="n">gamma</span> <span class="o">=</span> <span class="mf">0.90</span> <span class="c1"># discount factor
-</span><span class="n">state</span> <span class="o">=</span> <span class="mi">0</span> <span class="c1"># initial state
+<span class="c1"># exploration policy
+</span><span class="n">epsilon</span> <span class="o">=</span> <span class="mf">0.1</span>  <span class="c1"># Exploration rate
 </span>
-<span class="k">for</span> <span class="n">iteration</span> <span class="ow">in</span> <span class="nf">range</span><span class="p">(</span><span class="mi">10000</span><span class="p">):</span>
-	<span class="n">action</span> <span class="o">=</span> <span class="nf">exploration_policy</span><span class="p">(</span><span class="n">state</span><span class="p">)</span>
-	<span class="n">next_state</span><span class="p">,</span> <span class="n">reward</span> <span class="o">=</span> <span class="nf">step</span><span class="p">(</span><span class="n">state</span><span class="p">,</span> <span class="n">action</span><span class="p">)</span>
-	<span class="n">next_value</span> <span class="o">=</span> <span class="n">np</span><span class="p">.</span><span class="nf">max</span><span class="p">(</span><span class="n">Q_values</span><span class="p">[</span><span class="n">next_state</span><span class="p">])</span>
-	<span class="n">alpha</span> <span class="o">=</span> <span class="n">alpha0</span> <span class="o">/</span> <span class="p">(</span><span class="mi">1</span> <span class="o">+</span> <span class="n">iteration</span> <span class="o">*</span> <span class="n">decay</span><span class="p">)</span>   <span class="c1"># i think it should be alpha
-</span>	
-	<span class="n">Q_values</span><span class="p">[</span><span class="n">state</span><span class="p">,</span> <span class="n">action</span><span class="p">]</span> <span class="o">*=</span> <span class="mi">1</span> <span class="o">-</span> <span class="n">alpha</span>   <span class="c1"># old
-</span>	<span class="n">Q_values</span><span class="p">[</span><span class="n">state</span><span class="p">,</span> <span class="n">action</span><span class="p">]</span> <span class="o">+=</span> <span class="n">alpha</span> <span class="o">*</span> <span class="p">(</span><span class="n">reward</span> <span class="o">+</span> <span class="n">gamma</span> <span class="o">*</span> <span class="n">next_value</span><span class="p">)</span>  <span class="c1"># new
-</span>	
-	<span class="n">state</span> <span class="o">=</span> <span class="n">next_state</span>
+<span class="k">def</span> <span class="nf">exploration_policy</span><span class="p">(</span><span class="n">state</span><span class="p">):</span>
+    <span class="k">if</span> <span class="n">np</span><span class="p">.</span><span class="n">random</span><span class="p">.</span><span class="nf">random</span><span class="p">()</span> <span class="o">&lt;</span> <span class="n">epsilon</span><span class="p">:</span>
+        <span class="k">return</span> <span class="n">env</span><span class="p">.</span><span class="n">action_space</span><span class="p">.</span><span class="nf">sample</span><span class="p">()</span>  <span class="c1"># Explore
+</span>    <span class="k">else</span><span class="p">:</span>
+        <span class="k">return</span> <span class="n">np</span><span class="p">.</span><span class="nf">argmax</span><span class="p">(</span><span class="n">Q_values</span><span class="p">[</span><span class="n">state</span><span class="p">])</span>  <span class="c1"># Exploit
+</span></code></pre></div></div>
+
+<p>Q-Learning algorithm with learning rate decay: ☢️</p>
+
+<div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code>
+<span class="c1"># Hyperparameters
+</span><span class="n">alpha0</span> <span class="o">=</span> <span class="mf">0.1</span>  <span class="c1"># Initial learning rate
+</span><span class="n">decay</span> <span class="o">=</span> <span class="mf">0.0001</span>
+<span class="n">gamma</span> <span class="o">=</span> <span class="mf">0.99</span>  <span class="c1"># Discount factor
+</span>
+<span class="n">num_episodes</span> <span class="o">=</span> <span class="mi">10000</span>
+<span class="k">for</span> <span class="n">episode</span> <span class="ow">in</span> <span class="nf">range</span><span class="p">(</span><span class="n">num_episodes</span><span class="p">):</span>
+    <span class="n">state</span> <span class="o">=</span> <span class="n">env</span><span class="p">.</span><span class="nf">reset</span><span class="p">()[</span><span class="mi">0</span><span class="p">]</span>
+    <span class="n">done</span> <span class="o">=</span> <span class="bp">False</span>
+    
+    <span class="k">while</span> <span class="ow">not</span> <span class="n">done</span><span class="p">:</span>
+        <span class="n">action</span> <span class="o">=</span> <span class="nf">exploration_policy</span><span class="p">(</span><span class="n">state</span><span class="p">)</span>
+        <span class="n">next_state</span><span class="p">,</span> <span class="n">reward</span><span class="p">,</span> <span class="n">done</span><span class="p">,</span> <span class="n">_</span><span class="p">,</span> <span class="n">info</span> <span class="o">=</span> <span class="n">env</span><span class="p">.</span><span class="nf">step</span><span class="p">(</span><span class="n">action</span><span class="p">)</span>
+        
+        <span class="c1"># Q-learning update
+</span>        <span class="n">alpha</span> <span class="o">=</span> <span class="n">alpha0</span> <span class="o">/</span> <span class="p">(</span><span class="mi">1</span> <span class="o">+</span> <span class="n">episode</span> <span class="o">*</span> <span class="n">decay</span><span class="p">)</span>
+        
+        <span class="n">Q_values</span><span class="p">[</span><span class="n">state</span><span class="p">,</span> <span class="n">action</span><span class="p">]</span> <span class="o">*=</span> <span class="mi">1</span> <span class="o">-</span> <span class="n">alpha</span>
+        <span class="n">Q_values</span><span class="p">[</span><span class="n">state</span><span class="p">,</span> <span class="n">action</span><span class="p">]</span> <span class="o">+=</span> <span class="n">alpha</span> <span class="o">*</span> <span class="p">(</span><span class="n">reward</span> <span class="o">+</span> <span class="n">gamma</span> <span class="o">*</span> <span class="n">np</span><span class="p">.</span><span class="nf">max</span><span class="p">(</span><span class="n">Q_values</span><span class="p">[</span><span class="n">next_state</span><span class="p">]))</span>
+        
+        <span class="n">state</span> <span class="o">=</span> <span class="n">next_state</span>
 </code></pre></div></div>
 
 <p><img src="/assets/2024/September/Q_learning.png" alt="Fig: The Q-Value Iteration algorithm (left) versus the Q-Learning algorithm (don’t know anything) (right)" /></p>
 
-<p>Fig: The Q-Value Iteration algorithm (left) versus the Q-Learning algorithm (don’t know anything) (right)</p>
+<p><em>Fig: The Q-Value Iteration algorithm (left) versus the Q-Learning algorithm (don’t know anything) (right) <a href="https://www.oreilly.com/library/view/hands-on-machine-learning/9781492032632/">credit for image</a></em></p>
 
 <p>Obviously, not knowing the transition probabilities or the rewards makes finding the optimal policy significantly harder!</p>
 
-<p><strong>Advantage:</strong></p>
+<h3 id="advantage">Advantage</h3>
 
 <p>It can learn optimal policies without requiring a model of the environment. (Model-free reinforcement learning algorithm).  Instead, it learns directly from experience by updating the Q-values based on observed rewards and transitions between states.</p>
 
-<p><strong>Disadvantage:</strong></p>
+<h3 id="disadvantage">Disadvantage</h3>
 
 <p>It can be computationally expensive and may require a large amount of data to converge to an optimal solution.</p>
 
@@ -173,7 +237,7 @@
 <h2 id="references">References</h2>
 
 <ol>
-  <li>Hands on Machine learning with keras and Tensorflow</li>
+  <li>Hands-On Machine Learning with Scikit-Learn, Keras, and TensorFlow <a href="https://www.oreilly.com/library/view/hands-on-machine-learning/9781492032632/">Buy here</a></li>
 </ol>]]></content><author><name></name></author><category term="AI" /><summary type="html"><![CDATA[Introduction]]></summary></entry><entry><title type="html">Welcome to Jekyll!</title><link href="http://localhost:4000/jekyll/update/2024/09/15/welcome-to-jekyll.html" rel="alternate" type="text/html" title="Welcome to Jekyll!" /><published>2024-09-15T15:08:10+05:30</published><updated>2024-09-15T15:08:10+05:30</updated><id>http://localhost:4000/jekyll/update/2024/09/15/welcome-to-jekyll</id><content type="html" xml:base="http://localhost:4000/jekyll/update/2024/09/15/welcome-to-jekyll.html"><![CDATA[<p>You’ll find this post in your <code class="language-plaintext highlighter-rouge">_posts</code> directory. Go ahead and edit it and re-build the site to see your changes. You can rebuild the site in many different ways, but the most common way is to run <code class="language-plaintext highlighter-rouge">jekyll serve</code>, which launches a web server and auto-regenerates your site when a file is updated.</p>
 
 <p>Jekyll requires blog post files to be named according to the following format:</p>
