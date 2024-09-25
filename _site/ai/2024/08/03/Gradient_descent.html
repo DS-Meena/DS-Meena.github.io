@@ -7,8 +7,8 @@
 <meta name="generator" content="Jekyll v4.3.3" />
 <meta property="og:title" content="Gradient Descent" />
 <meta property="og:locale" content="en_US" />
-<meta name="description" content="This is a blog about Data Science and Machine Learning. I write about all the things I learn in this domain. I also share my knowledge with you." />
-<meta property="og:description" content="This is a blog about Data Science and Machine Learning. I write about all the things I learn in this domain. I also share my knowledge with you." />
+<meta name="description" content="In this blog post, we will understand the underlying algorithm for training neural networks. We will discuss gradient descent, the most basic step of training any model, and backpropagation." />
+<meta property="og:description" content="In this blog post, we will understand the underlying algorithm for training neural networks. We will discuss gradient descent, the most basic step of training any model, and backpropagation." />
 <link rel="canonical" href="http://localhost:4000/ai/2024/08/03/Gradient_descent.html" />
 <meta property="og:url" content="http://localhost:4000/ai/2024/08/03/Gradient_descent.html" />
 <meta property="og:site_name" content="dsm Blogs" />
@@ -17,7 +17,7 @@
 <meta name="twitter:card" content="summary" />
 <meta property="twitter:title" content="Gradient Descent" />
 <script type="application/ld+json">
-{"@context":"https://schema.org","@type":"BlogPosting","dateModified":"2024-08-03T15:08:10+05:30","datePublished":"2024-08-03T15:08:10+05:30","description":"This is a blog about Data Science and Machine Learning. I write about all the things I learn in this domain. I also share my knowledge with you.","headline":"Gradient Descent","mainEntityOfPage":{"@type":"WebPage","@id":"http://localhost:4000/ai/2024/08/03/Gradient_descent.html"},"url":"http://localhost:4000/ai/2024/08/03/Gradient_descent.html"}</script>
+{"@context":"https://schema.org","@type":"BlogPosting","dateModified":"2024-08-03T15:08:10+05:30","datePublished":"2024-08-03T15:08:10+05:30","description":"In this blog post, we will understand the underlying algorithm for training neural networks. We will discuss gradient descent, the most basic step of training any model, and backpropagation.","headline":"Gradient Descent","mainEntityOfPage":{"@type":"WebPage","@id":"http://localhost:4000/ai/2024/08/03/Gradient_descent.html"},"url":"http://localhost:4000/ai/2024/08/03/Gradient_descent.html"}</script>
 <!-- End Jekyll SEO tag -->
 <link rel="stylesheet" href="/assets/main.css"><link type="application/atom+xml" rel="alternate" href="http://localhost:4000/feed.xml" title="dsm Blogs" /></head>
 <body><header class="site-header" role="banner">
@@ -58,7 +58,246 @@
   </header>
 
   <div class="post-content e-content" itemprop="articleBody">
-    
+    <p>In this blog post, we will understand the underlying algorithm for training neural networks. We will discuss gradient descent, the most basic step of training any model, and backpropagation.</p>
+
+<h1 id="gradient-descent">Gradient Descent</h1>
+
+<p>The gradient is, simply a row vector of a function’s partial derivatives. It represents the direction and rate of the steepest increase of a function.</p>
+
+<p>Example: gradient $\nabla f$ of the function $f(a, b, c)  = ab^2 + 2c^3$, where the variables in order, are a, b, and c:</p>
+
+<p>$\nabla f = (\frac{\partial f}{\partial a} \frac{\partial f}{\partial b} \frac{\partial f}{\partial c}) = (b^2 \space\space\space\space 2ab \space\space\space\space 6c^2)$</p>
+
+<p>In basic calculus, with a simple algebraic function such as a polynomial, a standard optimization process is to:</p>
+
+<ol>
+  <li>take the derivative of the function</li>
+  <li>set the derivative equal to 0, and then</li>
+  <li>solve for the parameters (inputs) that satisfy this equation.</li>
+</ol>
+
+<p>Since, ANNs functions are very complicated, solving for 0 is not possible. Thus, <strong>heuristic methods are often used</strong> (trail &amp; error).</p>
+
+<p>Gradient descent is a heuristic method that starts at a random point and iteratively moves in the direction (hence “gradient”) that decreases (hence “descent”) the function that we want to minimize, which is usually a cost function. With enough of these steps in the decreasing direction, a local of these steps in the decreasing direction, a local minimum can theoretically be reached.</p>
+
+<p>Colloquially, think of it as playing a game of “hot” and “cold” until the improvement becomes negligible.</p>
+
+<p><img src="/assets/2024/September/gradient%20descent.png" alt="nse-6188589518431236078-512387566.png" /></p>
+
+<p>The gradient indicates the direction of steepest ascent of the function, and its negative is the direction of steepest descent.</p>
+
+<h3 id="gradient-descent-algorithm">Gradient Descent Algorithm</h3>
+
+<ol>
+  <li>Initialize the weights and biases of the neural network with random values.</li>
+  <li>Do the following until the cost stops improving or a fixed number of iterations:
+    <ol>
+      <li>Calculate cost function value with current parameters.</li>
+      <li>Calculate the gradient of the cost function w.r.t to its parameters.</li>
+      <li>Update the parameters by taking a small step in the opposite direction of the gradient.</li>
+    </ol>
+  </li>
+</ol>
+
+<div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="k">def</span> <span class="nf">gradient_descent</span><span class="p">(</span><span class="n">point</span><span class="p">,</span> <span class="n">step_size</span><span class="p">,</span> <span class="n">threshold</span><span class="p">):</span>
+	<span class="n">cost</span> <span class="o">=</span> <span class="nf">f</span><span class="p">(</span><span class="n">point</span><span class="p">)</span>  
+	<span class="n">new_point</span> <span class="o">=</span> <span class="n">point</span> <span class="o">-</span> <span class="n">step_size</span> <span class="o">*</span> <span class="nf">gradient</span><span class="p">(</span><span class="n">point</span><span class="p">)</span>  <span class="c1"># -ve for descent
+</span>	<span class="n">new_cost</span> <span class="o">=</span> <span class="nf">f</span><span class="p">(</span><span class="n">new_point</span><span class="p">)</span>
+	
+	<span class="c1"># if doesn't improve cost
+</span>	<span class="k">if</span> <span class="nf">abs</span><span class="p">(</span><span class="n">new_cost</span> <span class="o">-</span> <span class="n">cost</span><span class="p">)</span> <span class="o">&lt;</span> <span class="n">threshold</span><span class="p">:</span>
+		<span class="k">return</span> <span class="n">value</span>
+	
+	<span class="c1"># go to new point
+</span>	<span class="k">return</span> <span class="nf">gradient_descent</span><span class="p">(</span><span class="n">new_point</span><span class="p">,</span> <span class="n">step_size</span><span class="p">,</span> <span class="n">threshold</span><span class="p">)</span>
+</code></pre></div></div>
+
+<p>Let’s look at an example of how we update the parameters:</p>
+
+<p>Let’s say we function $f(x, y) = 2 + 3x^2 + 4y^2$, and we try to do a single step of gradient descent. Find the next set of parameters if we start at (10, 10) with step size = 0.5?</p>
+
+<p>Solution: We calculate gradient of this function, gradient $\nabla f = (\frac{\partial f}{\partial x} \frac{\partial f}{\partial y}) = (6x, 8y)$</p>
+
+<p>We know that,</p>
+
+<p>$\text{new point} = point - \text{step size} * gradient(point)$</p>
+
+<p>$\text{new point} = (10, 10) - 0.5 * (12, 16) ⇒ (10, 10) - (6, 8) ⇒ (4, 2)$</p>
+
+<p>Here, we moved in the direction opposite to the vector that is one-half the gradient at (10, 10).</p>
+
+<p>A more scary way to write the above function and equation of gradient descent:
+$w_{j+1} = w_j - \eta \nabla Q(w_j)$</p>
+
+<p>where,</p>
+
+<p>$w$ is a vector of parameters we are optimizing over</p>
+
+<p>$Q$ is our cost function</p>
+
+<p>$\eta$ learning parameter</p>
+
+<p>$\nabla Q$ gives direction of steepest ascent, and $- \nabla Q$ points to direction of steepest descent.</p>
+
+<p>Once you get to the bottom of the bowl, $\nabla Q = 0$, the algorithm terminates.</p>
+
+<p><img src="/assets/2024/September/gradient%20descent%20pitfalls.png" alt="Fig: Gradient Descent pitfalls" /></p>
+
+<p><em>Fig: Gradient Descent pitfalls</em></p>
+
+<p>Gradient descent has some pitfalls, like it might get stuck at a local minimum, or the gradient might be much lower, e.g., on a plateau. Because of this, it might take more time to train.</p>
+
+<p>Gradient descent is a key component of training neural networks, and understanding its properties and variants is important for building effective models.</p>
+
+<h2 id="types-of-gradient-descent">Types of Gradient Descent</h2>
+
+<p>There are several variants of gradient descent, including batch gradient descent, stochastic gradient descent, and mini-batch gradient descent. These variants differ in the number of examples used to compute the gradient at each iteration and can have different convergence rates and computational requirements.</p>
+
+<p>Some of the Gradient Descent are explained below:</p>
+
+<h3 id="1-batch-gradient-descent">1. Batch Gradient Descent</h3>
+
+<p>Batch gradient descent (BGD) computes the gradient of the cost function with respect to the parameters for the entire training set at each iteration. The weights and biases are then updated based on this gradient.</p>
+
+<p>gradient is calculated using all training examples.</p>
+
+<p>Example →</p>
+
+<p>$Q(w) = \frac{1}{N}   \sum_{i=1}^N Q_i(w)$    = cost is calculated using all training examples</p>
+
+<p>$\nabla Q = \frac{1}{N} \sum_{i=1}^N \nabla Q_i$           = gradient is calculated using all training examples.</p>
+
+<p>Gradient itself contains all parameters, here we are talking about examples.</p>
+
+<p>how much the cost function will change if you change $\theta_j$ just a little bit. This is called <em>partial derivative.</em></p>
+
+<p>$\frac{\partial}{\partial\theta_j}  MSE(\theta) = \frac{2}{m} \sum_{i=1}^{m} (\theta^Tx^{(i)} - y^{(i)})x_j^{(i)}$</p>
+
+<p><img src="/assets/2024/September/gradient%20vector%20of%20cost.png" alt="Fig: Gradient vector of the cost function" /></p>
+
+<p><em>Fig: Gradient vector of the cost function</em></p>
+
+<p>Once you have the gradient vector, which points uphill, just go in the opposite direction to go downhill. This means subtracting $\Delta_{\theta}MSE(\theta)$ from $\theta$ (it’s like going one unit back).</p>
+
+<p>$\theta^{\text{next step}} = \theta - \eta\Delta_{\theta}MSE(\theta)$</p>
+
+<p>Eq: Gradient Descent step</p>
+
+<p>BGD can be computationally expensive, especially for large datasets, but it can converge quickly and reach a global minimum of the cost function.</p>
+
+<h3 id="2-stochastic-gradient-descent">2. Stochastic Gradient Descent</h3>
+
+<p>Stochastic gradient descent (SGD) updates the weights and biases based on the gradient of the cost function with respect to the parameters for a single training example at each iteration. The gradient is therefore noisy and may not be representative of the overall gradient.</p>
+
+<p>gradient is calculated using one example (as we have been doing in perceptron)</p>
+
+<p>If N is extremely large, computing</p>
+
+<p>$\nabla Q = \frac{1}{N} \sum_{i=1}^N \nabla Q_i$</p>
+
+<p>and evaluating all N functions at w may be very time-consuming.</p>
+
+<p>Stochastic Gradient Descent (SGD) is called “stochastic” because it uses a random sample. This randomness helps SGD to avoid local minima and converge faster.</p>
+
+<h3 id="3-mini-batch-gradient-descent">3. Mini-Batch Gradient Descent</h3>
+
+<p>Mini-batch gradient descent (MBGD) is a compromise between BGD and SGD. It computes the gradient of the cost function with respect to the parameters for a small batch of training examples at each iteration.</p>
+
+<p>MBGD can be more computationally efficient than BGD and less noisy than SGD, and it can converge quickly with appropriate batch sizes.</p>
+
+<p>The choice of gradient descent algorithm depends on the specific problem and the available computational resources.</p>
+
+<h1 id="backpropagation">Backpropagation</h1>
+
+<p>If gradient descent was a single step to optimize the weights, then backpropagation is the complete algorithm to train neural networks.
+Let’s understand the intuition behind backpropagation with an example. Suppose a we are predicting the affinity of a person being male athlete on basis of purchases. We have one hidden layer with two neurons which correspond to the likelihood of being male and related to sports. For input X, we predict some output and later get to know that the input was male sports shoes. Now, how should our neural network update the weight of item X in predicting a male if the weight is currently 0? It should increase the weight.</p>
+
+<p><strong>Backpropagation</strong> (backward propagation of errors) is an algorithm for supervised learning of ANN using gradient descent. It works by computing the gradient of the cost function with respect to the network’s parameters, and then using this gradient to update the parameters using gradient descent. It is a generalization of the delta rule for perceptron’s to multilayer feedforward neural networks.</p>
+
+<p>The backpropagation algorithm consists of two main steps:</p>
+
+<h3 id="1-forward-pass">1. Forward pass</h3>
+
+<p>The input is fed through the network, and the output is computed for each layer using the current values of the weights and biases.</p>
+
+<p>It also preserves the intermediate results since they are needed for the backward pass.</p>
+
+<h3 id="2-backward-pass">2. Backward pass</h3>
+
+<p>The gradient of the cost function with respect to the weights and biases of each layer is computed using the previously computed gradients and the output of the layer. Finally, the weights and biases are updated using the computed gradients and gradient descent.</p>
+
+<p>Let’s get to the proof:</p>
+
+<p>Define for each neuron j in layer l the output $o_j^{(l)}$ such that</p>
+
+<p>$o_j^{(l)} = \phi(a_j^{(l)}) = \phi \bigg ( \sum_{k=1}^n w_{kj}^{(l)} o_k^{l-1} \bigg),$</p>
+
+<p>where,</p>
+
+<p>$o_k^{(l-1)}$ neuron output from previous layer</p>
+
+<p>$w_{kj}^{(l)}$ is weight on synapse from k to j (previous layer k neuron to current layer j neuron)</p>
+
+<p>$a_j^{(l)}$ the “activation” of the neuron</p>
+
+<p>bias is omitted</p>
+
+<p>To find how any error function $E$ (usually mean squared error) changes with respect to a weight $w_{ij}^{(l)}$, we apply the chain rule</p>
+
+<p>$\frac {\partial E}{\partial w_{ij}^{(l)}} = \frac {\partial E}{\partial o_j^{(l)}}\frac {\partial o_j^{(l)}}{\partial a_j^{(l)}} \frac {\partial a_j^{(l)}}{\partial w_{ij}^{(l)}}$</p>
+
+<p>Derivation for Gradient of error function w.r.t to parameters:</p>
+
+<p>$\frac {\partial a_j^{(l)}}{\partial w_{ij}^{(l)}} = o_i^{(l-1)}$</p>
+
+<p>For other terms, we can derive the identify by using the chain rule to write</p>
+
+<p>$\delta_j^{(l)} = \frac {\partial E}{\partial o_j^{(l)}}\frac {\partial o_j^{(l)}}{\partial a_j^{(l)}}$</p>
+
+<p>$\qquad = \frac {\partial o_j^{(l)}}{\partial a_j^{(l)}} \bigg ( \frac {\partial E}{\partial o_j^{(l)}} \bigg)$</p>
+
+<p>$\qquad = \phi’ \bigg(a_j^{(l)} \bigg) \sum_m \frac{\partial E}{\partial o_m^{l+1}} \frac{\partial o_m^{l+1}}{\partial a_m^{l+1}} \frac{\partial a_m^{l+1}}{\partial o_j^{l}}$   divide and multiply by $\partial o_m^{l+1}$,  $\partial a_m^{l+1}$</p>
+
+<p>$\qquad = \phi’ \bigg(a_j^{(l)} \bigg) \sum_m \delta_m^{l+1} w_{jm}^l$              neuron j from current layer sends signals to next layer neuron m.</p>
+
+<p>Note that this is our backpropagation formula. This allows us to compute previous layers of $\delta_j$ by later layers recursively — this is where backpropagation comes from. We can compute $\delta_j$ directly if $j$ is an output layer, so this process eventually terminates.</p>
+
+<p>If we combine both of our results we can calculate gradient of Error w.r.t parameters:</p>
+
+<p>$\frac {\partial E}{\partial w_{ij}^{(l)}}  = \phi’ \big(a_j^{(l)} \big) \sum_m w_{jm}^{(l)} \delta_m^{(l+1)} \qquad o_i^{(l-1)},$</p>
+
+<p>time complexity: $O(mn) = O(W)$</p>
+
+<p>where m is the number of neurons in this layer and n is the number of neurons in next layer.</p>
+
+<p>w = number of synapses in the network</p>
+
+<p>The algorithm is called backpropagation because the gradient is computed backwards through the network, starting from the output layer and working backwards towards the input layer. This allows the algorithm to efficiently compute the gradient for each parameter in the network versus the naive approach of calculating the gradient of each layer separately, which can be used to update the weights and biases.</p>
+
+<h2 id="vanishing-gradient-problem">Vanishing Gradient Problem</h2>
+
+<p>Backpropagation is a powerful algorithm that has enabled the training of deep neural networks with many layers. However, it can suffer from the vanishing gradient problem, where the gradient becomes very small as it is propagated backwards through the network, making it difficult to update the weights and biases of the early layers in the network.</p>
+
+<h3 id="why-gradient-keep-shrinking">Why Gradient keep shrinking</h3>
+
+<p>The gradient at each layer is the product of the gradients of the subsequent layers multiplied by the gradient of the current layer. If the gradients of the subsequent layers are small, then the gradient of the current layer will also be small, which can make it difficult to update the weights and biases of the early layers in the network. This is known as the vanishing gradient problem.</p>
+
+<p>This happens because of the activation function, because the activation function compresses the entire real numbers into a small range. You multiply few activation results and gradient becomes too small.</p>
+
+<p>Example → Sigmoid always gives output between [0, 1], If we use sigmoid while calculating gradient’s for previous layers. It keep getting smaller.</p>
+
+<p>This problem has been addressed through the use of activation functions such as ReLU and the development of more advanced optimization algorithms such as Adam and RMSProp.</p>
+
+<p>Sometimes, a smooth approximation to this function is used: $f(x)=ln⁡(1+e^x),$ which is called the <strong>softplus function</strong>.</p>
+
+<p>That’s if for this blog, hope this was worth your time. 🥰</p>
+
+<h2 id="references">References</h2>
+
+<ol>
+  <li><a href="www.brilliant.org">Brilliant.org</a></li>
+  <li>Hands-On Machine Learning with Scikit-Learn, Keras, and TensorFlow <a href="https://www.oreilly.com/library/view/hands-on-machine-learning/9781492032632/">Buy here</a></li>
+</ol>
 
   </div><a class="u-url" href="/ai/2024/08/03/Gradient_descent.html" hidden></a>
 </article>
