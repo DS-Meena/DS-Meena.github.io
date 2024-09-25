@@ -1,4 +1,4 @@
-<?xml version="1.0" encoding="utf-8"?><feed xmlns="http://www.w3.org/2005/Atom" ><generator uri="https://jekyllrb.com/" version="4.3.3">Jekyll</generator><link href="http://localhost:4000/feed.xml" rel="self" type="application/atom+xml" /><link href="http://localhost:4000/" rel="alternate" type="text/html" /><updated>2024-09-25T18:19:54+05:30</updated><id>http://localhost:4000/feed.xml</id><title type="html">dsm Blogs</title><subtitle>This is a blog about Data Science and Machine Learning. I write about all the things I learn in this domain. I also share my knowledge with you.</subtitle><entry><title type="html">Q-Learning</title><link href="http://localhost:4000/ai/2024/09/23/Q_learning.html" rel="alternate" type="text/html" title="Q-Learning" /><published>2024-09-23T10:00:10+05:30</published><updated>2024-09-23T10:00:10+05:30</updated><id>http://localhost:4000/ai/2024/09/23/Q_learning</id><content type="html" xml:base="http://localhost:4000/ai/2024/09/23/Q_learning.html"><![CDATA[<h1 id="introduction">Introduction</h1>
+<?xml version="1.0" encoding="utf-8"?><feed xmlns="http://www.w3.org/2005/Atom" ><generator uri="https://jekyllrb.com/" version="4.3.3">Jekyll</generator><link href="http://localhost:4000/feed.xml" rel="self" type="application/atom+xml" /><link href="http://localhost:4000/" rel="alternate" type="text/html" /><updated>2024-09-25T18:31:07+05:30</updated><id>http://localhost:4000/feed.xml</id><title type="html">dsm Blogs</title><subtitle>This is a blog about Data Science and Machine Learning. I write about all the things I learn in this domain. I also share my knowledge with you.</subtitle><entry><title type="html">Q-Learning</title><link href="http://localhost:4000/ai/2024/09/23/Q_learning.html" rel="alternate" type="text/html" title="Q-Learning" /><published>2024-09-23T10:00:10+05:30</published><updated>2024-09-23T10:00:10+05:30</updated><id>http://localhost:4000/ai/2024/09/23/Q_learning</id><content type="html" xml:base="http://localhost:4000/ai/2024/09/23/Q_learning.html"><![CDATA[<h1 id="introduction">Introduction</h1>
 
 <p>In this blog, we will learn about the fundamental algorithms used in reinforcement learning. It’s not about neural networks but the mathematical algorithms involved in learning.</p>
 
@@ -256,7 +256,259 @@ Bellman optimality equation assumes, that we already have the optimal state valu
 <span class="n">print_hi</span><span class="p">(</span><span class="s1">'Tom'</span><span class="p">)</span>
 <span class="c1">#=&gt; prints 'Hi, Tom' to STDOUT.</span></code></pre></figure>
 
-<p>Check out the <a href="https://jekyllrb.com/docs/home">Jekyll docs</a> for more info on how to get the most out of Jekyll. File all bugs/feature requests at <a href="https://github.com/jekyll/jekyll">Jekyll’s GitHub repo</a>. If you have questions, you can ask them on <a href="https://talk.jekyllrb.com/">Jekyll Talk</a>.</p>]]></content><author><name></name></author><category term="jekyll" /><category term="update" /><summary type="html"><![CDATA[You’ll find this post in your _posts directory. Go ahead and edit it and re-build the site to see your changes. You can rebuild the site in many different ways, but the most common way is to run jekyll serve, which launches a web server and auto-regenerates your site when a file is updated.]]></summary></entry><entry><title type="html">How to do clustering</title><link href="http://localhost:4000/ai/2024/01/20/How_to_do_clustering.html" rel="alternate" type="text/html" title="How to do clustering" /><published>2024-01-20T15:08:10+05:30</published><updated>2024-01-20T15:08:10+05:30</updated><id>http://localhost:4000/ai/2024/01/20/How_to_do_clustering</id><content type="html" xml:base="http://localhost:4000/ai/2024/01/20/How_to_do_clustering.html"><![CDATA[<h1 id="clustering">Clustering</h1>
+<p>Check out the <a href="https://jekyllrb.com/docs/home">Jekyll docs</a> for more info on how to get the most out of Jekyll. File all bugs/feature requests at <a href="https://github.com/jekyll/jekyll">Jekyll’s GitHub repo</a>. If you have questions, you can ask them on <a href="https://talk.jekyllrb.com/">Jekyll Talk</a>.</p>]]></content><author><name></name></author><category term="jekyll" /><category term="update" /><summary type="html"><![CDATA[You’ll find this post in your _posts directory. Go ahead and edit it and re-build the site to see your changes. You can rebuild the site in many different ways, but the most common way is to run jekyll serve, which launches a web server and auto-regenerates your site when a file is updated.]]></summary></entry><entry><title type="html">Gradient Descent</title><link href="http://localhost:4000/ai/2024/08/03/Gradient_descent.html" rel="alternate" type="text/html" title="Gradient Descent" /><published>2024-08-03T15:08:10+05:30</published><updated>2024-08-03T15:08:10+05:30</updated><id>http://localhost:4000/ai/2024/08/03/Gradient_descent</id><content type="html" xml:base="http://localhost:4000/ai/2024/08/03/Gradient_descent.html"><![CDATA[]]></content><author><name></name></author><category term="AI" /><summary type="html"><![CDATA[]]></summary></entry><entry><title type="html">Programming Languages</title><link href="http://localhost:4000/programming/2024/02/04/Programming_languages.html" rel="alternate" type="text/html" title="Programming Languages" /><published>2024-02-04T15:08:10+05:30</published><updated>2024-02-04T15:08:10+05:30</updated><id>http://localhost:4000/programming/2024/02/04/Programming_languages</id><content type="html" xml:base="http://localhost:4000/programming/2024/02/04/Programming_languages.html"><![CDATA[<p>Programming languages are the tools we use to write software, create web applications, manipulate data, and more. They’re fundamental to the world of computing, and there’s a wide variety to choose from, each with their own strengths and weaknesses.</p>
+
+<p>Let’s start off with some common types of programming languages:</p>
+
+<h2 id="1-procedural-programming-languages">1. Procedural Programming Languages</h2>
+
+<p>This language type is one of the oldest. It revolves around procedures or routines. They’re straightforward and efficient, but can be rigid and difficult to manage for larger software projects.</p>
+
+<p>They are great for tasks that can be broken down into a series of sequential steps.</p>
+
+<p>Examples include C and Pascal.</p>
+
+<h3 id="go">Go</h3>
+
+<p>Also known as Golang, Go is a statically-typed compiled language that was developed at Google. It’s known for its simplicity and efficiency. It’s particularly good for system-level programming, and it’s also used in web development. It has a garbage collector, which makes memory management easier. However, it’s less flexible than some other languages, due to its emphasis on simplicity.</p>
+
+<p>It is primarily a procedural language, but it does offer some support for object-oriented programming.</p>
+
+<div class="language-go highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="k">package</span> <span class="n">main</span>
+
+<span class="k">import</span> <span class="s">"fmt"</span>
+
+<span class="k">func</span> <span class="n">main</span><span class="p">()</span> <span class="p">{</span>
+    <span class="n">fmt</span><span class="o">.</span><span class="n">Println</span><span class="p">(</span><span class="s">"Hello, world!"</span><span class="p">)</span>
+<span class="p">}</span>
+</code></pre></div></div>
+
+<h2 id="2-object-oriented-programming-languages">2. Object-Oriented Programming Languages</h2>
+
+<p>These languages organize code into ‘objects’ that contain both data and the functions that operate on that data. They’re great for larger projects and promote reusability, but can be overkill for smaller tasks.</p>
+
+<p>Java and Python are examples.</p>
+
+<p>Now, let’s go in further details of some programming languages:</p>
+
+<h3 id="java">Java</h3>
+
+<p>It’s a general-purpose language known for its ‘write once, run anywhere’ philosophy. It’s widely used for building enterprise-scale applications. However, it requires a lot of memory and its syntax can be complex for beginners.
+Other features → memory safe, garbage collection</p>
+
+<div class="language-java highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="kd">public</span> <span class="kd">class</span> <span class="nc">HelloWorld</span> <span class="o">{</span>
+    <span class="kd">private</span> <span class="kt">void</span> <span class="nf">printHello</span><span class="o">()</span> <span class="o">{</span>  
+        <span class="nc">System</span><span class="o">.</span><span class="na">out</span><span class="o">.</span><span class="na">println</span><span class="o">(</span><span class="s">"Hello, world!"</span><span class="o">);</span>
+    <span class="o">}</span>
+
+    <span class="kd">public</span> <span class="kd">static</span> <span class="kt">void</span> <span class="nf">main</span><span class="o">(</span><span class="nc">String</span><span class="o">[]</span> <span class="n">args</span><span class="o">)</span> <span class="o">{</span>
+        <span class="nc">HelloWorld</span> <span class="n">helloWorld</span> <span class="o">=</span> <span class="k">new</span> <span class="nc">HelloWorld</span><span class="o">();</span>
+        <span class="n">helloWorld</span><span class="o">.</span><span class="na">printHello</span><span class="o">();</span>
+    <span class="o">}</span>
+<span class="o">}</span>
+
+</code></pre></div></div>
+
+<h2 id="3-functional-programming-languages">3. Functional Programming Languages</h2>
+
+<p>These languages treat computation as the evaluation of mathematical functions and avoid changing-state and mutable data. They’re excellent for parallel processing and have no side effects, but their paradigm can be difficult to grasp for newcomers.</p>
+
+<p>They excel at tasks that can be broken down into independent units that can be executed in any order because they don’t depend on the state of the program.</p>
+
+<p>Examples include Haskell and Lisp.</p>
+
+<h3 id="haskell-functional">Haskell (Functional)</h3>
+
+<p>Haskell is a statically typed, purely functional programming language with type inference and lazy evaluation. It’s used in fields where high-level, declarative code is beneficial, such as data analysis and symbolic computation. Due to its purity, code written in Haskell can be easy to test and reason about.</p>
+
+<div class="language-haskell highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="n">factorial</span> <span class="o">::</span> <span class="kt">Integer</span> <span class="o">-&gt;</span> <span class="kt">Integer</span>
+<span class="n">factorial</span> <span class="mi">0</span> <span class="o">=</span> <span class="mi">1</span>
+<span class="n">factorial</span> <span class="n">n</span> <span class="o">=</span> <span class="n">n</span> <span class="o">*</span> <span class="n">factorial</span> <span class="p">(</span><span class="n">n</span> <span class="o">-</span> <span class="mi">1</span><span class="p">)</span>
+
+<span class="n">main</span> <span class="o">::</span> <span class="kt">IO</span> <span class="nb">()</span>
+<span class="n">main</span> <span class="o">=</span> <span class="n">print</span> <span class="p">(</span><span class="n">factorial</span> <span class="mi">5</span><span class="p">)</span>  <span class="c1">-- Outputs: 120</span>
+</code></pre></div></div>
+
+<h2 id="4-multi-paradigm-programming-languages">4. Multi-paradigm Programming Languages</h2>
+
+<p>These languages support more than one programming paradigm, offering greater flexibility to developers. They can support procedural, object-oriented, functional programming, and others, depending on the language. They provide a lot of flexibility, but can also be more complex to learn and use because of the multiple paradigms.</p>
+
+<p>Examples include JavaScript and C++.</p>
+
+<p>Some examples are:</p>
+
+<h3 id="javascript-procedural--object-oriented">JavaScript (procedural + object-oriented)</h3>
+
+<p>It’s the language of the web, used for creating interactive web pages. It’s flexible and runs directly in the browser. But, it may have security issues and can be inconsistent across different browsers.</p>
+
+<div class="language-jsx highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="kd">function</span> <span class="nf">greet</span><span class="p">(</span><span class="nx">name</span><span class="p">)</span> <span class="p">{</span>
+    <span class="k">return</span> <span class="dl">"</span><span class="s2">Hello, </span><span class="dl">"</span> <span class="o">+</span> <span class="nx">name</span> <span class="o">+</span> <span class="dl">"</span><span class="s2">!</span><span class="dl">"</span><span class="p">;</span>
+<span class="p">}</span>
+
+<span class="kd">var</span> <span class="nx">message</span> <span class="o">=</span> <span class="nf">greet</span><span class="p">(</span><span class="dl">"</span><span class="s2">world</span><span class="dl">"</span><span class="p">);</span>
+
+<span class="nx">console</span><span class="p">.</span><span class="nf">log</span><span class="p">(</span><span class="nx">message</span><span class="p">);</span>
+</code></pre></div></div>
+
+<h3 id="c-procedural--object-oriented">C++ (procedural + object-oriented)</h3>
+
+<p>It’s a powerful language used for system/software development and game programming. It’s fast and flexible. However, it has a steep learning curve and managing memory can be tricky.</p>
+
+<h3 id="python">Python</h3>
+
+<p>It’s a high-level, interpreted language known for its readability. It’s great for beginners and widely used in scientific computing, data analysis, and AI. However, it’s slower than some other languages and not ideal for mobile app development.
+Other features → Memory safe, garbage collection</p>
+
+<p>Each of these languages has its own use cases, advantages, and disadvantages. The key is to choose the right tool for the job at hand.</p>
+
+<h2 id="memory-safe-languages">Memory safe Languages</h2>
+
+<p>Memory-safe languages are programming languages that include preventive measures to avoid common memory-related errors, such as buffer overflow and null pointer dereferencing. These languages can either prevent such errors at compile-time or runtime.</p>
+
+<p>Examples include Java, Python, Rust, Swift, Go, JavaScript, Ruby, C#, TypeScript and Kotlin</p>
+
+<h4 id="buffer-overflow">Buffer Overflow</h4>
+
+<div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="n">arr</span> <span class="o">=</span> <span class="p">[]</span>
+<span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="nf">range</span><span class="p">(</span><span class="mi">100</span><span class="p">):</span>
+    <span class="n">arr</span><span class="p">.</span><span class="nf">append</span><span class="p">(</span><span class="n">i</span><span class="p">)</span>  <span class="c1"># This is fine in Python. The array resizes automatically.
+</span><span class="nf">print</span><span class="p">(</span><span class="n">arr</span><span class="p">)</span>
+
+</code></pre></div></div>
+
+<p>In this code, Python automatically resizes the array as new elements are added, preventing a buffer overflow from occurring.</p>
+
+<h4 id="null-pointer-dereferencing">Null Pointer Dereferencing</h4>
+
+<div class="language-java highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="kd">public</span> <span class="kd">class</span> <span class="nc">Main</span> <span class="o">{</span>
+    <span class="kd">public</span> <span class="kd">static</span> <span class="kt">void</span> <span class="nf">main</span><span class="o">(</span><span class="nc">String</span><span class="o">[]</span> <span class="n">args</span><span class="o">)</span> <span class="o">{</span>
+        <span class="nc">String</span> <span class="n">str</span> <span class="o">=</span> <span class="kc">null</span><span class="o">;</span>
+        <span class="nc">System</span><span class="o">.</span><span class="na">out</span><span class="o">.</span><span class="na">println</span><span class="o">(</span><span class="n">str</span><span class="o">.</span><span class="na">length</span><span class="o">());</span>  <span class="c1">// This will throw a NullPointerException</span>
+    <span class="o">}</span>
+<span class="o">}</span>
+
+</code></pre></div></div>
+
+<p>In this code, <code class="language-plaintext highlighter-rouge">str</code> is null, so trying to call <code class="language-plaintext highlighter-rouge">str.length()</code> will throw a NullPointerException, preventing the program from continuing to run with invalid data.</p>
+
+<h3 id="garbage-collection">Garbage collection</h3>
+
+<hr />
+
+<p>Garbage collection is a form of automatic memory management. Programming languages with garbage collection automatically reclaim memory that the programmer has allocated but is no longer in use. This process helps to eliminate common programming bugs related to memory management, such as memory leaks and dangling pointers (points to invalid memory).</p>
+
+<p>For example, in Java, you do not need to manually deallocate memory once you’re done using an object. The Java Virtual Machine (JVM) has a garbage collector that automatically frees up memory that is no longer needed. This greatly simplifies programming and reduces the chance of memory leaks.</p>
+
+<div class="language-java highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="kd">public</span> <span class="kd">class</span> <span class="nc">Main</span> <span class="o">{</span>
+    <span class="kd">public</span> <span class="kd">static</span> <span class="kt">void</span> <span class="nf">main</span><span class="o">(</span><span class="nc">String</span><span class="o">[]</span> <span class="n">args</span><span class="o">)</span> <span class="o">{</span>
+        <span class="c1">// Creating a new object</span>
+        <span class="nc">String</span> <span class="n">str</span> <span class="o">=</span> <span class="k">new</span> <span class="nc">String</span><span class="o">(</span><span class="s">"Hello, world!"</span><span class="o">);</span>
+
+        <span class="c1">// The object is now eligible for garbage collection because it's no longer reachable</span>
+        <span class="n">str</span> <span class="o">=</span> <span class="kc">null</span><span class="o">;</span>
+    <span class="o">}</span>
+<span class="o">}</span>
+</code></pre></div></div>
+
+<p>Another language that uses garbage collection is Python. Like Java, Python automatically manages memory, meaning that objects are automatically destroyed once they are no longer in use.</p>
+
+<p>Here is an example of garbage collection in Python:</p>
+
+<div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="k">class</span> <span class="nc">MyClass</span><span class="p">:</span>
+    <span class="k">def</span> <span class="nf">__init__</span><span class="p">(</span><span class="n">self</span><span class="p">,</span> <span class="n">name</span><span class="p">):</span>
+        <span class="n">self</span><span class="p">.</span><span class="n">name</span> <span class="o">=</span> <span class="n">name</span>
+    <span class="k">def</span> <span class="nf">__del__</span><span class="p">(</span><span class="n">self</span><span class="p">):</span>
+        <span class="nf">print</span><span class="p">(</span><span class="sa">f</span><span class="sh">"</span><span class="si">{</span><span class="n">self</span><span class="p">.</span><span class="n">name</span><span class="si">}</span><span class="s"> has been deleted and is ready for garbage collection</span><span class="sh">"</span><span class="p">)</span>
+
+<span class="c1"># Create an object
+</span><span class="n">my_obj</span> <span class="o">=</span> <span class="nc">MyClass</span><span class="p">(</span><span class="sh">"</span><span class="s">Object 1</span><span class="sh">"</span><span class="p">)</span>
+
+<span class="c1"># Now, let's delete this object
+</span><span class="k">del</span> <span class="n">my_obj</span>
+
+<span class="c1"># Since the object has been deleted, it's now eligible for garbage collection
+</span>
+</code></pre></div></div>
+
+<p>When the <code class="language-plaintext highlighter-rouge">del</code> keyword is used, it removes a reference to the object.</p>
+
+<p>However, it’s important to note that an object can also become eligible for garbage collection without the <code class="language-plaintext highlighter-rouge">del</code> keyword, as long as there are no more references to it.</p>
+
+<p>However, it’s important to note that while garbage collection can make programming easier, it doesn’t completely prevent memory-related bugs. For instance, if an object is mistakenly kept alive when it’s not needed, this can still lead to memory leaks. Therefore, understanding how garbage collection works in your programming language of choice is still crucial.</p>
+
+<p>Examples of programming languages that use garbage collection include → Java, Python, JavaScript, C#, Ruby, Go and Kotlin.</p>
+
+<h2 id="interpreted-vs-compile-time-language">Interpreted vs compile time language</h2>
+
+<p>Interpreted and compiled languages represent two different ways of translating human-readable source code into machine code that a computer can execute.</p>
+
+<h3 id="interpreted-languages">Interpreted Languages</h3>
+
+<p>In an interpreted language, the source code is not directly translated into machine code. Either, an interpreter reads the source code line-by-line, and executes each command. (such as PHP or Ruby)</p>
+
+<p>Or, the source code is first translated into this intermediate form like bytecode (such as Python, Java, and C#), which allows for platform independence as the same bytecode can be interpreted on different machines. This bytecode is then interpreted (e.g. Python) or compiled at runtime using JIT (it is an optimization, that makes it hybrid with compiled languages) (e.g. Java and C#).</p>
+
+<p>Note, machine code is not executed line by line but as a whole. This allows for certain optimizations that can make the code run faster.</p>
+
+<p><img src="/assets/2024/September/interpreted.png" alt="Untitled" /></p>
+
+<p>Interpreted languages are generally more flexible, and they can even modify themselves during runtime.  However, they also tend to run slower than compiled languages, as the interpretation process takes time.</p>
+
+<p>Examples of interpreted languages include Python, Ruby, and PHP.</p>
+
+<h3 id="compiled-languages">Compiled Languages</h3>
+
+<p>In a compiled language, the source code is directly translated into machine code by a compiler before it’s run. This means that compiled programs generally run faster than interpreted ones, as all the translation work is done beforehand.</p>
+
+<p>However, they are less flexible than interpreted languages, as the source code cannot be changed during runtime.</p>
+
+<p>Examples of compiled languages include C, C++, and Go.</p>
+
+<p><img src="/assets/2024/September/compiled.png" alt="Untitled" /></p>
+
+<h3 id="jit-compilation">JIT compilation</h3>
+
+<p>Just-In-Time (JIT) compilation is a method of execution where a program is compiled into machine code just before it is run, rather than ahead of time as with traditional compilation.</p>
+
+<p>JIT compilation is used in several programming languages, most notably Java and JavaScript, but also in Python, Ruby, and .NET languages such as C#.</p>
+
+<p>Java and C# are often described as a hybrid of compiled and interpreted languages, due to their two-step process. First, source code is compiled into an intermediate form (bytecode for Java, and Intermediate Language for C#), and then this intermediate form is further compiled to machine code at runtime by a Just-In-Time (JIT) compiler.</p>
+
+<p><img src="/assets/2024/September/flowchart.png" alt="Fig: Flowchart from high level language to Output (Just my understanding) " /></p>
+
+<p>*Fig: Flowchart from high level language to Output (Just my understanding) *</p>
+
+<p>The main advantage of JIT compilation is that it can optimize the program for the machine’s current state, taking into account factors such as the data being processed and the machine’s architecture. This can result in more efficient execution than with traditionally compiled code.</p>
+
+<p>However, JIT compilation also has some disadvantages. The compilation process can lead to an initial delay in execution, known as a “warm-up” period.</p>
+
+<p>Additionally, JIT compilers are complex pieces of software that can introduce their own bugs and security vulnerabilities.</p>
+
+<h2 id="statically-vs-dynamically-typed-languages">Statically vs Dynamically Typed languages</h2>
+
+<h3 id="statically-typed-languages">Statically Typed Languages</h3>
+
+<p>In statically typed languages, the variable type is checked at compile-time. This means that you must declare the data type of the variable when you define it, and once set, the variable type can’t be changed. This approach can help catch errors early in the development process. Statically typed languages include Java, C, C++, Go, Rust, and Swift.</p>
+
+<div class="language-java highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="kt">int</span> <span class="n">num</span> <span class="o">=</span> <span class="mi">10</span><span class="o">;</span> <span class="c1">// Declare an integer variable</span>
+<span class="n">num</span> <span class="o">=</span> <span class="s">"Hello"</span><span class="o">;</span> <span class="c1">// Error: incompatible types</span>
+</code></pre></div></div>
+
+<p>In the above Java code, an error would be thrown at compile time because you cannot assign a string to an integer variable.</p>
+
+<h3 id="dynamically-typed-languages">Dynamically Typed Languages</h3>
+
+<p>The counterpart to statically typed languages are dynamically typed languages. In these languages, the type is checked at runtime, which means that you can declare a variable without specifying its type, and its type can be changed later in the program. While this provides more flexibility, it can also lead to errors that are only discovered when the code is run. Dynamically typed languages include Python, Ruby, PHP, and JavaScript.</p>
+
+<div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="n">num</span> <span class="o">=</span> <span class="mi">10</span>  <span class="c1"># num is an integer
+</span><span class="n">num</span> <span class="o">=</span> <span class="sh">"</span><span class="s">Hello</span><span class="sh">"</span>  <span class="c1"># num is now a string
+</span></code></pre></div></div>
+
+<p>In the above Python code, the <code class="language-plaintext highlighter-rouge">num</code> variable can be reassigned to a string without any errors, because the type check happens at runtime.</p>
+
+<p>It’s worth noting that some languages, like Python, are also capable of type hinting. This is a feature that allows developers to specify the expected type of a variable or function return, improving code readability and allowing for better IDE support and error checking, even though the language itself is dynamically typed.</p>
+
+<p>That’s it for this blog. 🦄🦄 I hope this helps you to better understand your favorite programming language. If you find any mistake or have any doubt feel free to contact!</p>]]></content><author><name></name></author><category term="Programming" /><summary type="html"><![CDATA[Programming languages are the tools we use to write software, create web applications, manipulate data, and more. They’re fundamental to the world of computing, and there’s a wide variety to choose from, each with their own strengths and weaknesses.]]></summary></entry><entry><title type="html">How to do clustering</title><link href="http://localhost:4000/ai/2024/01/20/How_to_do_clustering.html" rel="alternate" type="text/html" title="How to do clustering" /><published>2024-01-20T15:08:10+05:30</published><updated>2024-01-20T15:08:10+05:30</updated><id>http://localhost:4000/ai/2024/01/20/How_to_do_clustering</id><content type="html" xml:base="http://localhost:4000/ai/2024/01/20/How_to_do_clustering.html"><![CDATA[<h1 id="clustering">Clustering</h1>
 
 <p>Clustering is a type of unsupervised learning that involves grouping similar inputs into clusters or categories.</p>
 
@@ -2401,774 +2653,4 @@ Taken From Show, Attend and Tell: Neural Image Caption Generation with Visual At
 
 <p><a href="https://arxiv.org/pdf/1706.03762.pdf">Attention is All you Need → Self-Attention, Multi-Head Attention, Transformers</a></p>
 
-<p>That’s it for this blog, hope this was will help you better understand the concepts of deep learning ❤️❤️.</p>]]></content><author><name></name></author><category term="AI" /><summary type="html"><![CDATA[Welcome to this blog post on attention in deep learning! In this post, we will explore the concept of attention and its importance in the field of deep learning. We will start by explaining what attention is and how it works, and then move on to different types of attention mechanisms and their applications. Whether you are new to deep learning or an experienced practitioner 🧑‍⚕️, this post is sure to provide valuable insights into one of the most important concepts in modern machine learning.]]></summary></entry><entry><title type="html">Improving command line skills</title><link href="http://localhost:4000/linux/2023/06/25/Improving_command_line_skills.html" rel="alternate" type="text/html" title="Improving command line skills" /><published>2023-06-25T10:00:10+05:30</published><updated>2023-06-25T10:00:10+05:30</updated><id>http://localhost:4000/linux/2023/06/25/Improving_command_line_skills</id><content type="html" xml:base="http://localhost:4000/linux/2023/06/25/Improving_command_line_skills.html"><![CDATA[<p>Welcome to our comprehensive guide on improving your Command Line skills, where we primarily focus on the Linux-based command line. This emphasises Linux because most commands are identical across Linux and Windows, with just a few exceptions. This blog will explore various commands related to the Linux file system, their applications, and how to use them effectively to enhance your navigation and manipulation of the Linux operating system.</p>
-
-<h2 id="linux-file-system">Linux File System</h2>
-
-<p>This section focuses on commands used in Linux for working with files and directories – we will discuss some less-discussed commands. I hope that you are already aware of the primary file system commands like ‘pwd’ for printing the current directory, ‘cd’ for changing directories, ‘ls’ for listing directory contents, and shortcuts for navigation ‘.’ (current folder), ‘..’ (parent folder), ‘~’ (current user’s home directory) and wildcard symbols for matching patterns (*, ?), creating new files and directories using ‘touch’ and ‘mkdir’.</p>
-
-<p>The Linux File System follows a tree-like structure starting at a base (or root) directory, indicated by the slash (/). Locations on the file system are shown using file paths. Paths that start at the base directory (/) are known as absolute paths. Paths that start from the shell’s current working directory are known as relative paths.
-Absolute: /home/sarah/Documents/file1.txt
-Relative: Documents/file1.txt</p>
-
-<h3 id="editing-files">Editing Files📝</h3>
-
-<h4 id="nano">Nano</h4>
-
-<p>Nano is a simple, user-friendly text editor for the terminal. It is ideal for creating and editing text files and scripts. Here are some basic commands:</p>
-
-<ul>
-  <li>To open or create a file, use <code class="language-plaintext highlighter-rouge">nano &lt;filename&gt;</code>. If the file already exists, it will open for editing. If not, a new file will be created.</li>
-  <li>To save changes, press <code class="language-plaintext highlighter-rouge">Ctrl+O</code>. This will prompt you for a filename for the file. Press <code class="language-plaintext highlighter-rouge">Enter</code> to save.</li>
-  <li>To exit Nano, press <code class="language-plaintext highlighter-rouge">Ctrl+X</code>. If there are unsaved changes, Nano will ask if you want to save changes before exiting.</li>
-  <li>To cut and paste text, use <code class="language-plaintext highlighter-rouge">Ctrl+K</code> to cut a line and <code class="language-plaintext highlighter-rouge">Ctrl+U</code> to paste it back.</li>
-</ul>
-
-<p><img src="/assets/2024/September/nano.png" alt="Untitled" /></p>
-
-<p>It comes with a built-in toolbar of various commands and all one needs to know in order to use these options are the meaning of 2 special symbols.</p>
-
-<table>
-  <thead>
-    <tr>
-      <th>Character</th>
-      <th>Meaning</th>
-    </tr>
-  </thead>
-  <tbody>
-    <tr>
-      <td>^</td>
-      <td>This is the CTRL key on your keyboard. For example, ^O is CTRL + O.</td>
-    </tr>
-    <tr>
-      <td>M-</td>
-      <td>This is the “meta” key on your keyboard. Depending on your keyboard layout this may be the ALT, ESC, CMD key. Try it out 😄 Assuming M- is the ALT key, then M-X is ALT + X</td>
-    </tr>
-  </tbody>
-</table>
-
-<p>If want to learn more about nano, then read this page <a href="https://www.nano-editor.org/docs.php">nano.</a></p>
-
-<h4 id="vim">Vim</h4>
-
-<p>Vim is a highly configurable text editor for efficiently creating and changing any kind of text. It is especially useful for editing programs. Here are some basics:</p>
-
-<ul>
-  <li>To start Vim and open a file, use <code class="language-plaintext highlighter-rouge">vim &lt;filename&gt;</code>. If the file does not exist, it will be created.</li>
-  <li>Vim operates in different modes, primarily command mode and insert mode.</li>
-  <li>To switch to insert mode, press <code class="language-plaintext highlighter-rouge">i</code>. You can now enter and edit text.</li>
-  <li>To switch back to command mode, press <code class="language-plaintext highlighter-rouge">Esc</code>.</li>
-  <li>In command mode:
-    <ul>
-      <li><code class="language-plaintext highlighter-rouge">:w</code> will save the file without exiting.</li>
-      <li><code class="language-plaintext highlighter-rouge">:q</code> will quit Vim. If there are unsaved changes, Vim will not exit and will warn about unsaved changes.</li>
-      <li><code class="language-plaintext highlighter-rouge">:wq</code> will save changes and then exit.</li>
-      <li><code class="language-plaintext highlighter-rouge">:q!</code> will exit without saving changes.</li>
-    </ul>
-  </li>
-  <li>To cut and paste text in Vim, use <code class="language-plaintext highlighter-rouge">dd</code> to delete a line in command mode and <code class="language-plaintext highlighter-rouge">p</code> to paste it back.</li>
-</ul>
-
-<p>Here are some common commands used in Vim:</p>
-
-<ul>
-  <li><code class="language-plaintext highlighter-rouge">i</code> - enter insert mode</li>
-  <li><code class="language-plaintext highlighter-rouge">:q</code> - quit</li>
-  <li><code class="language-plaintext highlighter-rouge">esc + :wq</code> - save and quit</li>
-  <li><code class="language-plaintext highlighter-rouge">esc + :q!</code> - quit without saving</li>
-  <li><code class="language-plaintext highlighter-rouge">dd</code> - delete a line</li>
-  <li><code class="language-plaintext highlighter-rouge">#dd</code> - delete # lines</li>
-  <li><code class="language-plaintext highlighter-rouge">U</code> - undo</li>
-  <li><code class="language-plaintext highlighter-rouge">Ctrl+r</code> - redo</li>
-  <li><code class="language-plaintext highlighter-rouge">:/search</code> - search for a word</li>
-  <li><code class="language-plaintext highlighter-rouge">n,N</code> - move to the next/previous search result</li>
-  <li><code class="language-plaintext highlighter-rouge">:%s/word/to_word/gc</code> - replace all occurrences of “word” with “to_word” in the entire file, prompting for confirmation
-    <ul>
-      <li>Use g only if don’t want to prompt for confirmation.</li>
-    </ul>
-  </li>
-  <li><code class="language-plaintext highlighter-rouge">:set number</code> - display line numbers</li>
-  <li><code class="language-plaintext highlighter-rouge">:$</code> - go to last line</li>
-  <li><code class="language-plaintext highlighter-rouge">tail -f filename</code> - output the last 10 lines of a file and continue to output as new lines are added</li>
-</ul>
-
-<h3 id="the-locate-command">The Locate Command</h3>
-
-<p>The locate command searches a database on your file system for the files that match the text (or regular expression) that you provide it as a command line argument.</p>
-
-<p>If results are found, the locate command will return the absolute path to all matching files.</p>
-
-<p>For example:</p>
-
-<div class="language-bash highlighter-rouge"><div class="highlight"><pre class="highlight"><code>locate <span class="k">*</span>.txt
-</code></pre></div></div>
-
-<p>will find all files with filenames ending in .txt that are registered in the database.</p>
-
-<p>The locate command is fast, but because it relies on a database it can be error prone if the database isn’t kept up to date.</p>
-
-<p>Below are some commands to update the database and some reassuring procedures in case one cannot access administrator privileges.</p>
-
-<table>
-  <thead>
-    <tr>
-      <th>Command</th>
-      <th>Description</th>
-    </tr>
-  </thead>
-  <tbody>
-    <tr>
-      <td>locate -S or —statistics</td>
-      <td>Print information about the database file.</td>
-    </tr>
-    <tr>
-      <td>sudo updatedb</td>
-      <td>Update the database. As the updatedb command is an administrator command, the sudo command is used to run updatedb as the root user (the administrator)</td>
-    </tr>
-    <tr>
-      <td>Locate —existing or -e</td>
-      <td>Check whether a result actually exists before returning it. (Inspite of being present in database, cross check)</td>
-    </tr>
-    <tr>
-      <td>locate —limit 5 or -l</td>
-      <td>Limit the output to only show 5 results</td>
-    </tr>
-  </tbody>
-</table>
-
-<p>Examples →</p>
-
-<p><img src="/assets/2024/September/locate.png" alt="locate command with limit and existing options and -S option" /></p>
-
-<p>locate command with limit and existing options and -S option</p>
-
-<h3 id="the-find-command-">The Find Command 🔎</h3>
-
-<p>The find command can be used for more sophisticated search tasks than the locate command.</p>
-
-<p>This is made possible due to the many powerful options that the find command has.</p>
-
-<p>The first thing to note is that the find command will list both files and directories, below the</p>
-
-<p>point the file tree that it is told to start at.</p>
-
-<p>For example: <code class="language-plaintext highlighter-rouge">find .</code> will list all files and directories below the current working directory (which is denoted by the .)</p>
-
-<p><img src="/assets/2024/September/find.png" alt="Untitled" /></p>
-
-<p>While <code class="language-plaintext highlighter-rouge">find /</code> will list all files and directories below the base directory (/); thereby listing everything on the entire file system!</p>
-
-<p>By default, the find command will list everything on the file system below its starting point, to an infinite depth.</p>
-
-<p>The search depth can however be limited using the –maxdepth option.</p>
-
-<p>For example</p>
-
-<div class="language-bash highlighter-rouge"><div class="highlight"><pre class="highlight"><code>find / <span class="nt">-maxdepth</span> 4
-</code></pre></div></div>
-
-<p>Will list everything on the file system below the base directory, provided that it is within 4 levels of the base directory.</p>
-
-<p>There are many other options for the find command. Some of the most useful are tabulated below:</p>
-
-<table>
-  <thead>
-    <tr>
-      <th>Command</th>
-      <th>Description</th>
-    </tr>
-  </thead>
-  <tbody>
-    <tr>
-      <td>-type</td>
-      <td>Only list items of a certain type. <code class="language-plaintext highlighter-rouge">–type f</code> restricts the search to file and <code class="language-plaintext highlighter-rouge">–type d</code> restricts the search to directories.</td>
-    </tr>
-    <tr>
-      <td>-name “*.txt”</td>
-      <td>Search for items matching a certain name. This name may contain a regular expression and should be enclosed in double quotes as shown. In this example, the find command will return all items with names ending in .txt.</td>
-    </tr>
-    <tr>
-      <td>-iname</td>
-      <td>Same as  <code class="language-plaintext highlighter-rouge">–name</code> but uppercase and lowercase do not matter.</td>
-    </tr>
-    <tr>
-      <td>-size</td>
-      <td>Find files based on their size. e.g <code class="language-plaintext highlighter-rouge">–size +100k</code> finds files over 100 KiB in size <code class="language-plaintext highlighter-rouge">–size -5M</code> finds files less than 5MiB in size. Other units include G for GiB and c for bytes**.</td>
-    </tr>
-  </tbody>
-</table>
-
-<p><strong>Note:</strong> 1 Kibibyte (KiB) = 1024 bytes. 1 Mebibyte (MiB) = 1024 KiB. 1 Gibibyte = 1024 MiB.</p>
-
-<h4 id="exec--ok">Exec &amp; ok</h4>
-
-<p>A supremely useful feature of the find command is the ability to execute another command on each of the results.</p>
-
-<p>For example</p>
-
-<div class="language-bash highlighter-rouge"><div class="highlight"><pre class="highlight"><code>find /etc –exec <span class="nb">cp</span> <span class="o">{}</span> ~/Desktop <span class="se">\;</span>
-</code></pre></div></div>
-
-<p>will copy every item below the /etc folder on the file system to the ~/Desktop directory.</p>
-
-<p>The argument to the <code class="language-plaintext highlighter-rouge">–exec</code> option is the command you want to execute on each item found by the find command.</p>
-
-<p>Commands should be written as they would normally, with <strong>{} used as a placeholder for the results of the find command.</strong></p>
-
-<p>Be sure to terminate the <code class="language-plaintext highlighter-rouge">–exec</code> option using \; (a backslash then a semicolon).</p>
-
-<p>The <code class="language-plaintext highlighter-rouge">–ok</code> option can also be used, to prompt the user for permission before each action.</p>
-
-<p>This can be tedious for a large number of files, but provides an extra layer of security of a small number of files; especially when doing destructive processes such as deletion.</p>
-
-<p>An example may be:</p>
-
-<div class="language-bash highlighter-rouge"><div class="highlight"><pre class="highlight"><code>find /etc –ok <span class="nb">cp</span> <span class="o">{}</span> ~/Desktop <span class="se">\;</span>
-</code></pre></div></div>
-
-<p><img src="/assets/2024/September/find%20and%20ok.png" alt="Find command within current directory with name option and remove operation for each result " /></p>
-
-<p>Find command within current directory with name option and remove operation for each result</p>
-
-<p>exec → just execute the command</p>
-
-<p>ok → ask at each step 🌇</p>
-
-<h3 id="viewing-file-content-">Viewing File Content 🪟</h3>
-
-<p>There exist commands to open files and print their contents to standard output. One such example is the cat command. Let’s say we have a file called hello.txt on the Desktop.</p>
-
-<p>By performing: <code class="language-plaintext highlighter-rouge">cat ~/Desktop/hello.txt</code></p>
-
-<p>This will print out the contents of hello.txt to standard output where it can be viewed or piped to other commands if required.</p>
-
-<p>One such command to pipe to would be the less command. The less command is known as a “pager” program and excels at allowing a user to page through large amounts of output in a more user-friendly manner than just using the terminal.</p>
-
-<p>An example may be:</p>
-
-<div class="language-bash highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nb">cat</span> ~/Desktop/hello.txt | less
-</code></pre></div></div>
-
-<p>Or more simply:</p>
-
-<div class="language-bash highlighter-rouge"><div class="highlight"><pre class="highlight"><code>less ~/Desktop/hello.txt
-</code></pre></div></div>
-
-<p>By pressing the q key, the less command can be terminated and control regained over the shell.</p>
-
-<p>Here are some other ways to view file contents:</p>
-
-<table>
-  <thead>
-    <tr>
-      <th>Command</th>
-      <th>Description</th>
-    </tr>
-  </thead>
-  <tbody>
-    <tr>
-      <td>tac &lt;path/to/file&gt;</td>
-      <td>Print a file’s contents to standard output, reversed vertically.</td>
-    </tr>
-    <tr>
-      <td>rev &lt;path/to/file&gt;</td>
-      <td>Print a file’s content to standard output, reversed horizontally (along rows).</td>
-    </tr>
-    <tr>
-      <td>head -n 15 &lt;path/to/file&gt;</td>
-      <td>Read the first 15 lines from a file (10 by default if -n option not provided.)</td>
-    </tr>
-    <tr>
-      <td>tail -n 15 &lt;path/to/file&gt;</td>
-      <td>Read the bottom 15 lines from a file (10 by default if -n option not provided.)</td>
-    </tr>
-  </tbody>
-</table>
-
-<p><img src="/assets/2024/September/cat,rev.png" alt="Usage of cat, tac and rev command." /></p>
-
-<p><em>Fig: Usage of cat, tac and rev command.</em></p>
-
-<h3 id="searching-file-contents">Searching File Contents</h3>
-
-<p>The ability to search for and filter out what you want from a file or standard output makes working with the command line a much more efficient process.</p>
-
-<p>The command for this is called the grep command.</p>
-
-<p>The grep command will return all lines that match the particular piece of text (or regular expression) provided as a search term.</p>
-
-<p>For example: <code class="language-plaintext highlighter-rouge">grep hello myfile.txt</code> will return all lines containing the word “hello” in myfile.txt and <code class="language-plaintext highlighter-rouge">ls /etc | grep *.conf</code> will return all lines with anything ending in “.conf” in data piped from the ls command.</p>
-
-<p>Some common options when working with the grep command include:</p>
-
-<table>
-  <thead>
-    <tr>
-      <th>Command</th>
-      <th>Description</th>
-    </tr>
-  </thead>
-  <tbody>
-    <tr>
-      <td>grep -i</td>
-      <td>Search in a case insensitive manner. (upper case and lowercase don’t matter).</td>
-    </tr>
-    <tr>
-      <td>grep -v</td>
-      <td>Invert the search. i.e return all lines that DON’T contain a certain search term.</td>
-    </tr>
-    <tr>
-      <td>grep -c</td>
-      <td>Return the number of lines (count) that match a search term rather than the lines themselves.</td>
-    </tr>
-    <tr>
-      <td>grep -n</td>
-      <td>return the line no’s also</td>
-    </tr>
-  </tbody>
-</table>
-
-<h2 id="file-archiving-and-compression-️">File Archiving and Compression 🗃️</h2>
-
-<p>In this section, we will delve into how we can archive and compress files. This process is crucial to not only save space on your system but also make file transfer more efficient. Stay tuned as we explore various commands and techniques for this task.</p>
-
-<h3 id="the-overall-process">The Overall Process</h3>
-
-<p>Archiving and compressing files in Linux is a two-step process.</p>
-
-<p>1) Create a Tarball</p>
-
-<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>First, you will create what is known as a tar file or “tarball”. A tarball is a way of bundling together the files that you want to archive.
-</code></pre></div></div>
-
-<p>2) Compress the tarball with a compression algorithm</p>
-
-<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>Secondly, you will then compress that tarball with one of a variety of compression algorithms; leaving you with a compressed archive.
-</code></pre></div></div>
-
-<h3 id="1-creating-a-tarball">1. Creating a Tarball</h3>
-
-<p>Tarballs are created using the tar command
-<code class="language-plaintext highlighter-rouge">tar –cvf &lt;name of tarball&gt; &lt;file&gt;... </code></p>
-
-<p><code class="language-plaintext highlighter-rouge">The –c option</code>: “create”. This allows us to create a tarball. [required]</p>
-
-<p><code class="language-plaintext highlighter-rouge">The –v option</code>: “verbose”. This makes tar give us feedback on its progress. [optional]</p>
-
-<p><code class="language-plaintext highlighter-rouge">The –f option</code>: Tells tar that the next argument is the name of the tarball. [required]</p>
-
-<p><code class="language-plaintext highlighter-rouge">&lt;name of tarball&gt;</code>: The absolute or relative file path to where you want the tarball to be placed;</p>
-
-<p>e.g. ~/Desktop/myarchive.tar. It is recommended that you add .tar to your proposed filename for clarity.</p>
-
-<p><code class="language-plaintext highlighter-rouge">&lt;file&gt;</code>: The absolute or relative file paths to files that you want to insert into the tarball. You can have as many as you like and wildcards are accepted.</p>
-
-<h3 id="11-checking-a-tarballs-contents">1.1 Checking a Tarball’s Contents</h3>
-
-<p>Once the tarball has been created, you can check what is inside it using the tar command.</p>
-
-<p><code class="language-plaintext highlighter-rouge">tar –tf &lt;name of tarball&gt;</code></p>
-
-<p><code class="language-plaintext highlighter-rouge">The –t option</code>: “test-label”. This allows us to check the contents of a tarball. [required]</p>
-
-<p><code class="language-plaintext highlighter-rouge">The –f option</code>: Tells tar that the next argument is the name of the tarball. [required]</p>
-
-<p><code class="language-plaintext highlighter-rouge">&lt;name of tarball&gt;</code>: The absolute or relative file path to where you want the tarball to be placed;</p>
-
-<p>e.g. ~/Desktop/myarchive.tar</p>
-
-<h3 id="12-extracting-from-a-tar-ball">1.2 Extracting From a Tar ball</h3>
-
-<p>Let’s say that you download a tar file from the internet and you want to extract its contents using the command line. How can you do that?</p>
-
-<p>For this you would again use the tar command <code class="language-plaintext highlighter-rouge">tar –xvf &lt;name of tarball&gt;</code></p>
-
-<p><code class="language-plaintext highlighter-rouge">The –x option</code>: “extract”. This allows us to extract a tarball’s contents. [required]</p>
-
-<p><code class="language-plaintext highlighter-rouge">The –v option</code>: “verbose”. This makes tar give us feedback on its progress. [optional]</p>
-
-<p><code class="language-plaintext highlighter-rouge">The –f option:</code> Tells tar that the next argument is the name of the tarball. [required]</p>
-
-<p><code class="language-plaintext highlighter-rouge">&lt;name of tarball&gt;</code>: The absolute or relative file path to where the tarball is located;</p>
-
-<p>e.g. ~/Desktop/myarchive.tar</p>
-
-<p>cool 😎 → Extracting a tarball does not empty the tarball. You can extract from a tarball as many times as you want without affecting the tarball’s contents.</p>
-
-<h3 id="2-compressing-tarballs">2. Compressing Tarballs</h3>
-
-<p>Tarballs are just containers for files. They don’t by themselves do any compression, but the can be compressed using a variety of compression algorithms.</p>
-
-<p>The main types of compression algorithms are gzip and bzip2.</p>
-
-<p>The gzip compression algorithm tends to be faster than bzip2 but, as a trade-off, gzip usually offers less compression.</p>
-
-<p>You can find a comparison of various compression algorithms using this excellent blog post.</p>
-
-<h3 id="21-compressing-and-decompressing-with-gzip">2.1 Compressing and Decompressing with gzip</h3>
-
-<table>
-  <thead>
-    <tr>
-      <th>Comand</th>
-      <th>Description</th>
-    </tr>
-  </thead>
-  <tbody>
-    <tr>
-      <td>Compressing with gzip</td>
-      <td>gzip <name of="" tarball=""></name></td>
-    </tr>
-    <tr>
-      <td>Decompressing with gzip</td>
-      <td>gunzip <name of="" tarball=""></name></td>
-    </tr>
-  </tbody>
-</table>
-
-<p>When compressing with gzip, the file extension .gz is automatically added to the .tar archive.</p>
-
-<p>Therefore, the gzip compressed tar archive would, by convention, have the file extension .tar.gz</p>
-
-<h3 id="22-compressing-and-decompressing-with-bzip2">2.2 Compressing and Decompressing with bzip2</h3>
-
-<table>
-  <thead>
-    <tr>
-      <th>Command</th>
-      <th>Description</th>
-    </tr>
-  </thead>
-  <tbody>
-    <tr>
-      <td>Compressing with bzip2</td>
-      <td>bzip2 <name of="" tarball=""></name></td>
-    </tr>
-    <tr>
-      <td>Decompressing with bzip2</td>
-      <td>bunzip2 <name of="" tarball=""></name></td>
-    </tr>
-  </tbody>
-</table>
-
-<p>When compressing with bzip2, the file extension .bz2 is automatically added to the .tar archive.</p>
-
-<p>Therefore, the bzip2 compressed tar archive would, by convention, have the file extension .tar.bz2</p>
-
-<h3 id="3-doing-it-all-in-one-step">3. Doing it all in one step</h3>
-
-<p>Because compressing tar archives is such a common function, it is possible to create a tar archive and compress it all in one step using the tar command. It is also possible to decompress and extract a compressed archive in one step using the tar command too.</p>
-
-<p>To perform compression/decompression using gzip compression algorithm in the tar command, you provide the z option in addition to the other options required. [<strong>Just add z to the basic commands</strong>]</p>
-
-<table>
-  <thead>
-    <tr>
-      <th>Command</th>
-      <th>Description</th>
-    </tr>
-  </thead>
-  <tbody>
-    <tr>
-      <td>Creating a tarball and compressing via gzip</td>
-      <td>tar –cvzf <name of="" tarball=""> <file>...</file></name></td>
-    </tr>
-    <tr>
-      <td>Decompressing a tarball and extracting via xzip</td>
-      <td>tar –xvzf <name of="" tarball=""></name></td>
-    </tr>
-  </tbody>
-</table>
-
-<p>To perform compression/decompression using bzip2 compression algorithm in the tar command, you provide the j option to the other options required. <strong>[Just add j to the basic commands]</strong></p>
-
-<table>
-  <thead>
-    <tr>
-      <th>Command</th>
-      <th>Description</th>
-    </tr>
-  </thead>
-  <tbody>
-    <tr>
-      <td>Creating a tarball and compressing via bzip2</td>
-      <td>tar –cvjf <name of="" tarball=""> <file>…</file></name></td>
-    </tr>
-    <tr>
-      <td>Decompressing a tarball and extracting via bzip2</td>
-      <td>tar –xvjf <name of="" tarball=""></name></td>
-    </tr>
-  </tbody>
-</table>
-
-<p>To perform compression/decompression using the xzip compression algorithm in the tar command, you provide the J option to the other options required.</p>
-
-<table>
-  <thead>
-    <tr>
-      <th>Command</th>
-      <th>Description</th>
-    </tr>
-  </thead>
-  <tbody>
-    <tr>
-      <td>Creating a tarball and compressing via xzip</td>
-      <td>tar –cvJf <name of="" tarball=""> <file>...</file></name></td>
-    </tr>
-    <tr>
-      <td>Decompressing a tarball and extracting via xzip</td>
-      <td>tar –xvJf <name of="" tarball=""></name></td>
-    </tr>
-  </tbody>
-</table>
-
-<p><img src="/assets/2024/September/zip-unzip.png" alt="Creating tarballs using different compression algorithms" /></p>
-
-<p><em>Fig: Creating tarballs using different compression algorithms</em></p>
-
-<h3 id="4-creating-zip-files">4. Creating .zip files</h3>
-
-<p>Although .tar.gz and .tar.bz2 archives are the archives of choice on Linux, .zip archives are common on other operating systems such as Windows and Mac OSX.</p>
-
-<p>In order to create such archives, you can use the following commands.</p>
-
-<table>
-  <thead>
-    <tr>
-      <th>Command</th>
-      <th>Description</th>
-    </tr>
-  </thead>
-  <tbody>
-    <tr>
-      <td>Creating a .zip archive</td>
-      <td>zip <name of="" zipfile=""> <file>...</file></name></td>
-    </tr>
-    <tr>
-      <td>Extracting a .zip archive</td>
-      <td>unzip <name of="" zipfile=""></name></td>
-    </tr>
-  </tbody>
-</table>
-
-<p><code class="language-plaintext highlighter-rouge">&lt;name of zipfile&gt;</code>: The absolute or relative file path to the .zip file e.g. ~/ myarchive.zip</p>
-
-<p><code class="language-plaintext highlighter-rouge">&lt;file&gt;</code>: The absolute or relative file paths to files that you want to insert into the .zip file. You can have as many as you like and wildcards are accep</p>
-
-<p><img src="/assets/2024/September/unzip.png" alt="Zipping and unzipping" /></p>
-
-<p><em>Fig: Zipping and unzipping</em></p>
-
-<p>That’s all for this blog, I hope you found this helpful. ❤️❤️</p>]]></content><author><name></name></author><category term="Linux" /><summary type="html"><![CDATA[Welcome to our comprehensive guide on improving your Command Line skills, where we primarily focus on the Linux-based command line. This emphasises Linux because most commands are identical across Linux and Windows, with just a few exceptions. This blog will explore various commands related to the Linux file system, their applications, and how to use them effectively to enhance your navigation and manipulation of the Linux operating system.]]></summary></entry><entry><title type="html">Transformer of AI World</title><link href="http://localhost:4000/ai/2023/06/23/Transformer_of_ai_world.html" rel="alternate" type="text/html" title="Transformer of AI World" /><published>2023-06-23T10:00:10+05:30</published><updated>2023-06-23T10:00:10+05:30</updated><id>http://localhost:4000/ai/2023/06/23/Transformer_of_ai_world</id><content type="html" xml:base="http://localhost:4000/ai/2023/06/23/Transformer_of_ai_world.html"><![CDATA[<h2 id="introduction-">Introduction 🚀</h2>
-
-<p>Are you interested in natural language processing? 🤔 If so, you might have heard of the Transformer, a neural network architecture that has achieved state-of-the-art results in several NLP tasks 🏆, such as machine translation 🌍, text classification 📊, and language modeling 📚. In this blog, we’ll explore what the Transformer is, how it works, its advantages and disadvantages, and some of its applications. 🧐</p>
-
-<h2 id="definition-">Definition 📖</h2>
-
-<p>The Transformer is a type of neural network architecture that relies heavily on attention mechanisms 👀. It was introduced in 2017 by Vaswani et al. and has since become one of the most popular neural network architectures in the field of natural language processing. 🌟</p>
-
-<p>Its success is largely due to its ability to leverage attention mechanisms, which enable the model to focus on specific parts of the input sequence 🔍. This allows the Transformer to process long sequences of text more efficiently than traditional recurrent neural networks. 🚀</p>
-
-<h1 id="working-️">Working ⚙️</h1>
-
-<p>The Transformer architecture is a powerful deep learning model used for natural language processing. It is composed of two main parts: an encoder 🔒 and a decoder 🔓.</p>
-
-<p>The encoder, which is the first part of the model, processes the input sequence by encoding its information into a set of vectors 📊. These vectors capture the meaning of the input sequence and are then passed onto the decoder. 🔄</p>
-
-<p>The decoder is responsible for generating the output sequence, such as a translation or a summary 📝. It does this by decoding the vectors produced by the encoder and generating a new sequence of words based on the encoded information. 🎨</p>
-
-<p><img src="/assets/2024/September/transformers.png" alt="Fig: Transformer - model architecture [[Vaswani et al. (2017)](https://arxiv.org/pdf/1706.03762.pdf)]" /></p>
-
-<p><em>Fig: Transformer - model architecture [<a href="https://arxiv.org/pdf/1706.03762.pdf">Vaswani et al. (2017)</a>]</em></p>
-
-<h2 id="encoder-">Encoder 🔒</h2>
-
-<p>The Encoder is made up of N=6 identical layers, each of which has 2 sub-layers. 🧱🔄</p>
-
-<ol>
-  <li><strong>Multi-Head Self-Attention Mechanism 🧠👀</strong>: This mechanism calculates multiple sets of attention weights using self-attention, with each set focusing on a different part of the input sequence.</li>
-  <li>
-    <p><strong>Feed Forward Network 🔄➡️</strong>: This is a fully connected feed-forward network that is applied to each position separately and identically. For this, two linear transformations are used with ReLU activation between them:</p>
-
-    <p>$FFN(x) = \max(0, xW_1 + b_1)W_2 + b_2$</p>
-
-    <p>Here, $x$ is the input vector, $W_1$ and $W_2$ are weight matrices, $b_1$ and $b_2$ are bias vectors, and $\max(0, x)$ is the ReLU activation function. 🧮📊</p>
-  </li>
-</ol>
-
-<h2 id="decoder-">Decoder 🔓</h2>
-
-<p>The decoder is also composed of N=6 identical layers. However, the decoder adds an extra layer: 🔓🔢</p>
-
-<ol>
-  <li><strong>Multi-Head Attention 🎭👥</strong>: This layer does not use self-attention, but instead calculates attention weights over the output of the encoder stack. Its keys and values come from the output of the encoder layer, while its queries come from the previous decoder layer.</li>
-</ol>
-
-<p>After each sub-layer, normalization is performed using layer normalization 📏. This process helps maintain stable activations throughout the network. 🧠</p>
-
-<h4 id="normalization">Normalization</h4>
-
-<p>Normalization involves scaling the input features to have zero mean and unit variance, which helps reduce the effect of differences in the scale of the input features. 📊🔍</p>
-
-<p>Layer normalization is defined as: 🧮</p>
-
-<p>$LayerNorm(x) = \gamma \odot \frac{x - \mu}{\sqrt{\sigma^2 + \epsilon}} + \beta$</p>
-
-<p>where $x$ is the input vector, $\mu$ and $\sigma$ are the mean and standard deviation of $x$, respectively, $\epsilon$ is a small constant to prevent division by zero, $\odot$ is element-wise multiplication, and $\gamma$ and $\beta$ are learnable scale and shift parameters, respectively. 🔬</p>
-
-<p>In addition, positional encoding is added to the input embeddings of the encoder and decoder stacks. 🎯🔢</p>
-
-<h4 id="positional-encoding">Positional encoding</h4>
-
-<p>The positional encoding is defined as: 🧘🏽</p>
-
-<p>$PE_{(pos,2i)} = \sin(pos / 10000^{2i/d_{model}})$</p>
-
-<p>$PE_{(pos,2i+1)} = \cos(pos / 10000^{2i/d_{model}})$</p>
-
-<p>where $pos$ is the position of the token in the sequence, $i$ is the dimension of the embedding vector, and $d_{model}$ is the total number of dimensions. 📐</p>
-
-<p>These layers allow the model to learn complex patterns and relationships within the input and output sequences. 🕸️ The self-attention layers help the model focus on the most important parts of the input sequence 🔍, while the feed-forward layers help it make predictions based on the encoded information. 🎯</p>
-
-<p>Think in context of training, both input and output are provided. During backpropagation, the weight matrices of the scaled dot-product attention are updated, as well as the parameters of the feedforward neural layers. This process aims to improve the accuracy of the next output and make the attention weights more reasonable. 🔄📈</p>
-
-<p>Overall, the Transformer architecture is a highly effective model for a wide range of natural language processing tasks, including machine translation 🌍 and text summarization 📝. By using multiple layers of self-attention and feed-forward neural networks, it is able to capture complex relationships and patterns within the input and output sequences, making it a powerful tool for language understanding and generation. 🚀🗣️</p>
-
-<p>Let’s dive into the attention mechanism used in transformers! 🤿🧠</p>
-
-<h2 id="multi-head-attention-">Multi-Head Attention 🎭🔍</h2>
-
-<p>The multi-head attention operation is like a symphony of smaller attention operations 🎻🎺. These mini-operations work together in parallel, creating a harmonious final output 🎵.</p>
-
-<p>Here’s the magical equation for multi-head attention 🧙‍♂️:</p>
-
-<p>$\text{MultiHead}(Q, K, V) = \text{Concat}(\text{head}_1, …, \text{head}_h)W^O$</p>
-
-<p>Each smaller operation is called an attention “head” 👤. The output of the $i$-th head is calculated like this 🧮:</p>
-
-<p>$\text{head}_i = \text{Attention}(QW_i^Q, KW_i^K, VW_i^V)$</p>
-
-<p>The weight matrices $W_i^Q$, $W_i^K$, and $W_i^V$ are unique to each $i$-th head, like fingerprints 👆🏼.</p>
-
-<p><img src="/assets/2024/September/multi%20head.png" alt="Fig: Multi-Head Attention consists of several attention layers running in parallel. [[Vaswani et al. (2017)](https://arxiv.org/pdf/1706.03762.pdf)]" /></p>
-
-<p><em>Fig: Multi-Head Attention consists of several attention layers running in parallel. [<a href="https://arxiv.org/pdf/1706.03762.pdf">Vaswani et al. (2017)</a>]</em></p>
-
-<p>🔑 Q, 🗝️ K, and 💎 V are the query, key, and value matrices, respectively. The number of attention heads is represented by h 🧠. The final output of the multi-head attention operation is obtained by concatenating the output of each attention head and multiplying it by a weight matrix 🧮 W⁰.</p>
-
-<h2 id="scaled-dot-product-attention-">Scaled Dot-Product Attention 🔍</h2>
-
-<p>The scaled dot-product attention operation can be defined as: 🧮</p>
-
-<p>$\text{Attention}(Q,K,V) = \text{softmax}\left(\frac{QK^T}{\sqrt{d_k}}\right)V$</p>
-
-<p>Here, 🔑 Q, 🗝️ K, and 💎 V are the query, key, and value matrices, respectively, and 📏 d_k is the dimension of the key vectors.</p>
-
-<p>Self-attention 🧠👀 is a type of scaled dot-product attention. In self-attention, the query, key, and value vectors are all derived from the same sequence, allowing the model to focus on different parts of the sequence at different times. 🔍🔄</p>
-
-<p>For example, in the case of an encoder, the keys 🗝️, values 💎, and queries 🔑 come from the output of the previous layer of the encoder. 🔁🧱</p>
-
-<h3 id="coding-view">Coding View</h3>
-
-<p>Here is an example of a Transformer architecture implemented in Python using PyTorch:</p>
-
-<div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="kn">import</span> <span class="n">torch</span>
-<span class="kn">import</span> <span class="n">torch.nn.functional</span> <span class="k">as</span> <span class="n">F</span>
-
-<span class="k">class</span> <span class="nc">Transformer</span><span class="p">(</span><span class="n">torch</span><span class="p">.</span><span class="n">nn</span><span class="p">.</span><span class="n">Module</span><span class="p">):</span>
-    <span class="k">def</span> <span class="nf">__init__</span><span class="p">(</span><span class="n">self</span><span class="p">,</span> <span class="n">input_size</span><span class="p">,</span> <span class="n">output_size</span><span class="p">,</span> <span class="n">num_layers</span><span class="p">,</span> <span class="n">dropout</span><span class="p">):</span>
-        <span class="nf">super</span><span class="p">(</span><span class="n">Transformer</span><span class="p">,</span> <span class="n">self</span><span class="p">).</span><span class="nf">__init__</span><span class="p">()</span>
-
-        <span class="n">self</span><span class="p">.</span><span class="n">encoder</span> <span class="o">=</span> <span class="n">torch</span><span class="p">.</span><span class="n">nn</span><span class="p">.</span><span class="nc">ModuleList</span><span class="p">([</span><span class="nc">EncoderLayer</span><span class="p">(</span><span class="n">input_size</span><span class="p">,</span> <span class="n">dropout</span><span class="p">)</span> <span class="k">for</span> <span class="n">_</span> <span class="ow">in</span> <span class="nf">range</span><span class="p">(</span><span class="n">num_layers</span><span class="p">)])</span>
-        <span class="n">self</span><span class="p">.</span><span class="n">decoder</span> <span class="o">=</span> <span class="n">torch</span><span class="p">.</span><span class="n">nn</span><span class="p">.</span><span class="nc">ModuleList</span><span class="p">([</span><span class="nc">DecoderLayer</span><span class="p">(</span><span class="n">output_size</span><span class="p">,</span> <span class="n">dropout</span><span class="p">)</span> <span class="k">for</span> <span class="n">_</span> <span class="ow">in</span> <span class="nf">range</span><span class="p">(</span><span class="n">num_layers</span><span class="p">)])</span>
-        <span class="n">self</span><span class="p">.</span><span class="n">fc</span> <span class="o">=</span> <span class="n">torch</span><span class="p">.</span><span class="n">nn</span><span class="p">.</span><span class="nc">Linear</span><span class="p">(</span><span class="n">output_size</span><span class="p">,</span> <span class="n">output_size</span><span class="p">)</span>
-
-    <span class="k">def</span> <span class="nf">forward</span><span class="p">(</span><span class="n">self</span><span class="p">,</span> <span class="n">input_seq</span><span class="p">,</span> <span class="n">output_seq</span><span class="p">):</span>
-        <span class="n">enc_output</span> <span class="o">=</span> <span class="n">input_seq</span>
-
-        <span class="k">for</span> <span class="n">enc_layer</span> <span class="ow">in</span> <span class="n">self</span><span class="p">.</span><span class="n">encoder</span><span class="p">:</span>
-            <span class="n">enc_output</span> <span class="o">=</span> <span class="nf">enc_layer</span><span class="p">(</span><span class="n">enc_output</span><span class="p">)</span>
-
-        <span class="n">dec_output</span> <span class="o">=</span> <span class="n">output_seq</span>
-
-        <span class="k">for</span> <span class="n">dec_layer</span> <span class="ow">in</span> <span class="n">self</span><span class="p">.</span><span class="n">decoder</span><span class="p">:</span>
-            <span class="n">dec_output</span> <span class="o">=</span> <span class="nf">dec_layer</span><span class="p">(</span><span class="n">dec_output</span><span class="p">,</span> <span class="n">enc_output</span><span class="p">)</span>
-
-        <span class="n">output</span> <span class="o">=</span> <span class="n">self</span><span class="p">.</span><span class="nf">fc</span><span class="p">(</span><span class="n">dec_output</span><span class="p">)</span>
-
-        <span class="k">return</span> <span class="n">output</span>
-
-</code></pre></div></div>
-
-<p>The self-attention mechanism 🧠👀 is used in the <code class="language-plaintext highlighter-rouge">EncoderLayer</code> 🔒 and <code class="language-plaintext highlighter-rouge">DecoderLayer</code> 🔓 classes, which are used to define the encoder and decoder layers of the Transformer architecture, respectively.</p>
-
-<p>Here are the <code class="language-plaintext highlighter-rouge">EncoderLayer</code> 🔒 and <code class="language-plaintext highlighter-rouge">DecoderLayer</code> 🔓 classes used to define the encoder and decoder layers of the Transformer architecture, respectively: 🏗️</p>
-
-<div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="k">class</span> <span class="nc">EncoderLayer</span><span class="p">(</span><span class="n">torch</span><span class="p">.</span><span class="n">nn</span><span class="p">.</span><span class="n">Module</span><span class="p">):</span>
-    <span class="k">def</span> <span class="nf">__init__</span><span class="p">(</span><span class="n">self</span><span class="p">,</span> <span class="n">input_size</span><span class="p">,</span> <span class="n">dropout</span><span class="p">):</span>
-        <span class="nf">super</span><span class="p">(</span><span class="n">EncoderLayer</span><span class="p">,</span> <span class="n">self</span><span class="p">).</span><span class="nf">__init__</span><span class="p">()</span>
-
-        <span class="n">self</span><span class="p">.</span><span class="n">multi_head_attention</span> <span class="o">=</span> <span class="nc">MultiHeadAttention</span><span class="p">(</span><span class="n">input_size</span><span class="p">)</span>
-        <span class="n">self</span><span class="p">.</span><span class="n">feed_forward</span> <span class="o">=</span> <span class="nc">FeedForward</span><span class="p">(</span><span class="n">input_size</span><span class="p">)</span>
-        <span class="n">self</span><span class="p">.</span><span class="n">layer_norm1</span> <span class="o">=</span> <span class="n">torch</span><span class="p">.</span><span class="n">nn</span><span class="p">.</span><span class="nc">LayerNorm</span><span class="p">(</span><span class="n">input_size</span><span class="p">)</span>
-        <span class="n">self</span><span class="p">.</span><span class="n">layer_norm2</span> <span class="o">=</span> <span class="n">torch</span><span class="p">.</span><span class="n">nn</span><span class="p">.</span><span class="nc">LayerNorm</span><span class="p">(</span><span class="n">input_size</span><span class="p">)</span>
-        <span class="n">self</span><span class="p">.</span><span class="n">dropout</span> <span class="o">=</span> <span class="n">torch</span><span class="p">.</span><span class="n">nn</span><span class="p">.</span><span class="nc">Dropout</span><span class="p">(</span><span class="n">dropout</span><span class="p">)</span>
-
-    <span class="k">def</span> <span class="nf">forward</span><span class="p">(</span><span class="n">self</span><span class="p">,</span> <span class="n">input_seq</span><span class="p">):</span>
-        <span class="n">attention_output</span> <span class="o">=</span> <span class="n">self</span><span class="p">.</span><span class="nf">multi_head_attention</span><span class="p">(</span><span class="n">input_seq</span><span class="p">)</span>
-        <span class="n">attention_output</span> <span class="o">=</span> <span class="n">self</span><span class="p">.</span><span class="nf">dropout</span><span class="p">(</span><span class="n">attention_output</span><span class="p">)</span>
-        <span class="n">norm_output</span> <span class="o">=</span> <span class="n">self</span><span class="p">.</span><span class="nf">layer_norm1</span><span class="p">(</span><span class="n">input_seq</span> <span class="o">+</span> <span class="n">attention_output</span><span class="p">)</span>
-        <span class="n">ff_output</span> <span class="o">=</span> <span class="n">self</span><span class="p">.</span><span class="nf">feed_forward</span><span class="p">(</span><span class="n">norm_output</span><span class="p">)</span>
-        <span class="n">ff_output</span> <span class="o">=</span> <span class="n">self</span><span class="p">.</span><span class="nf">dropout</span><span class="p">(</span><span class="n">ff_output</span><span class="p">)</span>
-        <span class="n">output_seq</span> <span class="o">=</span> <span class="n">self</span><span class="p">.</span><span class="nf">layer_norm2</span><span class="p">(</span><span class="n">norm_output</span> <span class="o">+</span> <span class="n">ff_output</span><span class="p">)</span>
-
-        <span class="k">return</span> <span class="n">output_seq</span>
-
-<span class="k">class</span> <span class="nc">DecoderLayer</span><span class="p">(</span><span class="n">torch</span><span class="p">.</span><span class="n">nn</span><span class="p">.</span><span class="n">Module</span><span class="p">):</span>
-    <span class="k">def</span> <span class="nf">__init__</span><span class="p">(</span><span class="n">self</span><span class="p">,</span> <span class="n">output_size</span><span class="p">,</span> <span class="n">dropout</span><span class="p">):</span>
-        <span class="nf">super</span><span class="p">(</span><span class="n">DecoderLayer</span><span class="p">,</span> <span class="n">self</span><span class="p">).</span><span class="nf">__init__</span><span class="p">()</span>
-
-        <span class="n">self</span><span class="p">.</span><span class="n">self_attention</span> <span class="o">=</span> <span class="nc">MultiHeadAttention</span><span class="p">(</span><span class="n">output_size</span><span class="p">)</span>
-        <span class="n">self</span><span class="p">.</span><span class="n">source_attention</span> <span class="o">=</span> <span class="nc">MultiHeadAttention</span><span class="p">(</span><span class="n">output_size</span><span class="p">)</span>
-        <span class="n">self</span><span class="p">.</span><span class="n">feed_forward</span> <span class="o">=</span> <span class="nc">FeedForward</span><span class="p">(</span><span class="n">output_size</span><span class="p">)</span>
-        <span class="n">self</span><span class="p">.</span><span class="n">layer_norm1</span> <span class="o">=</span> <span class="n">torch</span><span class="p">.</span><span class="n">nn</span><span class="p">.</span><span class="nc">LayerNorm</span><span class="p">(</span><span class="n">output_size</span><span class="p">)</span>
-        <span class="n">self</span><span class="p">.</span><span class="n">layer_norm2</span> <span class="o">=</span> <span class="n">torch</span><span class="p">.</span><span class="n">nn</span><span class="p">.</span><span class="nc">LayerNorm</span><span class="p">(</span><span class="n">output_size</span><span class="p">)</span>
-        <span class="n">self</span><span class="p">.</span><span class="n">layer_norm3</span> <span class="o">=</span> <span class="n">torch</span><span class="p">.</span><span class="n">nn</span><span class="p">.</span><span class="nc">LayerNorm</span><span class="p">(</span><span class="n">output_size</span><span class="p">)</span>
-        <span class="n">self</span><span class="p">.</span><span class="n">dropout</span> <span class="o">=</span> <span class="n">torch</span><span class="p">.</span><span class="n">nn</span><span class="p">.</span><span class="nc">Dropout</span><span class="p">(</span><span class="n">dropout</span><span class="p">)</span>
-
-    <span class="k">def</span> <span class="nf">forward</span><span class="p">(</span><span class="n">self</span><span class="p">,</span> <span class="n">output_seq</span><span class="p">,</span> <span class="n">enc_output</span><span class="p">):</span>
-        <span class="n">self_attention_output</span> <span class="o">=</span> <span class="n">self</span><span class="p">.</span><span class="nf">self_attention</span><span class="p">(</span><span class="n">output_seq</span><span class="p">)</span>
-        <span class="n">self_attention_output</span> <span class="o">=</span> <span class="n">self</span><span class="p">.</span><span class="nf">dropout</span><span class="p">(</span><span class="n">self_attention_output</span><span class="p">)</span>
-        <span class="n">norm_output1</span> <span class="o">=</span> <span class="n">self</span><span class="p">.</span><span class="nf">layer_norm1</span><span class="p">(</span><span class="n">output_seq</span> <span class="o">+</span> <span class="n">self_attention_output</span><span class="p">)</span>
-        <span class="n">source_attention_output</span> <span class="o">=</span> <span class="n">self</span><span class="p">.</span><span class="nf">source_attention</span><span class="p">(</span><span class="n">norm_output1</span><span class="p">,</span> <span class="n">enc_output</span><span class="p">)</span>
-        <span class="n">source_attention_output</span> <span class="o">=</span> <span class="n">self</span><span class="p">.</span><span class="nf">dropout</span><span class="p">(</span><span class="n">source_attention_output</span><span class="p">)</span>
-        <span class="n">norm_output2</span> <span class="o">=</span> <span class="n">self</span><span class="p">.</span><span class="nf">layer_norm2</span><span class="p">(</span><span class="n">norm_output1</span> <span class="o">+</span> <span class="n">source_attention_output</span><span class="p">)</span>
-        <span class="n">ff_output</span> <span class="o">=</span> <span class="n">self</span><span class="p">.</span><span class="nf">feed_forward</span><span class="p">(</span><span class="n">norm_output2</span><span class="p">)</span>
-        <span class="n">ff_output</span> <span class="o">=</span> <span class="n">self</span><span class="p">.</span><span class="nf">dropout</span><span class="p">(</span><span class="n">ff_output</span><span class="p">)</span>
-        <span class="n">output_seq</span> <span class="o">=</span> <span class="n">self</span><span class="p">.</span><span class="nf">layer_norm3</span><span class="p">(</span><span class="n">norm_output2</span> <span class="o">+</span> <span class="n">ff_output</span><span class="p">)</span>
-
-        <span class="k">return</span> <span class="n">output_seq</span>
-
-</code></pre></div></div>
-
-<h3 id="advantages-and-disadvantages-">Advantages and Disadvantages 🌟🚫</h3>
-
-<p>One advantage of the Transformer is its ability to process long sequences of text efficiently 🚀. This makes it well-suited for tasks such as machine translation 🌍 and language modeling 📚.</p>
-
-<p>One disadvantage of the Transformer is its high computational cost 💻💰, which can make it difficult to train on large datasets 📊.</p>
-
-<h3 id="applications-️">Applications 🛠️</h3>
-
-<p>The Transformer has achieved state-of-the-art results in several natural language processing tasks, such as machine translation 🌐, text classification 📋, and language modeling 📝. It has also been used in various applications, such as speech recognition 🎙️, text generation ✍️, and image captioning 🖼️.</p>
-
-<h3 id="useful-resources-">Useful Resources 📚</h3>
-
-<p>If you’re interested in learning more about the Transformer, here are some useful resources to get you started:</p>
-
-<ul>
-  <li><a href="https://arxiv.org/abs/1706.03762">Attention Is All You Need</a> 📄 - The original paper introducing the Transformer architecture.</li>
-  <li><a href="http://jalammar.github.io/illustrated-transformer/">The Illustrated Transformer</a> 🎨 - A visual guide to the Transformer architecture.</li>
-  <li><a href="http://peterbloem.nl/blog/transformers">Transformers from Scratch</a> 🔨 - A step-by-step guide to implementing the Transformer from scratch.</li>
-</ul>
-
-<p>I hope you found this blog helpful in understanding the Transformer and its applications in natural language processing 🧠💬. If you have any questions or comments, feel free to leave them below! 💡💬</p>]]></content><author><name></name></author><category term="AI" /><summary type="html"><![CDATA[Introduction 🚀]]></summary></entry></feed>
+<p>That’s it for this blog, hope this was will help you better understand the concepts of deep learning ❤️❤️.</p>]]></content><author><name></name></author><category term="AI" /><summary type="html"><![CDATA[Welcome to this blog post on attention in deep learning! In this post, we will explore the concept of attention and its importance in the field of deep learning. We will start by explaining what attention is and how it works, and then move on to different types of attention mechanisms and their applications. Whether you are new to deep learning or an experienced practitioner 🧑‍⚕️, this post is sure to provide valuable insights into one of the most important concepts in modern machine learning.]]></summary></entry></feed>
