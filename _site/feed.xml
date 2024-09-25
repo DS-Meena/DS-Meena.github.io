@@ -1,4 +1,4 @@
-<?xml version="1.0" encoding="utf-8"?><feed xmlns="http://www.w3.org/2005/Atom" ><generator uri="https://jekyllrb.com/" version="4.3.3">Jekyll</generator><link href="http://localhost:4000/feed.xml" rel="self" type="application/atom+xml" /><link href="http://localhost:4000/" rel="alternate" type="text/html" /><updated>2024-09-24T09:28:14+05:30</updated><id>http://localhost:4000/feed.xml</id><title type="html">dsm Blogs</title><subtitle>This is a blog about Data Science and Machine Learning. I write about all the things I learn in this domain. I also share my knowledge with you.</subtitle><entry><title type="html">Q-Learning</title><link href="http://localhost:4000/ai/2024/09/23/Q_learning.html" rel="alternate" type="text/html" title="Q-Learning" /><published>2024-09-23T10:00:10+05:30</published><updated>2024-09-23T10:00:10+05:30</updated><id>http://localhost:4000/ai/2024/09/23/Q_learning</id><content type="html" xml:base="http://localhost:4000/ai/2024/09/23/Q_learning.html"><![CDATA[<h1 id="introduction">Introduction</h1>
+<?xml version="1.0" encoding="utf-8"?><feed xmlns="http://www.w3.org/2005/Atom" ><generator uri="https://jekyllrb.com/" version="4.3.3">Jekyll</generator><link href="http://localhost:4000/feed.xml" rel="self" type="application/atom+xml" /><link href="http://localhost:4000/" rel="alternate" type="text/html" /><updated>2024-09-25T10:35:55+05:30</updated><id>http://localhost:4000/feed.xml</id><title type="html">dsm Blogs</title><subtitle>This is a blog about Data Science and Machine Learning. I write about all the things I learn in this domain. I also share my knowledge with you.</subtitle><entry><title type="html">Q-Learning</title><link href="http://localhost:4000/ai/2024/09/23/Q_learning.html" rel="alternate" type="text/html" title="Q-Learning" /><published>2024-09-23T10:00:10+05:30</published><updated>2024-09-23T10:00:10+05:30</updated><id>http://localhost:4000/ai/2024/09/23/Q_learning</id><content type="html" xml:base="http://localhost:4000/ai/2024/09/23/Q_learning.html"><![CDATA[<h1 id="introduction">Introduction</h1>
 
 <p>In this blog, we will learn about the fundamental algorithms used in reinforcement learning. It’s not about neural networks but the mathematical algorithms involved in learning.</p>
 
@@ -240,41 +240,7 @@ Bellman optimality equation assumes, that we already have the optimal state valu
 
 <ol>
   <li>Hands-On Machine Learning with Scikit-Learn, Keras, and TensorFlow <a href="https://www.oreilly.com/library/view/hands-on-machine-learning/9781492032632/">Buy here</a></li>
-</ol>]]></content><author><name></name></author><category term="AI" /><summary type="html"><![CDATA[Introduction]]></summary></entry><entry><title type="html">Policy Gradients</title><link href="http://localhost:4000/ai/2024/09/20/Policy_gradients.html" rel="alternate" type="text/html" title="Policy Gradients" /><published>2024-09-20T10:00:10+05:30</published><updated>2024-09-20T10:00:10+05:30</updated><id>http://localhost:4000/ai/2024/09/20/Policy_gradients</id><content type="html" xml:base="http://localhost:4000/ai/2024/09/20/Policy_gradients.html"><![CDATA[<p>In this blog, we will discuss about the policy and policy gradients in reinforcement learning.</p>
-
-<h1 id="policy-">Policy 🎮</h1>
-
-<p>The algorithm a software agent uses to determine it’s actions is called it’s policy. The goal of the agent is to learn a policy that maximizes its reward over time. 🎯</p>
-
-<p>There are several types of policies:</p>
-
-<ol>
-  <li>Deterministic policies 🔒: 
-These directly map states to actions</li>
-  <li>Stochastic policies 🎲: 
-These map states to probability distributions over actions. An action is randomly chosen based on the probability distribution, and it’s not necessary for the agent to always choose the action with the highest probability. This type of policy involves some randomness.</li>
-</ol>
-
-<p>This distinction between deterministic and stochastic policies is an important concept in reinforcement learning and policy-based methods. 🧠</p>
-
-<h1 id="policy-gradients">Policy Gradients</h1>
-
-<p>Policy gradients is a type of reinforcement learning algorithm where the agent learns to make decisions based on a policy, which is a mapping from states to actions. [In naive terms, improves its policy by playing, using gradient descent  &amp; discounted rewards]</p>
-
-<p>This method is useful for problems where the environment is fully observable, and the agent can learn by trial and error. Policy gradients have been successfully applied to problems such as robotics and natural language processing.</p>
-
-<p>The policy gradient algorithm is an iterative process that gradually updates the policy parameters to maximize the expected reward. The optimization is done using gradient descent methods, such as stochastic gradient descent.</p>
-
-<h2 id="algorithm">Algorithm</h2>
-
-<p>One popular class of PG algorithms called REINFORCE algorithms (1992). Common variant:</p>
-
-<ol>
-  <li>Let the neural network play the game several times and keep calculating the gradients that would make the chosen action more likely - but don’t apply yet.</li>
-  <li>Once you have run several episodes, compute each action’s advantage (+ve for good, -ve for bad).</li>
-  <li>Multiply each gradient vector by the corresponding action’s advantage.</li>
-  <li>Finally compute the mean of all resulting gradient vectors, and use it to perform a Gradient Descent step.</li>
-</ol>]]></content><author><name></name></author><category term="AI" /><summary type="html"><![CDATA[In this blog, we will discuss about the policy and policy gradients in reinforcement learning.]]></summary></entry><entry><title type="html">Welcome to Jekyll!</title><link href="http://localhost:4000/jekyll/update/2024/09/15/welcome-to-jekyll.html" rel="alternate" type="text/html" title="Welcome to Jekyll!" /><published>2024-09-15T15:08:10+05:30</published><updated>2024-09-15T15:08:10+05:30</updated><id>http://localhost:4000/jekyll/update/2024/09/15/welcome-to-jekyll</id><content type="html" xml:base="http://localhost:4000/jekyll/update/2024/09/15/welcome-to-jekyll.html"><![CDATA[<p>You’ll find this post in your <code class="language-plaintext highlighter-rouge">_posts</code> directory. Go ahead and edit it and re-build the site to see your changes. You can rebuild the site in many different ways, but the most common way is to run <code class="language-plaintext highlighter-rouge">jekyll serve</code>, which launches a web server and auto-regenerates your site when a file is updated.</p>
+</ol>]]></content><author><name></name></author><category term="AI" /><summary type="html"><![CDATA[Introduction]]></summary></entry><entry><title type="html">Welcome to Jekyll!</title><link href="http://localhost:4000/jekyll/update/2024/09/15/welcome-to-jekyll.html" rel="alternate" type="text/html" title="Welcome to Jekyll!" /><published>2024-09-15T15:08:10+05:30</published><updated>2024-09-15T15:08:10+05:30</updated><id>http://localhost:4000/jekyll/update/2024/09/15/welcome-to-jekyll</id><content type="html" xml:base="http://localhost:4000/jekyll/update/2024/09/15/welcome-to-jekyll.html"><![CDATA[<p>You’ll find this post in your <code class="language-plaintext highlighter-rouge">_posts</code> directory. Go ahead and edit it and re-build the site to see your changes. You can rebuild the site in many different ways, but the most common way is to run <code class="language-plaintext highlighter-rouge">jekyll serve</code>, which launches a web server and auto-regenerates your site when a file is updated.</p>
 
 <p>Jekyll requires blog post files to be named according to the following format:</p>
 
@@ -704,7 +670,294 @@ Overall, decision trees are a simple and effective technique for classification 
 
 <p>Overall, ensemble methods are a powerful technique for improving the performance of machine learning models, and they are widely used in industry and research. However, it is important to carefully consider the problem and the available data before choosing an ensemble method.</p>
 
-<p><a href="https://www.kaggle.com/code/dsmeena/ch-7-ensemble-learning-and-random-forests"></a></p>]]></content><author><name></name></author><category term="AI" /><summary type="html"><![CDATA[In this blog post, we’re going to talk about machine learning and its different types.]]></summary></entry><entry><title type="html">Understanding git</title><link href="http://localhost:4000/web/2023/04/09/Understanding-Git.html" rel="alternate" type="text/html" title="Understanding git" /><published>2023-04-09T15:08:10+05:30</published><updated>2023-04-09T15:08:10+05:30</updated><id>http://localhost:4000/web/2023/04/09/Understanding-Git</id><content type="html" xml:base="http://localhost:4000/web/2023/04/09/Understanding-Git.html"><![CDATA[<h2 id="introduction">Introduction</h2>
+<p><a href="https://www.kaggle.com/code/dsmeena/ch-7-ensemble-learning-and-random-forests"></a></p>]]></content><author><name></name></author><category term="AI" /><summary type="html"><![CDATA[In this blog post, we’re going to talk about machine learning and its different types.]]></summary></entry><entry><title type="html">Attention in DL</title><link href="http://localhost:4000/ai/2023/06/25/Attention_in_DL.html" rel="alternate" type="text/html" title="Attention in DL" /><published>2023-06-25T10:00:10+05:30</published><updated>2023-06-25T10:00:10+05:30</updated><id>http://localhost:4000/ai/2023/06/25/Attention_in_DL</id><content type="html" xml:base="http://localhost:4000/ai/2023/06/25/Attention_in_DL.html"><![CDATA[<p>Welcome to this blog post on attention in deep learning! In this post, we will explore the concept of attention and its importance in the field of deep learning. We will start by explaining what attention is and how it works, and then move on to different types of attention mechanisms and their applications. Whether you are new to deep learning or an experienced practitioner 🧑‍⚕️, this post is sure to provide valuable insights into one of the most important concepts in modern machine learning.</p>
+
+<h1 id="attention">Attention</h1>
+
+<p>Attention is a mechanism in neural networks that allows the model to focus 🔍 on specific parts of the input sequence when making predictions. It has been a breakthrough in natural language processing and computer vision.</p>
+
+<p>Attention was first introduced in 2014 by Dzmitry Bahdanau, Kyunghyun Cho, and Yoshua Bengio, and since then, it has become a fundamental concept in deep learning.</p>
+
+<p><img src="/assets/2024/September/attention%20mechanism.png" alt="Fig: The attention mechanism improves model’s prediction. Taken from Show, Attend and Tell: Neural Image Caption Generation with Visual Attention" /></p>
+
+<p><em>Fig: The attention mechanism improves model’s prediction. Taken from Show, Attend and Tell: Neural Image Caption Generation with Visual Attention</em></p>
+
+<h2 id="working-of-attention-">Working of Attention 👷</h2>
+
+<p>The attention mechanism assigns weights to each element in the input sequence, indicating their relevance to the current output. Here’s how it works:</p>
+
+<ol>
+  <li>The attention weights 🏋️‍♀️ are computed based on the current state of the model and the entire input sequence.</li>
+  <li>The input sequence is multiplied ❌ element-wise by the attention weights, producing a sequence of weighted vectors. These vectors are then summed ➕ to obtain a single vector or context vector that captures the most relevant parts of the input sequence.</li>
+  <li>
+    <p>This weighted sum of the input sequence or context vector is then used to compute the next state of the model.</p>
+
+    <p>How? by concatenating 🔗 the context vector with the decoder output and passing through a feedforward neural network to get the final output sequence which is again used to update decoder hidden state.</p>
+  </li>
+</ol>
+
+<p>By focusing on specific parts of the input sequence that are most relevant to the current output, the attention mechanism improves the model’s performance.</p>
+
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>  Input Sequence  --&gt; Encoder --&gt; Attention --&gt; Decoder --&gt; Output Sequence
+</code></pre></div></div>
+
+<p>In this diagram, the input sequence is first passed through an encoder, which produces a set of encoded representations. The attention mechanism then computes weights for each encoded representation, indicating its relevance 🤔 to the current output. The weighted sum of the encoded representations is then passed through a decoder, which produces the final output sequence.</p>
+
+<h2 id="coding-view-">Coding View 🧑‍💻</h2>
+
+<p>To write an attention model from scratch, you would need to define the input and output shapes of the model, as well as the layers to be used. The model would then need to be trained using a suitable loss function and optimizer.</p>
+
+<p>Here is an example of how to implement an attention model using TensorFlow 🌊:</p>
+
+<div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="kn">from</span> <span class="n">tensorflow.keras.layers</span> <span class="kn">import</span> <span class="n">Input</span><span class="p">,</span> <span class="n">Dense</span><span class="p">,</span> <span class="n">LSTM</span><span class="p">,</span> <span class="n">Lambda</span><span class="p">,</span> <span class="n">dot</span><span class="p">,</span> <span class="n">Activation</span><span class="p">,</span> <span class="n">concatenate</span>
+<span class="kn">from</span> <span class="n">tensorflow.keras.models</span> <span class="kn">import</span> <span class="n">Model</span>
+<span class="kn">import</span> <span class="n">tensorflow.keras.backend</span> <span class="k">as</span> <span class="n">K</span>
+
+<span class="c1"># Define the input sequence shape and size
+</span><span class="n">sequence_length</span> <span class="o">=</span> <span class="mi">10</span>
+<span class="n">input_size</span> <span class="o">=</span> <span class="mi">32</span>
+
+<span class="c1"># Define the encoder and decoder layers using LSTM cells
+</span><span class="n">encoder_inputs</span> <span class="o">=</span> <span class="nc">Input</span><span class="p">(</span><span class="n">shape</span><span class="o">=</span><span class="p">(</span><span class="n">sequence_length</span><span class="p">,</span> <span class="n">input_size</span><span class="p">))</span>
+<span class="n">encoder_lstm</span> <span class="o">=</span> <span class="nc">LSTM</span><span class="p">(</span><span class="mi">64</span><span class="p">,</span> <span class="n">return_sequences</span><span class="o">=</span><span class="bp">True</span><span class="p">,</span> <span class="n">return_state</span><span class="o">=</span><span class="bp">True</span><span class="p">)</span>
+<span class="n">encoder_outputs</span><span class="p">,</span> <span class="n">state_h</span><span class="p">,</span> <span class="n">state_c</span> <span class="o">=</span> <span class="nf">encoder_lstm</span><span class="p">(</span><span class="n">encoder_inputs</span><span class="p">)</span>
+<span class="n">encoder_states</span> <span class="o">=</span> <span class="p">[</span><span class="n">state_h</span><span class="p">,</span> <span class="n">state_c</span><span class="p">]</span>
+
+<span class="n">decoder_inputs</span> <span class="o">=</span> <span class="nc">Input</span><span class="p">(</span><span class="n">shape</span><span class="o">=</span><span class="p">(</span><span class="n">sequence_length</span><span class="p">,</span> <span class="n">input_size</span><span class="p">))</span>
+<span class="n">decoder_lstm</span> <span class="o">=</span> <span class="nc">LSTM</span><span class="p">(</span><span class="mi">64</span><span class="p">,</span> <span class="n">return_sequences</span><span class="o">=</span><span class="bp">True</span><span class="p">,</span> <span class="n">return_state</span><span class="o">=</span><span class="bp">True</span><span class="p">)</span>
+<span class="n">decoder_outputs</span><span class="p">,</span> <span class="n">_</span><span class="p">,</span> <span class="n">_</span> <span class="o">=</span> <span class="nf">decoder_lstm</span><span class="p">(</span><span class="n">decoder_inputs</span><span class="p">,</span> <span class="n">initial_state</span><span class="o">=</span><span class="n">encoder_states</span><span class="p">)</span>
+
+<span class="c1"># Compute attention weights
+</span><span class="n">attention</span> <span class="o">=</span> <span class="nf">dot</span><span class="p">([</span><span class="n">decoder_outputs</span><span class="p">,</span> <span class="n">encoder_outputs</span><span class="p">],</span> <span class="n">axes</span><span class="o">=</span><span class="p">[</span><span class="mi">2</span><span class="p">,</span> <span class="mi">2</span><span class="p">])</span>
+<span class="n">attention</span> <span class="o">=</span> <span class="nc">Activation</span><span class="p">(</span><span class="sh">'</span><span class="s">softmax</span><span class="sh">'</span><span class="p">)(</span><span class="n">attention</span><span class="p">)</span>
+
+<span class="n">context</span> <span class="o">=</span> <span class="nf">dot</span><span class="p">([</span><span class="n">attention</span><span class="p">,</span> <span class="n">encoder_outputs</span><span class="p">],</span> <span class="n">axes</span><span class="o">=</span><span class="p">[</span><span class="mi">2</span><span class="p">,</span><span class="mi">1</span><span class="p">])</span>
+<span class="n">decoder_combined_context</span> <span class="o">=</span> <span class="nf">concatenate</span><span class="p">([</span><span class="n">context</span><span class="p">,</span> <span class="n">decoder_outputs</span><span class="p">])</span>
+
+<span class="c1"># Define the output layer
+</span><span class="n">output_layer</span> <span class="o">=</span> <span class="nc">Dense</span><span class="p">(</span><span class="n">input_size</span><span class="p">,</span> <span class="n">activation</span><span class="o">=</span><span class="sh">'</span><span class="s">softmax</span><span class="sh">'</span><span class="p">)</span>
+<span class="n">output</span> <span class="o">=</span> <span class="nf">output_layer</span><span class="p">(</span><span class="n">decoder_combined_context</span><span class="p">)</span>
+
+<span class="c1"># Define the model
+</span><span class="n">model</span> <span class="o">=</span> <span class="nc">Model</span><span class="p">([</span><span class="n">encoder_inputs</span><span class="p">,</span> <span class="n">decoder_inputs</span><span class="p">],</span> <span class="n">output</span><span class="p">)</span>
+
+</code></pre></div></div>
+
+<p>In this example, we first define the shape and size of the input sequence. The input vectors have a dimensionality of 32 and input sequence has a length of 10.</p>
+
+<p>Let’s take a quick glance, at these terms. 🧐</p>
+
+<table>
+  <thead>
+    <tr>
+      <th>Term</th>
+      <th>Definition</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td>Input Vectors</td>
+      <td>Represent the elements of the input sequence</td>
+    </tr>
+    <tr>
+      <td>Input Sequence</td>
+      <td>Input of the model</td>
+    </tr>
+    <tr>
+      <td>Input size</td>
+      <td>Refers to the dimensionality of the input vectors</td>
+    </tr>
+    <tr>
+      <td>Input sequence length</td>
+      <td>Refers to the number of elements in the input sequence.</td>
+    </tr>
+  </tbody>
+</table>
+
+<p>We then define the encoder and decoder layers 🧱 using LSTM cells, similar to the previous example.</p>
+
+<p>We then compute the attention weights by taking the dot product of the decoder outputs and encoder outputs, and passing the result through a softmax activation function 🥎 to obtain the attention weights.</p>
+
+<p>We then compute the context vector 📃 by taking the dot product of the attention weights and the encoder outputs.</p>
+
+<p>Finally, we concatenate 🔗 the context vector and the decoder outputs, and pass the result through the output layer to obtain the final output.</p>
+
+<p>There are many variations and improvements that can be made depending on the specific task and dataset being used.</p>
+
+<h2 id="mathematical-view-">Mathematical View 👩‍🔬</h2>
+
+<p>Here are the mathematical equations for the attention mechanism:</p>
+
+<p>Let $h_t$ be the hidden state of the decoder at time $t$, and let $e_{i,j}$ be a score that measures the relevance of the ith encoder output ($h_i$) and the jth decoder hidden state ($h_j$).</p>
+
+<p>The attention scores $e_{i,j}$ can be computed using various methods, such as dot product, additive, and multiplicative attention.</p>
+
+<p>In the <strong>dot product method 🔵</strong>, the scores are computed as the dot product of the encoder outputs and the decoder hidden state:</p>
+
+<p>$e_{i,j} = h_i^T h_j$</p>
+
+<p>In the <strong>additive method ➕</strong>, the scores are computed as the sum of two feedforward neural networks:</p>
+
+<p>$e_{i,j} = v_a^T \tanh(W_a h_i + U_a h_j)$</p>
+
+<p>where $v_a$, $W_a$, and $U_a$ are learnable weight matrices.</p>
+
+<p>In the <strong>multiplicative method ✖️</strong>, the scores are computed as the dot product of the decoder hidden state and a learnable weight matrix, which is then multiplied element-wise with the encoder outputs:</p>
+
+<p>$e_{i,j} = h_i^T W_a h_j$</p>
+
+<p>where $W_a$ is a learnable weight matrix.</p>
+
+<p>In all cases, the attention mechanism allows the model to focus 🔍 on specific parts of the input sequence that are most relevant to the current output, improving the performance of the model.</p>
+
+<p>The attention weights $\alpha_{i,j}$ are computed using the softmax function 🥎:</p>
+
+<p>$\alpha_{i,j} = \frac{\exp(e_{i,j})}{\sum_{k=1}^{T_x} \exp(e_{i,k})}$</p>
+
+<p>where $T_x$ is the length of the input sequence,</p>
+
+<p>The exponential function: $\exp(x) = e^x$</p>
+
+<p>The context vector $c_t$ is then computed as a weighted sum ➕ of the encoder outputs, using the attention weights:</p>
+
+<p>$c_t = \sum_{i=1}^{T_x} \alpha_{i,t} h_i$</p>
+
+<p>Finally, the context vector is concatenated 🔗 with the decoder hidden state $h_t$ and passed through a feedforward neural network to obtain the final output.</p>
+
+<p>This output represents the model’s prediction or the next state of the model.</p>
+
+<h2 id="self-attention-">Self-Attention 🤳</h2>
+
+<p>Self-attention, also known as intra-attention, is a type of attention mechanism where the input sequence is compared 🪞 to itself to obtain a set of attention weights. This allows the model to attend to different parts of the input sequence when making predictions, without requiring any additional context.</p>
+
+<h3 id="working-of-self-attention-">Working of self-attention 👷</h3>
+
+<p>In self-attention, the input sequence is first passed through three linear transformations to obtain query, key 🗝️, and value vectors.</p>
+
+<p>Let’s say we have an input sequence of length $T_x$ and input size $d$.</p>
+
+<p>Then, we define three weight matrices $W_q$, $W_k$, and $W_v$, each of shape $d \times d$.</p>
+
+<p>We use these weight matrices to transform the input sequence into query, key, and value vectors:</p>
+
+<ul>
+  <li>
+    <p>The query ❓ vector $q_i$ for the ith element of the input sequence is obtained by multiplying the input sequence by $W_q$:</p>
+
+    <p>$q_i = W_q x_i$</p>
+  </li>
+  <li>
+    <p>The key 🗝️ vector $k_j$ for the jth element of the input sequence is obtained by multiplying the input sequence by $W_k$:</p>
+
+    <p>$k_j = W_k x_j$</p>
+  </li>
+  <li>
+    <p>The value ⚖️ vector $v_t$ for the th element of the input sequence is obtained by multiplying the input sequence by $W_v$:</p>
+
+    <p>$v_t = W_v x_t$</p>
+  </li>
+</ul>
+
+<p>where $x_i$, $x_j$, and $x_t$ are the embeddings of the ith, jth, and th elements of the input sequence, respectively.</p>
+
+<p>These vectors are then used to compute the attention scores as the dot product 🔵 of the query and key vectors, which is then scaled by the square root of the dimensionality $d$ to prevent the scores from becoming too large:</p>
+
+<p>$e_{i,j} = \frac{q_i^T k_j}{\sqrt{d}}$</p>
+
+<p>where $q_i$ and $k_j$ are the query and key vectors for the ith and jth elements of the input sequence, respectively.</p>
+
+<p>The attention scores are then normalized using the softmax function 🥎 to get attention weights:</p>
+
+<p>$\alpha_{i,j} = \frac{\exp(e_{i,j})}{\sum_{k=1}^{T_x} \exp(e_{i,k})}$</p>
+
+<p>where $T_x$ is the length of the input sequence.</p>
+
+<p>The context vector $c_i$ for the ith element of the input sequence is then computed as the weighted sum ➕ of the value vectors, using the attention weights:</p>
+
+<p>$c_i = \sum_{j=1}^{T_x} \alpha_{i,j} v_j$</p>
+
+<p>where $v_j$ is the value vector for the jth element of the input sequence.</p>
+
+<p>Finally, the context vectors are concatenated 🔗 and passed through a feedforward neural network to obtain the final output.</p>
+
+<p>It represents the model’s prediction or the next state of the model. The specific details of the final output would depend on the architecture and task of the deep learning model being used.</p>
+
+<p>However, self-attention is particularly useful in natural language processing tasks, where the input sequence is often a sequence of words or tokens, and the model needs to capture long-range dependencies between them.</p>
+
+<p>Self-attention has been a breakthrough in natural language processing and has been used in many state-of-the-art models such as BERT and GPT-2.</p>
+
+<h3 id="differences-">Differences 🔎</h3>
+
+<p>In Generic attention, on the other hand, the input sequence is compared to some additional context to obtain a set of attention weights.</p>
+
+<p>The additional context can be the current state of the model (like decoder outputs), image or another sequence.</p>
+
+<p>For example,</p>
+
+<p>In image captioning, 📸 the model uses both the image and the previously generated words as additional context to generate a caption. The attention mechanism can then focus on different parts of the image when generating each word of the caption.</p>
+
+<p>Similarly, in machine translation 🤖, the model can use the previously generated words as additional context when generating the next word. The attention mechanism can then focus on different parts of the source sentence when generating each word of the target sentence.</p>
+
+<p>So, the additional context can be any sequence or vector that is relevant to the task being performed by the model, including the output of the model itself.</p>
+
+<p>The key difference between the two is that in <strong>scaled dot product attention</strong> 🔵, the query, key, and value matrices are all derived from different sources, while in self-attention, they are all derived from the same input sequence.</p>
+
+<p>Scaled dot product attention is commonly used in transformer-based models, while self-attention is commonly used in recurrent neural networks and other models for natural language processing tasks.</p>
+
+<p>This differences will help you better understand the attention mechanism.</p>
+
+<h2 id="types-of-attention-mechanism">Types of Attention Mechanism</h2>
+
+<p>There are several types of attention mechanisms, including:</p>
+
+<h3 id="global-attention-">Global attention 🌍</h3>
+
+<p>In this type of attention, the model considers all the input elements when computing the attention weights. It is also known as hard attention or window-based attention.</p>
+
+<p>For example, in image captioning, global attention can be used to attend to all the regions of the image when generating the corresponding caption.</p>
+
+<p>However, global attention can be computationally expensive when dealing with long input sequences, as it requires computing the attention weights for all the input elements.</p>
+
+<h3 id="local-attention-">Local attention 🏠</h3>
+
+<p>In this type of attention, the model only considers a subset of the input elements when computing the attention weights. This subset can be determined based on the current state of the model or other factors. It is also known as soft attention or content-based attention.</p>
+
+<p>For example, in machine translation, local attention can be used to attend to a subset of the source sentence when generating the corresponding target sentence.</p>
+
+<h3 id="multi-head-attention-">Multi-head attention 🤹</h3>
+
+<p>In this type of attention, the model computes multiple sets of attention weights, each focusing on a different part of the input sequence. 
+In multi-head attention, the input is split into multiple heads, each of which is processed using self-attention. The outputs of the multiple heads are then concatenated and passed through a linear layer to produce the final output.</p>
+
+<p>This allows the model to capture different aspects of the input sequence simultaneously.</p>
+
+<p>One example of a complex task that requires multi-head attention is language modeling 🔮, where the model is trained to predict the next word in a sentence given the previous words. In this task, the model needs to capture both local dependencies between adjacent words and long-range dependencies between distant words. Multi-head attention can be used to capture both types of dependencies by allowing the model to attend to different parts of the input sequence in parallel. This has been demonstrated in models such as GPT-2 and BERT, which have achieved state-of-the-art performance on a wide range of natural language processing tasks.</p>
+
+<p><img src="/assets/2024/September/soft-hard.png" alt="Fig: As the model generates each word, its attention changes to reflect the relevant parts of the image. “soft” (top row) vs “hard” (bottom row) attention. 
+Taken From Show, Attend and Tell: Neural Image Caption Generation with Visual Attention" /></p>
+
+<p><em>Fig: As the model generates each word, its attention changes to reflect the relevant parts of the image. “soft” (top row) vs “hard” (bottom row) attention. 
+Taken From Show, Attend and Tell: Neural Image Caption Generation with Visual Attention</em></p>
+
+<p>Each type of attention mechanism has its own advantages and disadvantages, and the choice of which one to use depends on the specific task and dataset being used.</p>
+
+<h2 id="applications">Applications</h2>
+
+<p>Attention has been used in various applications in deep learning, such as machine translation, speech recognition, image captioning, and question answering.</p>
+
+<p>One of the most popular models that use attention is the Transformer, which was introduced in 2017 by Vaswani et al.</p>
+
+<p>Overall, attention has proven to be a powerful mechanism in deep learning that allows the model to focus on specific parts of the input sequence, improving the performance of various deep learning models.</p>
+
+<h2 id="references-">References 👏</h2>
+
+<p><a href="https://towardsdatascience.com/transformers-89034557de14">Data science</a></p>
+
+<p><a href="https://arxiv.org/pdf/1502.03044.pdf">Show, Attend and Tell: Neural Image Caption Generation with Visual Attention → Image captioning using Attention</a></p>
+
+<p><a href="https://arxiv.org/pdf/1706.03762.pdf">Attention is All you Need → Self-Attention, Multi-Head Attention, Transformers</a></p>
+
+<p>That’s it for this blog, hope this was will help you better understand the concepts of deep learning ❤️❤️.</p>]]></content><author><name></name></author><category term="AI" /><summary type="html"><![CDATA[Welcome to this blog post on attention in deep learning! In this post, we will explore the concept of attention and its importance in the field of deep learning. We will start by explaining what attention is and how it works, and then move on to different types of attention mechanisms and their applications. Whether you are new to deep learning or an experienced practitioner 🧑‍⚕️, this post is sure to provide valuable insights into one of the most important concepts in modern machine learning.]]></summary></entry><entry><title type="html">Understanding git</title><link href="http://localhost:4000/web/2023/04/09/Understanding-Git.html" rel="alternate" type="text/html" title="Understanding git" /><published>2023-04-09T15:08:10+05:30</published><updated>2023-04-09T15:08:10+05:30</updated><id>http://localhost:4000/web/2023/04/09/Understanding-Git</id><content type="html" xml:base="http://localhost:4000/web/2023/04/09/Understanding-Git.html"><![CDATA[<h2 id="introduction">Introduction</h2>
 
 <p>Git is a distributed version control system that enables developers to track changes in their code and collaborate on projects with others. Created by Linus Torvalds in 2005, Git has since become one of the most popular version control systems in use today.</p>
 

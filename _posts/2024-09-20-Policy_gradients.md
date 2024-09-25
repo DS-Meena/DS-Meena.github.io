@@ -1,7 +1,7 @@
 ---
 layout: post
 title:  "Policy Gradients"
-date:   2024-09-20 10:00:10 +0530
+date:   3024-09-20 10:00:10 +0530
 categories: AI
 ---
 
@@ -20,16 +20,19 @@ These map states to probability distributions over actions. An action is randoml
 
 This distinction between deterministic and stochastic policies is an important concept in reinforcement learning and policy-based methods. 🧠
 
+# Policy-based Methods 🎮
 
+In value-based methods, we learn the value function and derive a policy from it (e.g., in Q-learning we choose the action with the highest Q-value). In policy-based methods like policy gradients, we directly optimize the policy without explicitly computing a value function. 🎯
 
+However, some advanced methods, such as actor-critic algorithms, combine both approaches by learning both a value function and a policy simultaneously. 🤖
 
-# Policy Gradients
+# Policy Gradients 📈
 
-Policy gradients is a type of reinforcement learning algorithm where the agent learns to make decisions based on a policy, which is a mapping from states to actions. [In naive terms, improves its policy by playing, using gradient descent  & discounted rewards] 
+In policy gradients, the agent learns to make decisions based on a policy, which is a mapping from states to actions. The method is particularly useful for problems where the environment is fully observable, and the agent can learn through trial and error. 🧠🔍
 
-This method is useful for problems where the environment is fully observable, and the agent can learn by trial and error. Policy gradients have been successfully applied to problems such as robotics and natural language processing.
+The policy gradient algorithm is an iterative process that gradually updates the policy parameters to maximize the expected reward. It improves the policy by playing, using gradient ascent and discounted rewards. The optimization is done using gradient ascent methods, such as stochastic gradient ascent. 💹
 
-The policy gradient algorithm is an iterative process that gradually updates the policy parameters to maximize the expected reward. The optimization is done using gradient descent methods, such as stochastic gradient descent.
+Policy gradients have been successfully applied to various domains, including robotics and natural language processing. 🤖💬
 
 ## Algorithm
 
