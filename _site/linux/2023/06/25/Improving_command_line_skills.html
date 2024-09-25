@@ -1,0 +1,651 @@
+<!DOCTYPE html>
+<html lang="en"><head>
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1"><!-- Begin Jekyll SEO tag v2.8.0 -->
+<title>Improving command line skills | dsm Blogs</title>
+<meta name="generator" content="Jekyll v4.3.3" />
+<meta property="og:title" content="Improving command line skills" />
+<meta property="og:locale" content="en_US" />
+<meta name="description" content="Welcome to our comprehensive guide on improving your Command Line skills, where we primarily focus on the Linux-based command line. This emphasises Linux because most commands are identical across Linux and Windows, with just a few exceptions. This blog will explore various commands related to the Linux file system, their applications, and how to use them effectively to enhance your navigation and manipulation of the Linux operating system." />
+<meta property="og:description" content="Welcome to our comprehensive guide on improving your Command Line skills, where we primarily focus on the Linux-based command line. This emphasises Linux because most commands are identical across Linux and Windows, with just a few exceptions. This blog will explore various commands related to the Linux file system, their applications, and how to use them effectively to enhance your navigation and manipulation of the Linux operating system." />
+<link rel="canonical" href="http://localhost:4000/linux/2023/06/25/Improving_command_line_skills.html" />
+<meta property="og:url" content="http://localhost:4000/linux/2023/06/25/Improving_command_line_skills.html" />
+<meta property="og:site_name" content="dsm Blogs" />
+<meta property="og:type" content="article" />
+<meta property="article:published_time" content="2023-06-25T10:00:10+05:30" />
+<meta name="twitter:card" content="summary" />
+<meta property="twitter:title" content="Improving command line skills" />
+<script type="application/ld+json">
+{"@context":"https://schema.org","@type":"BlogPosting","dateModified":"2023-06-25T10:00:10+05:30","datePublished":"2023-06-25T10:00:10+05:30","description":"Welcome to our comprehensive guide on improving your Command Line skills, where we primarily focus on the Linux-based command line. This emphasises Linux because most commands are identical across Linux and Windows, with just a few exceptions. This blog will explore various commands related to the Linux file system, their applications, and how to use them effectively to enhance your navigation and manipulation of the Linux operating system.","headline":"Improving command line skills","mainEntityOfPage":{"@type":"WebPage","@id":"http://localhost:4000/linux/2023/06/25/Improving_command_line_skills.html"},"url":"http://localhost:4000/linux/2023/06/25/Improving_command_line_skills.html"}</script>
+<!-- End Jekyll SEO tag -->
+<link rel="stylesheet" href="/assets/main.css"><link type="application/atom+xml" rel="alternate" href="http://localhost:4000/feed.xml" title="dsm Blogs" /></head>
+<body><header class="site-header" role="banner">
+
+  <div class="wrapper"><a class="site-title" rel="author" href="/">dsm Blogs</a><nav class="site-nav">
+        <input type="checkbox" id="nav-trigger" class="nav-trigger" />
+        <label for="nav-trigger">
+          <span class="menu-icon">
+            <svg viewBox="0 0 18 15" width="18px" height="15px">
+              <path d="M18,1.484c0,0.82-0.665,1.484-1.484,1.484H1.484C0.665,2.969,0,2.304,0,1.484l0,0C0,0.665,0.665,0,1.484,0 h15.032C17.335,0,18,0.665,18,1.484L18,1.484z M18,7.516C18,8.335,17.335,9,16.516,9H1.484C0.665,9,0,8.335,0,7.516l0,0 c0-0.82,0.665-1.484,1.484-1.484h15.032C17.335,6.031,18,6.696,18,7.516L18,7.516z M18,13.516C18,14.335,17.335,15,16.516,15H1.484 C0.665,15,0,14.335,0,13.516l0,0c0-0.82,0.665-1.483,1.484-1.483h15.032C17.335,12.031,18,12.695,18,13.516L18,13.516z"/>
+            </svg>
+          </span>
+        </label>
+
+        <div class="trigger"><a class="page-link" href="/about/">About</a></div>
+      </nav></div>
+</header>
+<main class="page-content" aria-label="Content">
+      <div class="wrapper">
+        <!--Added Math Latext support-->
+<script src="https://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML" type="text/javascript"></script>
+<script type="text/x-mathjax-config">
+  MathJax.Hub.Config({
+    tex2jax: {
+      inlineMath: [['$','$']],
+      processEscapes: true
+    }
+  });
+</script>
+
+<article class="post h-entry" itemscope itemtype="http://schema.org/BlogPosting">
+
+  <header class="post-header">
+    <h1 class="post-title p-name" itemprop="name headline">Improving command line skills</h1>
+    <p class="post-meta">
+      <time class="dt-published" datetime="2023-06-25T10:00:10+05:30" itemprop="datePublished">Jun 25, 2023
+      </time></p>
+  </header>
+
+  <div class="post-content e-content" itemprop="articleBody">
+    <p>Welcome to our comprehensive guide on improving your Command Line skills, where we primarily focus on the Linux-based command line. This emphasises Linux because most commands are identical across Linux and Windows, with just a few exceptions. This blog will explore various commands related to the Linux file system, their applications, and how to use them effectively to enhance your navigation and manipulation of the Linux operating system.</p>
+
+<h2 id="linux-file-system">Linux File System</h2>
+
+<p>This section focuses on commands used in Linux for working with files and directories – we will discuss some less-discussed commands. I hope that you are already aware of the primary file system commands like ‘pwd’ for printing the current directory, ‘cd’ for changing directories, ‘ls’ for listing directory contents, and shortcuts for navigation ‘.’ (current folder), ‘..’ (parent folder), ‘~’ (current user’s home directory) and wildcard symbols for matching patterns (*, ?), creating new files and directories using ‘touch’ and ‘mkdir’.</p>
+
+<p>The Linux File System follows a tree-like structure starting at a base (or root) directory, indicated by the slash (/). Locations on the file system are shown using file paths. Paths that start at the base directory (/) are known as absolute paths. Paths that start from the shell’s current working directory are known as relative paths.
+Absolute: /home/sarah/Documents/file1.txt
+Relative: Documents/file1.txt</p>
+
+<h3 id="editing-files">Editing Files📝</h3>
+
+<h4 id="nano">Nano</h4>
+
+<p>Nano is a simple, user-friendly text editor for the terminal. It is ideal for creating and editing text files and scripts. Here are some basic commands:</p>
+
+<ul>
+  <li>To open or create a file, use <code class="language-plaintext highlighter-rouge">nano &lt;filename&gt;</code>. If the file already exists, it will open for editing. If not, a new file will be created.</li>
+  <li>To save changes, press <code class="language-plaintext highlighter-rouge">Ctrl+O</code>. This will prompt you for a filename for the file. Press <code class="language-plaintext highlighter-rouge">Enter</code> to save.</li>
+  <li>To exit Nano, press <code class="language-plaintext highlighter-rouge">Ctrl+X</code>. If there are unsaved changes, Nano will ask if you want to save changes before exiting.</li>
+  <li>To cut and paste text, use <code class="language-plaintext highlighter-rouge">Ctrl+K</code> to cut a line and <code class="language-plaintext highlighter-rouge">Ctrl+U</code> to paste it back.</li>
+</ul>
+
+<p><img src="/assets/2024/September/nano.png" alt="Untitled" /></p>
+
+<p>It comes with a built-in toolbar of various commands and all one needs to know in order to use these options are the meaning of 2 special symbols.</p>
+
+<table>
+  <thead>
+    <tr>
+      <th>Character</th>
+      <th>Meaning</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td>^</td>
+      <td>This is the CTRL key on your keyboard. For example, ^O is CTRL + O.</td>
+    </tr>
+    <tr>
+      <td>M-</td>
+      <td>This is the “meta” key on your keyboard. Depending on your keyboard layout this may be the ALT, ESC, CMD key. Try it out 😄 Assuming M- is the ALT key, then M-X is ALT + X</td>
+    </tr>
+  </tbody>
+</table>
+
+<p>If want to learn more about nano, then read this page <a href="https://www.nano-editor.org/docs.php">nano.</a></p>
+
+<h4 id="vim">Vim</h4>
+
+<p>Vim is a highly configurable text editor for efficiently creating and changing any kind of text. It is especially useful for editing programs. Here are some basics:</p>
+
+<ul>
+  <li>To start Vim and open a file, use <code class="language-plaintext highlighter-rouge">vim &lt;filename&gt;</code>. If the file does not exist, it will be created.</li>
+  <li>Vim operates in different modes, primarily command mode and insert mode.</li>
+  <li>To switch to insert mode, press <code class="language-plaintext highlighter-rouge">i</code>. You can now enter and edit text.</li>
+  <li>To switch back to command mode, press <code class="language-plaintext highlighter-rouge">Esc</code>.</li>
+  <li>In command mode:
+    <ul>
+      <li><code class="language-plaintext highlighter-rouge">:w</code> will save the file without exiting.</li>
+      <li><code class="language-plaintext highlighter-rouge">:q</code> will quit Vim. If there are unsaved changes, Vim will not exit and will warn about unsaved changes.</li>
+      <li><code class="language-plaintext highlighter-rouge">:wq</code> will save changes and then exit.</li>
+      <li><code class="language-plaintext highlighter-rouge">:q!</code> will exit without saving changes.</li>
+    </ul>
+  </li>
+  <li>To cut and paste text in Vim, use <code class="language-plaintext highlighter-rouge">dd</code> to delete a line in command mode and <code class="language-plaintext highlighter-rouge">p</code> to paste it back.</li>
+</ul>
+
+<p>Here are some common commands used in Vim:</p>
+
+<ul>
+  <li><code class="language-plaintext highlighter-rouge">i</code> - enter insert mode</li>
+  <li><code class="language-plaintext highlighter-rouge">:q</code> - quit</li>
+  <li><code class="language-plaintext highlighter-rouge">esc + :wq</code> - save and quit</li>
+  <li><code class="language-plaintext highlighter-rouge">esc + :q!</code> - quit without saving</li>
+  <li><code class="language-plaintext highlighter-rouge">dd</code> - delete a line</li>
+  <li><code class="language-plaintext highlighter-rouge">#dd</code> - delete # lines</li>
+  <li><code class="language-plaintext highlighter-rouge">U</code> - undo</li>
+  <li><code class="language-plaintext highlighter-rouge">Ctrl+r</code> - redo</li>
+  <li><code class="language-plaintext highlighter-rouge">:/search</code> - search for a word</li>
+  <li><code class="language-plaintext highlighter-rouge">n,N</code> - move to the next/previous search result</li>
+  <li><code class="language-plaintext highlighter-rouge">:%s/word/to_word/gc</code> - replace all occurrences of “word” with “to_word” in the entire file, prompting for confirmation
+    <ul>
+      <li>Use g only if don’t want to prompt for confirmation.</li>
+    </ul>
+  </li>
+  <li><code class="language-plaintext highlighter-rouge">:set number</code> - display line numbers</li>
+  <li><code class="language-plaintext highlighter-rouge">:$</code> - go to last line</li>
+  <li><code class="language-plaintext highlighter-rouge">tail -f filename</code> - output the last 10 lines of a file and continue to output as new lines are added</li>
+</ul>
+
+<h3 id="the-locate-command">The Locate Command</h3>
+
+<p>The locate command searches a database on your file system for the files that match the text (or regular expression) that you provide it as a command line argument.</p>
+
+<p>If results are found, the locate command will return the absolute path to all matching files.</p>
+
+<p>For example:</p>
+
+<div class="language-bash highlighter-rouge"><div class="highlight"><pre class="highlight"><code>locate <span class="k">*</span>.txt
+</code></pre></div></div>
+
+<p>will find all files with filenames ending in .txt that are registered in the database.</p>
+
+<p>The locate command is fast, but because it relies on a database it can be error prone if the database isn’t kept up to date.</p>
+
+<p>Below are some commands to update the database and some reassuring procedures in case one cannot access administrator privileges.</p>
+
+<table>
+  <thead>
+    <tr>
+      <th>Command</th>
+      <th>Description</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td>locate -S or —statistics</td>
+      <td>Print information about the database file.</td>
+    </tr>
+    <tr>
+      <td>sudo updatedb</td>
+      <td>Update the database. As the updatedb command is an administrator command, the sudo command is used to run updatedb as the root user (the administrator)</td>
+    </tr>
+    <tr>
+      <td>Locate —existing or -e</td>
+      <td>Check whether a result actually exists before returning it. (Inspite of being present in database, cross check)</td>
+    </tr>
+    <tr>
+      <td>locate —limit 5 or -l</td>
+      <td>Limit the output to only show 5 results</td>
+    </tr>
+  </tbody>
+</table>
+
+<p>Examples →</p>
+
+<p><img src="/assets/2024/September/locate.png" alt="locate command with limit and existing options and -S option" /></p>
+
+<p>locate command with limit and existing options and -S option</p>
+
+<h3 id="the-find-command-">The Find Command 🔎</h3>
+
+<p>The find command can be used for more sophisticated search tasks than the locate command.</p>
+
+<p>This is made possible due to the many powerful options that the find command has.</p>
+
+<p>The first thing to note is that the find command will list both files and directories, below the</p>
+
+<p>point the file tree that it is told to start at.</p>
+
+<p>For example: <code class="language-plaintext highlighter-rouge">find .</code> will list all files and directories below the current working directory (which is denoted by the .)</p>
+
+<p><img src="/assets/2024/September/find.png" alt="Untitled" /></p>
+
+<p>While <code class="language-plaintext highlighter-rouge">find /</code> will list all files and directories below the base directory (/); thereby listing everything on the entire file system!</p>
+
+<p>By default, the find command will list everything on the file system below its starting point, to an infinite depth.</p>
+
+<p>The search depth can however be limited using the –maxdepth option.</p>
+
+<p>For example</p>
+
+<div class="language-bash highlighter-rouge"><div class="highlight"><pre class="highlight"><code>find / <span class="nt">-maxdepth</span> 4
+</code></pre></div></div>
+
+<p>Will list everything on the file system below the base directory, provided that it is within 4 levels of the base directory.</p>
+
+<p>There are many other options for the find command. Some of the most useful are tabulated below:</p>
+
+<table>
+  <thead>
+    <tr>
+      <th>Command</th>
+      <th>Description</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td>-type</td>
+      <td>Only list items of a certain type. <code class="language-plaintext highlighter-rouge">–type f</code> restricts the search to file and <code class="language-plaintext highlighter-rouge">–type d</code> restricts the search to directories.</td>
+    </tr>
+    <tr>
+      <td>-name “*.txt”</td>
+      <td>Search for items matching a certain name. This name may contain a regular expression and should be enclosed in double quotes as shown. In this example, the find command will return all items with names ending in .txt.</td>
+    </tr>
+    <tr>
+      <td>-iname</td>
+      <td>Same as  <code class="language-plaintext highlighter-rouge">–name</code> but uppercase and lowercase do not matter.</td>
+    </tr>
+    <tr>
+      <td>-size</td>
+      <td>Find files based on their size. e.g <code class="language-plaintext highlighter-rouge">–size +100k</code> finds files over 100 KiB in size <code class="language-plaintext highlighter-rouge">–size -5M</code> finds files less than 5MiB in size. Other units include G for GiB and c for bytes**.</td>
+    </tr>
+  </tbody>
+</table>
+
+<p><strong>Note:</strong> 1 Kibibyte (KiB) = 1024 bytes. 1 Mebibyte (MiB) = 1024 KiB. 1 Gibibyte = 1024 MiB.</p>
+
+<h4 id="exec--ok">Exec &amp; ok</h4>
+
+<p>A supremely useful feature of the find command is the ability to execute another command on each of the results.</p>
+
+<p>For example</p>
+
+<div class="language-bash highlighter-rouge"><div class="highlight"><pre class="highlight"><code>find /etc –exec <span class="nb">cp</span> <span class="o">{}</span> ~/Desktop <span class="se">\;</span>
+</code></pre></div></div>
+
+<p>will copy every item below the /etc folder on the file system to the ~/Desktop directory.</p>
+
+<p>The argument to the <code class="language-plaintext highlighter-rouge">–exec</code> option is the command you want to execute on each item found by the find command.</p>
+
+<p>Commands should be written as they would normally, with <strong>{} used as a placeholder for the results of the find command.</strong></p>
+
+<p>Be sure to terminate the <code class="language-plaintext highlighter-rouge">–exec</code> option using \; (a backslash then a semicolon).</p>
+
+<p>The <code class="language-plaintext highlighter-rouge">–ok</code> option can also be used, to prompt the user for permission before each action.</p>
+
+<p>This can be tedious for a large number of files, but provides an extra layer of security of a small number of files; especially when doing destructive processes such as deletion.</p>
+
+<p>An example may be:</p>
+
+<div class="language-bash highlighter-rouge"><div class="highlight"><pre class="highlight"><code>find /etc –ok <span class="nb">cp</span> <span class="o">{}</span> ~/Desktop <span class="se">\;</span>
+</code></pre></div></div>
+
+<p><img src="/assets/2024/September/find%20and%20ok.png" alt="Find command within current directory with name option and remove operation for each result " /></p>
+
+<p>Find command within current directory with name option and remove operation for each result</p>
+
+<p>exec → just execute the command</p>
+
+<p>ok → ask at each step 🌇</p>
+
+<h3 id="viewing-file-content-">Viewing File Content 🪟</h3>
+
+<p>There exist commands to open files and print their contents to standard output. One such example is the cat command. Let’s say we have a file called hello.txt on the Desktop.</p>
+
+<p>By performing: <code class="language-plaintext highlighter-rouge">cat ~/Desktop/hello.txt</code></p>
+
+<p>This will print out the contents of hello.txt to standard output where it can be viewed or piped to other commands if required.</p>
+
+<p>One such command to pipe to would be the less command. The less command is known as a “pager” program and excels at allowing a user to page through large amounts of output in a more user-friendly manner than just using the terminal.</p>
+
+<p>An example may be:</p>
+
+<div class="language-bash highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nb">cat</span> ~/Desktop/hello.txt | less
+</code></pre></div></div>
+
+<p>Or more simply:</p>
+
+<div class="language-bash highlighter-rouge"><div class="highlight"><pre class="highlight"><code>less ~/Desktop/hello.txt
+</code></pre></div></div>
+
+<p>By pressing the q key, the less command can be terminated and control regained over the shell.</p>
+
+<p>Here are some other ways to view file contents:</p>
+
+<table>
+  <thead>
+    <tr>
+      <th>Command</th>
+      <th>Description</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td>tac &lt;path/to/file&gt;</td>
+      <td>Print a file’s contents to standard output, reversed vertically.</td>
+    </tr>
+    <tr>
+      <td>rev &lt;path/to/file&gt;</td>
+      <td>Print a file’s content to standard output, reversed horizontally (along rows).</td>
+    </tr>
+    <tr>
+      <td>head -n 15 &lt;path/to/file&gt;</td>
+      <td>Read the first 15 lines from a file (10 by default if -n option not provided.)</td>
+    </tr>
+    <tr>
+      <td>tail -n 15 &lt;path/to/file&gt;</td>
+      <td>Read the bottom 15 lines from a file (10 by default if -n option not provided.)</td>
+    </tr>
+  </tbody>
+</table>
+
+<p><img src="/assets/2024/September/cat,rev.png" alt="Usage of cat, tac and rev command." /></p>
+
+<p><em>Fig: Usage of cat, tac and rev command.</em></p>
+
+<h3 id="searching-file-contents">Searching File Contents</h3>
+
+<p>The ability to search for and filter out what you want from a file or standard output makes working with the command line a much more efficient process.</p>
+
+<p>The command for this is called the grep command.</p>
+
+<p>The grep command will return all lines that match the particular piece of text (or regular expression) provided as a search term.</p>
+
+<p>For example: <code class="language-plaintext highlighter-rouge">grep hello myfile.txt</code> will return all lines containing the word “hello” in myfile.txt and <code class="language-plaintext highlighter-rouge">ls /etc | grep *.conf</code> will return all lines with anything ending in “.conf” in data piped from the ls command.</p>
+
+<p>Some common options when working with the grep command include:</p>
+
+<table>
+  <thead>
+    <tr>
+      <th>Command</th>
+      <th>Description</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td>grep -i</td>
+      <td>Search in a case insensitive manner. (upper case and lowercase don’t matter).</td>
+    </tr>
+    <tr>
+      <td>grep -v</td>
+      <td>Invert the search. i.e return all lines that DON’T contain a certain search term.</td>
+    </tr>
+    <tr>
+      <td>grep -c</td>
+      <td>Return the number of lines (count) that match a search term rather than the lines themselves.</td>
+    </tr>
+    <tr>
+      <td>grep -n</td>
+      <td>return the line no’s also</td>
+    </tr>
+  </tbody>
+</table>
+
+<h2 id="file-archiving-and-compression-️">File Archiving and Compression 🗃️</h2>
+
+<p>In this section, we will delve into how we can archive and compress files. This process is crucial to not only save space on your system but also make file transfer more efficient. Stay tuned as we explore various commands and techniques for this task.</p>
+
+<h3 id="the-overall-process">The Overall Process</h3>
+
+<p>Archiving and compressing files in Linux is a two-step process.</p>
+
+<p>1) Create a Tarball</p>
+
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>First, you will create what is known as a tar file or “tarball”. A tarball is a way of bundling together the files that you want to archive.
+</code></pre></div></div>
+
+<p>2) Compress the tarball with a compression algorithm</p>
+
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>Secondly, you will then compress that tarball with one of a variety of compression algorithms; leaving you with a compressed archive.
+</code></pre></div></div>
+
+<h3 id="1-creating-a-tarball">1. Creating a Tarball</h3>
+
+<p>Tarballs are created using the tar command
+<code class="language-plaintext highlighter-rouge">tar –cvf &lt;name of tarball&gt; &lt;file&gt;... </code></p>
+
+<p><code class="language-plaintext highlighter-rouge">The –c option</code>: “create”. This allows us to create a tarball. [required]</p>
+
+<p><code class="language-plaintext highlighter-rouge">The –v option</code>: “verbose”. This makes tar give us feedback on its progress. [optional]</p>
+
+<p><code class="language-plaintext highlighter-rouge">The –f option</code>: Tells tar that the next argument is the name of the tarball. [required]</p>
+
+<p><code class="language-plaintext highlighter-rouge">&lt;name of tarball&gt;</code>: The absolute or relative file path to where you want the tarball to be placed;</p>
+
+<p>e.g. ~/Desktop/myarchive.tar. It is recommended that you add .tar to your proposed filename for clarity.</p>
+
+<p><code class="language-plaintext highlighter-rouge">&lt;file&gt;</code>: The absolute or relative file paths to files that you want to insert into the tarball. You can have as many as you like and wildcards are accepted.</p>
+
+<h3 id="11-checking-a-tarballs-contents">1.1 Checking a Tarball’s Contents</h3>
+
+<p>Once the tarball has been created, you can check what is inside it using the tar command.</p>
+
+<p><code class="language-plaintext highlighter-rouge">tar –tf &lt;name of tarball&gt;</code></p>
+
+<p><code class="language-plaintext highlighter-rouge">The –t option</code>: “test-label”. This allows us to check the contents of a tarball. [required]</p>
+
+<p><code class="language-plaintext highlighter-rouge">The –f option</code>: Tells tar that the next argument is the name of the tarball. [required]</p>
+
+<p><code class="language-plaintext highlighter-rouge">&lt;name of tarball&gt;</code>: The absolute or relative file path to where you want the tarball to be placed;</p>
+
+<p>e.g. ~/Desktop/myarchive.tar</p>
+
+<h3 id="12-extracting-from-a-tar-ball">1.2 Extracting From a Tar ball</h3>
+
+<p>Let’s say that you download a tar file from the internet and you want to extract its contents using the command line. How can you do that?</p>
+
+<p>For this you would again use the tar command <code class="language-plaintext highlighter-rouge">tar –xvf &lt;name of tarball&gt;</code></p>
+
+<p><code class="language-plaintext highlighter-rouge">The –x option</code>: “extract”. This allows us to extract a tarball’s contents. [required]</p>
+
+<p><code class="language-plaintext highlighter-rouge">The –v option</code>: “verbose”. This makes tar give us feedback on its progress. [optional]</p>
+
+<p><code class="language-plaintext highlighter-rouge">The –f option:</code> Tells tar that the next argument is the name of the tarball. [required]</p>
+
+<p><code class="language-plaintext highlighter-rouge">&lt;name of tarball&gt;</code>: The absolute or relative file path to where the tarball is located;</p>
+
+<p>e.g. ~/Desktop/myarchive.tar</p>
+
+<p>cool 😎 → Extracting a tarball does not empty the tarball. You can extract from a tarball as many times as you want without affecting the tarball’s contents.</p>
+
+<h3 id="2-compressing-tarballs">2. Compressing Tarballs</h3>
+
+<p>Tarballs are just containers for files. They don’t by themselves do any compression, but the can be compressed using a variety of compression algorithms.</p>
+
+<p>The main types of compression algorithms are gzip and bzip2.</p>
+
+<p>The gzip compression algorithm tends to be faster than bzip2 but, as a trade-off, gzip usually offers less compression.</p>
+
+<p>You can find a comparison of various compression algorithms using this excellent blog post.</p>
+
+<h3 id="21-compressing-and-decompressing-with-gzip">2.1 Compressing and Decompressing with gzip</h3>
+
+<table>
+  <thead>
+    <tr>
+      <th>Comand</th>
+      <th>Description</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td>Compressing with gzip</td>
+      <td>gzip <name of="" tarball=""></name></td>
+    </tr>
+    <tr>
+      <td>Decompressing with gzip</td>
+      <td>gunzip <name of="" tarball=""></name></td>
+    </tr>
+  </tbody>
+</table>
+
+<p>When compressing with gzip, the file extension .gz is automatically added to the .tar archive.</p>
+
+<p>Therefore, the gzip compressed tar archive would, by convention, have the file extension .tar.gz</p>
+
+<h3 id="22-compressing-and-decompressing-with-bzip2">2.2 Compressing and Decompressing with bzip2</h3>
+
+<table>
+  <thead>
+    <tr>
+      <th>Command</th>
+      <th>Description</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td>Compressing with bzip2</td>
+      <td>bzip2 <name of="" tarball=""></name></td>
+    </tr>
+    <tr>
+      <td>Decompressing with bzip2</td>
+      <td>bunzip2 <name of="" tarball=""></name></td>
+    </tr>
+  </tbody>
+</table>
+
+<p>When compressing with bzip2, the file extension .bz2 is automatically added to the .tar archive.</p>
+
+<p>Therefore, the bzip2 compressed tar archive would, by convention, have the file extension .tar.bz2</p>
+
+<h3 id="3-doing-it-all-in-one-step">3. Doing it all in one step</h3>
+
+<p>Because compressing tar archives is such a common function, it is possible to create a tar archive and compress it all in one step using the tar command. It is also possible to decompress and extract a compressed archive in one step using the tar command too.</p>
+
+<p>To perform compression/decompression using gzip compression algorithm in the tar command, you provide the z option in addition to the other options required. [<strong>Just add z to the basic commands</strong>]</p>
+
+<table>
+  <thead>
+    <tr>
+      <th>Command</th>
+      <th>Description</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td>Creating a tarball and compressing via gzip</td>
+      <td>tar –cvzf <name of="" tarball=""> <file>...</file></name></td>
+    </tr>
+    <tr>
+      <td>Decompressing a tarball and extracting via xzip</td>
+      <td>tar –xvzf <name of="" tarball=""></name></td>
+    </tr>
+  </tbody>
+</table>
+
+<p>To perform compression/decompression using bzip2 compression algorithm in the tar command, you provide the j option to the other options required. <strong>[Just add j to the basic commands]</strong></p>
+
+<table>
+  <thead>
+    <tr>
+      <th>Command</th>
+      <th>Description</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td>Creating a tarball and compressing via bzip2</td>
+      <td>tar –cvjf <name of="" tarball=""> <file>…</file></name></td>
+    </tr>
+    <tr>
+      <td>Decompressing a tarball and extracting via bzip2</td>
+      <td>tar –xvjf <name of="" tarball=""></name></td>
+    </tr>
+  </tbody>
+</table>
+
+<p>To perform compression/decompression using the xzip compression algorithm in the tar command, you provide the J option to the other options required.</p>
+
+<table>
+  <thead>
+    <tr>
+      <th>Command</th>
+      <th>Description</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td>Creating a tarball and compressing via xzip</td>
+      <td>tar –cvJf <name of="" tarball=""> <file>...</file></name></td>
+    </tr>
+    <tr>
+      <td>Decompressing a tarball and extracting via xzip</td>
+      <td>tar –xvJf <name of="" tarball=""></name></td>
+    </tr>
+  </tbody>
+</table>
+
+<p><img src="/assets/2024/September/zip-unzip.png" alt="Creating tarballs using different compression algorithms" /></p>
+
+<p><em>Fig: Creating tarballs using different compression algorithms</em></p>
+
+<h3 id="4-creating-zip-files">4. Creating .zip files</h3>
+
+<p>Although .tar.gz and .tar.bz2 archives are the archives of choice on Linux, .zip archives are common on other operating systems such as Windows and Mac OSX.</p>
+
+<p>In order to create such archives, you can use the following commands.</p>
+
+<table>
+  <thead>
+    <tr>
+      <th>Command</th>
+      <th>Description</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td>Creating a .zip archive</td>
+      <td>zip <name of="" zipfile=""> <file>...</file></name></td>
+    </tr>
+    <tr>
+      <td>Extracting a .zip archive</td>
+      <td>unzip <name of="" zipfile=""></name></td>
+    </tr>
+  </tbody>
+</table>
+
+<p><code class="language-plaintext highlighter-rouge">&lt;name of zipfile&gt;</code>: The absolute or relative file path to the .zip file e.g. ~/ myarchive.zip</p>
+
+<p><code class="language-plaintext highlighter-rouge">&lt;file&gt;</code>: The absolute or relative file paths to files that you want to insert into the .zip file. You can have as many as you like and wildcards are accep</p>
+
+<p><img src="/assets/2024/September/unzip.png" alt="Zipping and unzipping" /></p>
+
+<p><em>Fig: Zipping and unzipping</em></p>
+
+<p>That’s all for this blog, I hope you found this helpful. ❤️❤️</p>
+
+  </div><a class="u-url" href="/linux/2023/06/25/Improving_command_line_skills.html" hidden></a>
+</article>
+
+      </div>
+    </main><footer class="site-footer h-card">
+  <data class="u-url" href="/"></data>
+
+  <div class="wrapper">
+
+    <h2 class="footer-heading">dsm Blogs</h2>
+
+    <div class="footer-col-wrapper">
+      <div class="footer-col footer-col-1">
+        <ul class="contact-list">
+          <li class="p-name">dsm Blogs</li><li><a class="u-email" href="mailto:dharamsinghmeena2000@gmail.com">dharamsinghmeena2000@gmail.com</a></li></ul>
+      </div>
+
+      <div class="footer-col footer-col-2"><ul class="social-media-list"><li><a href="https://github.com/DS-Meena"><svg class="svg-icon"><use xlink:href="/assets/minima-social-icons.svg#github"></use></svg> <span class="username">DS-Meena</span></a></li><li><a href="https://www.twitter.com/DSMOfficial1"><svg class="svg-icon"><use xlink:href="/assets/minima-social-icons.svg#twitter"></use></svg> <span class="username">DSMOfficial1</span></a></li></ul>
+</div>
+
+      <div class="footer-col footer-col-3">
+        <p>This is a blog about Data Science and Machine Learning. I write about all the things I learn in this domain. I also share my knowledge with you.</p>
+      </div>
+    </div>
+
+  </div>
+
+</footer>
+</body>
+
+</html>
