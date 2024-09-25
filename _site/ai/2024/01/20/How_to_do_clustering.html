@@ -1,0 +1,323 @@
+<!DOCTYPE html>
+<html lang="en"><head>
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1"><!-- Begin Jekyll SEO tag v2.8.0 -->
+<title>How to do clustering | dsm Blogs</title>
+<meta name="generator" content="Jekyll v4.3.3" />
+<meta property="og:title" content="How to do clustering" />
+<meta property="og:locale" content="en_US" />
+<meta name="description" content="Clustering" />
+<meta property="og:description" content="Clustering" />
+<link rel="canonical" href="http://localhost:4000/ai/2024/01/20/How_to_do_clustering.html" />
+<meta property="og:url" content="http://localhost:4000/ai/2024/01/20/How_to_do_clustering.html" />
+<meta property="og:site_name" content="dsm Blogs" />
+<meta property="og:type" content="article" />
+<meta property="article:published_time" content="2024-01-20T15:08:10+05:30" />
+<meta name="twitter:card" content="summary" />
+<meta property="twitter:title" content="How to do clustering" />
+<script type="application/ld+json">
+{"@context":"https://schema.org","@type":"BlogPosting","dateModified":"2024-01-20T15:08:10+05:30","datePublished":"2024-01-20T15:08:10+05:30","description":"Clustering","headline":"How to do clustering","mainEntityOfPage":{"@type":"WebPage","@id":"http://localhost:4000/ai/2024/01/20/How_to_do_clustering.html"},"url":"http://localhost:4000/ai/2024/01/20/How_to_do_clustering.html"}</script>
+<!-- End Jekyll SEO tag -->
+<link rel="stylesheet" href="/assets/main.css"><link type="application/atom+xml" rel="alternate" href="http://localhost:4000/feed.xml" title="dsm Blogs" /></head>
+<body><header class="site-header" role="banner">
+
+  <div class="wrapper"><a class="site-title" rel="author" href="/">dsm Blogs</a><nav class="site-nav">
+        <input type="checkbox" id="nav-trigger" class="nav-trigger" />
+        <label for="nav-trigger">
+          <span class="menu-icon">
+            <svg viewBox="0 0 18 15" width="18px" height="15px">
+              <path d="M18,1.484c0,0.82-0.665,1.484-1.484,1.484H1.484C0.665,2.969,0,2.304,0,1.484l0,0C0,0.665,0.665,0,1.484,0 h15.032C17.335,0,18,0.665,18,1.484L18,1.484z M18,7.516C18,8.335,17.335,9,16.516,9H1.484C0.665,9,0,8.335,0,7.516l0,0 c0-0.82,0.665-1.484,1.484-1.484h15.032C17.335,6.031,18,6.696,18,7.516L18,7.516z M18,13.516C18,14.335,17.335,15,16.516,15H1.484 C0.665,15,0,14.335,0,13.516l0,0c0-0.82,0.665-1.483,1.484-1.483h15.032C17.335,12.031,18,12.695,18,13.516L18,13.516z"/>
+            </svg>
+          </span>
+        </label>
+
+        <div class="trigger"><a class="page-link" href="/about/">About</a></div>
+      </nav></div>
+</header>
+<main class="page-content" aria-label="Content">
+      <div class="wrapper">
+        <!--Added Math Latext support-->
+<script src="https://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML" type="text/javascript"></script>
+<script type="text/x-mathjax-config">
+  MathJax.Hub.Config({
+    tex2jax: {
+      inlineMath: [['$','$']],
+      processEscapes: true
+    }
+  });
+</script>
+
+<article class="post h-entry" itemscope itemtype="http://schema.org/BlogPosting">
+
+  <header class="post-header">
+    <h1 class="post-title p-name" itemprop="name headline">How to do clustering</h1>
+    <p class="post-meta">
+      <time class="dt-published" datetime="2024-01-20T15:08:10+05:30" itemprop="datePublished">Jan 20, 2024
+      </time></p>
+  </header>
+
+  <div class="post-content e-content" itemprop="articleBody">
+    <h1 id="clustering">Clustering</h1>
+
+<p>Clustering is a type of unsupervised learning that involves grouping similar inputs into clusters or categories.</p>
+
+<p>This technique can be used to identify patterns or relationships in data that may not be immediately apparent. There are many algorithms that can be used for clustering, including k-means, hierarchical clustering, and DBSCAN. The choice of clustering algorithm depends on the specific problem and the characteristics of the data.</p>
+
+<p>Hard clustering → Assigning each instance to a single cluster.</p>
+
+<p>Soft clustering → Assigning each instance a score per cluster, it can be a similarity score (or affinity).</p>
+
+<h2 id="types-of-clustering">Types of Clustering</h2>
+
+<p>There are several types of clustering algorithms, including:</p>
+
+<h3 id="centroid-based-clustering">Centroid-based clustering</h3>
+
+<p>Centroid-based clustering is a type of clustering method in which the position of a cluster is represented by the central point of its objects.</p>
+
+<p>A popular example of centroid-based clustering is the k-means algorithm. Centroid-based algorithms are efficient but sensitive to initial conditions and outliers.</p>
+
+<p><img src="https://developers.google.com/static/machine-learning/clustering/images/CentroidBasedClustering.svg" alt="Fig: Centroid based clustering" /></p>
+
+<p><em>Fig: Centroid based clustering</em></p>
+
+<p>Let’s learn about K-means clustering, an example of centroid-based clustering.</p>
+<h3 id="k-means">K-Means</h3>
+
+<p>The model learns to group inputs into k clusters based on similarity. It is a straightforward and efficient algorithm for data segmentation and pattern recognition.</p>
+
+<p>The main objective of k-means clustering is to partition the data into ‘k’ clusters, where ‘k’ is a user-defined parameter representing the number of clusters desired.</p>
+
+<p>Here’s how the k-means clustering algorithm works:</p>
+
+<ol>
+  <li><strong>Initialization</strong>: Choose ‘k’ initial centroids (cluster centers) randomly from the data points. These centroids represent the initial cluster centers.</li>
+  <li><strong>Assignment</strong>: Assign each data point to the nearest centroid. This step is based on the distance metric, commonly the Euclidean distance, but other distance measures can also be used.</li>
+  <li><strong>Update Centroids</strong>: Calculate the mean of all the data points assigned to each centroid. Move the centroid to the mean position. This step aims to find the new cluster centers.</li>
+  <li><strong>Repeat Assignment and Update</strong>: Repeatedly assign data points to the nearest centroid and update the centroids until convergence or until a maximum number of iterations is reached.</li>
+  <li><strong>Convergence</strong>: The algorithm converges when the centroids no longer change significantly between iterations or when a predefined convergence criterion is met.</li>
+  <li><strong>Result</strong>: After convergence, each data point will be assigned to one of the ‘k’ clusters based on the final positions of the centroids.</li>
+</ol>
+
+<p>When sets of circles from competing centroids overlap they form a line. The result is what’s called a <strong>Voronoi tessellation</strong>.</p>
+
+<p><img src="https://storage.googleapis.com/kaggle-media/learn/images/KSoLd3o.jpg" alt="Fig: K-means clustering creates a Voronoi tessallation of the feature space." /></p>
+
+<p>Fig: K-means clustering creates a Voronoi tessallation of the feature space.</p>
+
+<p>Choosing the appropriate value of ‘k’ is critical in k-means clustering. The number of clusters should be determined based on domain knowledge or through techniques like the elbow method, silhouette score, or other clustering evaluation metrics.</p>
+
+<p>K-means clustering is widely used in various applications, such as customer segmentation, image compression, anomaly detection, and data preprocessing for other machine learning tasks.</p>
+
+<p>It is important to note that k-means is sensitive to the initial random centroid selection, and it may converge to a suboptimal solution depending on the initial positions of the centroids.</p>
+
+<p><img src="/assets/2024/September/suboptimal%20solutions.png" alt="Fig: Suboptimal solutions due to unlucky centroid initializations" /></p>
+
+<p><em>Fig: Suboptimal solutions due to unlucky centroid initializations</em></p>
+
+<p>To mitigate this issue, it is common to run the algorithm multiple times with different initializations and choose the best result based on a chosen evaluation metric.</p>
+
+<h4 id="disadvantages-of-k-means-algorithm">Disadvantages of K-means algorithm:</h4>
+
+<ul>
+  <li>Need to run K-means few times, before finding global optimal solution.</li>
+  <li>Need to specify number of clusters.</li>
+  <li>K-means does not behave very well when the clusters have varying sizes, different densities, or non-spherical shapes.</li>
+</ul>
+
+<p>Let’s demonstrate the K-means clustering using a real-world dataset. Here, we’ll use the popular <code class="language-plaintext highlighter-rouge">Iris</code> dataset available in the <code class="language-plaintext highlighter-rouge">sklearn</code> datasets module. This dataset includes measurements of 150 iris flowers from three different species.</p>
+
+<div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="kn">from</span> <span class="n">sklearn.datasets</span> <span class="kn">import</span> <span class="n">load_iris</span>
+<span class="kn">from</span> <span class="n">sklearn.cluster</span> <span class="kn">import</span> <span class="n">KMeans</span>
+<span class="kn">import</span> <span class="n">matplotlib.pyplot</span> <span class="k">as</span> <span class="n">plt</span>
+
+<span class="c1"># Load the iris dataset
+</span><span class="n">iris</span> <span class="o">=</span> <span class="nf">load_iris</span><span class="p">()</span>
+<span class="n">X</span> <span class="o">=</span> <span class="n">iris</span><span class="p">.</span><span class="n">data</span>
+
+<span class="c1"># Apply K-means clustering
+</span><span class="n">kmeans</span> <span class="o">=</span> <span class="nc">KMeans</span><span class="p">(</span><span class="n">n_clusters</span><span class="o">=</span><span class="mi">3</span><span class="p">,</span> <span class="n">random_state</span><span class="o">=</span><span class="mi">0</span><span class="p">,</span> <span class="n">n_init</span><span class="o">=</span><span class="mi">1</span><span class="p">)</span> <span class="c1"># n_init tells how many random initializations to do (times the whole process is repeated)
+</span><span class="n">kmeans</span><span class="p">.</span><span class="nf">fit</span><span class="p">(</span><span class="n">X</span><span class="p">)</span>
+<span class="n">labels</span> <span class="o">=</span> <span class="n">kmeans</span><span class="p">.</span><span class="n">labels_</span>
+
+<span class="c1"># labels
+</span><span class="sh">"""</span><span class="s">
+array([1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1,
+       1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1,
+       1, 1, 1, 1, 1, 1, 0, 0, 2, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0,
+       0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 2, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0,
+       0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 2, 0, 2, 2, 2, 2, 0, 2, 2, 2,
+       2, 2, 2, 0, 0, 2, 2, 2, 2, 0, 2, 0, 2, 0, 2, 2, 0, 0, 2, 2, 2, 2,
+       2, 0, 2, 2, 2, 2, 0, 2, 2, 2, 0, 2, 2, 2, 0, 2, 2, 0], dtype=int32)
+</span><span class="sh">"""</span>
+
+<span class="c1"># Plot the clusters (plot using any 2 attributes, your wish)
+</span><span class="n">plt</span><span class="p">.</span><span class="nf">scatter</span><span class="p">(</span><span class="n">X</span><span class="p">[:,</span> <span class="mi">2</span><span class="p">],</span> <span class="n">X</span><span class="p">[:,</span> <span class="mi">3</span><span class="p">],</span> <span class="n">c</span><span class="o">=</span><span class="n">labels</span><span class="p">)</span>
+<span class="n">plt</span><span class="p">.</span><span class="nf">scatter</span><span class="p">(</span><span class="n">kmeans</span><span class="p">.</span><span class="n">cluster_centers_</span><span class="p">[:,</span> <span class="mi">2</span><span class="p">],</span> <span class="n">kmeans</span><span class="p">.</span><span class="n">cluster_centers_</span><span class="p">[:,</span> <span class="mi">3</span><span class="p">],</span> <span class="n">s</span><span class="o">=</span><span class="mi">300</span><span class="p">,</span> <span class="n">c</span><span class="o">=</span><span class="sh">'</span><span class="s">red</span><span class="sh">'</span><span class="p">)</span>
+<span class="n">plt</span><span class="p">.</span><span class="nf">show</span><span class="p">()</span>
+
+<span class="c1"># Some other functions
+</span><span class="n">y_pred</span> <span class="o">=</span> <span class="n">kmeans</span><span class="p">.</span><span class="nf">fit_predict</span><span class="p">(</span><span class="n">X</span><span class="p">)</span>
+<span class="n">kmeans</span><span class="p">.</span><span class="nf">transform</span><span class="p">(</span><span class="n">X</span><span class="p">)</span> <span class="c1"># score for each cluster
+</span></code></pre></div></div>
+
+<p><img src="https://www.kaggleusercontent.com/kf/158886682/eyJhbGciOiJkaXIiLCJlbmMiOiJBMTI4Q0JDLUhTMjU2In0..PCQzfyplvHilkSHDdYpjew.S3D9I--L2F0_KlZBRlvAkZPFDXrYGZNfA3IcbtkIUUUPTNth3ZeUka7FOqQqPW4Z-hNChF0fyxZ-qQaoeIqequH6AyA9Ad2KIIqFUsJTQXuIdnnrYadSQjF19vrMpVXZct2M1MUBOzX_obMwyA8dU2yXV6vgk3_YbOCu-lf02MHWw8t25Tizqh5hbUmdsm2PoTFPgkn_M2R54xanJFb8upKBC7JOF6k7MBS0Dhzo-kXhku7fNLFKDLJhOZTEJcCD46JIFj0BlteTf_bGB6ijfz2rFo-ub7yJEvgHDSKZyzgKc0eMihW6k_iMf2WSKoidCZao7Jj4DcIEGlZy7-BMWMDk5Eus9qmODrd63UB1xVI4ZjJ25W9itFlO_8kI67yv4xSWN8fIRqhtOo4bvLKySNQOYA1bE9WNFXeX_1Ug9mqqr5-K5f8xGtC5rkzQs-KnuDRhtYdcmzot_U2s-QHs96hJkC53FHwqdKf453pGvMnJCobbh4ZF9Z_DKa7R0t_vXaZVx0RAZMLcJDaGZ5XnYZXb7MdUd9NJbTQEpGI849jUwiIhK9oav7dP7w02w7UsSRUdJKzJlQEA3HFDN_4d53hM1FULpc1RgZufrSEvQEfo08Dam398PRhtyq98NhjAkL6Roe25uoAAhyfi2NndN3G5a3P4YtoBInrpIwzG1iI.ajnu3QmYOLkOgnndJwPAXw/__results___files/__results___6_0.png" alt="Fig: Dataset is divided into 3 clusters" /></p>
+
+<p>In this code, <code class="language-plaintext highlighter-rouge">iris.data</code> is a 150x4 matrix where each row is a flower sample and each column is a feature (sepal length, sepal width, petal length, petal width). The K-means algorithm groups the flowers into 3 clusters based on these features. The final line plots the clusters, with the cluster centers marked in red.</p>
+
+<h3 id="density-based-clustering">Density-based clustering</h3>
+
+<p>Density-based clustering connects areas of high example density into clusters. This method can form clusters of any shape as long as dense areas are connected. However, it struggles with data that has different densities and many dimensions. Also, these algorithms intentionally do not include outliers in any clusters.</p>
+
+<p><img src="https://developers.google.com/static/machine-learning/clustering/images/DensityClustering.svg" alt="Fig: Density based clustering" /></p>
+
+<p><em>Fig: Density based clustering</em></p>
+
+<ul>
+  <li><strong>DBSCAN Clustering</strong>: the model learns to group inputs into clusters based on density, with high-density regions representing clusters and low-density regions representing noise.</li>
+  <li><strong>Mean Shift Clustering:</strong> the model learns to identify and group inputs based on local density maxima.</li>
+</ul>
+
+<h3 id="distribution-based-clustering">Distribution-based clustering</h3>
+
+<p>This clustering approach assumes data is composed of distributions, such as <a href="https://wikipedia.org/wiki/Normal_distribution"><strong>Gaussian distributions</strong></a>. As distance from the distribution’s center increases, the probability that a point belongs to the distribution decreases.</p>
+
+<p><img src="https://developers.google.com/static/machine-learning/clustering/images/DistributionClustering.svg" alt="Fig: Distribution-based clustering" /></p>
+
+<p>Fig: Distribution-based clustering</p>
+
+<p>A common example of distribution-based clustering is the Gaussian Mixture Model (GMM).</p>
+
+<h3 id="hierarchical-clustering">Hierarchical clustering</h3>
+
+<p>The model learns to group inputs into a hierarchy of clusters, with larger clusters containing smaller clusters.</p>
+
+<p><img src="https://developers.google.com/static/machine-learning/clustering/images/HierarchicalClustering.svg" alt="Fig: Hierarchical clustering" /></p>
+
+<p>Fig: Hierarchical clustering</p>
+
+<ul>
+  <li>Agglomerative clustering</li>
+  <li>BIRCH (scale well to large dataset)</li>
+</ul>
+
+<p>Each type of clustering algorithm is suited for different types of data and problems, and choosing the right type of clustering is an important part of building an accurate machine learning model.</p>
+
+<h2 id="applications-of-clustering">Applications of Clustering:</h2>
+
+<ul>
+  <li>Data analysis</li>
+  <li>Customer segmentation</li>
+  <li>recommender systems</li>
+  <li>Dimensionality reduction</li>
+  <li>Anomaly detection (outlier detection)</li>
+  <li>Search engines</li>
+  <li>image segmentation</li>
+  <li>Semi-supervised learning</li>
+</ul>
+
+<h2 id="creating-a-similarity-matrix">Creating a Similarity Matrix</h2>
+
+<p>A similarity matrix is a matrix where each element ij represents the similarity between the ith and jth elements of the dataset. A common method of calculating similarity is by using the Euclidean distance.</p>
+
+<p>In the context of clustering, we use a similarity matrix to find the similarity between any element and it’s corresponding centroid.</p>
+
+<p>There are 2 types of similarity measures: –</p>
+
+<ol>
+  <li>
+    <p><strong>Supervised similarity</strong> measure refers to the use of a supervised machine learning model to calculate how similar two items are. This model is trained on data that includes the correct answer, which it uses to learn how to predict the similarity of new items.</p>
+  </li>
+  <li>
+    <p><strong>Manual similarity</strong> measure means calculating the similarity between two items using a predefined formula or method, without the use of a machine learning model. This approach is often used when it’s straightforward to calculate similarity, such as measuring the distance between two points in a space.</p>
+  </li>
+</ol>
+
+<p>Here is a sample Python code for creating a similarity matrix:</p>
+
+<div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="kn">from</span> <span class="n">scipy.spatial.distance</span> <span class="kn">import</span> <span class="n">cdist</span>
+
+<span class="c1"># Calculate Euclidean distance between each sample and each cluster centroid
+</span><span class="n">dist_matrix</span> <span class="o">=</span> <span class="nf">cdist</span><span class="p">(</span><span class="n">X</span><span class="p">,</span> <span class="n">kmeans</span><span class="p">.</span><span class="n">cluster_centers_</span><span class="p">)</span>
+
+<span class="c1"># Create similarity matrix
+</span><span class="n">similarity_matrix</span> <span class="o">=</span> <span class="mi">1</span><span class="o">/</span><span class="n">dist_matrix</span>
+
+<span class="c1"># Print the similarity matrix
+</span><span class="nf">print</span><span class="p">(</span><span class="n">similarity_matrix</span><span class="p">)</span>
+
+<span class="sh">"""</span><span class="s">
+Output
+array([[ 0.29246175,  7.074606  ,  0.19764636],
+       [ 0.29424103,  2.23394674,  0.19550559],
+       [ 0.28016253,  2.3974543 ,  0.18941707],
+       [ 0.29219179,  1.90353644,  0.1940395 ],
+       [ 0.28841184,  5.30147879,  0.19591195],
+       [ 0.31779005,  1.4770227 ,  0.2136073 ],
+</span><span class="sh">"""</span>
+</code></pre></div></div>
+
+<p>Each row in the similarity matrix corresponds to a sample, and each column corresponds to a cluster centroid. The higher the value in the similarity matrix, the closer the sample is to the corresponding cluster centroid.</p>
+
+<h2 id="interpret-results">Interpret results</h2>
+
+<p>The results of K-means clustering can be visualized using a scatter plot, as shown above. Each cluster is represented by a different colour, and the cluster centres are marked in red.</p>
+
+<p>The results can also be evaluated quantitatively using various metrics such as inertia (sum of squared distances of samples to their closest cluster centre) and silhouette score (a measure of how close each sample in one cluster is to the samples in the neighbouring clusters).</p>
+
+<div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="kn">from</span> <span class="n">sklearn.metrics</span> <span class="kn">import</span> <span class="n">silhouette_score</span>
+
+<span class="c1"># Calculate silhouette score
+</span><span class="n">sil_score</span> <span class="o">=</span> <span class="nf">silhouette_score</span><span class="p">(</span><span class="n">X</span><span class="p">,</span> <span class="n">labels</span><span class="p">)</span>
+
+<span class="c1"># Print silhouette score
+</span><span class="nf">print</span><span class="p">(</span><span class="sh">'</span><span class="s">Silhouette Score: </span><span class="sh">'</span><span class="p">,</span> <span class="n">sil_score</span><span class="p">)</span>
+
+<span class="c1"># Print inertia
+</span><span class="nf">print</span><span class="p">(</span><span class="sh">'</span><span class="s">Inertia: </span><span class="sh">'</span><span class="p">,</span> <span class="n">kmeans</span><span class="p">.</span><span class="n">inertia_</span><span class="p">)</span>
+
+<span class="c1"># Inertia:  78.85144142614601
+# Silhouette Score:  0.5528190123564095
+</span></code></pre></div></div>
+
+<p>In this code, <code class="language-plaintext highlighter-rouge">kmeans.inertia_ returns</code> the inertia of the KMeans clustering. A lower inertia means a better model.
+In this code, silhouette_score(X, labels) calculates the silhouette score of the clustering result. A higher silhouette score indicates that the samples are well clustered.</p>
+
+<p>That’s it for this blog. I hope you learned something useful about clustering ❤️❤️.</p>
+
+<h3 id="references">References</h3>
+
+<p><a href="https://developers.google.com/machine-learning/clustering">Google Developers</a></p>
+
+  </div><a class="u-url" href="/ai/2024/01/20/How_to_do_clustering.html" hidden></a>
+</article>
+
+      </div>
+    </main><footer class="site-footer h-card">
+  <data class="u-url" href="/"></data>
+
+  <div class="wrapper">
+
+    <h2 class="footer-heading">dsm Blogs</h2>
+
+    <div class="footer-col-wrapper">
+      <div class="footer-col footer-col-1">
+        <ul class="contact-list">
+          <li class="p-name">dsm Blogs</li><li><a class="u-email" href="mailto:dharamsinghmeena2000@gmail.com">dharamsinghmeena2000@gmail.com</a></li></ul>
+      </div>
+
+      <div class="footer-col footer-col-2"><ul class="social-media-list"><li><a href="https://github.com/DS-Meena"><svg class="svg-icon"><use xlink:href="/assets/minima-social-icons.svg#github"></use></svg> <span class="username">DS-Meena</span></a></li><li><a href="https://www.twitter.com/DSMOfficial1"><svg class="svg-icon"><use xlink:href="/assets/minima-social-icons.svg#twitter"></use></svg> <span class="username">DSMOfficial1</span></a></li></ul>
+</div>
+
+      <div class="footer-col footer-col-3">
+        <p>This is a blog about Data Science and Machine Learning. I write about all the things I learn in this domain. I also share my knowledge with you.</p>
+      </div>
+    </div>
+
+  </div>
+
+</footer>
+</body>
+
+</html>
