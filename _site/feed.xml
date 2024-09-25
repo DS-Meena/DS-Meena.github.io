@@ -1,4 +1,4 @@
-<?xml version="1.0" encoding="utf-8"?><feed xmlns="http://www.w3.org/2005/Atom" ><generator uri="https://jekyllrb.com/" version="4.3.3">Jekyll</generator><link href="http://localhost:4000/feed.xml" rel="self" type="application/atom+xml" /><link href="http://localhost:4000/" rel="alternate" type="text/html" /><updated>2024-09-25T15:56:54+05:30</updated><id>http://localhost:4000/feed.xml</id><title type="html">dsm Blogs</title><subtitle>This is a blog about Data Science and Machine Learning. I write about all the things I learn in this domain. I also share my knowledge with you.</subtitle><entry><title type="html">Q-Learning</title><link href="http://localhost:4000/ai/2024/09/23/Q_learning.html" rel="alternate" type="text/html" title="Q-Learning" /><published>2024-09-23T10:00:10+05:30</published><updated>2024-09-23T10:00:10+05:30</updated><id>http://localhost:4000/ai/2024/09/23/Q_learning</id><content type="html" xml:base="http://localhost:4000/ai/2024/09/23/Q_learning.html"><![CDATA[<h1 id="introduction">Introduction</h1>
+<?xml version="1.0" encoding="utf-8"?><feed xmlns="http://www.w3.org/2005/Atom" ><generator uri="https://jekyllrb.com/" version="4.3.3">Jekyll</generator><link href="http://localhost:4000/feed.xml" rel="self" type="application/atom+xml" /><link href="http://localhost:4000/" rel="alternate" type="text/html" /><updated>2024-09-25T17:05:02+05:30</updated><id>http://localhost:4000/feed.xml</id><title type="html">dsm Blogs</title><subtitle>This is a blog about Data Science and Machine Learning. I write about all the things I learn in this domain. I also share my knowledge with you.</subtitle><entry><title type="html">Q-Learning</title><link href="http://localhost:4000/ai/2024/09/23/Q_learning.html" rel="alternate" type="text/html" title="Q-Learning" /><published>2024-09-23T10:00:10+05:30</published><updated>2024-09-23T10:00:10+05:30</updated><id>http://localhost:4000/ai/2024/09/23/Q_learning</id><content type="html" xml:base="http://localhost:4000/ai/2024/09/23/Q_learning.html"><![CDATA[<h1 id="introduction">Introduction</h1>
 
 <p>In this blog, we will learn about the fundamental algorithms used in reinforcement learning. It’s not about neural networks but the mathematical algorithms involved in learning.</p>
 
@@ -670,7 +670,211 @@ Overall, decision trees are a simple and effective technique for classification 
 
 <p>Overall, ensemble methods are a powerful technique for improving the performance of machine learning models, and they are widely used in industry and research. However, it is important to carefully consider the problem and the available data before choosing an ensemble method.</p>
 
-<p><a href="https://www.kaggle.com/code/dsmeena/ch-7-ensemble-learning-and-random-forests"></a></p>]]></content><author><name></name></author><category term="AI" /><summary type="html"><![CDATA[In this blog post, we’re going to talk about machine learning and its different types.]]></summary></entry><entry><title type="html">Advancing in Git</title><link href="http://localhost:4000/web/2023/09/23/Advancing-git.html" rel="alternate" type="text/html" title="Advancing in Git" /><published>2023-09-23T15:08:10+05:30</published><updated>2023-09-23T15:08:10+05:30</updated><id>http://localhost:4000/web/2023/09/23/Advancing-git</id><content type="html" xml:base="http://localhost:4000/web/2023/09/23/Advancing-git.html"><![CDATA[<h2 id="introduction">Introduction</h2>
+<p><a href="https://www.kaggle.com/code/dsmeena/ch-7-ensemble-learning-and-random-forests"></a></p>]]></content><author><name></name></author><category term="AI" /><summary type="html"><![CDATA[In this blog post, we’re going to talk about machine learning and its different types.]]></summary></entry><entry><title type="html">Start a Webserver with aws</title><link href="http://localhost:4000/cloud/2023/10/22/Start-a-webserver-with-aws.html" rel="alternate" type="text/html" title="Start a Webserver with aws" /><published>2023-10-22T15:08:10+05:30</published><updated>2023-10-22T15:08:10+05:30</updated><id>http://localhost:4000/cloud/2023/10/22/Start-a-webserver-with-aws</id><content type="html" xml:base="http://localhost:4000/cloud/2023/10/22/Start-a-webserver-with-aws.html"><![CDATA[<h2 id="introduction">Introduction</h2>
+
+<p>In this blog, we are gonna try to create our own webserver in aws. We will follow operation Excellence principle by designing it failure by using multi-AZ architecture or extending it to more than 1 availability zones. We will use load balancer to uniformly distribute the requests coming to our webserver to different EC2 instances. and If you have a domain we will learn how to create DNS records so that your domain points to this newly created webserver. While doing all of this we will not forget the security principle of well-architected framework.</p>
+
+<h3 id="create-an-ec2-instance">Create an EC2 Instance</h3>
+
+<p>Let’s first create an EC2 instance to run our webserver. Amazon Elastic compute cloud (EC2) is a web service that provides resizable computing capacity in the cloud.</p>
+
+<p>EC2 offers a wide range of <a href="https://aws.amazon.com/ec2/instance-types/">instance types</a> to cater to different workload requirements. Here are some commonly used EC2 instance types:</p>
+
+<ul>
+  <li>General Purpose Instances</li>
+  <li>Compute-Optimized Instances</li>
+  <li>Memory-Optimized Instances</li>
+  <li>Storage-Optimized Instances</li>
+</ul>
+
+<p>For creating a new EC2 instance follow the steps</p>
+
+<ol>
+  <li>Go to EC2 service, then go instances and click Launch an Instance.</li>
+  <li>Give a name to your instance and choose an ubuntu AMI (Amazon Machine Image), its similar to docker images.</li>
+  <li>Choose an Instance type, there are different instance families including General Purpose, compute-optimized, memory-optimized and storage-optimized. For now just choose t2.micro.</li>
+  <li>Amazon recommends to use a key pair to securely connect to your instance. If you already have one use that otherwise you can easily create a new one.</li>
+  <li>Leave other settings to default.</li>
+  <li>Then click Launch Instance.</li>
+</ol>
+
+<p><img src="/assets/2024/September/start%20ec2%20instance.png" alt="Fig: Creating a new EC2 Instance" /></p>
+
+<p><em>Fig: Creating a new EC2 Instance</em></p>
+
+<h3 id="set-up-a-web-server">Set up a web server</h3>
+
+<p>For this connect to your EC2 instance, by choosing your newly created instance and then click on connect. Make sure it’s in running state.</p>
+
+<p><img src="/assets/2024/September/connect%20to%20ec2%20instance.png" alt="Fig: Connecting to EC2 Instance" /></p>
+
+<p><em>Fig: Connecting to EC2 Instance</em></p>
+
+<p>After connecting, run the following commands:</p>
+
+<div class="language-bash highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nb">sudo </span>apt update
+<span class="nb">sudo </span>apt upgrade
+
+<span class="c"># This will instance apache web server</span>
+<span class="nb">sudo </span>apt <span class="nb">install </span>apache2
+</code></pre></div></div>
+
+<p>If you see something like this after running upgrade, then you need to reboot your system. The different between rebooting and Start/stop is that on start/stop the hardware running your instance is changed but on rebooting the hardware is the same.</p>
+
+<p><img src="/assets/2024/September/start%20ec2%20instance2.png" alt="Untitled" /></p>
+
+<p>In the next screen, select via tab then click enter.</p>
+
+<p><img src="/assets/2024/September/reboot%20instance.png" alt="Fig: Rebooting Instance" /></p>
+
+<p><em>Fig: Rebooting Instance</em></p>
+
+<p>Again connect to your instance and install the Apache webserver. If at this time you try to connect to your apache webserver via your EC2 pubic IP, it will be timed out.  because currently your EC2 instance does not allow http traffic.  For that we need to modify security group.</p>
+
+<h3 id="using-security-group-as-firewall">Using security group as firewall</h3>
+
+<p>Security groups in AWS are virtual firewalls that control inbound and outbound traffic for EC2 instances. They act as a protective layer around instances, allowing you to define rules that specify the protocols, ports, and IP ranges that are allowed to access the instances.</p>
+
+<p>We will create a custom security group for our EC2 instance.  Inside EC2 service go to Network &amp; security panel and click on Create security group.</p>
+
+<p>Add following inbound rules to the security group.</p>
+
+<p><img src="/assets/2024/September/inbound%20rules.png" alt="Fig: Inbound rules to allow http traffic" /></p>
+
+<p><em>Fig: Inbound rules to allow http traffic</em></p>
+
+<p>To change add this newly created security group to your EC2 instance following the steps:</p>
+
+<p>Instances → select instance → Action → security → change security group</p>
+
+<p>Add the newly created security group and remove the old security group, then save it.</p>
+
+<p><img src="/assets/2024/September/change%20security%20group.png" alt="Fig: Adding security group to EC2 instance" /></p>
+
+<p><em>Fig: Adding security group to EC2 instance</em></p>
+
+<p>Now, you will be able to send request to your webserver over http connection. To confirm, type the IPv4 address of your EC2 instance in browser and you will see the default Apache web server page.</p>
+
+<p>Hooray, but that’s not it we are gonna do more than this to improve the architecture of our web server.</p>
+
+<h3 id="create-backups-with-ami-snapshot">Create backups with AMI snapshot</h3>
+
+<p>You can create the backup of your current webserver by creating an Image that contains all the information required to launch more EC2 instances with same configuration.</p>
+
+<p>To create an image of your webserver follow the steps:</p>
+
+<p>Instances → select Instance → Action → Image and templates → Create Image</p>
+
+<p>Give some appropriate name to your image and keep the rest settings default. Click on create Image.</p>
+
+<p>It will take some time to create the Image or we can say Amazon Machine Image (AMI). You will be able to check this AMI under AMI section of EC2 instance.</p>
+
+<p><img src="/assets/2024/September/create%20ami%20snapshot.png" alt="Fig: Amazon Machine Images" /></p>
+
+<p><em>Fig: Amazon Machine Images</em></p>
+
+<p>After the status is changed to Available, click on Launch Instance from AMI to create your duplicate web servers. Prefer to select same key-pair, security group and under network settings choose a subnet (Availability zone) other than that your current EC2 instance is using to design for failures.</p>
+
+<p><img src="/assets/2024/September/create%20new%20instance%20from%20ami.png" alt="Fig: Creating new instance from AMI" /></p>
+
+<p><em>Fig: Creating new instance from AMI</em></p>
+
+<p>After this you will have 2 EC2 instances running your webserver in two different availability zones. You can create as many as you want but for now let’s keep it two and try some more things.</p>
+
+<p>If you try to access the IPv4 of your new instance, you will see the default Apache page.</p>
+
+<h3 id="scaling-with-elastic-load-balancer-elb">Scaling with Elastic Load Balancer (ELB)</h3>
+
+<p>We will create an Elastic Load balancer (ELB) to uniformly route the incoming requests to healthy instances.</p>
+
+<p>There are three types of load balancers that AWS provides:</p>
+
+<ol>
+  <li><strong>Application Load Balancer (ALB)</strong>: This load balancer operates at the application layer and is best suited for applications that require advanced routing capabilities. It can distribute traffic based on URL paths or HTTP headers, making it ideal for routing requests to different microservices or handling multiple domains. ALBs are commonly used for web applications, API gateways, and container-based architectures.</li>
+  <li><strong>Network Load Balancer (NLB)</strong>: This load balancer operates at the transport layer (Layer 4) and is designed for applications that require ultra-high performance and low latency. It can handle extremely high volumes of traffic and is suitable for TCP/UDP-based applications, gaming, and real-time streaming.</li>
+  <li><strong>Gateway Load Balancer (GLB)</strong>: This load balancer is designed to handle traffic at the edge of the AWS network and is used for scenarios where you need to distribute traffic across multiple virtual appliances, such as firewalls, intrusion detection systems, or deep packet inspection systems.</li>
+</ol>
+
+<p>For our task application load balancer is best choice. To create ALB go to EC2 dashboard then to Load Balancing section.</p>
+
+<ol>
+  <li>Click on Create new load balancer.</li>
+  <li>Choose Application load balancer.</li>
+  <li>Add security group that allows inbound traffic over internet.</li>
+  <li>
+    <p>Create a target group and add the EC2 instances → Include as pending below → Register pending targets.</p>
+
+    <p><img src="/assets/2024/September/register%20target%20group.png" alt="Untitled" /></p>
+  </li>
+  <li>
+    <p>Click Create Load balancer.</p>
+
+    <p><img src="/assets/2024/September//create%20load%20balancer.png" alt="Fig: Application load balancer" /></p>
+
+    <p><em>Fig: Application load balancer</em></p>
+  </li>
+</ol>
+
+<p>If you go to the DNS name of the elb, you will be routed to one of the healthy EC2 instances.</p>
+
+<p>But this domain doesn’t look good, if you already have a domain or want to buy a domain in that case you use Route 53.</p>
+
+<h3 id="route-53">Route 53</h3>
+
+<p>Amazon Route 53 is a highly available and scalable Domain Name System (DNS) web service.</p>
+
+<p>You can buy a domain from here also in around $12.</p>
+
+<p>Pricing:</p>
+
+<ul>
+  <li>$0.50 per hosted zone / month for the first 25 hosted zones</li>
+  <li>$0.10 per hosted zone / month for additional hosted zones</li>
+</ul>
+
+<p>If hosted zone deleted within 12 hours of creation then no charge.</p>
+
+<h3 id="create-a-hosted-zone">Create a Hosted zone</h3>
+
+<p>In Amazon Route 53, a hosted zone is a container for a collection of DNS records that define how domain names are resolved. It is a way to manage the DNS records for a domain. Each hosted zone represents a domain and contains the DNS records that specify how traffic for that domain is routed.</p>
+
+<p>Create a hosted zone by going to Route 53 → Hosted zones. In the domain add you own domain like <a href="http://abc.com">abc.com</a> Keep the rest default and click create Hosted zone.</p>
+
+<p><img src="/assets/2024/September/create%20hosted%20zone.png" alt="Fig: Hosted zone for my website" /></p>
+
+<p><em>Fig: Hosted zone for my website</em></p>
+
+<p>Nameservers are part of the Domain Name System (DNS) infrastructure and are responsible for translating domain names into IP addresses</p>
+
+<p>Replace your domain name server urls with hosted zone urls.</p>
+
+<p><img src="/assets/2024/September/hostinger.png" alt="Fig: Added Route 53 Name servers" /></p>
+
+<p><em>Fig: Added Route 53 Name servers</em></p>
+
+<p>It might take few hours until the changes reflect for your domain. Till then lets add the record for our ALB.</p>
+
+<p>1st record: It will point to the application load balancer.</p>
+
+<p><img src="/assets/2024/September/create%20record.png" alt="Untitled" /></p>
+
+<p>Create another record with subdomain www, this will point to the our first record.</p>
+
+<p><img src="/assets/2024/September/create%20another%20record.png" alt="Fig: Creating record with www. and routing to dsm-blogs.in" /></p>
+
+<p><em>Fig: Creating record with www. and routing to dsm-blogs.in</em></p>
+
+<p>Now, if you try to access your domain you will see the default Apache web server page.</p>
+
+<p><img src="/assets/2024/September/apache%20running.png" alt="Fig: Now, [dsm-blogs.in](http://dsm-blogs.in) is point to lba which directs to one of EC2 instances" /></p>
+
+<p>Fig: Now, <a href="http://dsm-blogs.in">dsm-blogs.in</a> is point to lba which directs to one of EC2 instances</p>
+
+<p>Hurray, we come really far starting from just EC2 instance to our own domain.</p>
+
+<p>That’s enough for this blog post. We will continue developing our webserver in future blog posts, by adding storage services like EBS, EFS and S3 and distributing content with CloudFront. Our aim is better understand the usage of services and when to use which service for our application.</p>
+
+<p>Hope you learnt something useful from this blog. See ya in next blog posts ❤️❤️.</p>]]></content><author><name></name></author><category term="cloud" /><summary type="html"><![CDATA[Introduction]]></summary></entry><entry><title type="html">Advancing in Git</title><link href="http://localhost:4000/web/2023/09/23/Advancing-git.html" rel="alternate" type="text/html" title="Advancing in Git" /><published>2023-09-23T15:08:10+05:30</published><updated>2023-09-23T15:08:10+05:30</updated><id>http://localhost:4000/web/2023/09/23/Advancing-git</id><content type="html" xml:base="http://localhost:4000/web/2023/09/23/Advancing-git.html"><![CDATA[<h2 id="introduction">Introduction</h2>
 
 <p>This blog post discusses intermediate techniques for using Git, a version control system commonly used in software development. Topics covered include branch management, interactive staging, cherry-picking commits, creating and applying diff patches, and rebasing. The post also explains the use of pre-receive hooks and the Git Rerere feature.</p>
 
@@ -2992,215 +3196,4 @@ A → C</li>
 
 <p>These types of inheritance provide flexibility in designing class hierarchies, allowing for code reuse and organization of related classes.</p>
 
-<p>In conclusion, Object-Oriented Programming provides a clear structure for our programs, making the code easier to design, understand, and maintain. So, the next time you’re coding in C++, keep these OOP concepts in mind as your guiding principles. They will surely make your programming journey smoother and more efficient.</p>]]></content><author><name></name></author><category term="Programming" /><summary type="html"><![CDATA[Programming is a vast field with myriad techniques and paradigms. Among these, Object-Oriented Programming (OOP) shines as a method that helps us structure our programs using objects. Objects are entities that bundle data and functionality, making our code more intuitive and easier to maintain. C++ is a perfect language to delve into OOP, as it inherently supports this paradigm.]]></summary></entry><entry><title type="html">Hashing and Hash Functions</title><link href="http://localhost:4000/data/structures/2022/03/22/Hashing-and-Hash-Functions.html" rel="alternate" type="text/html" title="Hashing and Hash Functions" /><published>2022-03-22T15:08:10+05:30</published><updated>2022-03-22T15:08:10+05:30</updated><id>http://localhost:4000/data/structures/2022/03/22/Hashing-and-Hash-Functions</id><content type="html" xml:base="http://localhost:4000/data/structures/2022/03/22/Hashing-and-Hash-Functions.html"><![CDATA[<h1 id="introduction">Introduction</h1>
-
-<p>Let’s talk hashing and hash tables. Array + Linked List advantages.</p>
-
-<p><code class="language-plaintext highlighter-rouge">Hash Table</code> is a data structure which organizes data using <code class="language-plaintext highlighter-rouge">hash functions</code> in order to support quick insertion and search.</p>
-
-<h1 id="hashing">Hashing</h1>
-
-<p>In hashing, we convert a value/num/string into key index using hash function. The idea is to uniformly distribute the key to the array.</p>
-
-<p><code class="language-plaintext highlighter-rouge">Hash_func(value/int/string) = key/index</code></p>
-
-<p><code class="language-plaintext highlighter-rouge">arr[key/index] = value/int/string</code></p>
-
-<p>When we insert a key-value pair in a hash table, we store the key along with its value.</p>
-
-<p>Properties of good hash function: -</p>
-
-<ol>
-  <li>Makes use of all info provided by key</li>
-  <li>Uniformly distributes output across table</li>
-  <li>Maps similar keys to very different hash values</li>
-  <li>Uses only very fast operations.</li>
-</ol>
-
-<h1 id="avoiding-collision">Avoiding Collision</h1>
-
-<p>It’s very hard to create a perfect hashing function. Rarely or when we use a bad hashing function, it gives same key for 2 different values. Such case is known as Collision.</p>
-
-<p>To avoid collision we apply different techniques, as explained below:</p>
-
-<h2 id="1-separate-chaining">1. Separate chaining</h2>
-
-<p>In this we use a map of type vector, hence we simply push the next value at the key.</p>
-
-<p>Example →</p>
-
-<div class="language-cpp highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="n">index</span> <span class="o">=</span> <span class="n">hash_func</span><span class="p">(</span><span class="n">s</span><span class="p">)</span>
-<span class="n">map</span><span class="p">[</span><span class="n">index</span><span class="p">].</span><span class="n">push_back</span><span class="p">(</span><span class="n">s</span><span class="p">)</span>
-</code></pre></div></div>
-
-<p>Complexity:</p>
-
-<p>Insertion takes O(1) and search takes O(k), k = size of linked list.</p>
-
-<p><strong>Open addressing</strong> based algorithms. In these algorithms we find the next empty space.</p>
-
-<h2 id="2-linear-probing">2. Linear Probing</h2>
-
-<div class="language-cpp highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="k">while</span> <span class="n">not</span> <span class="n">empty</span><span class="o">:</span>
-	<span class="n">index</span> <span class="o">=</span> <span class="p">(</span><span class="n">index</span> <span class="o">+</span> <span class="n">i</span><span class="p">)</span><span class="o">%</span><span class="n">size</span>
-	<span class="n">i</span><span class="o">++</span>
-</code></pre></div></div>
-
-<p><a href="https://leetcode.com/explore/learn/card/hash-table/182/practical-applications/1139/">Implementation of Hash Set with Linear probing</a></p>
-
-<div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="k">class</span> <span class="nc">MyHashSet</span> <span class="p">{</span>
-<span class="n">public</span><span class="p">:</span>
-<span class="n">static</span> <span class="n">const</span> <span class="nb">int</span> <span class="n">size</span> <span class="o">=</span> <span class="mi">1000005</span><span class="p">;</span>
-<span class="nb">int</span> <span class="n">arr</span><span class="p">[</span><span class="n">size</span><span class="p">];</span>
-
-<span class="nc">MyHashSet</span><span class="p">()</span> <span class="p">{</span>
-    <span class="nf">memset</span><span class="p">(</span><span class="n">arr</span><span class="p">,</span> <span class="o">-</span><span class="mi">1</span><span class="p">,</span> <span class="nf">sizeof</span><span class="p">(</span><span class="n">arr</span><span class="p">));</span>
-<span class="p">}</span>
-
-<span class="n">void</span> <span class="nf">add</span><span class="p">(</span><span class="nb">int</span> <span class="n">key</span><span class="p">)</span> <span class="p">{</span>
-    <span class="o">//</span> <span class="nb">hash</span> <span class="n">function</span>
-    <span class="nb">int</span> <span class="n">indx</span> <span class="o">=</span> <span class="n">key</span> <span class="o">%</span> <span class="n">size</span><span class="p">;</span>
-    
-    <span class="o">//</span> <span class="n">linear</span> <span class="n">probing</span>
-    <span class="nb">int</span> <span class="n">i</span><span class="o">=</span><span class="mi">1</span><span class="p">;</span>
-    <span class="nf">while</span><span class="p">(</span><span class="n">arr</span><span class="p">[</span><span class="n">indx</span><span class="p">]</span> <span class="o">!=</span> <span class="o">-</span><span class="mi">1</span><span class="p">)</span> <span class="p">{</span>
-        <span class="n">indx</span> <span class="o">=</span> <span class="p">(</span><span class="n">indx</span> <span class="o">+</span> <span class="n">i</span><span class="p">)</span> <span class="o">%</span> <span class="n">size</span><span class="p">;</span>
-        <span class="n">i</span><span class="o">++</span><span class="p">;</span>
-    <span class="p">}</span>
-    
-    <span class="o">//</span> <span class="n">store</span>
-    <span class="n">arr</span><span class="p">[</span><span class="n">indx</span><span class="p">]</span> <span class="o">=</span> <span class="n">key</span><span class="p">;</span>
-<span class="p">}</span>
-
-<span class="n">void</span> <span class="nf">remove</span><span class="p">(</span><span class="nb">int</span> <span class="n">key</span><span class="p">)</span> <span class="p">{</span>
-    <span class="nb">int</span> <span class="n">indx</span> <span class="o">=</span> <span class="n">key</span> <span class="o">%</span> <span class="n">size</span><span class="p">;</span>
-    
-    <span class="nb">int</span> <span class="n">i</span><span class="o">=</span><span class="mi">1</span><span class="p">;</span>
-    <span class="nf">while</span><span class="p">(</span><span class="n">arr</span><span class="p">[</span><span class="n">indx</span><span class="p">]</span> <span class="o">!=</span> <span class="o">-</span><span class="mi">1</span><span class="p">)</span> <span class="p">{</span>
-        
-        <span class="o">//</span> <span class="n">remove</span> <span class="n">only</span> <span class="k">if</span> <span class="n">contains</span>
-        <span class="nf">if </span><span class="p">(</span><span class="n">arr</span><span class="p">[</span><span class="n">indx</span><span class="p">]</span> <span class="o">==</span> <span class="n">key</span><span class="p">)</span> <span class="p">{</span>
-            <span class="n">arr</span><span class="p">[</span><span class="n">indx</span><span class="p">]</span> <span class="o">=</span> <span class="o">-</span><span class="mi">1</span><span class="p">;</span>
-            <span class="k">break</span><span class="p">;</span>
-        <span class="p">}</span>
-        
-        <span class="n">indx</span> <span class="o">=</span> <span class="p">(</span><span class="n">indx</span> <span class="o">+</span> <span class="n">i</span><span class="p">)</span><span class="o">%</span><span class="n">size</span><span class="p">;</span>
-        <span class="n">i</span><span class="o">++</span><span class="p">;</span>
-    <span class="p">}</span>
-<span class="p">}</span>
-
-<span class="nb">bool</span> <span class="nf">contains</span><span class="p">(</span><span class="nb">int</span> <span class="n">key</span><span class="p">)</span> <span class="p">{</span>
-    <span class="nb">int</span> <span class="n">indx</span> <span class="o">=</span> <span class="n">key</span> <span class="o">%</span> <span class="n">size</span><span class="p">;</span>
-    
-    <span class="o">//</span> <span class="n">move</span> <span class="n">till</span> <span class="n">empty</span> <span class="n">space</span>
-    <span class="nb">int</span> <span class="n">i</span> <span class="o">=</span><span class="mi">1</span><span class="p">;</span>
-    <span class="nf">while</span><span class="p">(</span><span class="n">arr</span><span class="p">[</span><span class="n">indx</span><span class="p">]</span> <span class="o">!=</span> <span class="o">-</span><span class="mi">1</span><span class="p">)</span> <span class="p">{</span>
-        
-        <span class="o">//</span> <span class="n">contains</span>
-        <span class="nf">if </span><span class="p">(</span><span class="n">arr</span><span class="p">[</span><span class="n">indx</span><span class="p">]</span> <span class="o">==</span> <span class="n">key</span><span class="p">)</span> 
-            <span class="k">return</span> <span class="n">true</span><span class="p">;</span>
-        
-        <span class="n">indx</span> <span class="o">=</span> <span class="p">(</span><span class="n">indx</span> <span class="o">+</span> <span class="n">i</span><span class="p">)</span><span class="o">%</span> <span class="n">size</span><span class="p">;</span>
-        <span class="n">i</span><span class="o">++</span><span class="p">;</span>
-    <span class="p">}</span>
-    
-    <span class="k">return</span> <span class="n">false</span><span class="p">;</span>
-<span class="p">}</span>
-<span class="p">};</span>
-</code></pre></div></div>
-
-<ul>
-  <li><a href="https://leetcode.com/explore/learn/card/hash-table/182/practical-applications/1140/">Hash Map Implementation with 2 arrays and Linear probing</a></li>
-</ul>
-
-<div class="language-cpp highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="k">class</span> <span class="nc">MyHashMap</span> <span class="p">{</span>
-<span class="nl">public:</span>
-    <span class="k">static</span> <span class="k">const</span> <span class="kt">int</span> <span class="n">size</span> <span class="o">=</span> <span class="mi">1000005</span><span class="p">;</span>
-    <span class="kt">int</span> <span class="n">key</span><span class="p">[</span><span class="n">size</span><span class="p">];</span>
-    <span class="kt">int</span> <span class="n">value</span><span class="p">[</span><span class="n">size</span><span class="p">];</span>
-    
-    <span class="n">MyHashMap</span><span class="p">()</span> <span class="p">{</span>
-        <span class="n">memset</span><span class="p">(</span><span class="n">key</span><span class="p">,</span> <span class="o">-</span><span class="mi">1</span><span class="p">,</span> <span class="k">sizeof</span><span class="p">(</span><span class="n">key</span><span class="p">));</span>
-        <span class="n">memset</span><span class="p">(</span><span class="n">value</span><span class="p">,</span> <span class="o">-</span><span class="mi">1</span><span class="p">,</span> <span class="k">sizeof</span><span class="p">(</span><span class="n">value</span><span class="p">));</span>
-    <span class="p">}</span>
-    
-    <span class="kt">void</span> <span class="nf">put</span><span class="p">(</span><span class="kt">int</span> <span class="n">k</span><span class="p">,</span> <span class="kt">int</span> <span class="n">v</span><span class="p">)</span> <span class="p">{</span>
-        <span class="kt">int</span> <span class="n">indx</span> <span class="o">=</span> <span class="n">k</span> <span class="o">%</span> <span class="n">size</span><span class="p">;</span>
-        
-        <span class="kt">int</span> <span class="n">i</span><span class="o">=</span><span class="mi">1</span><span class="p">;</span>
-        <span class="k">while</span><span class="p">(</span><span class="n">key</span><span class="p">[</span><span class="n">indx</span><span class="p">]</span> <span class="o">!=</span> <span class="o">-</span><span class="mi">1</span><span class="p">)</span> <span class="p">{</span>
-            <span class="c1">// already present</span>
-            <span class="k">if</span> <span class="p">(</span><span class="n">key</span><span class="p">[</span><span class="n">indx</span><span class="p">]</span> <span class="o">==</span> <span class="n">k</span><span class="p">)</span>
-                <span class="k">break</span><span class="p">;</span>
-            
-            <span class="n">indx</span> <span class="o">=</span> <span class="p">(</span><span class="n">indx</span> <span class="o">+</span> <span class="n">i</span><span class="p">)</span> <span class="o">%</span> <span class="n">size</span><span class="p">;</span>
-            <span class="n">i</span><span class="o">++</span><span class="p">;</span>
-        <span class="p">}</span>
-        
-        <span class="n">key</span><span class="p">[</span><span class="n">indx</span><span class="p">]</span> <span class="o">=</span> <span class="n">k</span><span class="p">;</span>
-        <span class="n">value</span><span class="p">[</span><span class="n">indx</span><span class="p">]</span> <span class="o">=</span> <span class="n">v</span><span class="p">;</span>
-    <span class="p">}</span>
-    
-    <span class="kt">int</span> <span class="nf">get</span><span class="p">(</span><span class="kt">int</span> <span class="n">k</span><span class="p">)</span> <span class="p">{</span>
-        <span class="kt">int</span> <span class="n">indx</span> <span class="o">=</span> <span class="n">k</span> <span class="o">%</span> <span class="n">size</span><span class="p">;</span>
-        
-        <span class="kt">int</span> <span class="n">i</span> <span class="o">=</span><span class="mi">1</span><span class="p">;</span>
-        <span class="k">while</span><span class="p">(</span><span class="n">key</span><span class="p">[</span><span class="n">indx</span><span class="p">]</span> <span class="o">!=</span> <span class="o">-</span><span class="mi">1</span><span class="p">)</span> <span class="p">{</span>
-            
-            <span class="c1">// contains</span>
-            <span class="k">if</span> <span class="p">(</span><span class="n">key</span><span class="p">[</span><span class="n">indx</span><span class="p">]</span> <span class="o">==</span> <span class="n">k</span><span class="p">)</span> 
-                <span class="k">return</span> <span class="n">value</span><span class="p">[</span><span class="n">indx</span><span class="p">];</span>
-            
-            <span class="n">indx</span> <span class="o">=</span> <span class="p">(</span><span class="n">indx</span> <span class="o">+</span> <span class="n">i</span><span class="p">)</span><span class="o">%</span> <span class="n">size</span><span class="p">;</span>
-            <span class="n">i</span><span class="o">++</span><span class="p">;</span>
-        <span class="p">}</span>
-        
-        <span class="k">return</span> <span class="o">-</span><span class="mi">1</span><span class="p">;</span>
-    <span class="p">}</span>
-    
-    <span class="kt">void</span> <span class="nf">remove</span><span class="p">(</span><span class="kt">int</span> <span class="n">k</span><span class="p">)</span> <span class="p">{</span>
-        <span class="kt">int</span> <span class="n">indx</span> <span class="o">=</span> <span class="n">k</span> <span class="o">%</span> <span class="n">size</span><span class="p">;</span>
-        
-        <span class="kt">int</span> <span class="n">i</span><span class="o">=</span><span class="mi">1</span><span class="p">;</span>
-        <span class="k">while</span><span class="p">(</span><span class="n">key</span><span class="p">[</span><span class="n">indx</span><span class="p">]</span> <span class="o">!=</span> <span class="o">-</span><span class="mi">1</span><span class="p">)</span> <span class="p">{</span>
-            
-            <span class="c1">// remove only if contains</span>
-            <span class="k">if</span> <span class="p">(</span><span class="n">key</span><span class="p">[</span><span class="n">indx</span><span class="p">]</span> <span class="o">==</span> <span class="n">k</span><span class="p">)</span> <span class="p">{</span>
-                <span class="n">key</span><span class="p">[</span><span class="n">indx</span><span class="p">]</span> <span class="o">=</span> <span class="o">-</span><span class="mi">1</span><span class="p">;</span>
-                <span class="n">value</span><span class="p">[</span><span class="n">indx</span><span class="p">]</span> <span class="o">=</span> <span class="o">-</span><span class="mi">1</span><span class="p">;</span>
-                <span class="k">break</span><span class="p">;</span>
-            <span class="p">}</span>
-            
-            <span class="n">indx</span> <span class="o">=</span> <span class="p">(</span><span class="n">indx</span> <span class="o">+</span> <span class="n">i</span><span class="p">)</span><span class="o">%</span><span class="n">size</span><span class="p">;</span>
-            <span class="n">i</span><span class="o">++</span><span class="p">;</span>
-        <span class="p">}</span>
-    <span class="p">}</span>
-<span class="p">};</span>
-</code></pre></div></div>
-
-<h3 id="complexity">Complexity:</h3>
-
-<p>Search and insert both takes O(n), n = size of table</p>
-
-<h2 id="3-quadratic-probing">3. Quadratic Probing</h2>
-
-<div class="language-cpp highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="k">while</span> <span class="n">not</span> <span class="n">empty</span><span class="o">:</span>
-	<span class="n">index</span> <span class="o">=</span> <span class="p">(</span><span class="n">index</span> <span class="o">+</span> <span class="n">i</span><span class="o">^</span><span class="mi">2</span><span class="p">)</span> <span class="o">%</span> <span class="n">size</span>
-	<span class="n">i</span><span class="o">++</span>
-</code></pre></div></div>
-
-<h2 id="4-double-hashing">4. Double hashing</h2>
-
-<div class="language-cpp highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="n">index</span> <span class="o">=</span> <span class="n">hashfunc</span><span class="p">(</span><span class="n">s</span><span class="p">)</span>
-<span class="n">index2</span> <span class="o">=</span> <span class="n">hashfunc2</span><span class="p">(</span><span class="n">s</span><span class="p">)</span>
-
-<span class="k">while</span> <span class="n">not</span> <span class="n">empty</span><span class="o">:</span>
-	<span class="n">index</span> <span class="o">=</span> <span class="p">(</span><span class="n">index</span> <span class="o">+</span> <span class="n">i</span> <span class="o">*</span> <span class="n">index2</span><span class="p">)</span> <span class="o">%</span> <span class="n">size</span>
-	<span class="n">i</span><span class="o">++</span>
-</code></pre></div></div>
-
-<p>Practically we use separate chaining with height-balanced BST.</p>
-
-<h3 id="complexity-">Complexity:-</h3>
-
-<p>The average time complexity of both insertion and search is still <code class="language-plaintext highlighter-rouge">O(1)</code>. And the time complexity in the worst case is <code class="language-plaintext highlighter-rouge">O(logN)</code> for both insertion and search by using height-balanced BST (at each index, using vector). It is a trade-off between insertion and search.</p>]]></content><author><name></name></author><category term="Data" /><category term="structures" /><summary type="html"><![CDATA[Introduction]]></summary></entry></feed>
+<p>In conclusion, Object-Oriented Programming provides a clear structure for our programs, making the code easier to design, understand, and maintain. So, the next time you’re coding in C++, keep these OOP concepts in mind as your guiding principles. They will surely make your programming journey smoother and more efficient.</p>]]></content><author><name></name></author><category term="Programming" /><summary type="html"><![CDATA[Programming is a vast field with myriad techniques and paradigms. Among these, Object-Oriented Programming (OOP) shines as a method that helps us structure our programs using objects. Objects are entities that bundle data and functionality, making our code more intuitive and easier to maintain. C++ is a perfect language to delve into OOP, as it inherently supports this paradigm.]]></summary></entry></feed>
