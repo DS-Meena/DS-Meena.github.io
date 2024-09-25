@@ -1,4 +1,4 @@
-<?xml version="1.0" encoding="utf-8"?><feed xmlns="http://www.w3.org/2005/Atom" ><generator uri="https://jekyllrb.com/" version="4.3.3">Jekyll</generator><link href="http://localhost:4000/feed.xml" rel="self" type="application/atom+xml" /><link href="http://localhost:4000/" rel="alternate" type="text/html" /><updated>2024-09-25T15:34:43+05:30</updated><id>http://localhost:4000/feed.xml</id><title type="html">dsm Blogs</title><subtitle>This is a blog about Data Science and Machine Learning. I write about all the things I learn in this domain. I also share my knowledge with you.</subtitle><entry><title type="html">Q-Learning</title><link href="http://localhost:4000/ai/2024/09/23/Q_learning.html" rel="alternate" type="text/html" title="Q-Learning" /><published>2024-09-23T10:00:10+05:30</published><updated>2024-09-23T10:00:10+05:30</updated><id>http://localhost:4000/ai/2024/09/23/Q_learning</id><content type="html" xml:base="http://localhost:4000/ai/2024/09/23/Q_learning.html"><![CDATA[<h1 id="introduction">Introduction</h1>
+<?xml version="1.0" encoding="utf-8"?><feed xmlns="http://www.w3.org/2005/Atom" ><generator uri="https://jekyllrb.com/" version="4.3.3">Jekyll</generator><link href="http://localhost:4000/feed.xml" rel="self" type="application/atom+xml" /><link href="http://localhost:4000/" rel="alternate" type="text/html" /><updated>2024-09-25T15:56:54+05:30</updated><id>http://localhost:4000/feed.xml</id><title type="html">dsm Blogs</title><subtitle>This is a blog about Data Science and Machine Learning. I write about all the things I learn in this domain. I also share my knowledge with you.</subtitle><entry><title type="html">Q-Learning</title><link href="http://localhost:4000/ai/2024/09/23/Q_learning.html" rel="alternate" type="text/html" title="Q-Learning" /><published>2024-09-23T10:00:10+05:30</published><updated>2024-09-23T10:00:10+05:30</updated><id>http://localhost:4000/ai/2024/09/23/Q_learning</id><content type="html" xml:base="http://localhost:4000/ai/2024/09/23/Q_learning.html"><![CDATA[<h1 id="introduction">Introduction</h1>
 
 <p>In this blog, we will learn about the fundamental algorithms used in reinforcement learning. It’s not about neural networks but the mathematical algorithms involved in learning.</p>
 
@@ -670,7 +670,866 @@ Overall, decision trees are a simple and effective technique for classification 
 
 <p>Overall, ensemble methods are a powerful technique for improving the performance of machine learning models, and they are widely used in industry and research. However, it is important to carefully consider the problem and the available data before choosing an ensemble method.</p>
 
-<p><a href="https://www.kaggle.com/code/dsmeena/ch-7-ensemble-learning-and-random-forests"></a></p>]]></content><author><name></name></author><category term="AI" /><summary type="html"><![CDATA[In this blog post, we’re going to talk about machine learning and its different types.]]></summary></entry><entry><title type="html">Generative Pre-training</title><link href="http://localhost:4000/ai/2023/08/13/Generative_pre_training.html" rel="alternate" type="text/html" title="Generative Pre-training" /><published>2023-08-13T10:00:10+05:30</published><updated>2023-08-13T10:00:10+05:30</updated><id>http://localhost:4000/ai/2023/08/13/Generative_pre_training</id><content type="html" xml:base="http://localhost:4000/ai/2023/08/13/Generative_pre_training.html"><![CDATA[<h1 id="introduction-">Introduction 🚀</h1>
+<p><a href="https://www.kaggle.com/code/dsmeena/ch-7-ensemble-learning-and-random-forests"></a></p>]]></content><author><name></name></author><category term="AI" /><summary type="html"><![CDATA[In this blog post, we’re going to talk about machine learning and its different types.]]></summary></entry><entry><title type="html">Advancing in Git</title><link href="http://localhost:4000/web/2023/09/23/Advancing-git.html" rel="alternate" type="text/html" title="Advancing in Git" /><published>2023-09-23T15:08:10+05:30</published><updated>2023-09-23T15:08:10+05:30</updated><id>http://localhost:4000/web/2023/09/23/Advancing-git</id><content type="html" xml:base="http://localhost:4000/web/2023/09/23/Advancing-git.html"><![CDATA[<h2 id="introduction">Introduction</h2>
+
+<p>This blog post discusses intermediate techniques for using Git, a version control system commonly used in software development. Topics covered include branch management, interactive staging, cherry-picking commits, creating and applying diff patches, and rebasing. The post also explains the use of pre-receive hooks and the Git Rerere feature.</p>
+
+<h2 id="branch-management">Branch Management</h2>
+
+<h3 id="git-reset">Git reset</h3>
+
+<p>If you’re using Git and you need to undo changes you made to files, you can use the <code class="language-plaintext highlighter-rouge">git reset</code> command. Basically, it resets your working directory and staging area to a previous commit. So, let’s say you made some changes to files that you haven’t committed yet, you can undo those changes with <code class="language-plaintext highlighter-rouge">git reset</code>.</p>
+
+<table>
+  <thead>
+    <tr>
+      <th>Command</th>
+      <th>Description</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td>git reset</td>
+      <td>reset your working directory and staging area to a previous commit</td>
+    </tr>
+    <tr>
+      <td>git reset –soft HEAD^</td>
+      <td>reset your working directory to the previous commit but keep your changes in the staging area</td>
+    </tr>
+    <tr>
+      <td>git reset –hard HEAD^</td>
+      <td>reset both your working directory and staging area to the previous commit</td>
+    </tr>
+    <tr>
+      <td>git reset <file></file></td>
+      <td>unstage a file that you accidentally added to the staging area</td>
+    </tr>
+    <tr>
+      <td>git clean -f</td>
+      <td>remove untracked files</td>
+    </tr>
+    <tr>
+      <td>git rm –cached testfile.js</td>
+      <td>no longer track the file</td>
+    </tr>
+    <tr>
+      <td>git restore –staged file.txt</td>
+      <td>unstage the changes made to file</td>
+    </tr>
+    <tr>
+      <td>git restore file.txt</td>
+      <td>restore the file to its previous state</td>
+    </tr>
+  </tbody>
+</table>
+
+<p>Just keep in mind that <code class="language-plaintext highlighter-rouge">git reset</code> can be a bit risky since it can permanently discard changes and commits. So be careful when using it, alright?</p>
+
+<h3 id="fetch">Fetch</h3>
+
+<p><code class="language-plaintext highlighter-rouge">git fetch</code> is a command in Git that downloads new changes from a remote repository without merging them into the local branch. It updates the remote-tracking branch, which is a local branch that tracks changes in the remote repository.</p>
+
+<p>After running <code class="language-plaintext highlighter-rouge">git fetch</code>, you can use <code class="language-plaintext highlighter-rouge">git merge</code> or <code class="language-plaintext highlighter-rouge">git rebase</code> to integrate the changes from the remote repository into your local branch. Alternatively, you can use <code class="language-plaintext highlighter-rouge">git checkout</code> to switch to the remote-tracking branch and inspect the changes without merging them.</p>
+
+<p><code class="language-plaintext highlighter-rouge">git fetch</code> is a useful command to use when collaborating with others on a project. It allows you to keep your local repository up-to-date with changes made by others, without affecting your working directory.</p>
+
+<table>
+  <thead>
+    <tr>
+      <th>Command</th>
+      <th>Description</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td>git fetch</td>
+      <td>Downloads new changes from a remote repository without merging them into the local branch.</td>
+    </tr>
+    <tr>
+      <td>git fetch –tags</td>
+      <td>Fetches all tags from the remote repository that are not already present in the local repository.</td>
+    </tr>
+    <tr>
+      <td>git fetch –prune</td>
+      <td>Deletes any remote-tracking branches that are no longer on the remote repository.</td>
+    </tr>
+    <tr>
+      <td>git fetch -p</td>
+      <td>Shortcut for <code class="language-plaintext highlighter-rouge">git fetch --prune</code>.</td>
+    </tr>
+  </tbody>
+</table>
+
+<div class="language-bash highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="c"># command to overwrite of your local files with the master branch</span>
+git fetch <span class="nt">--all</span>
+git reset <span class="nt">--hard</span> origin/master
+</code></pre></div></div>
+
+<p>The git amend command allows you to modify the most recent commit on your branch. You can use it to add changes you forgot to include in the commit, or to modify the commit message. When you run <code class="language-plaintext highlighter-rouge">git commit --amend</code>, Git will open up your default text editor and allow you to edit the commit message. Once you save and close the editor, the commit message on your most recent commit will be updated.</p>
+
+<p>If you have staged changes that were not included in the previous commit, running <code class="language-plaintext highlighter-rouge">git commit --amend</code> will add those changes to the previous commit. You can also use the <code class="language-plaintext highlighter-rouge">-m</code> flag to modify the commit message without opening the text editor.</p>
+
+<p>To remove a file from the previous commit, you can use <code class="language-plaintext highlighter-rouge">git rm --cached &lt;file&gt;</code> and then run <code class="language-plaintext highlighter-rouge">git commit --amend</code>.</p>
+
+<div class="language-bash highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="c"># change the previous commit</span>
+git add
+git commit <span class="nt">--amend</span> <span class="c"># will add the staged changes to previous commit</span>
+
+git commit <span class="nt">--amend</span> <span class="nt">-m</span> <span class="s2">"New commit message"</span>  <span class="c"># modify commit message</span>
+
+<span class="c"># remove file from staging </span>
+git <span class="nb">rm</span> <span class="nt">--cached</span> testfile.js    <span class="c"># no longer tracked</span>
+</code></pre></div></div>
+
+<h3 id="force-push-to-a-remote">Force push to a remote</h3>
+
+<p>Reasons to use force push:</p>
+
+<ul>
+  <li>Local version is preferable to the remote version</li>
+  <li>The remote version went wrong and needs repair</li>
+  <li>Versions have diverged and merging is undesirable</li>
+  <li>Force push replaces the remote branch with your local branch</li>
+  <li>Use with caution</li>
+  <li>Commits may disappear</li>
+  <li>It can be disruptive for others using the remote branch</li>
+  <li>It’s an easy way to frustrate your development team</li>
+</ul>
+
+<table>
+  <thead>
+    <tr>
+      <th>Command</th>
+      <th>Description</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td><code class="language-plaintext highlighter-rouge">git push -f</code> or <code class="language-plaintext highlighter-rouge">git push --force</code></td>
+      <td>Force push the changes to the remote repository, replacing the commits that are already there and not in the local repository.</td>
+    </tr>
+    <tr>
+      <td><code class="language-plaintext highlighter-rouge">git push --force-with-lease</code></td>
+      <td>Allow force push if no one else has pushed changes to that branch since you pulled.</td>
+    </tr>
+    <tr>
+      <td><code class="language-plaintext highlighter-rouge">git commit -am "Add salsa to shopping list"</code></td>
+      <td>Automatically add changed files to the staging area and add the message.</td>
+    </tr>
+    <tr>
+      <td><code class="language-plaintext highlighter-rouge">git log</code></td>
+      <td>Show the commits in the local repository.</td>
+    </tr>
+    <tr>
+      <td><code class="language-plaintext highlighter-rouge">git log origin/main</code></td>
+      <td>Show the commits in the <code class="language-plaintext highlighter-rouge">origin/main</code> branch.</td>
+    </tr>
+    <tr>
+      <td><code class="language-plaintext highlighter-rouge">git show origin/main</code></td>
+      <td>Show the changes done in commits in the <code class="language-plaintext highlighter-rouge">origin/main</code> branch.</td>
+    </tr>
+    <tr>
+      <td><code class="language-plaintext highlighter-rouge">git reset --hard origin/main</code></td>
+      <td>Replace the local repository with the remote repository. Collaborators can use this command to replace their local repository with the remote repository.</td>
+    </tr>
+  </tbody>
+</table>
+
+<h3 id="identify-merged-branches">Identify Merged branches</h3>
+
+<p>Here’s a cool trick for Git! You can use the command <code class="language-plaintext highlighter-rouge">git branch --merged</code> to see which branches have been merged into your current branch. This is really useful if you want to keep track of what features have been incorporated or if you need to do some cleanup after merging a bunch of features. By default, the command uses your current branch, but you can specify other branch names or commits too. Basically, it shows you all the branches whose tips are reachable from the specified commit (or HEAD if you don’t specify anything). So, if you’re working on a project with multiple branches, give this command a try!</p>
+
+<table>
+  <thead>
+    <tr>
+      <th>Command</th>
+      <th>Description</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td>git branch –merged</td>
+      <td>List branches that have been merged to the current branch</td>
+    </tr>
+    <tr>
+      <td>git branch –no-merged</td>
+      <td>List branches that haven’t been merged to the current branch</td>
+    </tr>
+    <tr>
+      <td>git branch -r –merged</td>
+      <td>Show results for remote branches that have been merged</td>
+    </tr>
+    <tr>
+      <td>git merge main</td>
+      <td>Merge the main branch into the current branch</td>
+    </tr>
+    <tr>
+      <td>git branch –merged july_release</td>
+      <td>Show what branches are merged into the specified branch</td>
+    </tr>
+    <tr>
+      <td>git branch –merged origin/july_release</td>
+      <td>Show what branches are merged into the specified remote branch</td>
+    </tr>
+    <tr>
+      <td>git branch –merged b325a7c49</td>
+      <td>Show what branches have this commit</td>
+    </tr>
+  </tbody>
+</table>
+
+<h3 id="prune-stale-branches">Prune Stale Branches</h3>
+
+<p>To keep your Git repository organized, it’s important to delete stale branches. A stale branch is a remote-tracking branch that no longer tracks anything because the actual branch in the remote repository has been deleted. To delete a remote branch, you must also delete your remote-tracking branch. However, if another collaborator deletes a remote branch, your remote-tracking branch remains. Fetching does not automatically delete remote-tracking branches, so you must manually prune them.</p>
+
+<table>
+  <thead>
+    <tr>
+      <th>Command</th>
+      <th>Description</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td><code class="language-plaintext highlighter-rouge">git branch -d bugfix</code></td>
+      <td>Delete local branch</td>
+    </tr>
+    <tr>
+      <td><code class="language-plaintext highlighter-rouge">git push -d origin bugfix</code></td>
+      <td>Delete remote branch</td>
+    </tr>
+    <tr>
+      <td><code class="language-plaintext highlighter-rouge">git remote prune origin</code></td>
+      <td>Delete stale remote-tracking branches</td>
+    </tr>
+    <tr>
+      <td><code class="language-plaintext highlighter-rouge">git remote prune origin --dry-run</code></td>
+      <td>Demo which branch would be pruned or removed</td>
+    </tr>
+    <tr>
+      <td><code class="language-plaintext highlighter-rouge">git branch -r</code></td>
+      <td>Show remote-tracking branches</td>
+    </tr>
+    <tr>
+      <td><code class="language-plaintext highlighter-rouge">git fetch --prune</code> or <code class="language-plaintext highlighter-rouge">git fetch -p</code></td>
+      <td>Shortcut to prune, then fetch</td>
+    </tr>
+    <tr>
+      <td><code class="language-plaintext highlighter-rouge">git config --global fetch.prune true</code></td>
+      <td>Always prune before fetch</td>
+    </tr>
+    <tr>
+      <td><code class="language-plaintext highlighter-rouge">git prune</code></td>
+      <td>Prune all unreachable objects</td>
+    </tr>
+    <tr>
+      <td><code class="language-plaintext highlighter-rouge">git gc</code></td>
+      <td>Part of garbage collection</td>
+    </tr>
+    <tr>
+      <td><code class="language-plaintext highlighter-rouge">git prune --expire &lt;time&gt;</code></td>
+      <td>Prune unreachable objects older than specified time</td>
+    </tr>
+  </tbody>
+</table>
+
+<h2 id="taging">Taging</h2>
+
+<h3 id="create-tags">Create Tags</h3>
+
+<p>Tags in Git are like bookmarks, marking important points in the history of a repository. They can be used to mark software versions or to highlight key features or changes. You can also use tags to mark points for discussion with collaborators, like bugs or issues. So, if you’re working on a project in Git, don’t forget to use tags to help keep track of important points in your repository’s history!</p>
+
+<table>
+  <thead>
+    <tr>
+      <th>Command</th>
+      <th>Description</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td><code class="language-plaintext highlighter-rouge">git tag issue_136 655da716e7</code></td>
+      <td>Add lightweight tag (using hash or branch name)</td>
+    </tr>
+    <tr>
+      <td><code class="language-plaintext highlighter-rouge">git tag -am "Version 1.0" v1.0 dd5c49428a0</code></td>
+      <td>Add annotated tag (most common)</td>
+    </tr>
+    <tr>
+      <td><code class="language-plaintext highlighter-rouge">git tag -d v1.0</code> or <code class="language-plaintext highlighter-rouge">git tag --delete v1.0</code></td>
+      <td>Delete a tag</td>
+    </tr>
+  </tbody>
+</table>
+
+<h3 id="list-tags">List Tags</h3>
+
+<p>| Command | Description |
+| — | — |
+| git tag
+git tag –list
+git tag -l | List tags alphabetically |
+| git tag -l “v2*” | List tags beginning with “v2” |
+| git tag -n | List tags with first line of each annotation |
+| git tag -n5 | List tags with five lines of each annotation |
+| git show v1.1 | Show changes made in the commits tagged with v1.1 |
+| git diff v1.0..v1.1 | Show all differences from v1.0 to v1.1 |
+| git switch v1.0 | Switch to the commit or branch labeled as v1.0 |
+| git switch -c branch_v1 v1.0 | Create a new branch from a tag |</p>
+
+<h3 id="push-tags-to-a-remote">Push Tags to a Remote</h3>
+
+<p>Like branches, tags are local unless shared to a remote. Git push does not transfer tags, so they must be explicitly transferred. However, git fetch automatically retrieves shared tags. So, if you’re collaborating with others on a project, make sure to share your tags to keep everyone in the loop!</p>
+
+<table>
+  <thead>
+    <tr>
+      <th>Command</th>
+      <th>Description</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td><code class="language-plaintext highlighter-rouge">git push origin v1.0</code></td>
+      <td>Push a tag to a remote repository</td>
+    </tr>
+    <tr>
+      <td><code class="language-plaintext highlighter-rouge">git push origin --tags</code></td>
+      <td>Push all tags to a remote repository</td>
+    </tr>
+    <tr>
+      <td><code class="language-plaintext highlighter-rouge">git fetch</code></td>
+      <td>Fetch commits and tags</td>
+    </tr>
+    <tr>
+      <td><code class="language-plaintext highlighter-rouge">git fetch --tags</code></td>
+      <td>Fetch only tags (with necessary commits) (rarely used)</td>
+    </tr>
+    <tr>
+      <td><code class="language-plaintext highlighter-rouge">git push -d origin v1.0</code></td>
+      <td>Delete remote tags like remote branches</td>
+    </tr>
+  </tbody>
+</table>
+
+<h2 id="interactive-staging">Interactive Staging</h2>
+
+<h3 id="interactive-mode">Interactive Mode</h3>
+
+<p>Interactive staging is a cool feature in Git that lets you pick and choose which changes you want to stage. This means you can make smaller, focused commits and avoid committing changes you’re not sure about. It’s also a feature of many Git GUI tools. So, next time you’re using Git, give interactive staging a try!</p>
+
+<p>To enter into interactive mode, use:</p>
+
+<div class="language-bash highlighter-rouge"><div class="highlight"><pre class="highlight"><code>git add <span class="nt">-i</span>
+git add <span class="nt">--interactive</span>
+</code></pre></div></div>
+
+<p><img src="/assets/2024/September/interactive%20mode.png" alt="Untitled" /></p>
+
+<p>In interactive mode, you can stage changes, unstage changes, and add untracked files. You can choose options either by clicking on the corresponding number or the first letter of the option:</p>
+
+<ul>
+  <li>s: Status of the repository</li>
+  <li>u: Add files to the staging area</li>
+  <li>r: Remove files from the staging area</li>
+  <li>a: Add untracked files</li>
+  <li>d: Differences in file</li>
+  <li>q: Quit interactive mode</li>
+  <li>h: Help</li>
+</ul>
+
+<h3 id="patch-mode">Patch mode</h3>
+
+<p>In Git, you can pick and choose which changes you want to stage using interactive staging. This means you can make smaller, focused commits and avoid committing changes you’re not sure about. You can stage each hunk (chunk of changes) separately. It’s really useful!</p>
+
+<p>To enter patch mode, go to interactive mode and enter “p”, followed by the file number.</p>
+
+<p><img src="/assets/2024/September/patch%20mode.png" alt="Untitled" /></p>
+
+<p>Other ways to use patch mode</p>
+
+<table>
+  <thead>
+    <tr>
+      <th>Command</th>
+      <th>Description</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td>git add –patch or git add -p</td>
+      <td>Interactively choose which changes you want to add to the staging area.</td>
+    </tr>
+    <tr>
+      <td>git stash -p</td>
+      <td>Interactively choose which changes you want to stash.</td>
+    </tr>
+    <tr>
+      <td>git reset -p</td>
+      <td>Interactively choose which changes you want to unstage.</td>
+    </tr>
+    <tr>
+      <td>git restore -p</td>
+      <td>Interactively choose which changes you want to discard from your working directory.</td>
+    </tr>
+    <tr>
+      <td>git commit -p</td>
+      <td>Interactively choose which changes you want to include in your commit.</td>
+    </tr>
+  </tbody>
+</table>
+
+<h3 id="split-a-hunk">Split a Hunk</h3>
+
+<p>When using Git’s interactive staging feature, you can split a hunk further by using the “s” option in patch mode. This is useful when a hunk contains multiple changes and requires one or more unchanged lines between them.</p>
+
+<h3 id="edit-a-hunk">Edit a Hunk</h3>
+
+<p>When editing a hunk in Git, you can do it manually if needed. This is especially useful when a hunk cannot be split automatically. However, make sure to pay attention to the prefixes (+, -, space) while editing, or the hunk might not be staged correctly. So, take your time and give them the respect they deserve!</p>
+
+<h2 id="share-select-changes">Share Select Changes</h2>
+
+<h3 id="cherry-picking-commits">Cherry-Picking Commits</h3>
+
+<p>Cherry-picking commits is like copying and pasting code from one branch to another. Each commit becomes a new commit on the current branch, and they’ll have different SHA codes. You can cherry-pick commits from any branch, but you can’t do it with merge commits. You can use the –edit or -e flag to edit the commit message if you need to. However, conflicts can arise that you’ll need to resolve. It’s a useful feature to have in your Git toolkit!</p>
+
+<p><img src="/assets/2024/September/cherry%20pick.png" alt="Untitled" /></p>
+
+<div class="language-bash highlighter-rouge"><div class="highlight"><pre class="highlight"><code>git cherry-pick d4e8411d09
+git cherry-pick d438411d09..57d290ec44
+</code></pre></div></div>
+
+<p>Resolve cherry-picking conflicts is similar to resolving merge conflicts. Just edit in editor and try again!</p>
+
+<h3 id="diff-patches">Diff Patches</h3>
+
+<p>If you want to share changes with collaborators but the changes aren’t ready for a public branch or your collaborators don’t share a remote, you can use diff patches to share the changes via files. It’s useful for discussing bugs or issues with collaborators or for sharing changes that need further testing before merging into the main branch.</p>
+
+<div class="language-bash highlighter-rouge"><div class="highlight"><pre class="highlight"><code>git diff from-commit to-commit <span class="o">&gt;</span> output.diff
+</code></pre></div></div>
+
+<p>Use following common to apply changes in a diff patch file to the working directory. But remember, apply diff patches does not transfer commit history.</p>
+
+<div class="language-bash highlighter-rouge"><div class="highlight"><pre class="highlight"><code>git apply output.diff 
+</code></pre></div></div>
+
+<h3 id="formatted-patches">Formatted Patches</h3>
+
+<p>In Git, you can export each commit in Unix mailbox format using formatted patches. It’s a great way to distribute changes via email and includes commit messages. You can apply formatted patches using the <code class="language-plaintext highlighter-rouge">git am</code> command. It’s similar to cherry-picking, which copies and pastes code from one branch to another. However, formatted patches are better for sharing changes that aren’t ready for a public branch or when collaborators don’t share a remote. Keep in mind that applying formatted patches transfers the commit history.</p>
+
+<table>
+  <thead>
+    <tr>
+      <th>Command</th>
+      <th>Description</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td><code class="language-plaintext highlighter-rouge">git format-patch 2e33d..655da</code></td>
+      <td>Creates patch files for all commits in the range</td>
+    </tr>
+    <tr>
+      <td><code class="language-plaintext highlighter-rouge">git format-patch main</code> or <code class="language-plaintext highlighter-rouge">git format-patch main..HEAD</code></td>
+      <td>Creates patch files for all commits on the current branch that are not in the <code class="language-plaintext highlighter-rouge">main</code> branch</td>
+    </tr>
+    <tr>
+      <td><code class="language-plaintext highlighter-rouge">git format-path -1 655da</code></td>
+      <td>Creates a patch file for a single commit with hash <code class="language-plaintext highlighter-rouge">655da</code></td>
+    </tr>
+    <tr>
+      <td><code class="language-plaintext highlighter-rouge">git format-patch 2e33d..655da -o ~/feature_patches</code></td>
+      <td>Creates patch files for all commits in the range and puts them into a directory named <code class="language-plaintext highlighter-rouge">feature_patches</code></td>
+    </tr>
+    <tr>
+      <td><code class="language-plaintext highlighter-rouge">git format-patch 2e33d..655da --stdout &gt; feature.patch</code></td>
+      <td>Outputs patch files as a single file named <code class="language-plaintext highlighter-rouge">feature.patch</code></td>
+    </tr>
+    <tr>
+      <td><code class="language-plaintext highlighter-rouge">git am feature/0001-some-name.patch</code></td>
+      <td>Applies a single patch</td>
+    </tr>
+    <tr>
+      <td><code class="language-plaintext highlighter-rouge">git am feature/*.patch</code></td>
+      <td>Applies all patches in a directory</td>
+    </tr>
+  </tbody>
+</table>
+
+<p>In the command <code class="language-plaintext highlighter-rouge">git am feature/*.patch</code>, <code class="language-plaintext highlighter-rouge">am</code> stands for “apply mailbox”. This command applies a mailbox-style patch to the current branch.</p>
+
+<h2 id="rebasing">Rebasing</h2>
+
+<h3 id="rebase-commits">Rebase Commits</h3>
+
+<p>Rebasing is a way to move commits from one branch to another. It’s useful when you want to integrate recent commits without merging and to maintain a clearer, more linear project history. It also ensures that topic branch commits apply cleanly. So, if you’re working on a project and want to keep your commits organized, give rebasing a try!</p>
+
+<p><img src="/assets/2024/September/rebase.svg" alt="Untitled" /></p>
+
+<p><em>Fig: Rebasing Feature branch <a href="www.atlassian.com">Credit</a></em></p>
+
+<table>
+  <thead>
+    <tr>
+      <th>Command</th>
+      <th>Description</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td>git rebase main</td>
+      <td>Rebase current branch on tip of main (from feature branch)</td>
+    </tr>
+    <tr>
+      <td>git rebase main new_feature</td>
+      <td>Rebase new_feature to tip of main (from main)</td>
+    </tr>
+    <tr>
+      <td>git rebase –onto newbase upstream branch</td>
+      <td>Rebase branch onto newbase</td>
+    </tr>
+    <tr>
+      <td>git rebase –onto target main new_feature</td>
+      <td>Rebase new_feature commits on target branch that are not on main (merged)</td>
+    </tr>
+  </tbody>
+</table>
+
+<h4 id="handle-rebase-conflicts">Handle Rebase Conflicts</h4>
+
+<p>When you rebase commits, it can cause conflicts with existing code. Git will pause the rebase before each conflicting commit, and you’ll need to resolve the conflicts. This process is similar to resolving merge conflicts. It’s important to be patient and take your time to ensure that the conflicts are resolved correctly.</p>
+
+<table>
+  <thead>
+    <tr>
+      <th>Command</th>
+      <th>Description</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td>git rebase –continue</td>
+      <td>Continue the rebase after resolving conflicts</td>
+    </tr>
+    <tr>
+      <td>git rebase –skip</td>
+      <td>Skip the current commit during the rebase process</td>
+    </tr>
+    <tr>
+      <td>git log –graph –all –decorate –oneline</td>
+      <td>Visualize the branch history as a graph</td>
+    </tr>
+    <tr>
+      <td>git merge-base main new_feature</td>
+      <td>Return the commit SHA where the topic branch diverges from main</td>
+    </tr>
+    <tr>
+      <td>git rebase -i</td>
+      <td>Open an interactive rebase prompt to choose which commits to move</td>
+    </tr>
+  </tbody>
+</table>
+
+<p><img src="/assets/2024/September/diverges.png" alt="Fig: The branch test diverges from main" /></p>
+
+<p><em>Fig: The branch test diverges from main</em></p>
+
+<h3 id="merging-vs-rebasing">Merging vs. Rebasing</h3>
+
+<ul>
+  <li>Two ways to incorporate changes from one branch into another branch</li>
+  <li>Similar ends but the means are different</li>
+  <li>Side effects are important to understand</li>
+</ul>
+
+<p><img src="https://www.edureka.co/blog/wp-content/uploads/2022/01/fig13.png" alt="Edureak" />
+<em>Fig: Git Merge vs Git Rebase <a href="">Credit: Edureka</a></em></p>
+
+<table>
+  <thead>
+    <tr>
+      <th>Merging</th>
+      <th>Rebasing</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td>Adds a merge commit</td>
+      <td>No additional merge commit</td>
+    </tr>
+    <tr>
+      <td>Nondestructive</td>
+      <td>Destructive: SHA changes, commits are rewritten</td>
+    </tr>
+    <tr>
+      <td>Complete record of what happened and when</td>
+      <td>No longer a complete record of what happened and when</td>
+    </tr>
+    <tr>
+      <td>Easy to undo</td>
+      <td>Tricky to undo</td>
+    </tr>
+    <tr>
+      <td>Logs can become cluttered and nonlinear</td>
+      <td>Logs are cleaner and more linear</td>
+    </tr>
+  </tbody>
+</table>
+
+<p><strong>The Golden Rule of Rebasing</strong></p>
+
+<ul>
+  <li>Thou Shalt not rebase a public branch</li>
+  <li>Rebase abandons existing, shared commits and creates new, similar commits instead</li>
+  <li>Collaborators would see project history vanish</li>
+  <li>Getting all collaborators back in sync can be hassle</li>
+</ul>
+
+<p><strong>How to Choose</strong></p>
+
+<ul>
+  <li>Merge to allow commits to stand out or to be clearly grouped</li>
+  <li>Merge to bring large topic branches back into main</li>
+  <li>Rebase to add minor commits in main to a topic branch</li>
+  <li>Rebase to move commits from one branch to another</li>
+  <li>Merge anytime the topic branch is already public and being used by others (The Golden Rule of Rebasing).</li>
+</ul>
+
+<h3 id="interactive-rebasing">Interactive Rebasing</h3>
+
+<p>Interactive rebasing is a feature in Git that allows you to modify commits as they’re being replayed. When you run <code class="language-plaintext highlighter-rouge">git rebase -i</code>, Git will open up the git-rebase-todo file for editing. In this file, you can reorder, skip, or edit commits. The options available to you in interactive rebasing include:</p>
+
+<ul>
+  <li><code class="language-plaintext highlighter-rouge">pick</code>: include the commit</li>
+  <li><code class="language-plaintext highlighter-rouge">drop</code>: remove the commit</li>
+  <li><code class="language-plaintext highlighter-rouge">reword</code>: edit the commit message</li>
+  <li><code class="language-plaintext highlighter-rouge">edit</code>: pause the rebasing process to allow you to make changes to the commit</li>
+  <li><code class="language-plaintext highlighter-rouge">squash</code>: combine the commit with the one immediately before it</li>
+  <li><code class="language-plaintext highlighter-rouge">fixup</code>: combine the commit with the one immediately before it, but discard its commit message</li>
+</ul>
+
+<p>Interactive rebasing is useful when you want to modify the history of a branch before sharing it with others. It can also be helpful for cleaning up your commit history by grouping related changes or removing unnecessary commits. However, be careful when using interactive rebasing, as it can be risky if not done properly. It’s always a good idea to make a backup copy of your branch before rebasing it.</p>
+
+<div class="language-bash highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="c"># Interactive rebase</span>
+git rebase <span class="nt">-i</span> main new_feature
+
+<span class="c"># Rebase last three commits onto the same branch</span>
+<span class="c"># but with the opportunity to modify them</span>
+git rebase <span class="nt">-i</span> HEAD~3
+</code></pre></div></div>
+
+<p><img src="/assets/2024/September/rebase.png" alt="Untitled" /></p>
+
+<h3 id="squash-commits">Squash Commits</h3>
+
+<p>Squash commits is a way to combine multiple commits into one. It’s useful for when you have several small commits that are related to each other and you want to make them into a single, cohesive commit. This can help to keep your commits organized and make it easier to understand the history of your code.</p>
+
+<p>When squashing commits, you’ll take the changes from each commit and combine them into a single commit. The commit message for the new commit will be a combination of the commit messages from the original commits. You can use the <code class="language-plaintext highlighter-rouge">git rebase -i</code> command to interactively rebase your branch and squash commits.</p>
+
+<p>To squash commits, follow these steps:</p>
+
+<ol>
+  <li>Use <code class="language-plaintext highlighter-rouge">git log</code> to find the SHA IDs of the commits you want to squash.</li>
+  <li>Use <code class="language-plaintext highlighter-rouge">git rebase -i HEAD~&lt;number of commits&gt;</code> to start an interactive rebase.</li>
+  <li>In the interactive rebase, change <code class="language-plaintext highlighter-rouge">pick</code> to <code class="language-plaintext highlighter-rouge">squash</code> for the commits you want to squash. You can also edit the commit messages if needed.</li>
+  <li>Save and close the file to complete the rebase.</li>
+</ol>
+
+<p>After squashing the commits, you’ll have a single commit that contains all the changes from the original commits. This can be helpful for keeping your commit history clean and organized, especially when collaborating with others on a project.</p>
+
+<div class="language-bash highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="c"># Rebase last four commits onto the same branch</span>
+<span class="c"># but with the opportunity to modify them</span>
+git rebase <span class="nt">-i</span> HEAD~4
+
+pick 81a73ff Redesign
+squash b2baf90 Change image sizes
+fixup c0261b3 Bug fix to the design
+squash 0f7760e Adjust styles
+</code></pre></div></div>
+
+<h3 id="pull-rebase">Pull Rebase</h3>
+
+<p>Pull rebase is a way to fetch changes from a remote repository and then rebase them onto the local branch instead of merging them. This helps to keep the commit history cleaner by reducing the number of merge commits. However, it should only be used for local commits that are not shared to a remote branch.</p>
+
+<p><img src="https://media.geeksforgeeks.org/wp-content/uploads/20200415234509/Rebasing-in-git.png" alt="" /></p>
+
+<p><em>Fig: Rebasing <a href="geeksforgeeks.org">Credit: GFG</a></em></p>
+
+<table>
+  <thead>
+    <tr>
+      <th>Command</th>
+      <th>Description</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td><code class="language-plaintext highlighter-rouge">git pull -r</code></td>
+      <td>Pull with rebase</td>
+    </tr>
+    <tr>
+      <td><code class="language-plaintext highlighter-rouge">git pull --rebase</code></td>
+      <td>Pull with rebase</td>
+    </tr>
+    <tr>
+      <td><code class="language-plaintext highlighter-rouge">git pull --rebase=preserve</code></td>
+      <td>Pull with rebase and preserve merge commits</td>
+    </tr>
+    <tr>
+      <td><code class="language-plaintext highlighter-rouge">git pull --rebase=interactive</code></td>
+      <td>Pull with interactive rebase</td>
+    </tr>
+  </tbody>
+</table>
+
+<h2 id="track-down-problems">Track Down Problems</h2>
+
+<h3 id="log-options">Log Options</h3>
+
+<p><code class="language-plaintext highlighter-rouge">git log</code> is a command in Git that displays the commit history for a repository. It shows the SHA-1 hash, author, date, and commit message for each commit in reverse chronological order. By default, it shows the entire commit history for the current branch.</p>
+
+<p>However, there are many options to customize the output, such as sorting, filtering, and formatting. Some common options are <code class="language-plaintext highlighter-rouge">--oneline</code> to show each commit on one line, <code class="language-plaintext highlighter-rouge">--graph</code> to display the commit history as a graph, and <code class="language-plaintext highlighter-rouge">--since</code> or <code class="language-plaintext highlighter-rouge">--until</code> to filter the commit history by date. You can also use <code class="language-plaintext highlighter-rouge">git log</code> to show the commit history for a specific file or directory, or to show the changes made by a specific commit.</p>
+
+<table>
+  <thead>
+    <tr>
+      <th>Command</th>
+      <th>Description</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td>git log filename.txt</td>
+      <td>List commits that changed filename.txt</td>
+    </tr>
+    <tr>
+      <td>git log -p or git log –patch</td>
+      <td>List commits as patches (with diffs)</td>
+    </tr>
+    <tr>
+      <td>git log -L 100,150:filename.txt or git log -L 100,+50:filename.txt</td>
+      <td>List changes (as patches) to lines 100-150 in filename.txt</td>
+    </tr>
+    <tr>
+      <td>git log -S “MaxConnections”</td>
+      <td>List all commits that add or change the string</td>
+    </tr>
+    <tr>
+      <td>git log –pretty=format:”%h %cn %cd %s %an”</td>
+      <td>Show commit hash, committer name, commit date, commit message, author name</td>
+    </tr>
+    <tr>
+      <td>git reflog</td>
+      <td>Used to recover lost commits and branches</td>
+    </tr>
+    <tr>
+      <td>git log –since=yesterday</td>
+      <td>Show commits since yesterday (midnight)</td>
+    </tr>
+    <tr>
+      <td>git log –since=”May 1, 2021”</td>
+      <td>Show commits since a specific date</td>
+    </tr>
+    <tr>
+      <td>git log –since=”May 1, 2021 14:23:45”</td>
+      <td>Show commits since a specific date and time</td>
+    </tr>
+    <tr>
+      <td>git log –since=”3 days ago”</td>
+      <td>Show commits since a certain number of days ago</td>
+    </tr>
+    <tr>
+      <td>git log –since=”2 hours ago”</td>
+      <td>Show commits since a certain number of hours ago</td>
+    </tr>
+  </tbody>
+</table>
+
+<p><strong>Git diff</strong></p>
+
+<p>Git uses standard UNIX less program do show the git diff.</p>
+
+<p><img src="/assets/2024/September/git%20diff.png" alt="Untitled" /></p>
+
+<p><strong>Git pager</strong> (used with diff)</p>
+
+<p>The <code class="language-plaintext highlighter-rouge">core.pager</code> setting determines the pager used when Git pages output. This setting can be configured globally or per-repository.</p>
+
+<p>To set the pager globally, use the following command:</p>
+
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>git config --global core.pager &lt;pager&gt;
+</code></pre></div></div>
+
+<p>Replace <code class="language-plaintext highlighter-rouge">&lt;pager&gt;</code> with the name of the pager you want to use, such as <code class="language-plaintext highlighter-rouge">less</code> or <code class="language-plaintext highlighter-rouge">more</code>.</p>
+
+<p>To set the pager per-repository, use the same command without the <code class="language-plaintext highlighter-rouge">--global</code> option, inside the repository directory.</p>
+
+<p>Git comes with a default pager, which is <code class="language-plaintext highlighter-rouge">less</code>. If you haven’t set a pager explicitly, <code class="language-plaintext highlighter-rouge">less</code> will be used as the default.</p>
+
+<h3 id="blame">Blame</h3>
+
+<p><code class="language-plaintext highlighter-rouge">git blame</code> is a command in Git that allows you to see who made changes to a file, which lines were changed, and when the changes were made. It can be helpful for understanding the history of a file, tracking down the source of a bug, or determining who to contact with questions about a particular piece of code. The output of <code class="language-plaintext highlighter-rouge">git blame</code> includes the commit SHA, author name, date, and the specific line of code that was changed. By default, <code class="language-plaintext highlighter-rouge">git blame</code> shows the annotations for the entire file, but you can also specify a specific range of lines or a specific revision to show annotations for.</p>
+
+<table>
+  <thead>
+    <tr>
+      <th>Command</th>
+      <th>Description</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td>git blame filename.txt</td>
+      <td>Annotate file with commit details</td>
+    </tr>
+    <tr>
+      <td>git blame -w filename.txt</td>
+      <td>Annotate file with commit details, ignoring whitespace</td>
+    </tr>
+    <tr>
+      <td>git blame -L 100,150 filaname.txt</td>
+      <td>Annotate lines 100-150</td>
+    </tr>
+    <tr>
+      <td>git blame -L 100,+50 filename.txt</td>
+      <td>Annotate lines 100-150</td>
+    </tr>
+    <tr>
+      <td>git blame d9dba0 filename.txt</td>
+      <td>Annotate file at revision d9dba0</td>
+    </tr>
+    <tr>
+      <td>git blame d9dba0 – filename.txt</td>
+      <td>Same as previous command</td>
+    </tr>
+    <tr>
+      <td>git config –global alias.praise blame</td>
+      <td>Add a global alias for “praise” (if blame sounds negative)</td>
+    </tr>
+    <tr>
+      <td>git annotate filename.txt</td>
+      <td>Annotate file with commit details, different output format</td>
+    </tr>
+  </tbody>
+</table>
+
+<h3 id="bisect">Bisect</h3>
+
+<p>If you’re trying to find a bug in your Git project, binary search is your friend! Here’s how it works: first, find the commit that introduced the bug or regression. Then, mark the last good revision and the first bad revision. Reset your code to the midpoint between these two revisions and test it out. If the code is still broken, mark the midpoint as bad. If it’s fixed, mark it as good. Keep repeating this process, dividing the revisions in half each time, until you find the exact commit that introduced the bug. It may take a few tries, but it’s worth it to squash that bug!</p>
+
+<p><img src="/assets/2024/September/bisect.png" alt="Untitled" /></p>
+
+<div class="language-bash highlighter-rouge"><div class="highlight"><pre class="highlight"><code>git bisect start
+git bisect good &lt;treeish&gt;
+git bisect bad &lt;treeish&gt;
+git bisect reset
+</code></pre></div></div>
+
+<p>That’s all for today’s learning. 🥰</p>
+
+<h2 id="references">References</h2>
+
+<p><a href="https://github.com/LinkedInLearning/git-intermediate-techniques-3082618">LinkedIn Learning</a></p>]]></content><author><name></name></author><category term="Web" /><summary type="html"><![CDATA[Introduction]]></summary></entry><entry><title type="html">Generative Pre-training</title><link href="http://localhost:4000/ai/2023/08/13/Generative_pre_training.html" rel="alternate" type="text/html" title="Generative Pre-training" /><published>2023-08-13T10:00:10+05:30</published><updated>2023-08-13T10:00:10+05:30</updated><id>http://localhost:4000/ai/2023/08/13/Generative_pre_training</id><content type="html" xml:base="http://localhost:4000/ai/2023/08/13/Generative_pre_training.html"><![CDATA[<h1 id="introduction-">Introduction 🚀</h1>
 
 <p>In this blog, we will explore the main idea behind chat-GPT, which is generative pre-training, and create our own smaller version of a question-answering model using generative pre-training. 🤖💬</p>
 
