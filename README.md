@@ -8,7 +8,13 @@ Here I post some one my experiences and what i learnt in my journey.
 
 ## Issue with ' and *
 
-On using ' and * in equation, it is not rendering on website. To fix this replace * with `\star` and ' with `\prime`.
+Some characters are not rendered correctly on website, for which we can use corresponding mathJax latex code.
+
+|Character|Mathjax|
+|---|--|
+|*|`\star`|
+|'|`\prime`|
+| \| |`\lvert` or `\rveret`|
 
 ## Equations not rendering ➗
 
