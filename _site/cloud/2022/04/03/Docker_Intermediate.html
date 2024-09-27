@@ -1,0 +1,356 @@
+<!DOCTYPE html>
+<html lang="en"><head>
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1"><!-- Begin Jekyll SEO tag v2.8.0 -->
+<title>Advancing in Docker | dsm Blogs</title>
+<meta name="generator" content="Jekyll v4.3.3" />
+<meta property="og:title" content="Advancing in Docker" />
+<meta property="og:locale" content="en_US" />
+<meta name="description" content="In this blog, we’ll explore the world of Docker, from the basics to advanced topics. Whether you’re a Docker pro or just starting out, this document has you covered!" />
+<meta property="og:description" content="In this blog, we’ll explore the world of Docker, from the basics to advanced topics. Whether you’re a Docker pro or just starting out, this document has you covered!" />
+<link rel="canonical" href="http://localhost:4000/cloud/2022/04/03/Docker_Intermediate.html" />
+<meta property="og:url" content="http://localhost:4000/cloud/2022/04/03/Docker_Intermediate.html" />
+<meta property="og:site_name" content="dsm Blogs" />
+<meta property="og:type" content="article" />
+<meta property="article:published_time" content="2022-04-03T10:00:10+05:30" />
+<meta name="twitter:card" content="summary" />
+<meta property="twitter:title" content="Advancing in Docker" />
+<script type="application/ld+json">
+{"@context":"https://schema.org","@type":"BlogPosting","dateModified":"2022-04-03T10:00:10+05:30","datePublished":"2022-04-03T10:00:10+05:30","description":"In this blog, we’ll explore the world of Docker, from the basics to advanced topics. Whether you’re a Docker pro or just starting out, this document has you covered!","headline":"Advancing in Docker","mainEntityOfPage":{"@type":"WebPage","@id":"http://localhost:4000/cloud/2022/04/03/Docker_Intermediate.html"},"url":"http://localhost:4000/cloud/2022/04/03/Docker_Intermediate.html"}</script>
+<!-- End Jekyll SEO tag -->
+<link rel="stylesheet" href="/assets/main.css"><link type="application/atom+xml" rel="alternate" href="http://localhost:4000/feed.xml" title="dsm Blogs" /></head>
+<body><header class="site-header" role="banner">
+
+  <div class="wrapper"><a class="site-title" rel="author" href="/">dsm Blogs</a><nav class="site-nav">
+        <input type="checkbox" id="nav-trigger" class="nav-trigger" />
+        <label for="nav-trigger">
+          <span class="menu-icon">
+            <svg viewBox="0 0 18 15" width="18px" height="15px">
+              <path d="M18,1.484c0,0.82-0.665,1.484-1.484,1.484H1.484C0.665,2.969,0,2.304,0,1.484l0,0C0,0.665,0.665,0,1.484,0 h15.032C17.335,0,18,0.665,18,1.484L18,1.484z M18,7.516C18,8.335,17.335,9,16.516,9H1.484C0.665,9,0,8.335,0,7.516l0,0 c0-0.82,0.665-1.484,1.484-1.484h15.032C17.335,6.031,18,6.696,18,7.516L18,7.516z M18,13.516C18,14.335,17.335,15,16.516,15H1.484 C0.665,15,0,14.335,0,13.516l0,0c0-0.82,0.665-1.483,1.484-1.483h15.032C17.335,12.031,18,12.695,18,13.516L18,13.516z"/>
+            </svg>
+          </span>
+        </label>
+
+        <div class="trigger"><a class="page-link" href="/about/">About</a></div>
+      </nav></div>
+</header>
+<main class="page-content" aria-label="Content">
+      <div class="wrapper">
+        <!--Added Math Latext support-->
+<script src="https://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML" type="text/javascript"></script>
+<script type="text/x-mathjax-config">
+  MathJax.Hub.Config({
+    tex2jax: {
+      inlineMath: [['$','$']],
+      processEscapes: true
+    }
+  });
+</script>
+
+<article class="post h-entry" itemscope itemtype="http://schema.org/BlogPosting">
+
+  <header class="post-header">
+    <h1 class="post-title p-name" itemprop="name headline">Advancing in Docker</h1>
+    <p class="post-meta">
+      <time class="dt-published" datetime="2022-04-03T10:00:10+05:30" itemprop="datePublished">Apr 3, 2022
+      </time></p>
+  </header>
+
+  <div class="post-content e-content" itemprop="articleBody">
+    <p>In this blog, we’ll explore the world of Docker, from the basics to advanced topics. Whether you’re a Docker pro or just starting out, this document has you covered!</p>
+
+<p>We’ll cover everything you need to know about Docker, including its core principles and real-world applications. We’ll discuss Docker registries, public and private, and how they store and distribute Docker images. You’ll learn how to access private repositories and publish your own images.</p>
+
+<p>But that’s not all! We’ll also dive into Docker Engine, which powers Docker containerization. We’ll explore its main components and how they create, manage, and run Docker containers.</p>
+
+<h1 id="docker-registry">Docker Registry</h1>
+
+<p>Docker registry is a server-side application that allows users to store and distribute Docker images. It is highly scalable and can be used to create both public and private registries. Users can store and distribute Docker images through the registry, making it easy to share images between different environments and teams.</p>
+
+<h2 id="public-registry">Public Registry</h2>
+
+<p>A public registry is a Docker registry that is open to the public and can be accessed by anyone.</p>
+
+<p>The Docker Hub is an example of a public registry.</p>
+
+<h4 id="naming">Naming</h4>
+
+<p>When naming a Docker image in a public registry, the format is typically: <strong>Registry / User Account / Image Repository</strong>.</p>
+
+<p>For example, the Docker Hub (which is a public registry) with a user account of Redis could have an image repository of Redis.</p>
+
+<p>So the image name would be: <code class="language-plaintext highlighter-rouge">docker.io/Redis/Redis</code></p>
+
+<h2 id="private-registry">Private Registry</h2>
+
+<p>A private registry, on the other hand, is a Docker registry that is only accessible by authorized users or machines.</p>
+
+<p>Users can create their own private registry using the registry container image provided by Docker. This allows them to store and distribute Docker images internally, rather than relying on a public registry.</p>
+
+<h4 id="naming-1">Naming</h4>
+
+<p>When naming a Docker image in a private registry, the format is typically: <strong>Registry / Image Repository / Image Name</strong>.</p>
+
+<p>For example, if the registry is located at <code class="language-plaintext highlighter-rouge">myregistry.example.com</code> and the image repository is named <code class="language-plaintext highlighter-rouge">myimages</code>, the name of a custom image might be <code class="language-plaintext highlighter-rouge">myregistry.example.com/myimages/myimage:tag</code>.</p>
+
+<h3 id="creating-private-repository">Creating Private Repository</h3>
+
+<p>We can use the following commands related to Docker Registry:</p>
+
+<table>
+  <thead>
+    <tr>
+      <th>Command</th>
+      <th>Description</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td><code class="language-plaintext highlighter-rouge">docker run -d -p 5000:5000 --name registry registry:2</code></td>
+      <td>Creates a Docker registry Image container</td>
+    </tr>
+    <tr>
+      <td><code class="language-plaintext highlighter-rouge">docker tag [Image name\|Image Id] [Tag]</code></td>
+      <td>Adds a tag to a custom image that will be pushed to the registry</td>
+    </tr>
+    <tr>
+      <td><code class="language-plaintext highlighter-rouge">docker push [Image Tag]</code></td>
+      <td>Pushes an image to a private registry by referring to the tag</td>
+    </tr>
+    <tr>
+      <td><code class="language-plaintext highlighter-rouge">docker pull [Private Registry name.io]/User Account/Image Repository</code></td>
+      <td>Pulls an image from a private registry</td>
+    </tr>
+  </tbody>
+</table>
+
+<p>The command <code class="language-plaintext highlighter-rouge">docker run -d -p 5000:5000 --name registry registry:2</code> creates a Docker registry. By default, it creates a local private registry that can be accessed on port 5000 using the URL localhost:5000 from the local host. When accessing the registry from the same machine, both the registry and user account can be referred to using this URL.</p>
+
+<p><img src="/assets/2024/September/62078c4babdb2e5620711a2b_registy%202.png" alt="Fig: Accessing Docker Registry" /></p>
+
+<p><em>Fig: Accessing Docker Registry</em></p>
+
+<h3 id="accessing-private-repository">Accessing Private Repository</h3>
+
+<p>If you have your private repository hosted on server then you can access that with following commands:</p>
+
+<p>To login: <strong>docker login [Private Registry name.io]</strong></p>
+
+<p>To pull image: <strong>docker pull [Private Registry name.io]/User Account/Image Repository</strong></p>
+
+<p><img src="/assets/2024/September/6208a2acccb873a85c53c1da_pull%20own.png" alt="Fig: Pull image from Private registry" /></p>
+
+<p><em>Fig: Pull image from Private registry</em></p>
+
+<h4 id="publish-your-image-to-private-registry">Publish your Image to Private registry</h4>
+
+<ol>
+  <li>Add a tag to the custom Image. e.g. <code class="language-plaintext highlighter-rouge">docker tag ccee localhost:5000/my_image_repo</code></li>
+  <li>Push the image to the private registry using tag.</li>
+</ol>
+
+<p><img src="/assets/2024/September/6208a210d0c851da9c03afc0_push.png" alt="Fig: Push image to Private registry" /></p>
+
+<p><em>Fig: Push image to Private registry</em></p>
+
+<h1 id="docker-engine">Docker Engine</h1>
+
+<p>Docker Engine is an open source technology that helps us containerize our applications. It’s got three important parts that work together to make it all happen.</p>
+
+<ol>
+  <li>Docker CLI, which is like our go-to command line tool for talking to the Docker daemon. We can use it to do all sorts of cool stuff with our containers, images, and volumes.</li>
+  <li>Rest API that acts as a middleman. It helps the CLI and the daemon communicate with each other in a standardized way. So, when we want to automate things or make our lives easier, we can use the Rest API.</li>
+  <li>Docker Daemon, this is the real powerhouse behind Docker Engine. It takes care of creating and managing our images, containers, and volumes. It’s like the engine that drives everything.</li>
+</ol>
+
+<p>In our systems, we rely on the Docker CLI to interact with the Docker host. It’s how we manage and control our containerized applications. It makes things super smooth and efficient.</p>
+
+<p><img src="/assets/2024/September/image.png" alt="alt text" /></p>
+
+<p>You can read more about Docker Architecture from here <a href="https://docs.docker.com/get-started/overview/#docker-architecture">See Docker Architecture</a>.‍</p>
+
+<h2 id="container-orchestration">Container Orchestration</h2>
+
+<p>Container orchestration is the management of multiple containers across multiple hosts. It provides a way to scale and manage containerized applications, making it easier to deploy, manage, and monitor them.</p>
+
+<p>Container orchestration tools ensure that containers are automatically deployed, scaled, and managed based on the application’s requirements. This helps to ensure that the application is always available and running smoothly. Some popular container orchestration tools include Docker Swarm, Kubernetes, and Mesos.</p>
+
+<p>Docker Desktop provides both of Docker swarm and Kubernetes tools for Container Orchestration.</p>
+
+<h3 id="docker-swarm">Docker Swarm</h3>
+
+<p>Docker Swarm makes it easy to manage and deploy containerized applications at a big scale. It’s all about this cluster thing with manager nodes and worker nodes.</p>
+
+<p>So, the manager nodes are like the boss of the swarm. They control everything and make sure the cluster is doing what it’s supposed to do. They handle stuff like deploying containers, scheduling services, and managing resources. And you can totally interact with the swarm through these manager nodes using the Docker CLI or API.</p>
+
+<p>Now, the worker nodes are the ones actually running the containers. They take instructions from the manager nodes and spin up container instances. They spread the workload around the cluster to make sure containers are deployed and scaled as needed. And you can totally add or remove worker nodes as you need to.</p>
+
+<p><img src="/assets/2024/September/image-1.png" alt="Fig: Docker Swarm, Manager and worker nodes" /></p>
+
+<p><em>Fig: Docker Swarm, Manager and worker nodes (docker.com)</em></p>
+
+<p>To enable Docker Swarm, follow these steps:</p>
+
+<ol>
+  <li>
+    <p>Create a swarm manager using the command <code class="language-plaintext highlighter-rouge">docker swarm init</code>. This node will manage all other nodes or hosts.</p>
+
+    <p><img src="/assets/2024/September/6208d9b3816bc0c7dffdaddf_swarm%20init.png" alt="Fig: Initializing a Docker Swarm" /></p>
+
+    <p><em>Fig: Initializing a Docker Swarm</em></p>
+
+    <p>If you encounter an IP address conflict, you can try using a different IP address.</p>
+  </li>
+  <li>
+    <p>Join other nodes to the swarm manager using the command <code class="language-plaintext highlighter-rouge">docker swarm join --token [token] [IP address of swarm manager]:2377</code>. Replace <code class="language-plaintext highlighter-rouge">[token]</code> with the token provided in the swarm init output, and replace <code class="language-plaintext highlighter-rouge">[IP address of swarm manager]</code> with the IP address of the swarm manager. 
+For example: <code class="language-plaintext highlighter-rouge">docker swarm join --token SWMTKN-1-1v68tj6e5bes37vz18tsrktt2km4lk55k4h5u1xqagj2fx2g0x-325dprf4zgdbzjvm6j7ab04sn 10.17.106.9:2377</code>.</p>
+  </li>
+  <li>
+    <p>Create services using the swarm manager using the command <code class="language-plaintext highlighter-rouge">docker service create --replicas=[number of replicas] [image name]</code> in a Docker swarm.</p>
+
+    <p><img src="/assets/2024/September/62091070460a086ba14504df_services.png" alt="Fig: Create services in a Docker swarm" /></p>
+
+    <p><em>Fig: Create services in a Docker swarm</em></p>
+  </li>
+</ol>
+
+<p>You can also create a swarm using the Docker Desktop GUI.</p>
+
+<p>When you run <code class="language-plaintext highlighter-rouge">docker swarm init</code>, the token displayed is for joining nodes as worker nodes. If you want to add nodes as manager nodes, you need to use a different token. You can check the manager token by using <code class="language-plaintext highlighter-rouge">docker swarm join-token manager</code>.</p>
+
+<p>Similarly, if you forget the worker node token, you can use <code class="language-plaintext highlighter-rouge">docker swarm join-token worker</code>.</p>
+
+<h1 id="kubernetes">Kubernetes</h1>
+
+<p>Kubernetes is an open-source container orchestration tool that is used for managing and deploying containerized applications. It has a different CLI known as <strong>kubectl</strong>.</p>
+
+<p>It provides multiple  functionality such as creating multiple instances of the container in a single command, updating instances by using rolling update command, and rolling back the updates using the rolling back command.</p>
+
+<p>Kubernetes has a master instance that controls all other instances in the Kubernetes cluster. The components of Kubernetes include the API server, etcd, kubelet, container runtime, controller, and scheduler.</p>
+
+<p><img src="/assets/2024/September/Docker-Kubernetes-together.webp" alt="Fig: Comparing Deployment Traditional vs Kubernetes (docker.com)" /></p>
+
+<p><em>Fig: Comparing Deployment Traditional vs Kubernetes (docker.com)</em></p>
+
+<table>
+  <thead>
+    <tr>
+      <th>Feature</th>
+      <th>Docker Swarm</th>
+      <th>Kubernetes</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td>Architecture</td>
+      <td>Less complex architecture with multiple manager and worker nodes.</td>
+      <td>More complex architecture with multiple master and worker nodes.</td>
+    </tr>
+    <tr>
+      <td>Ease of Use</td>
+      <td>Generally considered to be easier to use and set up than Kubernetes.</td>
+      <td>More difficult to set up and use, but has more features.</td>
+    </tr>
+    <tr>
+      <td>Features</td>
+      <td>Has a simpler feature set than Kubernetes, but includes basic container orchestration capabilities.</td>
+      <td>More extensive feature set than Docker Swarm, including automatic rollouts and rollbacks, service discovery and load balancing, and support for multiple storage options.</td>
+    </tr>
+    <tr>
+      <td>Scalability</td>
+      <td>Both tools can scale horizontally, but Kubernetes is generally considered to be more scalable than Docker Swarm.</td>
+      <td>Both tools can scale horizontally, but Kubernetes is generally considered to be more scalable than Docker Swarm.</td>
+    </tr>
+    <tr>
+      <td>Community</td>
+      <td>Smaller and less active community than Kubernetes.</td>
+      <td>Larger and more active community than Docker Swarm, which means more support and resources available for users.</td>
+    </tr>
+  </tbody>
+</table>
+
+<p>Overall, Docker Swarm is a good choice for smaller-scale deployments, while Kubernetes is better suited for larger and more complex deployments that require more advanced features and scalability.</p>
+
+<h3 id="kubernetes-commands">Kubernetes Commands</h3>
+
+<p>You can enable Kubernetes from the Docker Desktop settings. Go to Settings -&gt; Kubernetes -&gt; Enable Kubernetes.</p>
+
+<p>Here are some useful kubectl commands:</p>
+
+<table>
+  <thead>
+    <tr>
+      <th>Command</th>
+      <th>Description</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td><code class="language-plaintext highlighter-rouge">kubectl run [Application]</code></td>
+      <td>Starts the application.</td>
+    </tr>
+    <tr>
+      <td><code class="language-plaintext highlighter-rouge">kubectl cluster-info</code></td>
+      <td>Gets information about the cluster.</td>
+    </tr>
+    <tr>
+      <td><code class="language-plaintext highlighter-rouge">kubectl get nodes</code></td>
+      <td>Gets all the nodes in the cluster.</td>
+    </tr>
+    <tr>
+      <td><code class="language-plaintext highlighter-rouge">kubectl run [Application name] --image=[Image name] --replicas=[Instances count]</code></td>
+      <td>Creates a new Kubernetes application.</td>
+    </tr>
+    <tr>
+      <td><code class="language-plaintext highlighter-rouge">*kubectl run –replicas=[Count of Instances] [Image name]‍‍‍‍*</code></td>
+      <td>Creating multiple instances of the container in a single command.</td>
+    </tr>
+    <tr>
+      <td><code class="language-plaintext highlighter-rouge">kubectl scale --replicas=[Count of Instances] [Image name]</code></td>
+      <td>Can be set to automatically create new instances on requirement.</td>
+    </tr>
+    <tr>
+      <td><code class="language-plaintext highlighter-rouge">kubectl rolling-update [Image name] --image=[New Image]</code></td>
+      <td>Updates the instances using rolling update command.</td>
+    </tr>
+    <tr>
+      <td><code class="language-plaintext highlighter-rouge">kubectl rolling-update [Image name] --rollback</code></td>
+      <td>Rolls back the updates using the rolling back command.</td>
+    </tr>
+  </tbody>
+</table>
+
+<p>That’s it for this Blog Post, hope this was worth your time ❤️❤️.</p>
+
+  </div><a class="u-url" href="/cloud/2022/04/03/Docker_Intermediate.html" hidden></a>
+</article>
+
+      </div>
+    </main><footer class="site-footer h-card">
+  <data class="u-url" href="/"></data>
+
+  <div class="wrapper">
+
+    <h2 class="footer-heading">dsm Blogs</h2>
+
+    <div class="footer-col-wrapper">
+      <div class="footer-col footer-col-1">
+        <ul class="contact-list">
+          <li class="p-name">dsm Blogs</li><li><a class="u-email" href="mailto:dharamsinghmeena2000@gmail.com">dharamsinghmeena2000@gmail.com</a></li></ul>
+      </div>
+
+      <div class="footer-col footer-col-2"><ul class="social-media-list"><li><a href="https://github.com/DS-Meena"><svg class="svg-icon"><use xlink:href="/assets/minima-social-icons.svg#github"></use></svg> <span class="username">DS-Meena</span></a></li><li><a href="https://www.twitter.com/DSMOfficial1"><svg class="svg-icon"><use xlink:href="/assets/minima-social-icons.svg#twitter"></use></svg> <span class="username">DSMOfficial1</span></a></li></ul>
+</div>
+
+      <div class="footer-col footer-col-3">
+        <p>This is a blog about Data Science and Machine Learning. I write about all the things I learn in this domain. I also share my knowledge with you.</p>
+      </div>
+    </div>
+
+  </div>
+
+</footer>
+</body>
+
+</html>
