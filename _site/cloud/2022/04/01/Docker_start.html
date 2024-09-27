@@ -1,0 +1,531 @@
+<!DOCTYPE html>
+<html lang="en"><head>
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1"><!-- Begin Jekyll SEO tag v2.8.0 -->
+<title>Getting started with Docker | dsm Blogs</title>
+<meta name="generator" content="Jekyll v4.3.3" />
+<meta property="og:title" content="Getting started with Docker" />
+<meta property="og:locale" content="en_US" />
+<meta name="description" content="Docker is a tool that lets developers easily package up applications and all their dependencies into a single container. These containers can then be shared and run on any machine with Docker installed. In this blog, we’ll cover some basic commands for working with Docker, as well as show you how to create your own custom Docker images and work with Docker networking and storage. So let’s dive in and get started!" />
+<meta property="og:description" content="Docker is a tool that lets developers easily package up applications and all their dependencies into a single container. These containers can then be shared and run on any machine with Docker installed. In this blog, we’ll cover some basic commands for working with Docker, as well as show you how to create your own custom Docker images and work with Docker networking and storage. So let’s dive in and get started!" />
+<link rel="canonical" href="http://localhost:4000/cloud/2022/04/01/Docker_start.html" />
+<meta property="og:url" content="http://localhost:4000/cloud/2022/04/01/Docker_start.html" />
+<meta property="og:site_name" content="dsm Blogs" />
+<meta property="og:type" content="article" />
+<meta property="article:published_time" content="2022-04-01T10:00:10+05:30" />
+<meta name="twitter:card" content="summary" />
+<meta property="twitter:title" content="Getting started with Docker" />
+<script type="application/ld+json">
+{"@context":"https://schema.org","@type":"BlogPosting","dateModified":"2022-04-01T10:00:10+05:30","datePublished":"2022-04-01T10:00:10+05:30","description":"Docker is a tool that lets developers easily package up applications and all their dependencies into a single container. These containers can then be shared and run on any machine with Docker installed. In this blog, we’ll cover some basic commands for working with Docker, as well as show you how to create your own custom Docker images and work with Docker networking and storage. So let’s dive in and get started!","headline":"Getting started with Docker","mainEntityOfPage":{"@type":"WebPage","@id":"http://localhost:4000/cloud/2022/04/01/Docker_start.html"},"url":"http://localhost:4000/cloud/2022/04/01/Docker_start.html"}</script>
+<!-- End Jekyll SEO tag -->
+<link rel="stylesheet" href="/assets/main.css"><link type="application/atom+xml" rel="alternate" href="http://localhost:4000/feed.xml" title="dsm Blogs" /></head>
+<body><header class="site-header" role="banner">
+
+  <div class="wrapper"><a class="site-title" rel="author" href="/">dsm Blogs</a><nav class="site-nav">
+        <input type="checkbox" id="nav-trigger" class="nav-trigger" />
+        <label for="nav-trigger">
+          <span class="menu-icon">
+            <svg viewBox="0 0 18 15" width="18px" height="15px">
+              <path d="M18,1.484c0,0.82-0.665,1.484-1.484,1.484H1.484C0.665,2.969,0,2.304,0,1.484l0,0C0,0.665,0.665,0,1.484,0 h15.032C17.335,0,18,0.665,18,1.484L18,1.484z M18,7.516C18,8.335,17.335,9,16.516,9H1.484C0.665,9,0,8.335,0,7.516l0,0 c0-0.82,0.665-1.484,1.484-1.484h15.032C17.335,6.031,18,6.696,18,7.516L18,7.516z M18,13.516C18,14.335,17.335,15,16.516,15H1.484 C0.665,15,0,14.335,0,13.516l0,0c0-0.82,0.665-1.483,1.484-1.483h15.032C17.335,12.031,18,12.695,18,13.516L18,13.516z"/>
+            </svg>
+          </span>
+        </label>
+
+        <div class="trigger"><a class="page-link" href="/about/">About</a></div>
+      </nav></div>
+</header>
+<main class="page-content" aria-label="Content">
+      <div class="wrapper">
+        <!--Added Math Latext support-->
+<script src="https://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML" type="text/javascript"></script>
+<script type="text/x-mathjax-config">
+  MathJax.Hub.Config({
+    tex2jax: {
+      inlineMath: [['$','$']],
+      processEscapes: true
+    }
+  });
+</script>
+
+<article class="post h-entry" itemscope itemtype="http://schema.org/BlogPosting">
+
+  <header class="post-header">
+    <h1 class="post-title p-name" itemprop="name headline">Getting started with Docker</h1>
+    <p class="post-meta">
+      <time class="dt-published" datetime="2022-04-01T10:00:10+05:30" itemprop="datePublished">Apr 1, 2022
+      </time></p>
+  </header>
+
+  <div class="post-content e-content" itemprop="articleBody">
+    <p>Docker is a tool that lets developers easily package up applications and all their dependencies into a single container. These containers can then be shared and run on any machine with Docker installed. In this blog, we’ll cover some basic commands for working with Docker, as well as show you how to create your own custom Docker images and work with Docker networking and storage. So let’s dive in and get started!</p>
+
+<h2 id="terminology">Terminology</h2>
+
+<h4 id="container">Container</h4>
+
+<p>A container is like a portable package that contains everything needed to run an application. It includes the code, libraries, tools, and settings required for the application to work. Containers are created using Docker, which is a technology that allows developers to pack all the necessary components of an application into a single container.</p>
+
+<h4 id="image">Image</h4>
+
+<p>An image is like a ready-to-use package that contains all the necessary files and settings to run a specific application within a container. You can think of it as a blueprint for creating containers. Images can be obtained from a registry, such as Docker Hub, or built by following instructions in a Dockerfile.</p>
+
+<p>A Docker image is made up of multiple layers stacked on top of each other. Each layer represents a change to the filesystem and is stored separately. When a container is created from an image, a new layer is added on top of the image’s filesystem, allowing the container to make changes without affecting the original image.</p>
+
+<p><img src="/assets/2024/September/Untitled.png" alt="Fig: Creating container using Image" /></p>
+
+<p><em>Fig: Creating container using Image</em></p>
+
+<h2 id="docker-basic-commands">Docker Basic Commands</h2>
+
+<p>First we will see use of some basic docker commands including creation and removal of images and containers.</p>
+
+<p>Here are some basic Docker commands:</p>
+
+<table>
+  <thead>
+    <tr>
+      <th>Command</th>
+      <th>Description</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td><code class="language-plaintext highlighter-rouge">docker images</code></td>
+      <td>Lists all available images</td>
+    </tr>
+    <tr>
+      <td><code class="language-plaintext highlighter-rouge">docker ps</code></td>
+      <td>Lists all running containers</td>
+    </tr>
+    <tr>
+      <td><code class="language-plaintext highlighter-rouge">docker ps -a</code></td>
+      <td>List all containers</td>
+    </tr>
+    <tr>
+      <td><code class="language-plaintext highlighter-rouge">docker stop [container id\| container name]</code></td>
+      <td>Stops a running container</td>
+    </tr>
+    <tr>
+      <td><code class="language-plaintext highlighter-rouge">docker rm [container id \| container name]</code></td>
+      <td>Removes a container [After stopping it]</td>
+    </tr>
+    <tr>
+      <td><code class="language-plaintext highlighter-rouge">docker rmi [image name]</code></td>
+      <td>Removes an image [After stopping all dependent containers]</td>
+    </tr>
+    <tr>
+      <td><code class="language-plaintext highlighter-rouge">docker pull [image name]</code></td>
+      <td>Downloads an image without creating an instance</td>
+    </tr>
+    <tr>
+      <td><code class="language-plaintext highlighter-rouge">docker -v</code> or <code class="language-plaintext highlighter-rouge">docker --version</code></td>
+      <td>Checks the version of Docker</td>
+    </tr>
+    <tr>
+      <td><code class="language-plaintext highlighter-rouge">docker inspect [container name\| container id]</code></td>
+      <td>Inspects a container and gets information associated with it</td>
+    </tr>
+    <tr>
+      <td><code class="language-plaintext highlighter-rouge">docker logs [container name\| container id]</code></td>
+      <td>Checks the logs associated with a container</td>
+    </tr>
+    <tr>
+      <td><code class="language-plaintext highlighter-rouge">docker run [image name]</code></td>
+      <td>Runs an image instance‍</td>
+    </tr>
+    <tr>
+      <td><code class="language-plaintext highlighter-rouge">Docker build -t [Name of Image]:[tag] [Path to Source Code]</code></td>
+      <td>Build an Image from source code</td>
+    </tr>
+  </tbody>
+</table>
+
+<h2 id="docker-run-commands">Docker Run Commands</h2>
+
+<p>Know this: a Docker image instance refers to a Docker container. When you run an image using the <code class="language-plaintext highlighter-rouge">docker run</code> command, it creates a container instance of that image.</p>
+
+<p>Example:</p>
+
+<p><img src="/assets/2024/September/6203cf53a8d82b4c2b84a851_mysql.png" alt="Fig: Creating an Image Instance" /></p>
+
+<p><em>Fig: Creating an Image Instance</em></p>
+
+<p>Now, let’s read about different customizations of run command.</p>
+
+<table>
+  <thead>
+    <tr>
+      <th>Command</th>
+      <th>Description</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td><code class="language-plaintext highlighter-rouge">docker run [Image name]</code></td>
+      <td>Creates a new Image instance or container with a random name</td>
+    </tr>
+    <tr>
+      <td><code class="language-plaintext highlighter-rouge">docker run [Image name]:tag</code></td>
+      <td>Define the version of the image</td>
+    </tr>
+    <tr>
+      <td><code class="language-plaintext highlighter-rouge">docker run [-i | -it] [Container name]</code></td>
+      <td>Run an existing container</td>
+    </tr>
+    <tr>
+      <td><code class="language-plaintext highlighter-rouge">docker run -p [host port number]:[container port number] [image name]</code></td>
+      <td>Create a new Image instance with port connectivity to host</td>
+    </tr>
+    <tr>
+      <td><code class="language-plaintext highlighter-rouge">docker run -v /path/on/host:/path/in/container [image name]</code></td>
+      <td>Create a new Image instance with volume mapping to host machine</td>
+    </tr>
+    <tr>
+      <td><code class="language-plaintext highlighter-rouge">docker run -e [variable name]=[value] [image name]</code></td>
+      <td>Create a new Image instance while setting environment variables</td>
+    </tr>
+    <tr>
+      <td><code class="language-plaintext highlighter-rouge">docker run --name [Name of Instance] [Image name]</code></td>
+      <td>Creates a new container instance with a specified name</td>
+    </tr>
+    <tr>
+      <td><code class="language-plaintext highlighter-rouge">docker run --name [Name of Instance] --link [Name of Container]:[Alias] [Image Name]</code></td>
+      <td>Create a new container and connect it with another container</td>
+    </tr>
+    <tr>
+      <td><code class="language-plaintext highlighter-rouge">docker run -d [Image name]</code></td>
+      <td>Runs a docker container in the background as a daemon.</td>
+    </tr>
+  </tbody>
+</table>
+
+<p>Now, lets read and understand few topics:</p>
+
+<h3 id="port-mapping--p">Port Mapping -p</h3>
+
+<p>In order to map a port in a container to a port on the host machine, use the <code class="language-plaintext highlighter-rouge">-p</code> flag when running a container.</p>
+
+<p>For example, the command <code class="language-plaintext highlighter-rouge">docker run -p 80:8080 mywebapp:latest</code> would create a new instance of the <code class="language-plaintext highlighter-rouge">mywebapp</code> image with port connectivity.</p>
+
+<p>The left side port number shows which port the host is using and right side number shows through which port the container is connected to the host port. There can be multiple ports available simultaneously on the host but a single host port can be accessed by only a single container at a time.</p>
+
+<p>In below Image you can see a container with port connectivity.</p>
+
+<p><img src="/assets/2024/September/6203b51bb2599c944c9ad3f4_port%20desc.png" alt="Fig: Example of container with port connectivity to host" /></p>
+
+<p><em>Fig: Example of container with port connectivity to host</em></p>
+
+<p><img src="/assets/2024/September/6203b701e7b6e474ffbc0a01_port%20p.png" alt="Fig: Creating instance of Image with port connectivity" /></p>
+
+<p><em>Fig: Creating instance of Image with port connectivity</em></p>
+
+<h3 id="volume-mapping--v">Volume Mapping -v</h3>
+
+<p>In order to map a volume in a container to a directory on the host machine, use the -v flag when running a container.</p>
+
+<p>For example, the command <code class="language-plaintext highlighter-rouge">docker run -v /path/on/host:/path/in/container myimage</code> would create a new instance of the myimage image with a volume mapped to the /path/on/host directory on the host machine. Any changes made to the volume within the container will be reflected in the corresponding directory on the host machine, and vice versa.</p>
+
+<p>Note that the first path specified after the -v flag corresponds to the directory on the host machine, while the second path corresponds to the directory in the container.</p>
+
+<p>You can also create a named volume using the docker volume create command, and then use the –mount flag to specify the volume when running a container.</p>
+
+<p><img src="/assets/2024/September/6203cd315f8a38167a404a5c_postgres.png" alt="Fig: Create an Image instance with Volume mapping to host" /></p>
+
+<p><em>Fig: Create an Image instance with Volume mapping to host</em></p>
+
+<h3 id="environment-variables--e">Environment Variables -e</h3>
+
+<p>To set environment variables for a Docker container when creating an instance of an image, you can use the <code class="language-plaintext highlighter-rouge">-e</code> flag followed by the variable name and value. The syntax is as follows:</p>
+
+<p><code class="language-plaintext highlighter-rouge">docker run -e [variable name]=[value] [image name]</code></p>
+
+<p>For example, to set a password variable to “secret” for a Redis container, you can use:</p>
+
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>docker run -e REDIS_PASSWORD=secret redis
+</code></pre></div></div>
+
+<p><img src="/assets/2024/September/6203d4ee16ae6432ab358ba2_user%20redis.png" alt="Fig: Create an Image instance with given variables" /></p>
+
+<p><em>Fig: Create an Image instance with given variables</em></p>
+
+<h3 id="link-the-instance-link">Link the Instance –link</h3>
+
+<p>The <code class="language-plaintext highlighter-rouge">--link</code> flag in the <code class="language-plaintext highlighter-rouge">docker run</code> command is used to connect containers together over a network. It allows one container to access the other container’s environment variables and network ports without exposing them to the host machine. The syntax for the command is as follows:</p>
+
+<p><code class="language-plaintext highlighter-rouge">docker run --name [Name of Instance] --link [Name of Container]:[Alias] [Image Name]</code></p>
+
+<p>Here, <code class="language-plaintext highlighter-rouge">[Name of Container]</code> refers to the name of the container that you want to link to, and <code class="language-plaintext highlighter-rouge">[Alias]</code> refers to the name that you want to use to access that container from within the linked container.</p>
+
+<p>For example, the following command links a Redis container to a Python container, and sets the alias “redis” for the Redis container:</p>
+
+<p><code class="language-plaintext highlighter-rouge">docker run --name mypythonapp --link myredis:redis python</code></p>
+
+<h2 id="docker-custom-images">Docker Custom Images</h2>
+
+<p>We can create custom images to containerize our application.</p>
+
+<p>It includes the following steps:</p>
+
+<ol>
+  <li>Creating a container with a defined OS.</li>
+  <li>Updating the OS.</li>
+  <li>Installing OS dependencies associated.</li>
+  <li>Installing Python dependencies.</li>
+  <li>Declaring the path to copy source code.</li>
+  <li>Running the web server.</li>
+</ol>
+
+<p>We define all these steps in a Dockerfile. First, we have to create a Dockerfile associated with the application.</p>
+
+<h3 id="dockerfile">Dockerfile:</h3>
+
+<div class="language-Dockerfile highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="k">FROM</span><span class="s"> python:3.6</span>
+<span class="k">RUN </span>apt-get update <span class="o">&amp;&amp;</span> apt-get <span class="nb">install</span> <span class="nt">-y</span> <span class="se">\\</span>
+    libffi-dev \\
+    libssl-dev \\
+    libxml2-dev \\
+    libxslt-dev \\
+    libjpeg-dev \\
+    libopenjpeg-dev \\
+    libfreetype6-dev \\
+    zlib1g-dev \\
+    libmysqlclient-dev \\
+    libpq-dev \\
+    postgresql-client \\
+    git
+<span class="k">COPY</span><span class="s"> . /opt/myapp</span>
+<span class="k">WORKDIR</span><span class="s"> /opt/myapp</span>
+<span class="k">RUN </span>pip <span class="nb">install</span> <span class="nt">-r</span> requirements.txt
+<span class="k">EXPOSE</span><span class="s"> 8000</span>
+<span class="k">ENTRYPOINT</span><span class="s"> ["python", "manage.py", "runserver", "0.0.0.0:8000"]</span>
+</code></pre></div></div>
+
+<ul>
+  <li><strong>From -&gt;</strong> It defines the working environment. It can be a base operating system or another image, such as Ubuntu, Redis, Python, etc.</li>
+  <li><strong>Run -&gt;</strong> The command written after run is used to install the dependencies of the environment. It can contain pip install or apt-get update commands depending on the environment.‍</li>
+  <li><strong>Copy -&gt;</strong> This shows where the data is written while creating its image. For examply → My source code from the current folder will be copied to /opt/ folder in the Image on docker.‍</li>
+  <li><strong>Workdir -&gt;</strong> shows where the source code is present.‍</li>
+  <li><strong>Entrypoint -&gt;</strong> This command is used to run the application.‍</li>
+  <li><strong>Expose -&gt;</strong> It defines which port of the container is used to connect with the host port.</li>
+</ul>
+
+<p>Docker uses a layered architecture for the images. This means that with each command in the Dockerfile, a new layer is added to the image.</p>
+
+<p>For example, the base layer is of python:3.6 image and with each command including run, copy, expose, workdir, entrypoint the new layers are added to the below layer. The advantage of this is that when you change the source code of the image and try to create a new image, it will use the old layers.</p>
+
+<p><strong>Layers can be as follows:</strong></p>
+
+<ol>
+  <li>Base Python:3.6 Image Layer</li>
+  <li>Changes in Pip Packages</li>
+  <li>Source Code</li>
+  <li>Exposed port</li>
+  <li>Working directory change</li>
+  <li>Update Entry point</li>
+</ol>
+
+<h3 id="build-image">Build Image</h3>
+
+<p>After creating the Dockerfile, we build the image with the following command: <code class="language-plaintext highlighter-rouge">Docker build -t [Name of Image]:[tag] [Path to Source Code]</code></p>
+
+<p>For example, to create an image called “mywebapp” from the current directory, the command would be: <code class="language-plaintext highlighter-rouge">docker build -t mywebapp:latest .</code></p>
+
+<p><img src="/assets/2024/September/6204cf48fef7f1b285f489f5_my%20image.png" alt="Fig: Building a custom Image" /></p>
+
+<p><em>Fig: Building a custom Image</em></p>
+
+<h3 id="run-image">Run Image</h3>
+
+<p>After creating the image successfully, we can create its instances in the same way as we do for the official images.</p>
+
+<p>For example, to create a container instance from the “mywebapp” image and map port 8000 on the host to port 8000 in the container, the command would be:</p>
+
+<p><code class="language-plaintext highlighter-rouge">docker run -p 8000:8000 mywebapp:latest</code></p>
+
+<p>This will start a new container instance from the “mywebapp” image and map port 8000 on the host to port 8000 in the container.</p>
+
+<h3 id="cmd-and-entrypoint">CMD and ENTRYPOINT</h3>
+
+<h4 id="cmd">CMD</h4>
+
+<p>The <code class="language-plaintext highlighter-rouge">CMD</code> instruction in a Dockerfile specifies what command to run by default when a container is started from the image. If a command is specified when the container is started, it overrides the <code class="language-plaintext highlighter-rouge">CMD</code> instruction.</p>
+
+<h4 id="entrypoint">Entrypoint</h4>
+
+<p>The <code class="language-plaintext highlighter-rouge">ENTRYPOINT</code> instruction in a Dockerfile specifies the command to run when a container is started from the image. Any arguments passed to <code class="language-plaintext highlighter-rouge">docker run</code> will be appended to the <code class="language-plaintext highlighter-rouge">ENTRYPOINT</code> command.</p>
+
+<p>For example, if the <code class="language-plaintext highlighter-rouge">ENTRYPOINT</code> is set to <code class="language-plaintext highlighter-rouge">["python", "app.py"]</code> and the command <code class="language-plaintext highlighter-rouge">docker run myimage arg1 arg2</code> is used, the container will run the command <code class="language-plaintext highlighter-rouge">python app.py arg1 arg2</code>.</p>
+
+<p>Both <code class="language-plaintext highlighter-rouge">CMD</code> and <code class="language-plaintext highlighter-rouge">ENTRYPOINT</code> are optional instructions in a Dockerfile, but at least one of them should be present.</p>
+
+<h2 id="docker-networking">Docker Networking</h2>
+
+<p>Docker provides three default network types:</p>
+
+<ul>
+  <li><strong>Bridge</strong>: This is the default network type and allows containers to communicate with each other using internal IP addresses.</li>
+  <li><strong>Host</strong>: With this network type, containers share the network namespace with the host, meaning they can directly access the host’s network interfaces.</li>
+  <li><strong>None</strong>: Containers with this network type have no network access.</li>
+</ul>
+
+<p>These network types help manage how containers are connected and communicate with each other and the host machine.</p>
+
+<p>We use following commands while dealing with networks in docker:</p>
+
+<table>
+  <thead>
+    <tr>
+      <th>Command</th>
+      <th>Description</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td><code class="language-plaintext highlighter-rouge">docker network list</code></td>
+      <td>shows the list of available networks [We have created]</td>
+    </tr>
+    <tr>
+      <td><code class="language-plaintext highlighter-rouge">docker run --name [container name] --network=[name of network] [image name]</code></td>
+      <td>Create a container with given network</td>
+    </tr>
+    <tr>
+      <td><code class="language-plaintext highlighter-rouge">docker network create --driver [Network driver name] --subnet [subnet id] --gateway [Gateway id] [Network name]</code></td>
+      <td>Create a custom network</td>
+    </tr>
+    <tr>
+      <td><code class="language-plaintext highlighter-rouge">docker network inspect [Network name]</code></td>
+      <td>Inspect any network’s configuration</td>
+    </tr>
+  </tbody>
+</table>
+
+<p>Example of custom network:</p>
+
+<p><img src="/assets/2024/September/6205009a6eff383631641438_custom%20nw.png" alt="Fig: Create custom network" /></p>
+
+<p><em>Fig: Create custom network</em></p>
+
+<h2 id="docker-storage">Docker Storage</h2>
+
+<p>Docker stores data at <strong>/var/lib/docker</strong> on Linux-based systems. If you are using Docker Desktop on a Windows WSL machine, the data is stored at <em>*\wsl$\docker-desktop-data\version-pack-data\community\docker*</em>.</p>
+
+<p>You can directly search this address in windows explorer and it will show you the storage folder. Once you get there it contains different folders including volumes and images. As shows in image:</p>
+
+<p><img src="/assets/2024/September/6206208b121a9a56fc4e0675_docker%20storage%20folder.png" alt="Fig: Checking docker storage" /></p>
+
+<p><em>Fig: Checking docker storage</em></p>
+
+<p>In the Docker storage architecture, image layers are read-only, and the container layer can be updated. Image layers are defined in the Dockerfile, while the container layer is created when we create a new instance of an image. The container uses image layers but can have custom changes in the container layer.</p>
+
+<p>When a container is deleted, the data stored in the container layer is also deleted. To persist data, we can use volumes created by the user.</p>
+
+<table>
+  <thead>
+    <tr>
+      <th>Command</th>
+      <th>Description</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td><code class="language-plaintext highlighter-rouge">docker volume create [volume name]</code></td>
+      <td>Create a volume</td>
+    </tr>
+    <tr>
+      <td><code class="language-plaintext highlighter-rouge">docker run -v [volume name | folder path]:[default folder used] [image name]</code></td>
+      <td>Maps the folder used by the container to store data</td>
+    </tr>
+    <tr>
+      <td><code class="language-plaintext highlighter-rouge">docker run --mount type=bind, source=[source folder path], target=[target folder path] [image name]</code></td>
+      <td>Maps the folder used by the container to store data.</td>
+    </tr>
+  </tbody>
+</table>
+
+<h4 id="example-to-create-custom-volume">Example to Create custom Volume</h4>
+
+<p><img src="/assets/2024/September/6206259677915b152ac79122_my%20volumne.png" alt="Fig: Create custom volume" /></p>
+
+<p><em>Fig: Create custom volume</em></p>
+
+<p><img src="/assets/2024/September/620625d4c28c683945be4251_folder%20volumne.png" alt="Fig: Modified volumes folder" /></p>
+
+<p><em>Fig: Modified volumes folder</em></p>
+
+<h4 id="example-of-mounting-folder">Example of Mounting folder</h4>
+
+<p><img src="https://uploads-ssl.webflow.com/61fa86c5f8078e10e03570d4/6206361e5032e625cf349073_attach%20folder.png" alt="Fig: Mounting folder" /></p>
+
+<p><em>Fig: Mounting folder</em></p>
+
+<h2 id="docker-compose">Docker Compose</h2>
+
+<p>Docker Compose is a tool that allows developers to define and create multi-container applications. It uses a YAML file to define all the services/containers and their configurations.</p>
+
+<p>The process involves defining the application’s environment in a Dockerfile, defining the application’s services in a docker-compose.yml file, and starting the application using the <code class="language-plaintext highlighter-rouge">docker-compose up</code> command.</p>
+
+<p>Here is an example of a docker-compose.yml file:</p>
+
+<div class="language-yml highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="na">version</span><span class="pi">:</span> <span class="s1">'</span><span class="s">3.9'</span>
+<span class="na">services</span><span class="pi">:</span>
+  <span class="na">web</span><span class="pi">:</span>
+    <span class="na">build</span><span class="pi">:</span> <span class="s">.</span>
+    <span class="na">ports</span><span class="pi">:</span>
+      <span class="pi">-</span> <span class="s2">"</span><span class="s">5000:5000"</span>
+  <span class="na">redis</span><span class="pi">:</span>
+    <span class="na">image</span><span class="pi">:</span> <span class="s2">"</span><span class="s">redis:alpine"</span>
+
+</code></pre></div></div>
+
+<p>In this example, we have two services defined: <code class="language-plaintext highlighter-rouge">web</code> and <code class="language-plaintext highlighter-rouge">redis</code>.</p>
+
+<p>The <code class="language-plaintext highlighter-rouge">web</code> service is built using the Dockerfile in the current directory (<code class="language-plaintext highlighter-rouge">.</code>), and maps port 5000 on the host to port 5000 in the container.</p>
+
+<p>The <code class="language-plaintext highlighter-rouge">redis</code> service uses the official Redis image from Docker Hub (<code class="language-plaintext highlighter-rouge">redis:alpine</code>).</p>
+
+<p>To start the application, navigate to the directory containing the docker-compose.yml file and run the <code class="language-plaintext highlighter-rouge">docker-compose up</code> command. This will start both services and output their logs to the console.</p>
+
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>$ docker-compose up
+</code></pre></div></div>
+
+<p>Note that you can also use the <code class="language-plaintext highlighter-rouge">docker-compose</code> command to manage the lifecycle of the application’s services, such as starting, stopping, and restarting them.</p>
+
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>$ docker-compose start
+$ docker-compose stop
+$ docker-compose restart
+</code></pre></div></div>
+
+<p>That’s enough to know about docker if you are just starting. Hope it will help someone.❤❤</p>
+
+  </div><a class="u-url" href="/cloud/2022/04/01/Docker_start.html" hidden></a>
+</article>
+
+      </div>
+    </main><footer class="site-footer h-card">
+  <data class="u-url" href="/"></data>
+
+  <div class="wrapper">
+
+    <h2 class="footer-heading">dsm Blogs</h2>
+
+    <div class="footer-col-wrapper">
+      <div class="footer-col footer-col-1">
+        <ul class="contact-list">
+          <li class="p-name">dsm Blogs</li><li><a class="u-email" href="mailto:dharamsinghmeena2000@gmail.com">dharamsinghmeena2000@gmail.com</a></li></ul>
+      </div>
+
+      <div class="footer-col footer-col-2"><ul class="social-media-list"><li><a href="https://github.com/DS-Meena"><svg class="svg-icon"><use xlink:href="/assets/minima-social-icons.svg#github"></use></svg> <span class="username">DS-Meena</span></a></li><li><a href="https://www.twitter.com/DSMOfficial1"><svg class="svg-icon"><use xlink:href="/assets/minima-social-icons.svg#twitter"></use></svg> <span class="username">DSMOfficial1</span></a></li></ul>
+</div>
+
+      <div class="footer-col footer-col-3">
+        <p>This is a blog about Data Science and Machine Learning. I write about all the things I learn in this domain. I also share my knowledge with you.</p>
+      </div>
+    </div>
+
+  </div>
+
+</footer>
+</body>
+
+</html>
