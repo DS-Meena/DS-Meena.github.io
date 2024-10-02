@@ -51,60 +51,60 @@ Decision trees are a type of classification algorithm used in machine learning. 
 
 The basic idea behind decision trees is to split up the input space into different regions, where each region represents a different class or category. This is done by recursively splitting up the input space over and over again based on the values of the input features.
     
-    ![Fig: Decision Tree](https://static.javatpoint.com/tutorial/machine-learning/images/decision-tree-classification-algorithm.png)
+![Fig: Decision Tree](https://static.javatpoint.com/tutorial/machine-learning/images/decision-tree-classification-algorithm.png)
     
-    Fig: Decision Tree
+*Fig: Decision Tree [javatpoint](www.javatpoint.com)*
+
+At each level of the tree, the algorithm picks the input feature that separates the training examples into different classes the best. This feature is used to make a decision node, which splits the input space into two or more regions. The process is repeated on each of the resulting regions until a stopping criterion is met, like reaching the maximum depth or having a minimum number of examples in each region.
+
+Decision trees are super easy to understand and interpret, and they can be used for both classifying and regression problems. They can also handle non-linear relationships between the input features and the target variable.
+
+```python
+from sklearn.tree import DecisionTreeClassifier
+from sklearn.model_selection import cross_val_score
+
+model = DecisionTreeClassifier(random_state=0)
+model.fit(X_train, Y_train)
+
+score = cross_val_score(model, X, Y, cv=10)
+```
+
+Decision trees can also be used for regression problems, where the goal is to predict a continuous output variable based on the input features. The decision tree algorithm works in the same way as for classification problems, but instead of predicting a class label, it predicts a numeric value.
+
+Here is an example of a decision tree for a regression problem:
+
+#### Regression Decision Tree
     
-    At each level of the tree, the algorithm picks the input feature that separates the training examples into different classes the best. This feature is used to make a decision node, which splits the input space into two or more regions. The process is repeated on each of the resulting regions until a stopping criterion is met, like reaching the maximum depth or having a minimum number of examples in each region.
+![Fig: Regression Decision Tree](https://scikit-learn.org/stable/_images/sphx_glr_plot_tree_regression_001.png)
+
+*Fig: Regression Decision Tree [scikit-learn](scikit-learn.org)*
+
+In this example, the decision tree is used to fit a sine curve as a result it learns linear regression approximating the sine curve. We can see in this example, that if max depth of the tree is set to high, it can overfit the training data by learning the noise observations also.
+
+The algorithm chooses the feature that results in the best split of the data based on a measure of the variance reduction. The prediction for each leaf node is the average of the target values of the training examples that fall within that leaf node.
+
+
+However, decision trees can be sensitive to small changes in the input data and may overfit the training data if not properly regularized. To address these issues, ensemble methods such as random forests and gradient boosting are often used.
+
+Overall, decision trees are a simple and effective technique for classification and regression problems, particularly when the decision boundary is simple or linear.
     
-    Decision trees are super easy to understand and interpret, and they can be used for both classifying and regression problems. They can also handle non-linear relationships between the input features and the target variable.
+#### Nearest-neighbor classification
     
-    ```python
-    from sklearn.tree import DecisionTreeClassifier
-    from sklearn.model_selection import cross_val_score
+In this algorithm, the model given an input chooses the class of the nearest data point to that point.
+
+This technique is useful for problems where the decision boundary between classes is complex or nonlinear. However, it can be computationally expensive and may not perform well on high-dimensional data.
     
-    model = DecisionTreeClassifier(random_state=0)
-    model.fit(X_train, Y_train)
+#### K-Nearest Neighbor Classification (KNN)
     
-    score = cross_val_score(model, X, Y, cv=10)
-    ```
-    
-    Decision trees can also be used for regression problems, where the goal is to predict a continuous output variable based on the input features. The decision tree algorithm works in the same way as for classification problems, but instead of predicting a class label, it predicts a numeric value.
-    
-    Here is an example of a decision tree for a regression problem:
-    
-    - **Regression Decision Tree**
-        
-        ![Fig: Regression Decision Tree](https://scikit-learn.org/stable/_images/sphx_glr_plot_tree_regression_001.png)
-        
-        Fig: Regression Decision Tree
-        
-        In this example, the decision tree is used to fit a sine curve as a result it learns linear regression approximating the sine curve. We can see in this example, that if max depth of the tree is set to high, it can overfit the training data by learning the noise observations also.
-        
-        The algorithm chooses the feature that results in the best split of the data based on a measure of the variance reduction. The prediction for each leaf node is the average of the target values of the training examples that fall within that leaf node.
-        
-    
-    However, decision trees can be sensitive to small changes in the input data and may overfit the training data if not properly regularized. To address these issues, ensemble methods such as random forests and gradient boosting are often used.
-    
-    Overall, decision trees are a simple and effective technique for classification and regression problems, particularly when the decision boundary is simple or linear.
-    
-- **Nearest-neighbor classification**
-    
-    In this algorithm, the model given an input chooses the class of the nearest data point to that point.
-    
-    This technique is useful for problems where the decision boundary between classes is complex or nonlinear. However, it can be computationally expensive and may not perform well on high-dimensional data.
-    
-- **K-Nearest Neighbor Classification (KNN)**
-    
-    In this algorithm, the model assigns a class to a new data point based on the classes of the k nearest data points in the training data set. The value of k is a hyperparameter that can be tuned to optimize the model's performance.
-    
-    This technique is often used for problems with a small number of classes and a large number of features. However, it can be sensitive to the choice of distance metric used to calculate the distance between data points.
-    
-    [Fig: KNN Example](https://miro.medium.com/v2/resize:fit:1100/0*ItVKiyx2F3ZU8zV5)
-    
-    Fig: KNN Example
-    
-    Overall, k-nearest neighbor classification is a simple and effective technique for classification problems, particularly when the decision boundary is complex or nonlinear.
+In this algorithm, the model assigns a class to a new data point based on the classes of the k nearest data points in the training data set. The value of k is a hyperparameter that can be tuned to optimize the model's performance.
+
+This technique is often used for problems with a small number of classes and a large number of features. However, it can be sensitive to the choice of distance metric used to calculate the distance between data points.
+
+![Fig: KNN Example](/assets/2024/October/0_ItVKiyx2F3ZU8zV5.png)
+
+*Fig: KNN Example [medium](medium.com)*
+
+Overall, k-nearest neighbor classification is a simple and effective technique for classification problems, particularly when the decision boundary is complex or nonlinear.
     
 
 ### Regression
@@ -122,7 +122,7 @@ There are several types of regression, including:
 
 - **Linear Regression:** the model learns to predict a continuous output based on a linear relationship between the input and output variables.
     
-    !https://static.javatpoint.com/tutorial/machine-learning/images/linear-regression-in-machine-learning.png
+    ![Linar regression](https://static.javatpoint.com/tutorial/machine-learning/images/linear-regression-in-machine-learning.png)
     
     ```python
     # using skitit learn
@@ -146,7 +146,7 @@ There are several types of regression, including:
 
 Each type of regression is suited for different types of data and problems, and choosing the right type of regression is an important part of building an accurate machine learning model.
 
-**Logistic Regression**
+#### Logistic Regression
 
 Logistic regression is a type of supervised learning in machine learning that is used for binary classification tasks. In this technique, the model learns to predict a binary output (0 or 1) based on the input variables.
 
@@ -154,7 +154,9 @@ It is commonly used in applications such as fraud detection, spam filtering, and
 
 The logistic regression algorithm uses a sigmoid function to map the input values to a range between 0 and 1 (generate probabilities), which represents the probability of the input data belonging to one of the two categories. The algorithm then makes a binary decision based on this probability.
 
-!https://static.javatpoint.com/tutorial/machine-learning/images/logistic-regression-in-machine-learning.png
+![Logistic Regression](https://static.javatpoint.com/tutorial/machine-learning/images/logistic-regression-in-machine-learning.png)
+
+*Fig: Logistic regression [javatpoint](javatpoint.com)*
 
 ```python
 # Logistic Regression
@@ -168,7 +170,7 @@ accuracy = accuracy_score(model.predict(X_test), Y_test))
 print(accuracy)
 ```
 
-**Ridge Regression**
+#### Ridge Regression
 
 Ridge regression is a type of linear regression that adds a regularization term (L2) to the cost function to prevent overfitting. The cost function for ridge regression is:
 
@@ -187,11 +189,11 @@ where:
 
 The first term in the equation is the mean squared error (MSE) between the predicted values and the true values. The second term is the L2 regularization term, which penalizes the magnitude of the coefficients.
 
-**Lasso Regression**
+#### Lasso Regression
 
 Lasso regression is another type of linear regression that adds a regularization term (L1) to the cost function. The cost function for lasso regression is:
 
-$J(w) = \sum_{i=1}^{m} [y^{(i)} - \hat{y}^{(i)}]^2 + \alpha\sum_{j=1}^{n} |w_j|$
+$J(w) = \sum_{i=1}^{m} [y^{(i)} - \hat{y}^{(i)}]^2 + \alpha\sum_{j=1}^{n} \lvert w_j \rvert$
 
 Where:
 
@@ -206,9 +208,7 @@ The first term in the equation is the mean squared error (MSE) between the predi
 
 Lasso regression is useful for feature selection, as it tends to set the coefficients of less important features to zero. This can lead to a more interpretable model and improve its generalization performance.
 
-## Unsupervised Learning
-
----
+# Unsupervised Learning
 
 Unsupervised learning is a type of machine learning where the model is trained on unlabeled data. The model is not given any specific outputs to learn from, but instead must identify patterns and relationships in the input data on its own.
 
@@ -218,33 +218,23 @@ Some common types of unsupervised learning include:
 
 - **Clustering:** the model learns to group similar inputs into clusters or categories.
     
-    [But how you do clustering?](https://www.notion.so/But-how-you-do-clustering-d6b2d75d69204bf0a78f8df5548f7fc8?pvs=21)
+    [But how you do clustering?](https://ds-meena.github.io/ai/2024/01/20/How_to_do_clustering.html)
     
 - **Anomaly Detection:** the model learns to identify unusual or unexpected data points.
 - **Dimensionality Reduction:** the model learns to identify the most important features or variables in the input data.
 - **Density estimation** involves a model learning a probability density function (PDF), which is used in anomaly detection. Instances found in very-low density regions are considered anomalies.
 
-[Gaussian Mixtures](https://www.notion.so/Gaussian-Mixtures-b0c8ae93678d4590a12aeb3e42f68240?pvs=21)
-
 Unsupervised learning is useful when working with large amounts of data that may not be well understood or labeled. By identifying patterns and relationships in the data, unsupervised learning can help to uncover insights and guide further analysis.
 
-## Reinforcement learning
+# Reinforcement learning
 
----
+Reinforcement learning is like a cool type of machine learning where an agent learns to make decisions based on a reward system. The agent gets to interact with an environment, taking actions and getting feedback in the form of rewards or penalties. Over time, the agent gets smarter and learns to make decisions that give it the most rewards.
 
-[Learn by Reinforcement](https://www.notion.so/Learn-by-Reinforcement-e811c0c2b34c47abb946dc90b59749fe?pvs=21)
+This technique is used for things like game playing, robotics, and autonomous driving. It's all about teaching machines to make complex decisions and do cool things in the real world.
 
-**Convergence Rate**
+Reinforcement learning is really powerful and has lots of cool applications, but it can also be kind of complex and take up a lot of computer power. So, before you decide to use reinforcement learning, you should think about the problem and the data you have.
 
-The convergence rate of a model refers to how quickly the model is able to converge to an optimal solution during training. 
-
-A faster convergence rate means that the model is able to reach a good solution more quickly, while a slower convergence rate means that the model may require more time and resources to reach a good solution. 
-
-The convergence rate can be affected by various factors, such as the choice of optimization algorithm, the learning rate, the size of the training data, and the complexity of the model architecture. A well-designed model with appropriate hyperparameters can achieve a faster convergence rate and better performance.
-
-## Ensemble Methods
-
----
+# Ensemble Methods
 
 A group of predictors is called ensemble and an ensemble learning algorithm is called Ensemble method. 
 
@@ -252,59 +242,45 @@ In other words, Ensemble methods are a type of machine learning technique that i
 
 Ensemble has a similar bias but a lower variance than a single predictor trained on a the original training set.
 
-There are several types of ensemble methods, including:
+There are several types of ensemble methods (algorithms), including:
 
-- **Bagging:** the model combines the predictions of multiple models trained on different subsets of the training data. This can help to reduce overfitting and improve the accuracy of the model.
-    
-    ![Fig: Bagging and pasting involves training several predictors on different random samples of the training set](https://prod-files-secure.s3.us-west-2.amazonaws.com/5989232b-4798-4c63-ac9f-04cb2f5fb1a8/48745c7a-5e51-4186-8452-6647e672a3f6/Untitled.png)
-    
-    Fig: Bagging and pasting involves training several predictors on different random samples of the training set
-    
-    Bagging - sampling is performed with replacement (bootstrap=True)
-    
-    Pasting - sampling is performed without replacement (bootstrap=False)
-    
-    ```python
-    from sklearn.ensemble import BaggingClassifier
-    from sklearn.tree import DecisionTreeClassifier
-    
-    bag_clf = BaggingClassifier(
-        DecisionTreeClassifier(), n_estimators=500,
-        max_samples=100, bootstrap=True, n_jobs=-1
-    )
-    bag_clf.fit(X_train, y_train)
-    
-    y_pred = bag_clf.predict(X_val)
-    print(y_pred)
-    ```
-    
-    n_estimators = number of decision trees
-    
-    max_samples = 100 training samples randomly sampled from training set
-    
-    bootstrap = True, with replacement
-    
-    n_jobs = number of CPU cores to use for training and predictions, -1 means use all available
-    
-    Bootstrapping introduces more diversity into the predictor, means it is more biased than pasting; but the diversity also means the predictors are less correlated and ensemble variance is reduced.
-    
-- **Boosting:** the model combines the predictions of multiple weak models to create a strong model. This can help to improve the accuracy of the model and reduce bias.
-    
-    
-- **Stacking:** the model combines the predictions of multiple models using a meta-model (blender). This can help to improve the accuracy of the model and reduce overfitting.
-    
-    ![Fig: Aggregating predictions using a blending predictor](https://prod-files-secure.s3.us-west-2.amazonaws.com/5989232b-4798-4c63-ac9f-04cb2f5fb1a8/8984dd70-5bb4-482c-8329-825d5ce887ba/Untitled.png)
-    
-    Fig: Aggregating predictions using a blending predictor
-    
+## Bagging
 
-Ensemble methods are particularly useful when working with complex data or when the performance of a single model is not sufficient. By combining the predictions of multiple models, ensemble methods can help to improve the accuracy and reliability of the model.
+The model combines the predictions of multiple models trained on different subsets of the training data. This can help to reduce overfitting and improve the accuracy of the model.
+    
+![Fig: Bagging and pasting involves training several predictors on different random samples of the training set](/assets/2024/October/Untitled.png)
 
-Some common ensemble methods include:
+*Fig: Bagging and pasting involves training several predictors on different random samples of the training set*
 
-### **Random Forests**
+Bagging - sampling is performed with replacement (bootstrap=True)
 
----
+Pasting - sampling is performed without replacement (bootstrap=False)
+
+```python
+from sklearn.ensemble import BaggingClassifier
+from sklearn.tree import DecisionTreeClassifier
+
+bag_clf = BaggingClassifier(
+    DecisionTreeClassifier(), n_estimators=500,
+    max_samples=100, bootstrap=True, n_jobs=-1
+)
+bag_clf.fit(X_train, y_train)
+
+y_pred = bag_clf.predict(X_val)
+print(y_pred)
+```
+
+n_estimators = number of decision trees
+
+max_samples = 100 training samples randomly sampled from training set
+
+bootstrap = True, with replacement
+
+n_jobs = number of CPU cores to use for training and predictions, -1 means use all available
+
+Bootstrapping introduces more diversity into the predictor, means it is more biased than pasting; but the diversity also means the predictors are less correlated and ensemble variance is reduced.
+
+### Random Forests
 
 Random Forest is an ensemble of Decision trees, generally trained via the bagging method (or sometimes pasting), typically with *max_samples* set to the size of training set.
 
@@ -339,9 +315,12 @@ Random forests are particularly useful for high-dimensional data and problems wi
 
 Overall, random forests are a powerful and versatile technique for solving a wide range of machine learning problems.
 
-### **AdaBoost**
+## Boosting
 
----
+The model combines the predictions of multiple weak models to create a strong model. This can help to improve the accuracy of the model and reduce bias.
+    
+
+### AdaBoost
 
 A type of boosting ensemble method used for classification problems. AdaBoost combines the predictions of multiple weak models using a weighted sum, where the relative weight of misclassified instances increased (boost). 
 
@@ -357,9 +336,7 @@ ada_clf = AdaBoostClassifier(
 ada_clf.fit(X_train, y_train)
 ```
 
-### **Gradient Boosting**
-
----
+### Gradient Boosting
 
 A type of boosting ensemble method used for classification and regression problems. Gradient boosting tries to fit the new predictor to the residual errors (literally) made by the previous predictor.
 
@@ -394,6 +371,20 @@ y_pred = xgb_reg.predict(X_val)
 
 Gradient boosting is a powerful technique for improving the performance of machine learning models, particularly when working with complex data or when the performance of a single model is not sufficient. However, it can be computationally intensive and may require careful tuning of hyperparameters to achieve good performance.
 
+## Stacking 
+The model combines the predictions of multiple models using a meta-model (blender). This can help to improve the accuracy of the model and reduce overfitting.
+
+
+![Fig: Aggregating predictions using a blending predictor](/assets/2024/October/Untitled%20copy.png)
+
+*Fig: Aggregating predictions using a blending predictor*
+
+Ensemble methods are particularly useful when working with complex data or when the performance of a single model is not sufficient. By combining the predictions of multiple models, ensemble methods can help to improve the accuracy and reliability of the model.
+
 Overall, ensemble methods are a powerful technique for improving the performance of machine learning models, and they are widely used in industry and research. However, it is important to carefully consider the problem and the available data before choosing an ensemble method.
 
-[](https://www.kaggle.com/code/dsmeena/ch-7-ensemble-learning-and-random-forests)
+## References
+
+[Kaggle Notebook](https://www.kaggle.com/code/dsmeena/ch-7-ensemble-learning-and-random-forests)
+
+[Hands on Machine Learning - buy](https://www.oreilly.com/library/view/hands-on-machine-learning/9781492032632/)

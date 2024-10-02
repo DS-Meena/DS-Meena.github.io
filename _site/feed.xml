@@ -1,4 +1,4 @@
-<?xml version="1.0" encoding="utf-8"?><feed xmlns="http://www.w3.org/2005/Atom" ><generator uri="https://jekyllrb.com/" version="4.3.3">Jekyll</generator><link href="http://localhost:4000/feed.xml" rel="self" type="application/atom+xml" /><link href="http://localhost:4000/" rel="alternate" type="text/html" /><updated>2024-09-27T20:53:18+05:30</updated><id>http://localhost:4000/feed.xml</id><title type="html">dsm Blogs</title><subtitle>This is a blog about Data Science and Machine Learning. I write about all the things I learn in this domain. I also share my knowledge with you.</subtitle><entry><title type="html">Q-Learning</title><link href="http://localhost:4000/ai/2024/09/23/Q_learning.html" rel="alternate" type="text/html" title="Q-Learning" /><published>2024-09-23T10:00:10+05:30</published><updated>2024-09-23T10:00:10+05:30</updated><id>http://localhost:4000/ai/2024/09/23/Q_learning</id><content type="html" xml:base="http://localhost:4000/ai/2024/09/23/Q_learning.html"><![CDATA[<h1 id="introduction">Introduction</h1>
+<?xml version="1.0" encoding="utf-8"?><feed xmlns="http://www.w3.org/2005/Atom" ><generator uri="https://jekyllrb.com/" version="4.3.3">Jekyll</generator><link href="http://localhost:4000/feed.xml" rel="self" type="application/atom+xml" /><link href="http://localhost:4000/" rel="alternate" type="text/html" /><updated>2024-10-02T15:02:59+05:30</updated><id>http://localhost:4000/feed.xml</id><title type="html">dsm Blogs</title><subtitle>This is a blog about Data Science and Machine Learning. I write about all the things I learn in this domain. I also share my knowledge with you.</subtitle><entry><title type="html">Q-Learning</title><link href="http://localhost:4000/ai/2024/09/23/Q_learning.html" rel="alternate" type="text/html" title="Q-Learning" /><published>2024-09-23T10:00:10+05:30</published><updated>2024-09-23T10:00:10+05:30</updated><id>http://localhost:4000/ai/2024/09/23/Q_learning</id><content type="html" xml:base="http://localhost:4000/ai/2024/09/23/Q_learning.html"><![CDATA[<h1 id="introduction">Introduction</h1>
 
 <p>In this blog, we will learn about the fundamental algorithms used in reinforcement learning. It’s not about neural networks but the mathematical algorithms involved in learning.</p>
 
@@ -1027,66 +1027,58 @@ In this code, silhouette_score(X, labels) calculates the silhouette score of the
 
 <p>The basic idea behind decision trees is to split up the input space into different regions, where each region represents a different class or category. This is done by recursively splitting up the input space over and over again based on the values of the input features.</p>
 
-<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>![Fig: Decision Tree](https://static.javatpoint.com/tutorial/machine-learning/images/decision-tree-classification-algorithm.png)
+<p><img src="https://static.javatpoint.com/tutorial/machine-learning/images/decision-tree-classification-algorithm.png" alt="Fig: Decision Tree" /></p>
 
-Fig: Decision Tree
+<p><em>Fig: Decision Tree <a href="www.javatpoint.com">javatpoint</a></em></p>
 
-At each level of the tree, the algorithm picks the input feature that separates the training examples into different classes the best. This feature is used to make a decision node, which splits the input space into two or more regions. The process is repeated on each of the resulting regions until a stopping criterion is met, like reaching the maximum depth or having a minimum number of examples in each region.
+<p>At each level of the tree, the algorithm picks the input feature that separates the training examples into different classes the best. This feature is used to make a decision node, which splits the input space into two or more regions. The process is repeated on each of the resulting regions until a stopping criterion is met, like reaching the maximum depth or having a minimum number of examples in each region.</p>
 
-Decision trees are super easy to understand and interpret, and they can be used for both classifying and regression problems. They can also handle non-linear relationships between the input features and the target variable.
+<p>Decision trees are super easy to understand and interpret, and they can be used for both classifying and regression problems. They can also handle non-linear relationships between the input features and the target variable.</p>
 
-```python
-from sklearn.tree import DecisionTreeClassifier
-from sklearn.model_selection import cross_val_score
+<div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="kn">from</span> <span class="n">sklearn.tree</span> <span class="kn">import</span> <span class="n">DecisionTreeClassifier</span>
+<span class="kn">from</span> <span class="n">sklearn.model_selection</span> <span class="kn">import</span> <span class="n">cross_val_score</span>
 
-model = DecisionTreeClassifier(random_state=0)
-model.fit(X_train, Y_train)
+<span class="n">model</span> <span class="o">=</span> <span class="nc">DecisionTreeClassifier</span><span class="p">(</span><span class="n">random_state</span><span class="o">=</span><span class="mi">0</span><span class="p">)</span>
+<span class="n">model</span><span class="p">.</span><span class="nf">fit</span><span class="p">(</span><span class="n">X_train</span><span class="p">,</span> <span class="n">Y_train</span><span class="p">)</span>
 
-score = cross_val_score(model, X, Y, cv=10)
-```
-
-Decision trees can also be used for regression problems, where the goal is to predict a continuous output variable based on the input features. The decision tree algorithm works in the same way as for classification problems, but instead of predicting a class label, it predicts a numeric value.
-
-Here is an example of a decision tree for a regression problem:
-
-- **Regression Decision Tree**
-    
-    ![Fig: Regression Decision Tree](https://scikit-learn.org/stable/_images/sphx_glr_plot_tree_regression_001.png)
-    
-    Fig: Regression Decision Tree
-    
-    In this example, the decision tree is used to fit a sine curve as a result it learns linear regression approximating the sine curve. We can see in this example, that if max depth of the tree is set to high, it can overfit the training data by learning the noise observations also.
-    
-    The algorithm chooses the feature that results in the best split of the data based on a measure of the variance reduction. The prediction for each leaf node is the average of the target values of the training examples that fall within that leaf node.
-    
-
-However, decision trees can be sensitive to small changes in the input data and may overfit the training data if not properly regularized. To address these issues, ensemble methods such as random forests and gradient boosting are often used.
-
-Overall, decision trees are a simple and effective technique for classification and regression problems, particularly when the decision boundary is simple or linear.
+<span class="n">score</span> <span class="o">=</span> <span class="nf">cross_val_score</span><span class="p">(</span><span class="n">model</span><span class="p">,</span> <span class="n">X</span><span class="p">,</span> <span class="n">Y</span><span class="p">,</span> <span class="n">cv</span><span class="o">=</span><span class="mi">10</span><span class="p">)</span>
 </code></pre></div></div>
 
-<ul>
-  <li>
-    <p><strong>Nearest-neighbor classification</strong></p>
+<p>Decision trees can also be used for regression problems, where the goal is to predict a continuous output variable based on the input features. The decision tree algorithm works in the same way as for classification problems, but instead of predicting a class label, it predicts a numeric value.</p>
 
-    <p>In this algorithm, the model given an input chooses the class of the nearest data point to that point.</p>
+<p>Here is an example of a decision tree for a regression problem:</p>
 
-    <p>This technique is useful for problems where the decision boundary between classes is complex or nonlinear. However, it can be computationally expensive and may not perform well on high-dimensional data.</p>
-  </li>
-  <li>
-    <p><strong>K-Nearest Neighbor Classification (KNN)</strong></p>
+<h4 id="regression-decision-tree">Regression Decision Tree</h4>
 
-    <p>In this algorithm, the model assigns a class to a new data point based on the classes of the k nearest data points in the training data set. The value of k is a hyperparameter that can be tuned to optimize the model’s performance.</p>
+<p><img src="https://scikit-learn.org/stable/_images/sphx_glr_plot_tree_regression_001.png" alt="Fig: Regression Decision Tree" /></p>
 
-    <p>This technique is often used for problems with a small number of classes and a large number of features. However, it can be sensitive to the choice of distance metric used to calculate the distance between data points.</p>
+<p><em>Fig: Regression Decision Tree <a href="scikit-learn.org">scikit-learn</a></em></p>
 
-    <p><a href="https://miro.medium.com/v2/resize:fit:1100/0*ItVKiyx2F3ZU8zV5">Fig: KNN Example</a></p>
+<p>In this example, the decision tree is used to fit a sine curve as a result it learns linear regression approximating the sine curve. We can see in this example, that if max depth of the tree is set to high, it can overfit the training data by learning the noise observations also.</p>
 
-    <p>Fig: KNN Example</p>
+<p>The algorithm chooses the feature that results in the best split of the data based on a measure of the variance reduction. The prediction for each leaf node is the average of the target values of the training examples that fall within that leaf node.</p>
 
-    <p>Overall, k-nearest neighbor classification is a simple and effective technique for classification problems, particularly when the decision boundary is complex or nonlinear.</p>
-  </li>
-</ul>
+<p>However, decision trees can be sensitive to small changes in the input data and may overfit the training data if not properly regularized. To address these issues, ensemble methods such as random forests and gradient boosting are often used.</p>
+
+<p>Overall, decision trees are a simple and effective technique for classification and regression problems, particularly when the decision boundary is simple or linear.</p>
+
+<h4 id="nearest-neighbor-classification">Nearest-neighbor classification</h4>
+
+<p>In this algorithm, the model given an input chooses the class of the nearest data point to that point.</p>
+
+<p>This technique is useful for problems where the decision boundary between classes is complex or nonlinear. However, it can be computationally expensive and may not perform well on high-dimensional data.</p>
+
+<h4 id="k-nearest-neighbor-classification-knn">K-Nearest Neighbor Classification (KNN)</h4>
+
+<p>In this algorithm, the model assigns a class to a new data point based on the classes of the k nearest data points in the training data set. The value of k is a hyperparameter that can be tuned to optimize the model’s performance.</p>
+
+<p>This technique is often used for problems with a small number of classes and a large number of features. However, it can be sensitive to the choice of distance metric used to calculate the distance between data points.</p>
+
+<p><img src="/assets/2024/October/0_ItVKiyx2F3ZU8zV5.png" alt="Fig: KNN Example" /></p>
+
+<p><em>Fig: KNN Example <a href="medium.com">medium</a></em></p>
+
+<p>Overall, k-nearest neighbor classification is a simple and effective technique for classification problems, particularly when the decision boundary is complex or nonlinear.</p>
 
 <h3 id="regression">Regression</h3>
 
@@ -1105,7 +1097,7 @@ Overall, decision trees are a simple and effective technique for classification 
   <li>
     <p><strong>Linear Regression:</strong> the model learns to predict a continuous output based on a linear relationship between the input and output variables.</p>
 
-    <p>!https://static.javatpoint.com/tutorial/machine-learning/images/linear-regression-in-machine-learning.png</p>
+    <p><img src="https://static.javatpoint.com/tutorial/machine-learning/images/linear-regression-in-machine-learning.png" alt="Linar regression" /></p>
 
     <div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code>  <span class="c1"># using skitit learn
 </span>  <span class="kn">from</span> <span class="n">sklearn.linear_model</span> <span class="kn">import</span> <span class="n">Linear</span> <span class="n">Regression</span>
@@ -1129,7 +1121,7 @@ Overall, decision trees are a simple and effective technique for classification 
 
 <p>Each type of regression is suited for different types of data and problems, and choosing the right type of regression is an important part of building an accurate machine learning model.</p>
 
-<p><strong>Logistic Regression</strong></p>
+<h4 id="logistic-regression">Logistic Regression</h4>
 
 <p>Logistic regression is a type of supervised learning in machine learning that is used for binary classification tasks. In this technique, the model learns to predict a binary output (0 or 1) based on the input variables.</p>
 
@@ -1137,7 +1129,9 @@ Overall, decision trees are a simple and effective technique for classification 
 
 <p>The logistic regression algorithm uses a sigmoid function to map the input values to a range between 0 and 1 (generate probabilities), which represents the probability of the input data belonging to one of the two categories. The algorithm then makes a binary decision based on this probability.</p>
 
-<p>!https://static.javatpoint.com/tutorial/machine-learning/images/logistic-regression-in-machine-learning.png</p>
+<p><img src="https://static.javatpoint.com/tutorial/machine-learning/images/logistic-regression-in-machine-learning.png" alt="Logistic Regression" /></p>
+
+<p><em>Fig: Logistic regression <a href="javatpoint.com">javatpoint</a></em></p>
 
 <div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="c1"># Logistic Regression
 </span><span class="kn">from</span> <span class="n">sklearn.linear_model</span> <span class="kn">import</span> <span class="n">LogisticRegression</span>
@@ -1150,7 +1144,7 @@ Overall, decision trees are a simple and effective technique for classification 
 <span class="nf">print</span><span class="p">(</span><span class="n">accuracy</span><span class="p">)</span>
 </code></pre></div></div>
 
-<p><strong>Ridge Regression</strong></p>
+<h4 id="ridge-regression">Ridge Regression</h4>
 
 <p>Ridge regression is a type of linear regression that adds a regularization term (L2) to the cost function to prevent overfitting. The cost function for ridge regression is:</p>
 
@@ -1171,19 +1165,11 @@ Overall, decision trees are a simple and effective technique for classification 
 
 <p>The first term in the equation is the mean squared error (MSE) between the predicted values and the true values. The second term is the L2 regularization term, which penalizes the magnitude of the coefficients.</p>
 
-<p><strong>Lasso Regression</strong></p>
+<h4 id="lasso-regression">Lasso Regression</h4>
 
 <p>Lasso regression is another type of linear regression that adds a regularization term (L1) to the cost function. The cost function for lasso regression is:</p>
 
-<table>
-  <tbody>
-    <tr>
-      <td>$J(w) = \sum_{i=1}^{m} [y^{(i)} - \hat{y}^{(i)}]^2 + \alpha\sum_{j=1}^{n}</td>
-      <td>w_j</td>
-      <td>$</td>
-    </tr>
-  </tbody>
-</table>
+<p>$J(w) = \sum_{i=1}^{m} [y^{(i)} - \hat{y}^{(i)}]^2 + \alpha\sum_{j=1}^{n} \lvert w_j \rvert$</p>
 
 <p>Where:</p>
 
@@ -1200,9 +1186,7 @@ Overall, decision trees are a simple and effective technique for classification 
 
 <p>Lasso regression is useful for feature selection, as it tends to set the coefficients of less important features to zero. This can lead to a more interpretable model and improve its generalization performance.</p>
 
-<h2 id="unsupervised-learning">Unsupervised Learning</h2>
-
-<hr />
+<h1 id="unsupervised-learning">Unsupervised Learning</h1>
 
 <p>Unsupervised learning is a type of machine learning where the model is trained on unlabeled data. The model is not given any specific outputs to learn from, but instead must identify patterns and relationships in the input data on its own.</p>
 
@@ -1214,34 +1198,24 @@ Overall, decision trees are a simple and effective technique for classification 
   <li>
     <p><strong>Clustering:</strong> the model learns to group similar inputs into clusters or categories.</p>
 
-    <p><a href="https://www.notion.so/But-how-you-do-clustering-d6b2d75d69204bf0a78f8df5548f7fc8?pvs=21">But how you do clustering?</a></p>
+    <p><a href="https://ds-meena.github.io/ai/2024/01/20/How_to_do_clustering.html">But how you do clustering?</a></p>
   </li>
   <li><strong>Anomaly Detection:</strong> the model learns to identify unusual or unexpected data points.</li>
   <li><strong>Dimensionality Reduction:</strong> the model learns to identify the most important features or variables in the input data.</li>
   <li><strong>Density estimation</strong> involves a model learning a probability density function (PDF), which is used in anomaly detection. Instances found in very-low density regions are considered anomalies.</li>
 </ul>
 
-<p><a href="https://www.notion.so/Gaussian-Mixtures-b0c8ae93678d4590a12aeb3e42f68240?pvs=21">Gaussian Mixtures</a></p>
-
 <p>Unsupervised learning is useful when working with large amounts of data that may not be well understood or labeled. By identifying patterns and relationships in the data, unsupervised learning can help to uncover insights and guide further analysis.</p>
 
-<h2 id="reinforcement-learning">Reinforcement learning</h2>
+<h1 id="reinforcement-learning">Reinforcement learning</h1>
 
-<hr />
+<p>Reinforcement learning is like a cool type of machine learning where an agent learns to make decisions based on a reward system. The agent gets to interact with an environment, taking actions and getting feedback in the form of rewards or penalties. Over time, the agent gets smarter and learns to make decisions that give it the most rewards.</p>
 
-<p><a href="https://www.notion.so/Learn-by-Reinforcement-e811c0c2b34c47abb946dc90b59749fe?pvs=21">Learn by Reinforcement</a></p>
+<p>This technique is used for things like game playing, robotics, and autonomous driving. It’s all about teaching machines to make complex decisions and do cool things in the real world.</p>
 
-<p><strong>Convergence Rate</strong></p>
+<p>Reinforcement learning is really powerful and has lots of cool applications, but it can also be kind of complex and take up a lot of computer power. So, before you decide to use reinforcement learning, you should think about the problem and the data you have.</p>
 
-<p>The convergence rate of a model refers to how quickly the model is able to converge to an optimal solution during training.</p>
-
-<p>A faster convergence rate means that the model is able to reach a good solution more quickly, while a slower convergence rate means that the model may require more time and resources to reach a good solution.</p>
-
-<p>The convergence rate can be affected by various factors, such as the choice of optimization algorithm, the learning rate, the size of the training data, and the complexity of the model architecture. A well-designed model with appropriate hyperparameters can achieve a faster convergence rate and better performance.</p>
-
-<h2 id="ensemble-methods">Ensemble Methods</h2>
-
-<hr />
+<h1 id="ensemble-methods">Ensemble Methods</h1>
 
 <p>A group of predictors is called ensemble and an ensemble learning algorithm is called Ensemble method.</p>
 
@@ -1249,62 +1223,44 @@ Overall, decision trees are a simple and effective technique for classification 
 
 <p>Ensemble has a similar bias but a lower variance than a single predictor trained on a the original training set.</p>
 
-<p>There are several types of ensemble methods, including:</p>
+<p>There are several types of ensemble methods (algorithms), including:</p>
 
-<ul>
-  <li>
-    <p><strong>Bagging:</strong> the model combines the predictions of multiple models trained on different subsets of the training data. This can help to reduce overfitting and improve the accuracy of the model.</p>
+<h2 id="bagging">Bagging</h2>
 
-    <p><img src="https://prod-files-secure.s3.us-west-2.amazonaws.com/5989232b-4798-4c63-ac9f-04cb2f5fb1a8/48745c7a-5e51-4186-8452-6647e672a3f6/Untitled.png" alt="Fig: Bagging and pasting involves training several predictors on different random samples of the training set" /></p>
+<p>The model combines the predictions of multiple models trained on different subsets of the training data. This can help to reduce overfitting and improve the accuracy of the model.</p>
 
-    <p>Fig: Bagging and pasting involves training several predictors on different random samples of the training set</p>
+<p><img src="/assets/2024/October/Untitled.png" alt="Fig: Bagging and pasting involves training several predictors on different random samples of the training set" /></p>
 
-    <p>Bagging - sampling is performed with replacement (bootstrap=True)</p>
+<p><em>Fig: Bagging and pasting involves training several predictors on different random samples of the training set</em></p>
 
-    <p>Pasting - sampling is performed without replacement (bootstrap=False)</p>
+<p>Bagging - sampling is performed with replacement (bootstrap=True)</p>
 
-    <div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code>  <span class="kn">from</span> <span class="n">sklearn.ensemble</span> <span class="kn">import</span> <span class="n">BaggingClassifier</span>
-  <span class="kn">from</span> <span class="n">sklearn.tree</span> <span class="kn">import</span> <span class="n">DecisionTreeClassifier</span>
-    
-  <span class="n">bag_clf</span> <span class="o">=</span> <span class="nc">BaggingClassifier</span><span class="p">(</span>
-      <span class="nc">DecisionTreeClassifier</span><span class="p">(),</span> <span class="n">n_estimators</span><span class="o">=</span><span class="mi">500</span><span class="p">,</span>
-      <span class="n">max_samples</span><span class="o">=</span><span class="mi">100</span><span class="p">,</span> <span class="n">bootstrap</span><span class="o">=</span><span class="bp">True</span><span class="p">,</span> <span class="n">n_jobs</span><span class="o">=-</span><span class="mi">1</span>
-  <span class="p">)</span>
-  <span class="n">bag_clf</span><span class="p">.</span><span class="nf">fit</span><span class="p">(</span><span class="n">X_train</span><span class="p">,</span> <span class="n">y_train</span><span class="p">)</span>
-    
-  <span class="n">y_pred</span> <span class="o">=</span> <span class="n">bag_clf</span><span class="p">.</span><span class="nf">predict</span><span class="p">(</span><span class="n">X_val</span><span class="p">)</span>
-  <span class="nf">print</span><span class="p">(</span><span class="n">y_pred</span><span class="p">)</span>
-</code></pre></div>    </div>
+<p>Pasting - sampling is performed without replacement (bootstrap=False)</p>
 
-    <p>n_estimators = number of decision trees</p>
+<div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="kn">from</span> <span class="n">sklearn.ensemble</span> <span class="kn">import</span> <span class="n">BaggingClassifier</span>
+<span class="kn">from</span> <span class="n">sklearn.tree</span> <span class="kn">import</span> <span class="n">DecisionTreeClassifier</span>
 
-    <p>max_samples = 100 training samples randomly sampled from training set</p>
+<span class="n">bag_clf</span> <span class="o">=</span> <span class="nc">BaggingClassifier</span><span class="p">(</span>
+    <span class="nc">DecisionTreeClassifier</span><span class="p">(),</span> <span class="n">n_estimators</span><span class="o">=</span><span class="mi">500</span><span class="p">,</span>
+    <span class="n">max_samples</span><span class="o">=</span><span class="mi">100</span><span class="p">,</span> <span class="n">bootstrap</span><span class="o">=</span><span class="bp">True</span><span class="p">,</span> <span class="n">n_jobs</span><span class="o">=-</span><span class="mi">1</span>
+<span class="p">)</span>
+<span class="n">bag_clf</span><span class="p">.</span><span class="nf">fit</span><span class="p">(</span><span class="n">X_train</span><span class="p">,</span> <span class="n">y_train</span><span class="p">)</span>
 
-    <p>bootstrap = True, with replacement</p>
+<span class="n">y_pred</span> <span class="o">=</span> <span class="n">bag_clf</span><span class="p">.</span><span class="nf">predict</span><span class="p">(</span><span class="n">X_val</span><span class="p">)</span>
+<span class="nf">print</span><span class="p">(</span><span class="n">y_pred</span><span class="p">)</span>
+</code></pre></div></div>
 
-    <p>n_jobs = number of CPU cores to use for training and predictions, -1 means use all available</p>
+<p>n_estimators = number of decision trees</p>
 
-    <p>Bootstrapping introduces more diversity into the predictor, means it is more biased than pasting; but the diversity also means the predictors are less correlated and ensemble variance is reduced.</p>
-  </li>
-  <li>
-    <p><strong>Boosting:</strong> the model combines the predictions of multiple weak models to create a strong model. This can help to improve the accuracy of the model and reduce bias.</p>
-  </li>
-  <li>
-    <p><strong>Stacking:</strong> the model combines the predictions of multiple models using a meta-model (blender). This can help to improve the accuracy of the model and reduce overfitting.</p>
+<p>max_samples = 100 training samples randomly sampled from training set</p>
 
-    <p><img src="https://prod-files-secure.s3.us-west-2.amazonaws.com/5989232b-4798-4c63-ac9f-04cb2f5fb1a8/8984dd70-5bb4-482c-8329-825d5ce887ba/Untitled.png" alt="Fig: Aggregating predictions using a blending predictor" /></p>
+<p>bootstrap = True, with replacement</p>
 
-    <p>Fig: Aggregating predictions using a blending predictor</p>
-  </li>
-</ul>
+<p>n_jobs = number of CPU cores to use for training and predictions, -1 means use all available</p>
 
-<p>Ensemble methods are particularly useful when working with complex data or when the performance of a single model is not sufficient. By combining the predictions of multiple models, ensemble methods can help to improve the accuracy and reliability of the model.</p>
+<p>Bootstrapping introduces more diversity into the predictor, means it is more biased than pasting; but the diversity also means the predictors are less correlated and ensemble variance is reduced.</p>
 
-<p>Some common ensemble methods include:</p>
-
-<h3 id="random-forests"><strong>Random Forests</strong></h3>
-
-<hr />
+<h3 id="random-forests">Random Forests</h3>
 
 <p>Random Forest is an ensemble of Decision trees, generally trained via the bagging method (or sometimes pasting), typically with <em>max_samples</em> set to the size of training set.</p>
 
@@ -1337,9 +1293,11 @@ Overall, decision trees are a simple and effective technique for classification 
 
 <p>Overall, random forests are a powerful and versatile technique for solving a wide range of machine learning problems.</p>
 
-<h3 id="adaboost"><strong>AdaBoost</strong></h3>
+<h2 id="boosting">Boosting</h2>
 
-<hr />
+<p>The model combines the predictions of multiple weak models to create a strong model. This can help to improve the accuracy of the model and reduce bias.</p>
+
+<h3 id="adaboost">AdaBoost</h3>
 
 <p>A type of boosting ensemble method used for classification problems. AdaBoost combines the predictions of multiple weak models using a weighted sum, where the relative weight of misclassified instances increased (boost).</p>
 
@@ -1354,9 +1312,7 @@ Overall, decision trees are a simple and effective technique for classification 
 <span class="n">ada_clf</span><span class="p">.</span><span class="nf">fit</span><span class="p">(</span><span class="n">X_train</span><span class="p">,</span> <span class="n">y_train</span><span class="p">)</span>
 </code></pre></div></div>
 
-<h3 id="gradient-boosting"><strong>Gradient Boosting</strong></h3>
-
-<hr />
+<h3 id="gradient-boosting">Gradient Boosting</h3>
 
 <p>A type of boosting ensemble method used for classification and regression problems. Gradient boosting tries to fit the new predictor to the residual errors (literally) made by the previous predictor.</p>
 
@@ -1389,9 +1345,22 @@ Overall, decision trees are a simple and effective technique for classification 
 
 <p>Gradient boosting is a powerful technique for improving the performance of machine learning models, particularly when working with complex data or when the performance of a single model is not sufficient. However, it can be computationally intensive and may require careful tuning of hyperparameters to achieve good performance.</p>
 
+<h2 id="stacking">Stacking</h2>
+<p>The model combines the predictions of multiple models using a meta-model (blender). This can help to improve the accuracy of the model and reduce overfitting.</p>
+
+<p><img src="/assets/2024/October/Untitled%20copy.png" alt="Fig: Aggregating predictions using a blending predictor" /></p>
+
+<p><em>Fig: Aggregating predictions using a blending predictor</em></p>
+
+<p>Ensemble methods are particularly useful when working with complex data or when the performance of a single model is not sufficient. By combining the predictions of multiple models, ensemble methods can help to improve the accuracy and reliability of the model.</p>
+
 <p>Overall, ensemble methods are a powerful technique for improving the performance of machine learning models, and they are widely used in industry and research. However, it is important to carefully consider the problem and the available data before choosing an ensemble method.</p>
 
-<p><a href="https://www.kaggle.com/code/dsmeena/ch-7-ensemble-learning-and-random-forests"></a></p>]]></content><author><name></name></author><category term="AI" /><summary type="html"><![CDATA[In this blog post, we’re going to talk about machine learning and its different types.]]></summary></entry><entry><title type="html">Start a Webserver with aws</title><link href="http://localhost:4000/cloud/2023/10/22/Start-a-webserver-with-aws.html" rel="alternate" type="text/html" title="Start a Webserver with aws" /><published>2023-10-22T15:08:10+05:30</published><updated>2023-10-22T15:08:10+05:30</updated><id>http://localhost:4000/cloud/2023/10/22/Start-a-webserver-with-aws</id><content type="html" xml:base="http://localhost:4000/cloud/2023/10/22/Start-a-webserver-with-aws.html"><![CDATA[<h2 id="introduction">Introduction</h2>
+<h2 id="references">References</h2>
+
+<p><a href="https://www.kaggle.com/code/dsmeena/ch-7-ensemble-learning-and-random-forests">Kaggle Notebook</a></p>
+
+<p><a href="https://www.oreilly.com/library/view/hands-on-machine-learning/9781492032632/">Hands on Machine Learning - buy</a></p>]]></content><author><name></name></author><category term="AI" /><summary type="html"><![CDATA[In this blog post, we’re going to talk about machine learning and its different types.]]></summary></entry><entry><title type="html">Start a Webserver with aws</title><link href="http://localhost:4000/cloud/2023/10/22/Start-a-webserver-with-aws.html" rel="alternate" type="text/html" title="Start a Webserver with aws" /><published>2023-10-22T15:08:10+05:30</published><updated>2023-10-22T15:08:10+05:30</updated><id>http://localhost:4000/cloud/2023/10/22/Start-a-webserver-with-aws</id><content type="html" xml:base="http://localhost:4000/cloud/2023/10/22/Start-a-webserver-with-aws.html"><![CDATA[<h2 id="introduction">Introduction</h2>
 
 <p>In this blog, we are gonna try to create our own webserver in aws. We will follow operation Excellence principle by designing it failure by using multi-AZ architecture or extending it to more than 1 availability zones. We will use load balancer to uniformly distribute the requests coming to our webserver to different EC2 instances. and If you have a domain we will learn how to create DNS records so that your domain points to this newly created webserver. While doing all of this we will not forget the security principle of well-architected framework.</p>
 
