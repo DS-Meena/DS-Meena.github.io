@@ -1,7 +1,7 @@
 ---
 layout: post
 title:  "Policy Gradients"
-date:   3024-09-20 10:00:10 +0530
+date:   2024-10-03 10:00:10 +0530
 categories: AI
 ---
 
@@ -85,12 +85,12 @@ Where:
 The gradient of this objective with respect to the policy parameters is given by:
 
 $$
-\nabla_\theta J(\theta) = \mathbb{E}_{\tau \sim \pi_\theta} \left[ \sum_{t=0}^T \nabla_\theta \log \pi_\theta(a_t|s_t) R(\tau) \right]
+\nabla_\theta J(\theta) = \mathbb{E}_{\tau \sim \pi_\theta} \left[ \sum_{t=0}^T \nabla_\theta \log \pi_\theta(a_t \lvert s_t) R(\tau) \right]
 $$
 
 This equation can be interpreted as follows:
 
-- $∇_θ log π_θ(a_t|s_t)$ is the gradient of the log probability of taking action $a_t$ in state $s_t$
+- $∇_θ log π_θ(a_t\lvert s_t)$ is the gradient of the log probability of taking action $a_t$ in state $s_t$
 - $R(τ)$ is the return of the trajectory, acting as a weighting factor
 - The summation is over all time steps in the trajectory
 - The expectation $E$ is taken over all possible trajectories under the current policy
@@ -112,7 +112,100 @@ In practice, we often use the following steps to implement Policy Gradient metho
         $$
         
         Where α is the learning rate
+
+```python
+class PolicyGradient:
+    def __init__(self, n_states, n_actions, learning_rate=0.01):
+        self.n_states = n_states
+        self.n_actions = n_actions
+        self.learning_rate = learning_rate
         
+        self.model = self._build_model()
+        self.optimizer = tf.optimizers.Adam(learning_rate)
+    
+    # represents our policy π_θ
+    def _build_model(self):
+        model = tf.keras.Sequential([
+            tf.keras.layers.Dense(24, activation='relu', input_shape=(self.n_states,)),
+            tf.keras.layers.Dense(24, activation='relu'),
+            tf.keras.layers.Dense(self.n_actions, activation='softmax')
+        ])
+        return model
+    
+    # follows stochastic policy π_θ(a_t|s_t)
+    def choose_action(self, state):
+        state = np.reshape(state, [1, self.n_states])
+        probabilities = self.model(state)
+        action = np.random.choice(self.n_actions, p=probabilities.numpy()[0])
+        return action
+    
+    # optimize the policy given a sequence of states, actions, rewards (trajectory)
+    def train(self, states, actions, rewards):
+        states = np.array(states)
+        actions = np.array(actions)
+        rewards = np.array(rewards)
+        
+        with tf.GradientTape() as tape:
+            logits = self.model(states)
+            neg_log_prob = tf.nn.sparse_softmax_cross_entropy_with_logits(logits=logits, labels=actions)
+
+            # calcualte - log π_θ(a_t|s_t) * R(τ) = -1 * gain
+            loss = tf.reduce_mean(neg_log_prob * rewards)
+        
+        # calculate gradient of -ve gain
+        grads = tape.gradient(loss, self.model.trainable_variables)
+        
+        # apply gradient descent
+        self.optimizer.apply_gradients(zip(grads, self.model.trainable_variables))
+```
+
+This code implements the Policy gradient method:
+
+1. The policy $π_θ$ is represented by the neural network model.
+2. The action selection follows the stochastic policy: $π_θ(a_t\lvert s_t$).
+3. The train method implements the policy gradient theorem:
+    
+    $$\nabla_\theta J(\theta) = \mathbb{E}_{\tau \sim \pi_\theta} \left[ \sum_{t=0}^T \nabla_\theta \log \pi_\theta(a_t\lvert s_t) R(\tau) \right]$$
+    
+    Here, tf.nn.sparse_softmax_cross_entropy_with_logits computes $-log π_θ(a_t\lvert s_t)$, and we multiply it by the rewards.
+
+4. The gradient computation and parameter update follow the equation:
+    
+    $$θ ← θ - α (- ∇_θ J(θ))$$   
+
+    First -ve represents gradient descent and the second -ve represents negative of gradient of gain. That mean it maximizes the rewards.
+
+```python
+env = gym.make('Acrobot-v1')
+agent = PolicyGradient(n_states=6, n_actions=3)
+
+for episode in range(1000):
+    state = env.reset()[0]
+
+    # trajectory of the episode
+    states, actions, rewards = [], [], []
+    
+    while True:
+        action = agent.choose_action(state)
+        next_state, reward, done, _, _ = env.step(action)
+        
+        states.append(state)
+        actions.append(action)
+        rewards.append(reward)
+   
+        state = next_state
+        
+        if done:
+            break
+    
+    # Normalize rewards
+    rewards = (rewards - np.mean(rewards)) / (np.std(rewards) + 1e-8)
+    
+    # Now, optimize the policy using trajectory of the episode
+    agent.train(states, actions, rewards)
+```
+
+We have implemented the policy gradient of [Acrobot-v1](https://gymnasium.farama.org/environments/classic_control/acrobot/) environment. Where it tries to stand up and avoid penalty of -1.
 
 ## Advantages and Challenges 🏆🚧
 
