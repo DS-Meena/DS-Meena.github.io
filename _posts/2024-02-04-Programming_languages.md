@@ -236,7 +236,7 @@ Java and C# are often described as a hybrid of compiled and interpreted language
 
 ![Fig: Flowchart from high level language to Output (Just my understanding) ](/assets/2024/September/flowchart.png)
 
-*Fig: Flowchart from high level language to Output (Just my understanding) *
+*Fig: Flowchart from high level language to Output (Just my understanding)*
 
 The main advantage of JIT compilation is that it can optimize the program for the machine's current state, taking into account factors such as the data being processed and the machine's architecture. This can result in more efficient execution than with traditionally compiled code.
 

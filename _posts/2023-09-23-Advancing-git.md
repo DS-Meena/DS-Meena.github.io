@@ -17,9 +17,9 @@ If you're using Git and you need to undo changes you made to files, you can use 
 
 | Command | Description |
 | --- | --- |
-| git reset | reset your working directory and staging area to a previous commit |
-| git reset --soft HEAD^ | reset your working directory to the previous commit but keep your changes in the staging area |
-| git reset --hard HEAD^ | reset both your working directory and staging area to the previous commit |
+| git reset | reset your current HEAD to the specified state without changing the working directory or staging area |
+| git reset --soft HEAD^ | reset your working directory to the previous commit but keep your changes in the working directory and staging area |
+| git reset --hard HEAD^ | reset both your working directory and staging area to the previous commit, discarding changes in the working directory |
 | git reset <file> | unstage a file that you accidentally added to the staging area |
 | git clean -f  | remove untracked files |
 | git rm --cached testfile.js | no longer track the file |

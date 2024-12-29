@@ -90,7 +90,7 @@ The staging area, also known as the index, is a feature in Git that allows devel
 | --- | --- |
 | git add [file-name] | Add a file to the staging area |
 | git add -A | Add all changed files to the staging area |
-| git rm -r [file_name] | Remove a file from staging area |
+| git rm -r [file_name] | Remove a file from staging area as well as your directory |
 | git add -p | Opens the patch mode |
 
 1. **Committing changes**
